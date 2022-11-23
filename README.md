@@ -8,7 +8,7 @@
 
 ## Equipo:
 
-- **Maximiliano Alonso**, estudiante del curso **FullStack Node JS** en **DigitalHause** mediante fundación **Formar**. Ex alumno en la **UTN** donde hice un curso de html5 y css3 y la **UNab** hice una curso de introduccion a JAVA.
+- **Maximiliano Alonso**, estudiante del curso **FullStack Node JS** en **DigitalHause** mediante fundación **Formar**. Me capacite en la **UTN** donde hice un curso de **HTML5 y CSS3** y en la **UNab** hice una curso de introduccion a JAVA.
 
 - **Lucia Sánchez**, estudiante del curso **FullStack Node JS** en **DigitalHause** mediante fundación **Formar**. 
 Estudié durante 3 años la carrera de Diseño Gráfico en **La Escuela de Artes Visuales Martin A. Malharro** y actualmente me encuentro cursando la Tecnicatura en Desarrollo Web y Aplicaciones Digitales en el **ISPC de Córdoba**. 
