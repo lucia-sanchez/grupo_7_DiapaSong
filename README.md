@@ -21,6 +21,8 @@ Estudié durante 3 años la carrera de Diseño Gráfico en **La Escuela de Artes
 - **Ignacio Martin Araneda**, estudiante del curso **FullStack Node JS** en **DigitalHouse** mediante fundación **Formar**. 
     >Esta es mi primera experiencia de lleno en el mundo de la programación, a futuro me gustaria poder expandirme a otros rubros, como lo es la seguridad informatica. Soy de la provincia de Mendoza
 
+- **Ignacio Martin**, estudiante del curso **FullStack Node JS** en **DigitalHouse** mediante fundación **Formar**. Paralelamente estoy cursando **Programación web - Full Stack** mediante la plataforma de **Argentina Programa** e **Inovaccion Virtual - LaunchX Microsoft** este último orientado al uso de **Azure y herramientas de Microsoft**. 
+
 
 ## Inspiración en referentes del Mercado:
 
