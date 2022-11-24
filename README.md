@@ -40,4 +40,4 @@ Estudié durante 3 años la carrera de Diseño Gráfico en **La Escuela de Artes
 [Ir al sitio >](https://freemusic.com.ar/)
 
 - TiendaMusica: Es un sitio bien organizado, se lo ve muy estetico y adaptativo para cualquier tipo de persona, esto esta bueno ya que se adapta a nuestro objetivo que es lograr llegar a todo tipo de rango de edad y que sea una pagina facil de utilizar y dinamica
-[Ir al sitio >] (https://www.tiendamusica.com.ar/)
+[Ir al sitio >](https://www.tiendamusica.com.ar/)
