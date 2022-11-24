@@ -38,3 +38,5 @@ Estudié durante 3 años la carrera de Diseño Gráfico en **La Escuela de Artes
 
 - FreeMusic: El sitio es responsive, me gustan los colores, el carrousel del home, la disposicion de la barra de navegacion y los botones y los productos en el body, el proceso de registro y el carrito que se despliega y se oculta. Le faltaria nuestra sección de novedades, tutoriales y espectaculos.
 [Ir al sitio >](https://freemusic.com.ar/)
+
+- 
