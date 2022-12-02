@@ -17,6 +17,11 @@ Estudié durante 3 años la carrera de Diseño Gráfico en **La Escuela de Artes
 
 - **Luis Alfredo Barrantes**, estudiante del curso **FullStack Node JS** en **DigitalHouse** mediante fundación **Formar**. Paralelamente estoy cursando **Programación web - Full Stack** mediante la plataforma de **Argentina Programa** e **Inovaccion Virtual - LaunchX Microsoft** este último orientado al uso de **Azure y herramientas de Microsoft**. 
     >Esta es mi primera experiencia de lleno en el mundo de la programación, a futuro me gustaria poder expandirme a otros rubros, como lo es la robotica, la automatizacion e IoT.
+    
+- **Ignacio Martin Araneda**, estudiante del curso **FullStack Node JS** en **DigitalHouse** mediante fundación **Formar**. 
+    >Esta es mi primera experiencia de lleno en el mundo de la programación, a futuro me gustaria poder expandirme a otros rubros, codmo lo es la seguridad informatica. 
+
+ 
 
 
 ## Inspiración en referentes del Mercado:
@@ -33,3 +38,7 @@ Estudié durante 3 años la carrera de Diseño Gráfico en **La Escuela de Artes
 
 - FreeMusic: El sitio es responsive, me gustan los colores, el carrousel del home, la disposicion de la barra de navegacion y los botones y los productos en el body, el proceso de registro y el carrito que se despliega y se oculta. Le faltaria nuestra sección de novedades, tutoriales y espectaculos.
 [Ir al sitio >](https://freemusic.com.ar/)
+
+- TiendaMusica: Es un sitio bien organizado, se lo ve muy estetico y adaptativo para cualquier tipo de persona, esto esta bueno ya que se adapta a nuestro objetivo que es lograr llegar a todo tipo de rango de edad y que sea una pagina facil de utilizar y dinamica
+[Ir al sitio >](https://www.tiendamusica.com.ar/)
+.
