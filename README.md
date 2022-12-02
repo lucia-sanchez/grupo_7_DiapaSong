@@ -1,3 +1,4 @@
+![Logo Diapasong](/design/logoDiapasong.jpeg)
 # -DiapaSong-
 ## Descripción:
 - Ofrecemos **instrumentos musicales** de todo tipo, tanto clásicos como modernos. Además tenemos una sección donde podrán encontrar articulos, tutoriales y links de interés
