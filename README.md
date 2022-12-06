@@ -41,5 +41,15 @@ Estudié durante 3 años la carrera de Diseño Gráfico en **La Escuela de Artes
 [Ir al sitio >](https://freemusic.com.ar/)
 
 - TiendaMusica: Es un sitio bien organizado, se lo ve muy estetico y adaptativo para cualquier tipo de persona, esto esta bueno ya que se adapta a nuestro objetivo que es lograr llegar a todo tipo de rango de edad y que sea una pagina facil de utilizar y dinamica
-[Ir al sitio >](https://www.tiendamusica.com.ar/)
-.
+[Ir al sitio >](https://www.tiendamusica.com.ar/).
+
+ETAPA   | TAREAS
+--------|-------
+SPRINT 1|[Wireframe+Boceto](/WIREFRAMES)
+SPRINT 2|[HTML+CSS]("")
+SPRINT 3|[Teplate Engines]("")
+SPRINT 4|[JSON+métodos HTTP]("")
+SPRINT 5|[Middlewares+Auth]("")
+SPRINT 6|[Bases de Datos]("")
+SPRINT 7|[Validaciones]("")
+SPRINT 8|[APIs+React]("")
