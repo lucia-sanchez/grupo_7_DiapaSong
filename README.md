@@ -45,6 +45,7 @@ Estudié durante 3 años la carrera de Diseño Gráfico en **La Escuela de Artes
 
 ETAPA   | TAREAS
 --------|-------
+TRELLO  |[TABLERO DE TRABAJO](https://trello.com/b/hJcv1fSu/c18-grupo7-diapasong)
 SPRINT 1|[Wireframe+Boceto](/WIREFRAMES)
 SPRINT 2|[HTML+CSS]("")
 SPRINT 3|[Teplate Engines]("")
