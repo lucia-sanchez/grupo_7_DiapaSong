@@ -1,0 +1,20 @@
+{
+  "name": "grupo_7_diapasong",
+  "version": "1.0.0",
+  "description": "![Logo Diapasong](/design/logoDiapasong.jpeg)\r # -DiapaSong-\r ## Descripción:\r - Ofrecemos **instrumentos musicales** de todo tipo, tanto clásicos como modernos. Además tenemos una sección donde podrán encontrar articulos, tutoriales y links de interés",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucia-sanchez/grupo_7_DiapaSong.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucia-sanchez/grupo_7_DiapaSong/issues"
+  },
+  "homepage": "https://github.com/lucia-sanchez/grupo_7_DiapaSong#readme"
+}
