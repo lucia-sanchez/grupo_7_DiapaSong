@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <script src="https://kit.fontawesome.com/bd0eb781b4.js" crossorigin="anonymous"></script>
     <title>DIAPASONG | Login</title>
 </head>
-<body>
-    
+
+<body class="login">
+    <header>
+        en construccion
+    </header>
+    <!-- VISTA LOGIN USER -->
+    <main class="login__main">
+        <section class="login__main__section">
+            <!-- TITULO SITIO -->
+            <h3 class="login__main__section--title">inicia sesión o crea una cuenta</h3>
+            <form class="login__formbox" action="" method="post">
+                <!-- E-MAIL -->
+                <div>
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail" required>
+                </div>
+                <!-- PASSWORD -->
+                <div>
+                    <label for="password">contraseña</label>
+                    <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña"
+                        minlength="8" required>
+                </div>
+                <!-- BOTONES LOGIN Y register -->
+                <div class="login__formbox--btn-box">
+                    <button class="btn--login" type="submit">iniciar sesión</button>
+
+                    <button class="btn--register" type="reset"><a href="/register">crear cuenta</a></button>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        en construccion
+    </footer>
 </body>
+
 </html>

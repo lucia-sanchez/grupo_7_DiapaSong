@@ -1,0 +1,65 @@
+.register {}
+
+.register__main {}
+
+.register__main__section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.register__main__section--mapa-sitio {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: small;
+}
+
+.register__main__section--titulo {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.register__main__section--caja-beneficios {
+    background: rgba(255, 252, 252, 0.67);
+    border: 1px solid #000000;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.register__main__section--caja-beneficios ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.form__checkbox--novedades,
+.form__checkbox--terminos {
+    justify-content: center;
+}
+
+.form__checkbox--novedades input,
+.form__checkbox--terminos input {
+    width: 22px;
+}
+
+.form__checkbox--novedades label,
+.form__checkbox--terminos label {
+    width: 76%;
+    justify-content: flex-start;
+}
+.form__btn-box{
+    justify-content: center;
+}
+.btn--crear-cuenta {
+    width: 70%;
+    background: rgba(255, 252, 252, 0.5);
+    border: 1px solid #000000;
+    border-radius: 15px;
+    text-transform: uppercase;
+}
+.register__main__section--login{
+    display: flex;
+    justify-content: center;
+}
