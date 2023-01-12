@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+    font-family: barlow;
+}
+body{
+    background-color: var(--colorFondoBody);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
