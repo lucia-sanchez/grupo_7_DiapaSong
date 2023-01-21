@@ -1,0 +1,62 @@
+form {
+    border-radius: 15px;
+    background-color: var(--colorFondoForm);
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    padding: 5px;
+    gap: 8px;
+}
+
+form div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 5px;
+}
+
+form label {
+    display: flex;
+    width: 54%;
+    justify-content: flex-end;
+}
+
+form input {
+    display: flex;
+    width: 40%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background: rgb(255 255 255 / 50%);
+    border: 1px solid #000000;
+    border-radius: 5px;
+    height: 30px;
+}
+::placeholder{
+    text-align: center;
+    font-size: small;    
+}
+.form__checkbox{
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.form__checkbox p{
+    width: 32%;
+    margin-top: 8px;
+}
+.form__checkbox div{
+    width: 60%;
+    max-width: 200px;
+    /* display: flex; */
+    gap: 0;
+    font-size: small;
+    flex-wrap: wrap;
+}
+.form__checkbox input{
+    width: 15px;
+}
+.form__checkbox label{
+    width: 23%;
+    justify-content: flex-start;
+}

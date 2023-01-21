@@ -1,0 +1,41 @@
+.footer{
+    
+text-transform: capitalize;
+}
+.footer__top{
+    width: 100%;
+    padding: 10px;
+    /* background: rgb(34,142,255); */
+    background: linear-gradient(180deg, rgba(34,142,255,0.7) 0%, rgba(33,224,255,0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.footer__logo{
+
+}
+.footer__redes{
+
+}
+.footer__medios-de-pago, .footer__links, .footer__links--contacto, .footer__links--contacto ul, .footer__links ul{
+display: flex;
+flex-direction: column;
+align-items: center;
+align-content: center;
+gap: 5px;
+flex-wrap: wrap;
+}
+.footer__links--contacto ul{
+    text-transform: lowercase;
+}
+
+.footer__medios-de-pago img{
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.349);
+    border-radius: 5px;
+}
+.footer__bottom{
+    padding-left: 10px;
+
+}

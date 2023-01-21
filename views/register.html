@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diapasong | Registro de Usuario</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <script src="https://kit.fontawesome.com/bd0eb781b4.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="register">
+    <header>
+        header en construccion de maxi
+    </header>
+    <!-- VISTA REGISTER USER -->
+    <main class="register__main">
+        <section class="register__main__section">
+            <!-- MAPA DEL SITIO -->
+            <div class="register__main__section--mapa-sitio">
+                <p><a href="/">home</a>
+                    <i class="fa-solid fa-greater-than"></i>
+                    <a href="/login">cuenta</a>
+                    <i class="fa-solid fa-greater-than"></i> crear cuenta
+                </p>
+            </div>
+            <!-- TITULO SITIO -->
+            <h1 class="register__main__section--titulo">
+                crear cuenta gratis
+            </h1>
+            <!-- CAJA DE BENEFICIOS -->
+            <div class="register__main__section--caja-beneficios">
+                <ul>
+                    <li>Beneficios:</li>
+                    <li>
+                        <i class="fa-solid fa-check"></i> Descuentos exclusivos.
+                    </li>
+                    <li> <i class="fa-solid fa-check"></i> Compra mas rapida.</li>
+                    <li> <i class="fa-solid fa-check"></i> Novedades y ofertas
+                        personalizadas.</li>
+                    <li> <i class="fa-solid fa-check"></i> Datos y compra protegida.</li>
+                </ul>
+            </div>
+            <!-- FORMULARIO REGISTRO DE USUARIO -->
+            <form action="" method="get">
+                <!-- NOMBRE Y APELLIDO -->
+                <div>
+                    <label for="name">nombre y apellido</label>
+                    <input type="text" name="name" id="name" placeholder="Juan Perez" required>
+                </div>
+                <!-- E-MAIL -->
+                <div>
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email" placeholder="Juanperez@ejemplo.com" required>
+                </div>
+                <!-- PASSWORD -->
+                <div>
+                    <label for="password">contraseña</label>
+                    <input type="password" name="password" id="password" placeholder="Minimo 8 caracteres alfanumericos"
+                        minlength="8" required>
+                </div>
+                <!-- CONFIRMAR PASSWORD -->
+                <div>
+                    <label for="password2">confirmar contraseña</label>
+                    <input type="password" name="password2" id="password2"
+                        placeholder="Debe coincidir con tu contraseña" required>
+                </div>
+                <!-- DNI -->
+                <div>
+                    <label for="identifyid">documento</label>
+                    <input type="number" name="identifyid" id="identifyid"
+                        placeholder="Ingresa tu DNI sin espacios ni guiones" minlength="7" maxlength="8" required>
+                </div>
+                <!-- FECHA DE NACIMIENTO -->
+                <div>
+                    <label for="birthdate">fecha de nacimiento</label>
+                    <input type="date" name="birthdate" id="birthdate" required>
+                </div>
+                <!-- TELEFONO -->
+                <div>
+                    <label for="tel">telefono</label>
+                    <input type="tel" name="tel" id="tel" placeholder="Ingresa codigo de area seguido de tu teléfono"
+                        required>
+                </div>
+                <!-- CHECKBOX GENEROS -->
+                <div class="form__checkbox">
+                    <p>generos que te gustan</p>
+                    <div>
+                        <input type="checkbox" name="preferedgenre" id="latino" value="latino">
+                        <label for="latino">latino</label>
+                        <input type="checkbox" name="preferedgenre" id="punk" value="punk">
+                        <label for="punk">punk</label>
+                        <input type="checkbox" name="preferedgenre" id="clásico" value="clásico">
+                        <label for="clásico">clásico</label>
+                        <input type="checkbox" name="preferedgenre" id="rock" value="rock">
+                        <label for="rock">rock</label>
+                        <input type="checkbox" name="preferedgenre" id="metal" value="metal">
+                        <label for="metal">metal</label>
+                        <input type="checkbox" name="preferedgenre" id="folklore" value="folklore">
+                        <label for="folklore">folklore</label>
+                        <input type="checkbox" name="preferedgenre" id="jazz" value="jazz">
+                        <label for="jazz">jazz</label>
+                        <input type="checkbox" name="preferedgenre" id="pop" value="pop">
+                        <label for="pop">pop</label>
+                        <input type="checkbox" name="preferedgenre" id="cumbia" value="cumbia">
+                        <label for="cumbia">cumbia</label>
+                        <input type="checkbox" name="preferedgenre" id="alternativo" value="alternativo">
+                        <label for="alternativo">alternativo</label>
+                    </div>
+                </div>
+                <!-- CHECKBOX INSTRUMENTOS -->
+                <div class="form__checkbox">
+                    <p>instrumentos que te interesan</p>
+
+                    <div>
+                        <input type="checkbox" name="preferedinstruments" id="cuerda" value="cuerda">
+                        <label for="cuerda">cuerda</label>
+                        <input type="checkbox" name="preferedinstruments" id="viento" value="viento">
+                        <label for="viento">viento</label>
+                        <input type="checkbox" name="preferedinstruments" id="percusión" value="percusión">
+                        <label for="percusión">percusión</label>
+                        <input type="checkbox" name="preferedinstruments" id="electrónico" value="electrónico">
+                        <label for="electrónico">electrónico</label>
+                    </div>
+                </div>
+                <!-- CHECKBOX NOVEDADES Y OFERTAS -->
+                <div class="form__checkbox--novedades">
+                    <input type="checkbox" name="news" id="novedades-ofertas">
+                    <label for="novedades-ofertas">Recibir novedades y ofertas.</label>
+                </div>
+                <!-- CHECKBOX TERMINOS Y CONDICIONES -->
+                <div class="form__checkbox--terminos">
+                    <input type="checkbox" name="terms" id="terms" required>
+                    <label for="terms">Acepto terminos y condiciones</label>
+                </div>
+                <!-- BOTON CREAR CUENTA -->
+                <div class="form__btn-box">
+                    <button class="btn--crear-cuenta" type="submit">crear cuenta</button>
+                </div>
+
+            </form>
+            <!-- INICIA SESION -->
+            <div class="register__main__section--login">
+                <p>¿Ya tenes cuenta? <a href="/login">Inicia Sesión.</a></p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__top">
+        <!-- LOGO -->
+        <div class="footer__logo">
+            <img src="" alt="">logo
+        </div>
+        
+        <!-- REDES -->
+        <nav class="footer__redes">
+            <p>seguinos en nuestras redes</p>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </nav>
+        <!-- LINKS SITIO -->
+        <nav class="footer__links">
+            <b>links</b>
+            <ul>
+                <li><a href="/products">productos</a></li>
+                <li><a href="/bolg">blog</a></li>
+                <li><a href="/tickets">entradas</a></li>
+                <li><a href="">envios</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="">contacto</a></li>
+            </ul>
+        </nav>
+        <!-- LINKS CUENTA -->
+        <nav class="footer__links">
+            <b>cuenta</b>
+            <ul>
+                <li><a href="/login">mi cuenta</a></li>
+                <li><a href="/productCart"></a>carrito</li>
+            </ul>
+        </nav>
+        <nav class="footer__links--contacto">
+            <b>contacto</b>
+            <ul>
+                <li><a href="tel:+12345678">12345678</a></li>
+                <li><a href="mailto:ventas@diapasong.com.ar">ventas@diapasong.com.ar</a></li>
+                <li><!-- <a href=""></a> --><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2010.109030140013!2d-58.37138422275975!3d-34.59535660858388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335bd8305e7a9%3A0xc41a764ce655671f!2sGlobant%20Tower!5e0!3m2!1ses-419!2sar!4v1673717852325!5m2!1ses-419!2sar" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+            </ul>
+        </nav>
+        <div class="footer__medios-de-pago">
+            <b>medios de pago</b>            
+            <img src="/img/mediosdepago.png" alt="medios de pago">
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p>2022 - lorem ipsum dolor sit amet</p>
+
+    </div>
+
+    </footer>
+</body>
+
+</html>
