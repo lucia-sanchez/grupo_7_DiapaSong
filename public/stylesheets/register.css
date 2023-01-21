@@ -56,14 +56,14 @@
 .btn--crear-cuenta {
     width: 200px;
     background: rgba(255, 252, 252, 0.5);
-    border: 1px solid #000000;
+    /* border: 1px solid #000000; */
     border-radius: 15px;
     text-transform: uppercase;
     transition: all 0.5s;
     padding: 5px;
 }
 .btn--crear-cuenta:hover{
-    background-color: rgb(123 255 210);
+    background-color: rgb(150 119 255);
     box-shadow: 0px 0px 18px 1px rgb(129 129 129);
 }
 .register__main__section--login{
