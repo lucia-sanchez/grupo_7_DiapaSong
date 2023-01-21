@@ -1,7 +1,10 @@
-*{
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family:var(--fuenteGeneral);
     box-sizing: border-box;
     font-family: barlow;
-    margin:0
 }
 body{
     background-color: var(--colorFondoBody);
@@ -18,4 +21,7 @@ ul{
     margin: 0;
     gap: 5px;
     padding: 0;
+}
+ul li{
+    list-style: none;
 }
