@@ -3,8 +3,6 @@
     box-sizing: border-box;
     margin: 0;
     font-family:var(--fuenteGeneral);
-    box-sizing: border-box;
-    font-family: barlow;
 }
 body{
     background-color: var(--colorFondoBody);
