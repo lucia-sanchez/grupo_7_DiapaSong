@@ -18,7 +18,7 @@ app.get('/user',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'user.html
 app.get('/blog',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'blog.html')));
 app.get('/faq',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'faq.html')));
 app.get('/password',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'password.html')));
-app.get('/tickets',(req,res)=>res.sensFile(path.join__(dirname, 'views', 'tickets.html')));
+app.get('/tickets',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'tickets.html')));
 app.get('/ticketsDetail',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'ticketsDetail.html')));
 app.get('/products',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'products.html')));
 
