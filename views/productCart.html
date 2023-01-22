@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f9457e77c9.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--Slick-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/styles.css">
     <title>Carrito de compras</title>
+    
 </head>
 <body>
     <header class="header">
@@ -49,9 +60,43 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="main__carrito">
+        
+        <h2 class="carrito__main__title">tu carrito</h2>
         <hr>
-        <h1 class="">tu carrito</h1>
+        <div class="carrito__main__container">
+            <div class="carrito__main__img">
+                <img src="../img/electric-guitar.png" alt="electric-guitar">
+            </div>
+            <div class="carrito__main__desc">
+                <p>guitarra electrica Les-Paul</p>
+            </div>
+            <div class="carrito__main__cant">
+                <button type="button" class="carrito__main__cant--resta">
+                    -
+                </button>
+                <button type="button" class="carrito__main__cant--num">
+                    1
+                </button>
+                <button type="button" class="carrito__main__cant--suma">
+                    +
+                </button>
+        
+            </div>
+            <div class="carrito__main__precio">
+                <p>$85.000</p>
+            </div>
+        </div>
+            <hr>
+            <div class="carrito__main__totalCompra">
+            <p>total</p>
+            <span class="carrito__main__precio">$85.000</span>    
+            </div>
+            <div class="carrito__main__btn">
+                <button type="button" class="carrito__main__btn--contCompra btn--login">continuar comprando</button>
+                <button type="button" class="carrito__main__btn--pagar btn--login">pagar</button>
+        
+
         
 
     </main>   
