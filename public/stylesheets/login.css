@@ -1,44 +1,71 @@
-.login__main{
-
+/* MOBILE FIRST */
+.login {
+    width: 100%;
 }
-.login__main__section{
+
+.login__main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login__main__section {
     display: flex;
     background-color: white;
     border-radius: 15px;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    width: 600px;
 }
-.login__main__section--title{
+
+.login__main__section--title {
     text-transform: uppercase;
 }
-.login__formbox{
+
+.login__formbox {
     background-color: white;
-    width: 100%;
+    width: 90%;
     padding: 25px;
     text-transform: uppercase;
     font-size: larger;
     gap: 20px;
 }
-.login__formbox div{
+
+.login__formbox div {
     flex-direction: column;
     width: 100%;
 }
-.login__formbox label{
+
+.login__formbox label {
     width: 100%;
     justify-content: flex-start;
 }
-.login__formbox input{
+
+.login__formbox input {
     width: 100%;
     background-color: rgba(240, 229, 245, 0.5);
 }
-.login__formbox--btn-box button{
-    
-}
-.btn--login, .btn--register{
+
+.login__formbox--btn-box button {}
+
+.btn--login,
+.btn--register {
     background-color: rgb(243 238 238);
     border: 3px solid #000000;
     border-radius: 15px;
     text-transform: uppercase;
     padding: 15px;
 }
+
+/* TABLET */
+@media (min-width: 768px) {
+    .login__formbox {
+
+        width: 70%;
+    }
+
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {}
