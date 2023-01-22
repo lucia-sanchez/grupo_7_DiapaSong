@@ -93,6 +93,7 @@ width: 30%;
     }
 
     .footer__redes {
+        align-self: center;
         width: 30%;
         order: 1;
         text-align: center;
@@ -100,6 +101,7 @@ width: 30%;
     }
 
     .footer__medios-de-pago {
+        align-self: center;
         order: 2;
         width: 40%;
     }
