@@ -23,4 +23,4 @@ app.get('/ticketsDetail',(req,res)=>res.sendFile(path.join(__dirname, 'views', '
 app.get('/products',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'products.html')));
 
 
-app.listen(port, () => console.log('Servidor corriendo en el puerto 3030'));
+app.listen(port, () => console.log(`Servidor corriendo en el puerto: http://localhost:${port}`));

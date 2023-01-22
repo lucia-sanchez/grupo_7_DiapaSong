@@ -1,37 +1,59 @@
+.home__main {
+    padding: 0;
+    
+}
+.home__carrurell--banner .carousel-control-prev{
+margin-left: 0;
+top: 40px;
+width: 30px;
+height: 30px;
+}
+.home__carrurell--banner .carousel-control-next{
+    position: absolute;
+    top: 40px;
+    left: inherit;
+    margin-left: 205px;
+    width: 30px;
+    height: 30px;
+}
 .home__main{
     background-color: #E5E5E5;
 }
 .home__main__title{
     color: black;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
     text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
 }
-.home__main__carrusell{
-    padding: 0;
+.home__main__cardsCarrusel{
+    
 }
 .home__main__conteiner{
+    position: relative;
     width: 60%;
     border-radius: 10px;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 3%, rgba(9,90,121,0.742734593837535) 68%, rgba(0,212,255,1) 100%);;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     margin-bottom: 10%;
 }
 .home__main__conteiner--img-producto{
-    width:60%;
-    height: auto;
+    width: auto;
+    height: 300px;
 }
 .home__main__conteiner--descuento{
     width: 110px;
     height: 110px;
     display: flex;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 70px;
+    right: -50px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(2,0,36,1) 17%, rgba(9,90,121,1) 69%, rgba(0,212,255,1) 100%);
     flex-wrap: wrap;
@@ -47,6 +69,7 @@ text-transform: uppercase;
 
 }
 .home__main__conteiner--descripcion{
+    background-color: aliceblue;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -54,7 +77,14 @@ text-transform: uppercase;
     align-items: center;
     padding: 10px 10%;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+}
+.home__main__section--quienesSomos{
+    padding: 10%;
+}
+hr{
+    border: 2px solid black;
+    width: 100%;
 }
 .home__main__ubicacion{
     display: flex;
@@ -81,6 +111,7 @@ text-transform: uppercase;
     font-size: 0.8rem;
     text-transform: uppercase;
     text-align: center;
+    justify-content: center;
 
 }
 .home__main__form--button , .home__main__form--input{
@@ -90,4 +121,58 @@ text-transform: uppercase;
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
+}
+.home__main__form--button{
+    background-color: rgb(41, 51, 112);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+.home__main__form--button:hover{
+    box-shadow: black 0px 0px 10px 0px;
+    background-color: linear-gradient(180deg, rgba(34,142,255,0.7) 0%, rgba(33,224,255,0.8) 100%);
+    ;
+}
+
+
+/*Media Query*/
+/*TABLET*/
+@media (min-width: 768px){
+        .home__carrurell--banner .carousel-control-prev, .home__carrurell--banner .carousel-control-next{
+            display: flex;
+            top: 120px;
+           
+        }
+        .home__main__cardsCarrusel{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        .home__main__conteiner{
+            width: 23%;
+        }
+    }
+/*DESKTOP*/
+@media (min-width: 1024px){
+    .home__carrurell--banner .carousel-control-prev, .home__carrurell--banner .carousel-control-next{
+        display: flex;
+        top: 300px;
+    }
+    
+   .home__carrurell--banner .carousel-item, .home__carrurell--banner .active,.home__carrurell--banner .carousel, .home__carrurell--banner .slide {
+    all: initial;
+    }
+    .home__main__ubicacion--map{
+        width: 80%;
+    }
+    .home__main__form{
+        width: 80%;
+    }
+
 }

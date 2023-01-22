@@ -4,18 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f9457e77c9.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--Slick-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <!--CSS-->
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <title>DIAPASONG</title>
 </head>
 <body>
-    <header>
+  <header class="header">
 
-    </header>
-    <main CLASS="home__main">
-        <div id="carouselExampleIndicators" class="carousel slide home__main__carrusell" data-ride="carousel">
-            <ol class="carousel-indicators">
+    <!-- Icono menu -->
+    <button class="header--btn-menu" id="iconomenu">
+        <i class="fa-solid fa-bars ubtn" id="iconomenu"></i>
+    </button>
+    <!-- Logo -->
+    <figure class="header--logo">
+        <a href="/"><img src="img/logoDiapasong.png" alt="Image-logo">
+            <h1>Instrumentos Musicales</h1>
+        </a>
+    </figure>
+    <!--Iconos navegacion -->
+    <section class="header__section--user-navigation">
+        <a href="/user"><i class="fa-solid fa-user"></i></a>
+        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a class="header_redes" href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a class="header_redes" href="#"><i class="fa-brands fa-instagram"></i></a>
+    </section>
+    <!-- Buscador -->
+    <form class="header--search-bar" action="">
+        <input type="text" name="search-bar" placeholder="¿Que buscas?" id="search-bar">
+        <a class="lupa" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
+    </form>
+    <!-- Icono Whatsap -->
+    <div class="header--whatsapp-icon">
+        <a href="#"><i class="fa-solid fa-phone"></i><span class="Whatsapp-text">Whatsapp</span></a>
+
+
+    </div>
+
+    <!-- Menu -->
+    <nav class="header__nav" id="header_nav">
+        <ul>
+            <li class="productos_btn"><a href="/products">Productos</a></li>
+            <li class="blob_btn"><a href="/blog">Blog</a></li>
+            <li class="entradas_btn"><a href="tickets">Entradas</a></li>
+            <li class="about_btn"><a href="#about">Quienes somos!</a></li>
+            <li class="faq_btn"><a href="/faq">Faq</a></li>
+        </ul>
+    </nav>
+</header>
+    <main class="home__main">
+      <!--Banner-Carrusel-->
+        <div id="carouselExampleIndicators" class="carousel slide home__main__carrusell home__carrurell--banner" data-ride="carousel">
+            <ol class="carousel-indicators ">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -31,31 +77,111 @@
                 <img class="d-block w-100" src="/images/banner03.png" alt="Guitarrista">
               </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev banner-home-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next banner-home-control" href="#carouselExampleIndicators" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
           </div>
-        <h1 class="home__main__title">ofertas</h1>
-       <div class="home__main__conteiner">
-          <img src="/images/guitar.png" alt="guitar" class="home__main__conteiner--img-producto">
-          <div class="home__main__conteiner--descuento">
-          <h2>40% off</h2>
+          <!--Ofertas-->
+        <h2 class="home__main__title">ofertas</h2>
+          <div class="home__main__cardsCarrusel">
+                <div class="home__main__conteiner">
+                <img src="/images/guitar.png" alt="guitar" class="home__main__conteiner--img-producto">
+                    <div class="home__main__conteiner--descuento">
+                    <h2>40% off</h2>
+                    </div>
+                    <div class="home__main__conteiner--descripcion">
+                      <p>Guitarra Electroacustica Sigma Guitars 000tce - Oddity</p>
+                      </div>
+                </div>
+               
+                
+                <div class="home__main__conteiner">
+                    <img src="/images/chelo.png" alt="guitar" class="home__main__conteiner--img-producto">
+                    <div class="home__main__conteiner--descuento">
+                    <h2>40% off</h2>
+                    </div>
+                    <div class="home__main__conteiner--descripcion">
+                      <p>Guitarra Electroacustica Sigma Guitars 000tce - Oddity</p>
+                    </div>
+                </div>
+                
+
+
+                <div class="home__main__conteiner">
+                        <img src="/images/electric-guitar.png" alt="guitar" class="home__main__conteiner--img-producto">
+                        <div class="home__main__conteiner--descuento">
+                        <h2>40% off</h2>
+                        </div>
+                        <div class="home__main__conteiner--descripcion">
+                          <p>Guitarra Electroacustica Sigma Guitars 000tce - Oddity</p>
+                        </div>
+                </div>
+                <div class="home__main__cardsCarrusel">
+                  <div class="home__main__conteiner">
+                  <img src="/images/guitar.png" alt="guitar" class="home__main__conteiner--img-producto">
+                      <div class="home__main__conteiner--descuento">
+                      <h2>40% off</h2>
+                      </div>
+                      <div class="home__main__conteiner--descripcion">
+                        <p>Guitarra Electroacustica Sigma Guitars 000tce - Oddity</p>
+                        </div>
+                  </div>
+                 
+                  
+                  <div class="home__main__conteiner">
+                      <img src="/images/chelo.png" alt="guitar" class="home__main__conteiner--img-producto">
+                      <div class="home__main__conteiner--descuento">
+                      <h2>40% off</h2>
+                      </div>
+                      <div class="home__main__conteiner--descripcion">
+                        <p>Guitarra Electroacustica Sigma Guitars 000tce - Oddity</p>
+                      </div>
+                  </div>
+                  
+  
+  
+                  <div class="home__main__conteiner">
+                          <img src="/images/electric-guitar.png" alt="guitar" class="home__main__conteiner--img-producto">
+                          <div class="home__main__conteiner--descuento">
+                          <h2>40% off</h2>
+                          </div>
+                          <div class="home__main__conteiner--descripcion">
+                            <p>Guitarra Electroacustica Sigma Guitars 000tce - Oddity</p>
+                          </div>
+                  </div>
+                          
           </div>
-            </div>
-            <div class="home__main__conteiner--descripcion">
-              <p>Guitarra Electroacustica Sigma Guitars 000tce - Oddity</p>
-            </div>
-       <div class="home__main__ubicacion">
-        <i class="fa-sharp fa-solid fa-location-dot"></i>
-       <h1 class="home__main__title">ubicación</h1>
-       </div>
-       
+          </div>
+          <!--Quienes Somos-->
+          <a name="about" id="about"><section class="home__main__section--quienesSomos"> </a>
+           
+          <h2 class="home__main__title"> ¿Quienes somos? </h2>
+         
+          <br> <em> Diapasong: Instrumentos Musicales y Audio Profesional </em></br>
+          <hr>
+
+<p>La casa de música más completa de Argentina
+Diapasong es una casa de música líder en instrumentos musicales y equipamiento de audio profesional. Disponemos de una amplia variedad de productos en nuestro catálogo, desde instrumentos de orquesta y estudio, hasta guitarras, baterías, pianos digitales, saxofones y ukeleles, además de equipos de grabación y microfonía líderes en el mercado. </p> 
+
+<p>Desde guitarras criollas para principiantes hasta micrófonos y amplificadores profesionales, la tienda de instrumentos musicales online Diapasonf dispone de una amplia gama de equipamiento musical. No importa si lo que buscas es un micrófono, un teclado musical, una batería electrónica o un bajo eléctrico, siempre te daremos asesoramiento en lo que necesites. </p> 
+
+<p> Tenemos algunas de las marcas más populares en stock, tales como Fender, Roland, Casio, Marshall, Ibanez, Behringer y Shure, sin olvidar que somos distribuidores oficiales Yamaha para instrumentos musicales y audio en Argentina. </p>
+</section>
+          <!--Mapa Ubicación-->
+         
+          <div class="home__main__ubicacion">
+           <i class="fa-sharp fa-solid fa-location-dot"></i>
+          <h1 class="home__main__title">ubicación</h1>
+          
        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7811.467494879329!2d-58.376087897969384!3d-34.59613193376973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335bd8305e7a9%3A0xc41a764ce655671f!2sGlobant%20Tower!5e0!3m2!1ses-419!2sar!4v1673885282630!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="home__main__ubicacion--map"></iframe>
+      </div>
+  
+       <!--Formulario Suscripción-->
        <form action="" class="home__main__form">
        <label class="home__main__form--text" >no te pierdas las últimas novedades!!</label>
        <input type="text" name="name" placeholder="Nombre" class="home__main__form--input">
@@ -66,10 +192,68 @@
        </form>
 
     </main>
-    <footer>
+    <footer class="footer">
+      <div class="footer__top">
+      <!-- LOGO -->
+      <div class="footer__logo">
+          <img src="" alt="">logo
+      </div>
+      
+      <!-- REDES -->
+      <nav class="footer__redes">
+          <p>seguinos en nuestras redes</p>
+          <ul>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+          </ul>
+      </nav>
+      <!-- LINKS SITIO -->
+      <nav class="footer__links">
+          <b>links</b>
+          <ul>
+              <li><a href="/products">productos</a></li>
+              <li><a href="/bolg">blog</a></li>
+              <li><a href="/tickets">entradas</a></li>
+              <li><a href="">envios</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="">contacto</a></li>
+          </ul>
+      </nav>
+      <!-- LINKS CUENTA -->
+      <nav class="footer__links">
+          <b>cuenta</b>
+          <ul>
+              <li><a href="/login">mi cuenta</a></li>
+              <li><a href="/productCart"></a>carrito</li>
+          </ul>
+      </nav>
+      <nav class="footer__links--contacto">
+          <b>contacto</b>
+          <ul>
+              <li><a href="tel:+12345678">12345678</a></li>
+              <li><a href="mailto:ventas@diapasong.com.ar">ventas@diapasong.com.ar</a></li>
+              <li><!-- <a href=""></a> --><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2010.109030140013!2d-58.37138422275975!3d-34.59535660858388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335bd8305e7a9%3A0xc41a764ce655671f!2sGlobant%20Tower!5e0!3m2!1ses-419!2sar!4v1673717852325!5m2!1ses-419!2sar" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+          </ul>
+      </nav>
+      <div class="footer__medios-de-pago">
+          <b>medios de pago</b>            
+          <img src="/img/mediosdepago.png" alt="medios de pago">
+      </div>
+  </div>
+  <div class="footer__bottom">
+      <p>2022 - lorem ipsum dolor sit amet</p>
 
-    </footer>
+  </div>
+</footer>
 </body>
+<!--Slick script-->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script src="../javascript/dinamic.js"></script>
+				
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
