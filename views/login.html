@@ -10,12 +10,52 @@
     <script src="https://kit.fontawesome.com/bd0eb781b4.js" crossorigin="anonymous"></script>
     
 </head>
-
+<!-- VISTA LOGIN USER -->
 <body class="login">
-    <header>
-        en construccion
+    <!-- HEADER -->
+    <header class="header">
+
+        <!-- Icono menu -->
+        <button class="header--btn-menu" id="iconomenu">
+            <i class="fa-solid fa-bars ubtn" id="iconomenu"></i>
+        </button>
+        <!-- Logo -->
+        <figure class="header--logo">
+            <a href="/"><img src="img/logoDiapasong.png" alt="Image-logo">
+                <h1>Instrumentos Musicales</h1>
+            </a>
+        </figure>
+        <!--Iconos navegacion -->
+        <section class="header__section--user-navigation">
+            <a href="/user"><i class="fa-solid fa-user"></i></a>
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="header_redes" href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a class="header_redes" href="#"><i class="fa-brands fa-instagram"></i></a>
+        </section>
+        <!-- Buscador -->
+        <form class="header--search-bar" action="">
+            <input type="text" name="search-bar" placeholder="¿Que buscas?" id="search-bar">
+            <a class="lupa" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
+        </form>
+        <!-- Icono Whatsap -->
+        <div class="header--whatsapp-icon">
+            <a href="#"><i class="fa-solid fa-phone"></i><span class="Whatsapp-text">Whatsapp</span></a>
+
+
+        </div>
+
+        <!-- Menu -->
+        <nav class="header__nav" id="header_nav">
+            <ul>
+                <li class="productos_btn"><a href="/products">Productos</a></li>
+                <li class="blob_btn"><a href="/blog">Blog</a></li>
+                <li class="entradas_btn"><a href="tickets">Entradas</a></li>
+                <li class="envios_btn"><a href="#">Quienes somos!</a></li>
+                <li class="faq_btn"><a href="/faq">Faq</a></li>
+            </ul>
+        </nav>
     </header>
-    <!-- VISTA LOGIN USER -->
+    <!-- MAIN -->
     <main class="login__main">
         <section class="login__main__section">
             <!-- TITULO SITIO -->
@@ -43,21 +83,22 @@
         </section>
 
     </main>
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer__top">
         <!-- LOGO -->
         <div class="footer__logo">
-            <img src="" alt="">logo
+            <img src="/img/logoDiapasong.png" alt="Logo Diapasong">
         </div>
         
         <!-- REDES -->
         <nav class="footer__redes">
-            <p>seguinos en nuestras redes</p>
+            <b>seguinos en nuestras redes</b>
             <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
             </ul>
         </nav>
         <!-- LINKS SITIO -->
@@ -77,7 +118,7 @@
             <b>cuenta</b>
             <ul>
                 <li><a href="/login">mi cuenta</a></li>
-                <li><a href="/productCart"></a>carrito</li>
+                <li><a href="/productCart">carrito</a></li>
             </ul>
         </nav>
         <nav class="footer__links--contacto">
@@ -99,6 +140,7 @@
     </div>
 
     </footer>
+    <script src="../javascript/dinamic.js"></script>
 </body>
 
 </html>
