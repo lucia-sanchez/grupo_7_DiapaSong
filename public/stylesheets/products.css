@@ -125,7 +125,8 @@ font-weight: bold;
   background-color: rgb(147, 120, 172);
 }
 .main_section_nav_categorias{
-    display: flex;}
+    display: flex;
+padding-left: 10px;}
 
 .main__section__nav--titulo{
 background-color: black;
@@ -138,19 +139,26 @@ font-size: 18px;
 text-transform: uppercase;
 font-weight: bold;
 letter-spacing:3px;
-margin-left: -15px;
+margin-left: 0;
 text-shadow: 1px 1px 2px black;
 }
 
 .main__section__nav--categoria ul li{
-margin-left: -25px;
+margin-left: 25px;
 }
+
 .main__section__nav--categoria ul{
    border-left: 2px white solid;
    margin-bottom:10px ;
 
-
 }
+.main__section__nav--categoria ul li a:hover{
+   text-decoration: none;
+    letter-spacing: 1px;   
+}
+.main__section__nav--categoria ul a{
+text-decoration: none; 
+ }
 /*MAIN PRODUCTOS*/
 .productos__main{
     display: flex;
