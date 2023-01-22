@@ -1,3 +1,4 @@
+/* MOBILE FIRST */
 .register {}
 
 .register__main {}
@@ -26,12 +27,15 @@
     border-radius: 15px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+.register__main__section--caja-beneficios p {
+    padding: 7px 30px 0;
 }
 
 .register__main__section--caja-beneficios ul {
     list-style: none;
-    padding: 10px;
-    
+    padding: 5px 10px;
 }
 
 .form__checkbox--novedades,
@@ -63,10 +67,70 @@
     padding: 5px;
 }
 .btn--crear-cuenta:hover{
-    background-color: rgb(150 119 255);
+    background-color: rgb(150 119 255 / 36%);
     box-shadow: 0px 0px 18px 1px rgb(129 129 129);
+    width: 230px;
+    font-size: large;
 }
 .register__main__section--login{
     display: flex;
     justify-content: center;
+}
+/* TABLET */
+@media (min-width: 768px) {
+    .register__main__section {
+       
+display: flex;
+       
+align-items: center;
+    }
+    .register__main__section--caja-beneficios {
+        
+        display: inline-block;
+        width: 60%;
+        justify-content: flex-start;
+    }
+    .register__main__section--caja-beneficios p{
+        padding-left: 10px;
+    }
+    .register__main__section--caja-beneficios ul {
+        padding-top: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .register__main__section--caja-beneficios ul p{
+        width: 100%;
+    }
+    .register__main__section--caja-beneficios ul li{
+    width: 50%;
+    }
+    .register__form{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    height: 350px;
+}
+.register__form div{
+    
+width: 50%;
+    
+margin: 0;
+}
+.register__form .form__checkbox{
+    
+width: 40%;
+}
+.form__checkbox--novedades{
+}
+.form__checkbox--terminos{
+
+}
+.
+}
+/* DESKTOP */
+@media (min-width: 1024px){
 }

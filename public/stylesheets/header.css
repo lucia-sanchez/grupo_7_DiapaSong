@@ -112,6 +112,8 @@
 
 .header--search-bar {
     display: flex;
+    flex-direction: row;
+    background: none;
     justify-content: center;
     position: relative;
     margin: -10px 0 15px 20px;
@@ -121,6 +123,7 @@
     background: none;
     padding: 3px;
     margin-top: 15px;
+    margin-right: -10px;
     border-radius: 50px;
     border: 2px white solid;
     color: white;
@@ -130,6 +133,7 @@
 .header--search-bar input::placeholder {
     padding-left: 5px;
     color: rgb(255, 255, 255);
+    
 }
 
 .header--search-bar .lupa {
@@ -310,7 +314,7 @@
     .header--search-bar input {
         width: 500px;
         align-self: center;
-        padding: 8px;
+        padding: 15px 0;
         margin-top: 25px;
     }
 
@@ -318,7 +322,7 @@
         font-size: 20px;
         position: relative;
         right: 10px;
-        top: 16px
+        top: 12px
     }
 
     .header__nav {
@@ -330,7 +334,7 @@
         padding:0;
         background: none;
         position: relative;
-        top: -40px;
+        top: -25px;
         left: 160px;
     }
 
@@ -340,13 +344,13 @@
         flex-direction: row;
         margin: 0;
         padding: 0;
-        min-width: 500px;
+        min-width: 400px;
     }
 
     .header__nav ul li {
         margin: 0;
         justify-content: flex-start;
-        padding: 13px;
+        padding: 13px 10px;
     }
 
 
@@ -408,16 +412,31 @@
         transition: all 1s;
     }
     .header-scroll .header--search-bar {
-        width: 200px;
+        width: 170px;
         padding: 0;
         position: relative;
-        top: -30px;
+        top: -20px;
+        
+        left: -15px;
+        
     }
-
+    .header-scroll .header--search-bar input {
+        width: 140px;
+       
+      
+    }
+    .header-scroll .header--search-bar .lupa i{
+        font-size: 15px;
+        right:0;
+    }
+    .header-scroll .header--search-bar input::placeholder {
+        display: flex;
+        text-align: left;
+        }
     .header-scroll .header__nav {
         width: 400px;
         top: -2px;
-        left: -10px
+        left: -25px
     }
 
     .header-scroll .header__nav ul li {
