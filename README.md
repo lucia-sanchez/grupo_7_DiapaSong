@@ -1,11 +1,12 @@
 ![Logo Diapasong](/design/logoDiapasong.jpeg)
 # -DiapaSong-
 ## Descripción:
-- Ofrecemos **instrumentos musicales** de todo tipo, tanto clásicos como modernos. Además tenemos una sección donde podrán encontrar articulos, tutoriales y links de interés
- 
-- Apuntamos a gran variedad de clientes, desde aquellos que quieran introducirse al mundo de la música hasta los más experimentados.
+- Somos un equipo de desarrolladores freelance dedicados a proveer soluciones tanto en desarrollo Front-end como Back-end, atendiendo a las necesidades específicas de cada cliente.
 
-- Nos gusta mantener a nuestros clientes actualizados, brindando información relevante a cerca de las últimas tendencias en el mundo de la música y espectaculos proximos a realizarse. Ofreciendo también la venta de entradas para dichos espectáculos.
+- Nuestro principal objetivo es que en cada uno de los desarrollos que llevamos adelante, vayan de la mano la estética con la funcionalidad. Valoramos de manera primordial la experiencia del usuario.
+
+- Este proyecto en particular será la realización integral de un e-comerce para  **Diapasong instrumentos musicales**. Quienes además de vender instrumentos, nos encargaron realizar una sección donde se podrá encontrar articulos, tutoriales y links de interés y venta de entradas para espectáculos.
+ 
 
 ## Equipo:
 
