@@ -93,6 +93,7 @@ hr{
     align-items: center;
 
 }
+.home__main__ubicacion i{font-size: 1.5em;}
 .home__main__ubicacion--map{
     margin-bottom: 10%;
 }
@@ -103,16 +104,16 @@ hr{
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+    background-color: transparent;
 }
 .home__main__form--text{
     width: 100%;
     color: black;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     text-align: center;
     justify-content: center;
-
 }
 .home__main__form--button , .home__main__form--input{
     width: 100%;
@@ -130,6 +131,7 @@ hr{
     letter-spacing: 1px;
     font-weight: 600;
     transition: all 0.5s;
+    text-transform: uppercase;
 }
 .home__main__form--button:hover{
     box-shadow: black 0px 0px 10px 0px;
@@ -149,13 +151,19 @@ hr{
         .home__main__cardsCarrusel{
             display: flex;
             flex-direction: row;
+            gap: 25px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
             align-content: center;
+            padding: 0 10%;
         }
         .home__main__conteiner{
-            width: 23%;
+            width: 25%;
+        }
+        .home__main__form{
+            width:60%;
+            margin-bottom: 5%;
         }
     }
 /*DESKTOP*/
@@ -165,21 +173,14 @@ hr{
         top: 200px;
     }
     
-    .carousel-item, .active, .carousel, .slide {
-        
-    }
     .home__main__ubicacion--map{
         width: 80%;
     }
     .home__main__form{
-        width: 80%;
+        width: 60%;
         padding-top: 0;
         margin-top: 0;
     }
-    .carousel-inner {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-    }
+   
 
 }
