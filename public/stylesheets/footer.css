@@ -91,9 +91,9 @@
 
     .footer__logo {
 
-        width: 30%;
+width: 15%;
 
-    }
+}
 
     .footer__links {
         align-items: flex-start;
@@ -102,7 +102,7 @@
 
     .footer__redes {
         align-self: center;
-        width: 30%;
+        width: 33%;
         order: 4;
         text-align: center;
         padding-right: 25px;
@@ -137,11 +137,10 @@
     .footer__bottom {}
 
     .footer__links {
-
-        align-content: flex-start;
-        width: 20%;
-        height: 50%;
-    }
+align-content: flex-start;
+width: 25%;
+/* height: 50%; */
+}
 
     .footer__links--contacto {
         align-content: flex-start;
@@ -149,19 +148,22 @@
     }
 
     .footer__logo img {
-        width: 290px;
+        /* width: 290px; */
     }
 
-    .footer__logo {}
+    .footer__logo {
+    width: 13%;
+}
 
-    .footer__medios-de-pago {}
+    .footer__medios-de-pago {
+}
 
     .footer__redes {
         width: 30%;
-        height: 35%;
+        height: 25%;
     }
 
     .footer__top {
-        height: 355px;
+        /* height: 355px; */
     }
 }
