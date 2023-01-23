@@ -107,10 +107,10 @@ font-weight: bold;
 @media (min-width: 1024px){
 
     /*Quitando carrousel*/
-.carousel-item, .active, .carousel, .slide {
-    all: unset; 
+.productos__main .carousel-item, .productos__main .active, .productos__main .carousel, .productos__main .slide {
+    all: unset;
 }
-.carousel-control-prev, .carousel-control-next{
+.productos__main .carousel-control-prev, .productos__main .carousel-control-next{
     display: none;
 }   
 

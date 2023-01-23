@@ -80,7 +80,7 @@ text-transform: uppercase;
     text-align: left;
 }
 .home__main__section--quienesSomos{
-    padding: 10%;
+    padding: 0 10%;
 }
 hr{
     border: 2px solid black;
@@ -162,11 +162,11 @@ hr{
 @media (min-width: 1024px){
     .home__carrurell--banner .carousel-control-prev, .home__carrurell--banner .carousel-control-next{
         display: flex;
-        top: 300px;
+        top: 200px;
     }
     
     .carousel-item, .active, .carousel, .slide {
-        all: initial;
+        
     }
     .home__main__ubicacion--map{
         width: 80%;
