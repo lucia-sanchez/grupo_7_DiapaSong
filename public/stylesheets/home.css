@@ -165,14 +165,21 @@ hr{
         top: 300px;
     }
     
-   .home__carrurell--banner .carousel-item, .home__carrurell--banner .active,.home__carrurell--banner .carousel, .home__carrurell--banner .slide {
-    all: initial;
+    .carousel-item, .active, .carousel, .slide {
+        all: initial;
     }
     .home__main__ubicacion--map{
         width: 80%;
     }
     .home__main__form{
         width: 80%;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .carousel-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
     }
 
 }
