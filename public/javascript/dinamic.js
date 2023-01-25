@@ -1,6 +1,6 @@
 //Scroll//
 window.addEventListener("scroll", function () {
-    const main = document.querySelector(".productos__main");
+    const main = document.querySelector("main");
     main.classList.toggle("scroll_main_space_top", window.scrollY > 1);
 });
 window.addEventListener("scroll", function () {

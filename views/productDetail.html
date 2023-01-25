@@ -14,123 +14,292 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/ae7c764a16.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <title>DiapaSong | Productos</title>
+    <title>DiapaSong | Detalles de producto</title>
 </head>
-<header class="header">
 
-    <!-- Icono menu -->
-    <button class="header--btn-menu" id="iconomenu">
-        <i class="fa-solid fa-bars ubtn" id="iconomenu"></i>
-    </button>
-    <!-- Logo -->
-    <figure class="header--logo">
-        <a href="/"><img src="img/logoDiapasong.png" alt="Image-logo">
-            <h1>Instrumentos Musicales</h1>
-        </a>
-    </figure>
-    <!--Iconos navegacion -->
-    <section class="header__section--user-navigation">
-        <a href="/login"><i class="fa-solid fa-user"></i></a>
-        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-        <a class="header_redes" href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a class="header_redes" href="#"><i class="fa-brands fa-instagram"></i></a>
-    </section>
-    <!-- Buscador -->
-    <form class="header--search-bar" action="">
-        <input type="text" name="search-bar" placeholder="¿Que buscas?" id="search-bar">
-        <a class="lupa" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
-    </form>
-    <!-- Icono Whatsap -->
-    <div class="header--whatsapp-icon">
-        <a href="#"><i class="fa-solid fa-phone"></i><span class="Whatsapp-text">Whatsapp</span></a>
+<body class="body-productos">
+    <header class="header">
+
+        <!-- Icono menu -->
+        <button class="header--btn-menu" id="iconomenu">
+            <i class="fa-solid fa-bars ubtn" id="iconomenu"></i>
+        </button>
+        <!-- Logo -->
+        <figure class="header--logo">
+            <a href="/"><img src="img/logoDiapasong.png" alt="Image-logo">
+                <h1>Instrumentos Musicales</h1>
+            </a>
+        </figure>
+        <!--Iconos navegacion -->
+        <section class="header__section--user-navigation">
+            <a href="/login"><i class="fa-solid fa-user"></i></a>
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="header_redes" href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a class="header_redes" href="#"><i class="fa-brands fa-instagram"></i></a>
+        </section>
+        <!-- Buscador -->
+        <form class="header--search-bar" action="">
+            <input type="text" name="search-bar" placeholder="¿Que buscas?" id="search-bar">
+            <a class="lupa" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
+        </form>
+        <!-- Icono Whatsap -->
+        <div class="header--whatsapp-icon">
+            <a href="#"><i class="fa-solid fa-phone"></i><span class="Whatsapp-text">Whatsapp</span></a>
 
 
+        </div>
+
+        <!-- Menu -->
+        <nav class="header__nav" id="header_nav">
+            <ul>
+                <li class="productos_btn"><a href="/products">Productos</a></li>
+                <li class="blob_btn"><a href="/blog">Blog</a></li>
+                <li class="entradas_btn"><a href="tickets">Entradas</a></li>
+                <li class="envios_btn"><a href="/#about">Quienes somos!</a></li>
+                <li class="faq_btn"><a href="/faq">Faq</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main -->
+    <main class="productos__main" id="space_complement">
+        <section class="main__section__nav">
+            <!-- Menu navegacion -->
+            <nav>
+                <h3 class="main__section__nav--titulo">Categorias</h3>
+                <div class="main_section_nav_categorias">
+                    <ul>
+                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Cuerdas</a>
+                            <ul>
+                             
+                                <li><a href="#">Guitarras</a></li>
+                                <li><a href="#">Bajos</a></li>
+                                <li><a href="#">Violines</a></li>
+                                <li><a href="#">Violas</a></li>
+                                <li><a href="#">Contrabajos</a></li>
+                                <li><a href="#">Pianos</a></li>
+                                <li><a href="#">Arpas</a></li>
+                            </ul>
+                        </li>
+                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Vientos</a>
+                            <ul>
+                              
+                                <li><a href="#">Saxofones</a></li>
+                                <li><a href="#">Trombones</a></li>
+                                <li><a href="#">Trompetas</a></li>
+                                <li><a href="#">Acordeones</a></li>
+                                <li><a href="#">Armonicas</a></li>
+                                <li><a href="#">Clarinetes</a></li>
+                                <li><a href="#">Flautas</a></li>
+                            </ul>
+                        </li>
+                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Percucion</a>
+                            <ul>
+                               
+                                <li><a href="#">Baterias</a></li>
+                                <li><a href="#">Tumbadoras</a></li>
+                                <li><a href="#">Bongoes</a></li>
+                                <li><a href="#">Platos</a></li>
+                                <li><a href="#">Complementos</a></li>
+                            </ul>
+
+                        </li>
+                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Electronicos</a>
+                            <ul>
+                              
+                                <li><a href="#">Teclados</a></li>
+                                <li><a href="#">Amplificadores</a></li>
+                                <li><a href="#">Microfonos</a></li>
+                                <li><a href="#">Consolas</a></li>
+                            </ul>
+                        </li>
+                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Accesorios</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <!-- Productos -->
+        <section class="main__section__productos main__section__productos-detalles">
+
+            <h4 class="productos_detalles-titulo">guitarra gibson les paul collection</h4>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="main__section__productos-superior">
+                        
+                        <div class="carousel-item active">
+                            <article  class="main__section__productos--producto detalle-producto">
+
+                                    <figure class="main__section__productos__producto--imagen">
+                                        <img src="img/productos/guitarra1.webp" alt="Guitarra">
+                                    </figure>
+                            
+                            </article>
+                        </div>
+
+                        <div class="carousel-item">
+                            <article  class="main__section__productos--producto detalle-producto">
+                                
+                                    <figure class="main__section__productos__producto--imagen">
+                                        <img src="img/productos/guitarra2.webp" alt="Amplificador">
+                                    </figure>
+                                
+                            </article>
+                        </div>
+                        <div class="carousel-item">
+                            <article  class="main__section__productos--producto detalle-producto">
+                                
+                                    <figure class="main__section__productos__producto--imagen">
+                                        <img src="img/productos/guitarra3.webp" alt="Amplificador">
+                                    </figure>
+                                
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"
+                    data-touch="true">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+        <section class="detalles_producto">
+            <article class="detalle-producto-precio">
+                <h5>Precio: $992.789</h5>
+            </article>
+            <article class="detalle-producto-comprar">
+                <a href="#">COMPRAR</a>
+            </article>
+            <article class="detalle-producto-agregar">
+                <a href="/productCart" >Agregar al carrito</a>
+            </article>
+            <article class="detalle-producto-medios">
+                <h5>Medios de pago:</h5>
+                <figure>
+                    <img src="img/productos/mediosdepagodetalleproducto.png" alt="Medios de pago">
+                </figure>
+            </article>
+
+            <article class="detalle_producto-descripcion">
+                <hr>
+                <h5>Decripción:</h5>
+                <p>Gibson es una de las marcas con mayor tradición en el mercado: más de 100 años en la fabricación de guitarras. Se fundamenta a la calidad, la innovación y la excelencia del sonido para que los amantes de la música disfruten la compañía de una Gibson. <a href="">mas...</a></p>
+                <p class="descripcion-mas">Una forma para cada estilo musical
+                    Esta Les Paul cuenta con pastillas, tono independiente y controles de volumen para cada elemento, lo que produce distintos resultados. El punto fuerte en su sonido es ser distorsionado, denso, contundente, potente y redondo. Es ideal para el rock sureño, rock de los 70, blues, jazz, heavy metal y punk.</p>
+                    <hr>
+            </article>
+            <article class="detalle_producto-caracteristicas">
+             
+                <h5>Caracteristicas:</h5>
+                <div class="detalle_producto-caracteristicas-grisClaro">
+                    <h6>Marca</h6>
+                    <p>Gibson</p>
+                </div>
+                <div class="detalle_producto-caracteristicas-grisOscuro">
+                    <h6>Modelo</h6>
+                    <p>Modern Colection</p>
+                </div>
+                <div class="detalle_producto-caracteristicas-grisClaro">
+                    <h6>Origen</h6>
+                    <p>Japon</p>
+                </div>
+                <div class="detalle_producto-caracteristicas-grisOscuro">
+                    <h6>Dimenciones</h6>
+                    <p>100x40</p>
+                </div>
+            </article>
+
+        </section>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+    </main>
+    <footer class="footer">
+        <div class="footer__top">
+        <!-- LOGO -->
+        <div class="footer__logo">
+            <img src="/img/logoDiapasong.png" alt="Logo Diapasong">
+        </div>
+        
+        <!-- REDES -->
+        <nav class="footer__redes">
+            <b>seguinos en nuestras redes</b>
+            <ul>
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+            </ul>
+        </nav>
+        <!-- LINKS SITIO -->
+        <nav class="footer__links">
+            <b>links</b>
+            <ul>
+                <li><a href="/products">productos</a></li>
+                <li><a href="/blog">blog</a></li>
+                <li><a href="/tickets">entradas</a></li>
+                <li><a href="/#about">¿quienes somos?</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="">contacto</a></li>
+            </ul>
+        </nav>
+        <!-- LINKS CUENTA -->
+        <nav class="footer__links">
+            <b>cuenta</b>
+            <ul>
+                <li><a href="/login">mi cuenta</a></li>
+                <li><a href="/productCart">carrito</a></li>
+            </ul>
+        </nav>
+        <nav class="footer__links--contacto">
+            <b>contacto</b>
+            <ul>
+                <li><a href="tel:+12345678">12345678</a></li>
+                <li><a href="mailto:ventas@diapasong.com.ar">ventas@diapasong.com.ar</a></li>
+                <li><!-- <a href=""></a> --><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2010.109030140013!2d-58.37138422275975!3d-34.59535660858388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335bd8305e7a9%3A0xc41a764ce655671f!2sGlobant%20Tower!5e0!3m2!1ses-419!2sar!4v1673717852325!5m2!1ses-419!2sar" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+            </ul>
+        </nav>
+        <div class="footer__medios-de-pago">
+            <b>medios de pago</b>            
+            <img src="/img/mediosdepago.png" alt="medios de pago">
+        </div>
     </div>
-
-    <!-- Menu -->
-    <nav class="header__nav" id="header_nav">
-        <ul>
-            <li class="productos_btn"><a href="/products">Productos</a></li>
-            <li class="blob_btn"><a href="/blog">Blog</a></li>
-            <li class="entradas_btn"><a href="tickets">Entradas</a></li>
-            <li class="envios_btn"><a href="/#about">Quienes somos!</a></li>
-            <li class="faq_btn"><a href="/faq">Faq</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-
-</main>
-
-
-<footer class="footer">
-    <div class="footer__top">
-    <!-- LOGO -->
-    <div class="footer__logo">
-        <img src="/img/logoDiapasong.png" alt="Logo Diapasong">
+    <div class="footer__bottom">
+        <p><i class="fa-regular fa-copyright"></i> 2022 - todos los derechos reservados - <i class="fa-solid fa-heart"></i> hecho con amor</p>
+  
     </div>
-    
-    <!-- REDES -->
-    <nav class="footer__redes">
-        <b>seguinos en nuestras redes</b>
-        <ul>
-            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-        </ul>
-    </nav>
-    <!-- LINKS SITIO -->
-    <nav class="footer__links">
-        <b>links</b>
-        <ul>
-            <li><a href="/products">productos</a></li>
-            <li><a href="/blog">blog</a></li>
-            <li><a href="/tickets">entradas</a></li>
-            <li><a href="/#about">¿quienes somos?</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="">contacto</a></li>
-        </ul>
-    </nav>
-    <!-- LINKS CUENTA -->
-    <nav class="footer__links">
-        <b>cuenta</b>
-        <ul>
-            <li><a href="/login">mi cuenta</a></li>
-            <li><a href="/productCart">carrito</a></li>
-        </ul>
-    </nav>
-    <nav class="footer__links--contacto">
-        <b>contacto</b>
-        <ul>
-            <li><a href="tel:+12345678">12345678</a></li>
-            <li><a href="mailto:ventas@diapasong.com.ar">ventas@diapasong.com.ar</a></li>
-            <li><!-- <a href=""></a> --><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2010.109030140013!2d-58.37138422275975!3d-34.59535660858388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335bd8305e7a9%3A0xc41a764ce655671f!2sGlobant%20Tower!5e0!3m2!1ses-419!2sar!4v1673717852325!5m2!1ses-419!2sar" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
-        </ul>
-    </nav>
-    <div class="footer__medios-de-pago">
-        <b>medios de pago</b>            
-        <img src="/img/mediosdepago.png" alt="medios de pago">
+  
+    </footer>
+    <div class="eliminar_carrousel">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="../javascript/dinamic.js"></script>
     </div>
-</div>
-<div class="footer__bottom">
-    <p><i class="fa-regular fa-copyright"></i> 2022 - todos los derechos reservados - <i class="fa-solid fa-heart"></i> hecho con amor</p>
-
-</div>
-
-</footer>
-<div class="eliminar_carrousel">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="../javascript/dinamic.js"></script>
-</div>
 </body>
 
 </html>
