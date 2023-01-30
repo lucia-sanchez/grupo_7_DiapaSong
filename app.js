@@ -1,26 +1,42 @@
-const express = require('express');
-const app = express();
-const port = 3030;
-const path = require('path');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-//RECURSOS ESTATICOS
-app.use(express.static('public'));
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var productsRouter = require('./routes/products');
+var app = express();
 
-//RUTAS
-app.get('/',(req, res)=> res.sendFile(path.join(__dirname, 'views', 'index.html')));
-app.get('/login',(req,res) => res.sendFile(path.join(__dirname, 'views', 'login.html')));
-app.get('/register',(req,res) => res.sendFile(path.join(__dirname, 'views', 'register.html')));
-app.get('/productDetail',(req,res) => res.sendFile(path.join(__dirname, 'views', 'productDetail.html')));
-app.get('/productCart',(req,res) =>res.sendFile(path.join(__dirname, 'views', 'productCart.html')));
-app.get('/create',(req,res) =>res.sendFile(path.join(__dirname, 'views', 'create.html')));
-app.get('/udpate',(req,res) =>res.sendFile(path.join(__dirname, 'views', 'update.html')));
-app.get('/user',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'user.html')));
-app.get('/blog',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'blog.html')));
-app.get('/faq',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'faq.html')));
-app.get('/password',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'password.html')));
-app.get('/tickets',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'tickets.html')));
-app.get('/ticketsDetail',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'ticketsDetail.html')));
-app.get('/products',(req,res)=>res.sendFile(path.join(__dirname, 'views', 'products.html')));
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port, () => console.log(`Servidor corriendo en el puerto: http://localhost:${port}`));
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/products', productsRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
