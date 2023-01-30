@@ -1,63 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/f9457e77c9.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--Slick-->
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <!--CSS-->
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <title>DIAPASONG</title>
-</head>
+<!-- HEAD -->
+<%- include('./partials/head') %> 
+
 <body>
-  <header class="header">
 
-    <!-- Icono menu -->
-    <button class="header--btn-menu" id="iconomenu">
-        <i class="fa-solid fa-bars ubtn" id="iconomenu"></i>
-    </button>
-    <!-- Logo -->
-    <figure class="header--logo">
-        <a href="/"><img src="img/logoDiapasong.png" alt="Image-logo">
-            <h1>Instrumentos Musicales</h1>
-        </a>
-    </figure>
-    <!--Iconos navegacion -->
-    <section class="header__section--user-navigation">
-        <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-        <a class="header_redes" href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a class="header_redes" href="#"><i class="fa-brands fa-instagram"></i></a>
-    </section>
-    <!-- Buscador -->
-    <form class="header--search-bar" action="">
-        <input type="text" name="search-bar" placeholder="¿Que buscas?" id="search-bar">
-        <a class="lupa" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
-    </form>
-    <!-- Icono Whatsap -->
-    <div class="header--whatsapp-icon">
-        <a href="#"><i class="fa-solid fa-phone"></i><span class="Whatsapp-text">Whatsapp</span></a>
+<!-- HEADER -->
+<%- include('./partials/header') %> 
 
-
-    </div>
-
-    <!-- Menu -->
-    <nav class="header__nav" id="header_nav">
-        <ul>
-            <li class="productos_btn"><a href="/products/detail">Productos</a></li>
-            <li class="blob_btn"><a href="/blog">Blog</a></li>
-            <li class="entradas_btn"><a href="tickets">Entradas</a></li>
-            <li class="about_btn"><a href="#about">Quienes somos!</a></li>
-            <li class="faq_btn"><a href="/faq">Faq</a></li>
-        </ul>
-    </nav>
-</header>
     <main class="home__main">
       <!--Banner-Carrusel-->
         <div id="carouselExampleIndicators" class="carousel slide home__main__carrusell home__carrurell--banner" data-ride="carousel">
@@ -191,62 +141,8 @@
        </form>
 
     </main>
-    <footer class="footer">
-      <div class="footer__top">
-      <!-- LOGO -->
-      <div class="footer__logo">
-          <img src="/img/logoDiapasong.png" alt="Logo Diapasong">
-      </div>
-      
-      <!-- REDES -->
-      <nav class="footer__redes">
-          <b>seguinos en nuestras redes</b>
-          <ul>
-              <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-          </ul>
-      </nav>
-      <!-- LINKS SITIO -->
-      <nav class="footer__links">
-          <b>links</b>
-          <ul>
-              <li><a href="/products/detail">productos</a></li>
-              <li><a href="/blog">blog</a></li>
-              <li><a href="/tickets">entradas</a></li>
-              <li><a href="/#about">¿quienes somos?</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="">contacto</a></li>
-          </ul>
-      </nav>
-      <!-- LINKS CUENTA -->
-      <nav class="footer__links">
-          <b>cuenta</b>
-          <ul>
-              <li><a href="/users/login">mi cuenta</a></li>
-              <li><a href="/productCart">carrito</a></li>
-          </ul>
-      </nav>
-      <nav class="footer__links--contacto">
-          <b>contacto</b>
-          <ul>
-              <li><a href="tel:+12345678">12345678</a></li>
-              <li><a href="mailto:ventas@diapasong.com.ar">ventas@diapasong.com.ar</a></li>
-              <li><!-- <a href=""></a> --><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2010.109030140013!2d-58.37138422275975!3d-34.59535660858388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335bd8305e7a9%3A0xc41a764ce655671f!2sGlobant%20Tower!5e0!3m2!1ses-419!2sar!4v1673717852325!5m2!1ses-419!2sar" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
-          </ul>
-      </nav>
-      <div class="footer__medios-de-pago">
-          <b>medios de pago</b>            
-          <img src="/img/mediosdepago.png" alt="medios de pago">
-      </div>
-  </div>
-  <div class="footer__bottom">
-      <p><i class="fa-regular fa-copyright"></i> 2022 - todos los derechos reservados - <i class="fa-solid fa-heart"></i> hecho con amor</p>
-
-  </div>
-
-  </footer>
+<!-- FOOTER -->
+<%- include('./partials/footer') %> 
 </body>
 <!--Slick script-->
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
