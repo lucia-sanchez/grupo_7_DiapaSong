@@ -8,5 +8,10 @@ module.exports={
         return res.render('login',{
             title: "Inicio de sesión"
         });
+    },
+    password: (req,res)=>{
+        return res.render('password',{
+            title: "Recuperar Contraseña"
+        });
     }
 }

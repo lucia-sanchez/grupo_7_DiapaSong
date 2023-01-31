@@ -61,6 +61,7 @@ form input {
 .form__checkbox label{
     width: 24%;
     justify-content: flex-start;
+    margin: 0;
 }
 /* TABLET */
 @media (min-width: 768px) {
