@@ -45,6 +45,8 @@
 .login__formbox input {
     width: 100%;
     background-color: rgba(240, 229, 245, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .login__formbox--btn-box button {}

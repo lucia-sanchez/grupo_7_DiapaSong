@@ -14,18 +14,24 @@
     padding: 10px;
     background: linear-gradient(180deg, rgba(34, 142, 255, 0.7) 0%, rgba(33, 224, 255, 0.8) 100%);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .footer__logo {
-    width: 35%;
-    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .footer__logo img {
-    width: 100%;
+    width: 125px;
+}
+.footer__redes{
+    width: 84%;
+    text-align: center;
 }
 
 .footer__redes b {}
@@ -65,53 +71,59 @@
 .footer__medios-de-pago img {
     width: 90%;
     background-color: rgba(255, 255, 255, 0.349);
-    border-radius: 5px;
+    bius: 5px;
 }
 
 .footer__bottom {
     text-align: center;
 }
 
+.footer__bottom p{
+    margin: 0;
+}
+
 .footer__links--contacto {
     align-items: center;
+    width: 90%;
+}
+.footer__links--contacto iframe{
+    height: 100px;
 }
 
 /* TABLET */
 @media (min-width: 768px) {
     .footer__top {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
         padding: 10px 30px;
         gap: 0;
-        height: 315px;
-        align-content: space-between;
+        height: 281px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
     }
 
-    .footer__logo {
-
-width: 15%;
-
-}
+    .footer__logo {width: 200px;justify-content: flex-start;}
 
     .footer__links {
         align-items: flex-start;
+        width: 122px;
         order: 2;
+        height: 100%;
     }
 
     .footer__redes {
         align-self: center;
-        width: 33%;
-        order: 4;
         text-align: center;
         padding-right: 25px;
+        order: 3;
+        width: 250px;
     }
 
     .footer__medios-de-pago {
         align-self: center;
-        order: 5;
-        width: 40%;
+        order: 3;
+        width: 287px;
     }
 
     .footer__links ul,
@@ -121,8 +133,8 @@ width: 15%;
 
     .footer__links--contacto {
         align-items: flex-start;
-        order: 1;
         width: 30%;
+        order: 1;
     }
 
     .footer__links--contacto iframe {
@@ -137,10 +149,11 @@ width: 15%;
     .footer__bottom {}
 
     .footer__links {
-align-content: flex-start;
-width: 25%;
-/* height: 50%; */
-}
+
+align-content: flex-start;
+
+/* height: 50%; */
+}
 
     .footer__links--contacto {
         align-content: flex-start;
@@ -164,6 +177,7 @@ width: 15%;
     }
 
     .footer__top {
-        /* height: 355px; */
+        height: 286px;
+        justify-content: space-between;
     }
 }

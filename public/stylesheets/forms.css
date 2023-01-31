@@ -35,6 +35,7 @@ form input {
 ::placeholder{
     text-align: center;
     font-size: small;    
+    padding-bottom: 5px;
 }
 .form__checkbox{
     /* display: flex; */
