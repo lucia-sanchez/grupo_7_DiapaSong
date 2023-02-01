@@ -2,6 +2,8 @@
     {
         "id":0,
         "name":"",
+        "ticket":false,
+        "product":false,
         "description":"",
         "price":0,
         "image":"",
