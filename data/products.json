@@ -1,14 +1,42 @@
 [
-    {
-        "id":0,
-        "name":"",
-        "ticket":false,
-        "product":false,
-        "description":"",
-        "price":0,
-        "image":"",
-        "new":true,
-        "sale":false,
-        "category":""
-    }
+   {
+      "id": 0,
+      "title": "asd",
+      "subtitle": "asd",
+      "ticket": false,
+      "product": true,
+      "description": "asd",
+      "price": 5,
+      "image1": null,
+      "image2": null,
+      "image3": null,
+      "image4": null,
+      "image5": null,
+      "category": "Vientos",
+      "colour": "Verde",
+      "news": false,
+      "sale": true,
+      "height": 3,
+      "width": 4
+   },
+   {
+      "id": 1,
+      "title": "prueba de editado",
+      "subtitle": "prueba de editado",
+      "ticket": false,
+      "product": true,
+      "description": "prueba de editado",
+      "price": 300,
+      "image1": null,
+      "image2": null,
+      "image3": null,
+      "image4": null,
+      "image5": null,
+      "category": "Vientos",
+      "colour": "Negro",
+      "news": true,
+      "sale": false,
+      "height": 200,
+      "width": 200
+   }
 ]

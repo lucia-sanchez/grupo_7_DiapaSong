@@ -1,0 +1,95 @@
+/* MOBILE FIRST */
+.create__main {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin_panel {
+
+background-color: aqua;
+}
+
+.create__main h1 {
+    text-transform: uppercase;
+}
+
+.create__main__section {
+    text-align: center;
+}
+
+.create__main__section__div--form-box {}
+
+.form__create input {
+
+width: 34%;
+}
+
+.form__create h5 {
+    margin:0
+}
+
+.form__create--radio {
+    align-self: center;
+}
+.form__create--image-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.form__create--image-box label{
+    width: 46%;
+}
+.form__create--image-box input{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.form__create--characteristics {/* flex-wrap: wrap; */}
+.form__create--characteristics div{}
+.form__create--characteristics h4{
+    
+/* width: 100%; */
+}
+.form__create--characteristics select{
+}
+.form__create--characteristics input{width: 110px;}
+.form__create-btn-box{
+    align-self: center;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .form__create label{
+        
+width: 40%;
+}
+.form__create--image-box label {
+    width: 40%;
+}
+    .form__create--image-box input{
+    width: 50%;
+    margin-right: 8%;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .admin_panel{
+        width: 15%;
+    }
+    .create__main {
+
+display: flex;
+
+flex-direction: row;
+
+flex-wrap: nowrap;
+
+justify-content: space-between;
+}
+.create__main__section{
+    width: 80%;
+}
+    .create__main__section__div--form-box{
+    }
+}
