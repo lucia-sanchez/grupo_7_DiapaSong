@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "name":"Cuerdas"
+    },
+    {
+        "id":2,
+        "name":"Vientos"
+    },
+    {
+        "id":3,
+        "name":"Percusión"
+    },
+    {
+        "id":4,
+        "name":"Electrónicos"
+    },
+    {
+        "id":5,
+        "name":"Accesorios"
+    }
+]

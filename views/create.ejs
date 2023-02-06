@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+<%- include('./partials/head') %> 
+<body>
+    <!-- HEADER -->
+<%- include('./partials/header') %> 
+    <!-- Main -->
+    <main class="create__main">
+        <section class="admin_panel">panel administrador en construcción</section>
+        <section class="create__main__section">
+            
+            <h1>crear producto</h1>
+            <div class="create__main__section__div--form-box">
+                <form action="/products/create" method="post" class="form__create">
+                    <h5>tipo</h5>
+                    <div class="form__create--radio">
+                        
+                        <input type="radio" name="tipo" id="ticket" value="ticket">
+                        <label for="ticket">entrada</label>
+                        <input type="radio" name="tipo" id="product" value="product" checked>
+                        <label for="product">instrumento</label>
+                    </div>
+                    <h5>condición</h5>
+                    <div class="form__create--radio">
+                        
+                        <input type="radio" name="condition" id="new" value="news" checked>
+                        <label for="new">Nuevo</label>
+                        <input  type="radio" name="condition" id="sale" value="sale" >
+                        <label  for="sale">
+                        Oferta
+                        </label>
+                    </div>
+                    <div>
+                        <label for="title">título</label>
+                        <input type="text" name="title" id="title" required>
+                    </div>
+                    <div>
+                        <label for="subtitle">sub-título</label>
+                        <input type="text" name="subtitle" id="subtitle" required>
+                    </div>
+                    <div>
+                        <label for="category">categoría</label>
+                        <select name="category" id="category">
+                            <option value="" selected hidden>Elegir categoría...</option>
+                            <% categories.forEach(({name}) => { %>
+                                <option value="<%= name %>"><%= name %> </option>
+                                <% }) %>
+                            </select>
+                        </div>
+                    <div>
+                        <label for="description">descripcíon</label>
+                            <textarea name="description" id="description"  rows="3"></textarea>
+                    </div>
+                    <div class="form__create--image-box">
+                        <label for="image">imagenes</label>
+                        <% for( let i = 1; i < 6; i++ ) { %>
+                        <input type="file" name="image" id="image<%= i %> ">
+                        <!-- <img id="blah" src="#" alt="imagen <%= i %> " /> -->
+                        <% } %>
+                    </div>
+                    
+                        <h4>características</h4>
+                        <div class="form__create--characteristics"><label for="colour">color</label>
+                        <select name="colour" id="colour">
+                            <option value="" selected hidden>Elegir color...</option>
+                            <% colours.forEach(({name}) => { %>
+                                <option value="<%= name %>"><%= name %> </option>
+                                <% }) %>
+                        </select>
+                        </div>
+                        <div>
+                            <label for="height">alto</label>
+                            <input type="number" name="height" id="height"><p>cm.</p>
+                        </div>
+                        <div>
+                            <label for="width">ancho</label>
+                            <input type="number" name="width" id="width"><p>cm.</p>
+                        </div>
+                    
+                    <div>
+                        <label for="price">precio</label>
+                        <input type="number" name="price" id="price"><p>$</p>
+                    </div>
+                    <div class="form__create-btn-box">
+                        <button class="btn--crear-cuenta" type="submit">publicar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+<%- include('./partials/footer') %> 
+    
+
+<script>
+    /* vista previa de imagen cargada */
+/*     image1.onchange = evt => {
+  const [file] = image1.files
+  if (file) {
+    blah.src = URL.createObjectURL(file)
+  }
+} */
+</script>
+</body>
+</html>
