@@ -21,12 +21,12 @@
    },
    {
       "id": 1,
-      "title": "prueba de editado",
-      "subtitle": "prueba de editado",
+      "title": "Saxo",
+      "subtitle": "Alto Knight Eb Con Llave De F#",
       "ticket": false,
       "product": true,
-      "description": "prueba de editado",
-      "price": 300,
+      "description": "Excelente Saxo Alto en Eb (Mi Bemol) y llave de F#, cuerpo dorado laqueado, incluye estuche semi rígido y boquilla.",
+      "price": 200000,
       "image1": null,
       "image2": null,
       "image3": null,
@@ -36,7 +36,27 @@
       "colour": "Negro",
       "news": true,
       "sale": false,
-      "height": 200,
-      "width": 200
+      "height": 0,
+      "width": 0
+   },
+   {
+      "id": 2,
+      "title": "saxo",
+      "subtitle": "con Estuche",
+      "ticket": false,
+      "product": true,
+      "description": "Excelente Saxo Alto en Eb (Mi Bemol) y llave de F#, cuerpo dorado laqueado, incluye estuche semi rígido y boquilla.",
+      "price": 200000,
+      "image1": null,
+      "image2": null,
+      "image3": null,
+      "image4": null,
+      "image5": null,
+      "news": true,
+      "sale": false,
+      "category": "Vientos",
+      "colour": "Negro",
+      "height": 0,
+      "width": 0
    }
 ]

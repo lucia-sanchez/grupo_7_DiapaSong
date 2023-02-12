@@ -113,7 +113,10 @@ module.exports={
 
 },
     remove: (req,res)=>{
-
+        const {id} =req.params;
+        productsModified = products.filter(product=> product.id !== +id)
+        fs.writeFileSync('./data/products.json',JSON.stringify(productsModified, null, 3),'utf-8')
+        return res.redirect('./products')
 }
     
 }
