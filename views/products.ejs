@@ -12,58 +12,9 @@
     <main class="productos__main" id="space_complement">
         <section class="main__section__nav">
             <!-- Menu navegacion -->
-            <nav>
-                <h3 class="main__section__nav--titulo">Categorias</h3>
-                <div class="main_section_nav_categorias">
-                    <ul>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Cuerdas</a>
-                            <ul>
-                             
-                                <li><a href="#">Guitarras</a></li>
-                                <li><a href="#">Bajos</a></li>
-                                <li><a href="#">Violines</a></li>
-                                <li><a href="#">Violas</a></li>
-                                <li><a href="#">Contrabajos</a></li>
-                                <li><a href="#">Pianos</a></li>
-                                <li><a href="#">Arpas</a></li>
-                            </ul>
-                        </li>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Vientos</a>
-                            <ul>
-                              
-                                <li><a href="#">Saxofones</a></li>
-                                <li><a href="#">Trombones</a></li>
-                                <li><a href="#">Trompetas</a></li>
-                                <li><a href="#">Acordeones</a></li>
-                                <li><a href="#">Armonicas</a></li>
-                                <li><a href="#">Clarinetes</a></li>
-                                <li><a href="#">Flautas</a></li>
-                            </ul>
-                        </li>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Percucion</a>
-                            <ul>
-                               
-                                <li><a href="#">Baterias</a></li>
-                                <li><a href="#">Tumbadoras</a></li>
-                                <li><a href="#">Bongoes</a></li>
-                                <li><a href="#">Platos</a></li>
-                                <li><a href="#">Complementos</a></li>
-                            </ul>
 
-                        </li>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Electronicos</a>
-                            <ul>
-                              
-                                <li><a href="#">Teclados</a></li>
-                                <li><a href="#">Amplificadores</a></li>
-                                <li><a href="#">Microfonos</a></li>
-                                <li><a href="#">Consolas</a></li>
-                            </ul>
-                        </li>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Accesorios</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <%- include('./partials/navbarProducts') %> 
+
         </section>
         <!-- Productos -->
         <section class="main__section__productos">
@@ -74,148 +25,27 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="main__section__productos-superior">
-                        <div class="carousel-item active">
-
+          
+<% products.forEach(({id,image1, price, title, subtitle, category}) => { %>
+<div class="carousel-item-active">
                             <article class="main__section__productos--producto">
-                                <a href="/products/detail">
+                                 <a href="/products/detail/<%= id %>">
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/guitarra1.webp" alt="Guitarra">
+                                        <img src="img/productos/<%= image1 %> " alt=" <%= category %> ">
                                     </figure>
                                     <div class="datos_productos">
-                                        <span class="agregar-al-carrito">Agregar al carrito<i
+                                        <span class="agregar-al-carrito">Ver Detalles<i
                                                 class="fa-solid fa-cart-plus carrito_prod"></i> </span>
-                                        <h3 class="main__section__productos__producto--precio">$992.789 </h3>
-                                        <h4 class="main__section__productos__producto--marca">Gibson Colection</h4>
-                                        <p class="main__section__productos__producto--modelo">Les Paul Studio</p>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-
-                        <div class="carousel-item">
-                            <article class="main__section__productos--producto">
-                                <a href="">
-                                    <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/bateria1.webp" alt="Bateria">
-                                    </figure>
-                                    <div class="datos_productos">
-                                        <span class="agregar-al-carrito">Agregar al carrito<i
-                                                class="fa-solid fa-cart-plus carrito_prod"></i> </span>
-                                        <h3 class="main__section__productos__producto--precio">$195.568</h3>
-                                        <h4 class="main__section__productos__producto--marca">Mapex Horizon</h4>
-                                        <p class="main__section__productos__producto--modelo">5 cuerpos</p>
+                                        <h3 class="main__section__productos__producto--precio">$ <%= price %> </h3>
+                                        <h4 class="main__section__productos__producto--marca"><%= title %> </h4>
+                                        <p class="main__section__productos__producto--modelo"><%= subtitle %> </p>
                                     </div>
                                 </a>
 
                             </article>
                         </div>
+<% }) %>
 
-                        <div class="carousel-item">
-                            <article class="main__section__productos--producto">
-                                <a href="#">
-                                    <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/piano1.webp" alt="Piano">
-                                    </figure>
-                                    <div class="datos_productos">
-                                        <span class="agregar-al-carrito">Agregar al carrito<i
-                                                class="fa-solid fa-cart-plus carrito_prod"></i> </span>
-
-                                        <h3 class="main__section__productos__producto--precio">$5.582.650</h3>
-                                        <h4 class="main__section__productos__producto--marca">Acustico Yamaha</h4>
-                                        <p class="main__section__productos__producto--modelo">GB1K Polished</p>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-
-                        <div class="carousel-item" data-touch=true>
-
-                            <article class="main__section__productos--producto">
-                                <a href="#">
-                                    <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/saxo1.webp" alt="Saxo">
-                                    </figure>
-                                    <div class="datos_productos">
-                                        <span class="agregar-al-carrito">Agregar al carrito<i
-                                                class="fa-solid fa-cart-plus carrito_prod"></i> </span>
-                                        <h3 class="main__section__productos__producto--precio">$1.237.793</h3>
-                                        <h4 class="main__section__productos__producto--marca">Jupiter Tenor</h4>
-                                        <p class="main__section__productos__producto--modelo">Jts-1100q</p>
-                                    </div>
-                                </a>
-                            </article>
-
-                        </div>
-                    </div>
-                    <div class="main__section__productos-superior">
-                        <div class="carousel-item">
-                            <article class="main__section__productos--producto">
-                                <a href="#">
-                                    <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/micro1.webp" alt="Microfono">
-                                    </figure>
-                                    <div class="datos_productos">
-                                        <span class="agregar-al-carrito">Agregar al carrito<i
-                                                class="fa-solid fa-cart-plus carrito_prod"></i> </span>
-                                        <h3 class="main__section__productos__producto--precio">$706.999</h3>
-                                        <h4 class="main__section__productos__producto--marca">Shure</h4>
-                                        <p class="main__section__productos__producto--modelo">Ksm42 Sg</p>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-
-                        <div class="carousel-item">
-                            <article class="main__section__productos--producto">
-                                <a href="#">
-                                    <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/ampli1.webp" alt="Amplificador">
-                                    </figure>
-                                    <div class="datos_productos">
-                                        <span class="agregar-al-carrito">Agregar al carrito<i
-                                                class="fa-solid fa-cart-plus carrito_prod"></i> </span>
-                                        <h3 class="main__section__productos__producto--precio">$2.382.108</h3>
-                                        <h4 class="main__section__productos__producto--marca">Mesa Boogie</h4>
-                                        <p class="main__section__productos__producto--modelo">Dual Rectifie</p>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-
-                        <div class="carousel-item">
-                            <article class="main__section__productos--producto">
-                                <a href="#">
-                                    <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/consola1.webp" alt="Consola">
-                                    </figure>
-                                    <div class="datos_productos">
-                                        <span class="agregar-al-carrito">Agregar al carrito<i
-                                                class="fa-solid fa-cart-plus carrito_prod"></i> </span>
-                                        <h3 class="main__section__productos__producto--precio">$1.254.146</h3>
-                                        <h4 class="main__section__productos__producto--marca">Allen & Heath</h4>
-                                        <p class="main__section__productos__producto--modelo">Xone 4D</p>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-
-                        <div class="carousel-item">
-                            <article class="main__section__productos--producto">
-                                <a href="#">
-                                    <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/auricular1.webp" alt="Auricular">
-                                    </figure>
-                                    <div class="datos_productos">
-                                        <span class="agregar-al-carrito">Agregar al carrito<i
-                                                class="fa-solid fa-cart-plus carrito_prod"></i> </span>
-                                        <h3 class="main__section__productos__producto--precio">$1.415.299</h3>
-                                        <h4 class="main__section__productos__producto--marca">Focal estudio</h4>
-                                        <p class="main__section__productos__producto--modelo">Clear Mg Professional
-                                        </p>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
 
 
                     </div>

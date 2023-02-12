@@ -4,71 +4,24 @@
 <!-- HEAD -->
 <%- include('./partials/head') %> 
 
-<body class="body-productos">
+<body>
     
 <!-- HEADER -->
+
 <%- include('./partials/header') %> 
+
     <!-- Main -->
     <main class="productos__main" id="space_complement">
         <section class="main__section__nav">
             <!-- Menu navegacion -->
-            <nav>
-                <h3 class="main__section__nav--titulo">Categorias</h3>
-                <div class="main_section_nav_categorias">
-                    <ul>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Cuerdas</a>
-                            <ul>
-                             
-                                <li><a href="#">Guitarras</a></li>
-                                <li><a href="#">Bajos</a></li>
-                                <li><a href="#">Violines</a></li>
-                                <li><a href="#">Violas</a></li>
-                                <li><a href="#">Contrabajos</a></li>
-                                <li><a href="#">Pianos</a></li>
-                                <li><a href="#">Arpas</a></li>
-                            </ul>
-                        </li>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Vientos</a>
-                            <ul>
-                              
-                                <li><a href="#">Saxofones</a></li>
-                                <li><a href="#">Trombones</a></li>
-                                <li><a href="#">Trompetas</a></li>
-                                <li><a href="#">Acordeones</a></li>
-                                <li><a href="#">Armonicas</a></li>
-                                <li><a href="#">Clarinetes</a></li>
-                                <li><a href="#">Flautas</a></li>
-                            </ul>
-                        </li>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Percucion</a>
-                            <ul>
-                               
-                                <li><a href="#">Baterias</a></li>
-                                <li><a href="#">Tumbadoras</a></li>
-                                <li><a href="#">Bongoes</a></li>
-                                <li><a href="#">Platos</a></li>
-                                <li><a href="#">Complementos</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Electronicos</a>
-                            <ul>
-                              
-                                <li><a href="#">Teclados</a></li>
-                                <li><a href="#">Amplificadores</a></li>
-                                <li><a href="#">Microfonos</a></li>
-                                <li><a href="#">Consolas</a></li>
-                            </ul>
-                        </li>
-                        <li class="main__section__nav--categoria"><a class="main__section__nav--categoria-titulo" href="#">Accesorios</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <%- include('./partials/navbarProducts') %> 
         </section>
         <!-- Productos -->
+
         <section class="main__section__productos main__section__productos-detalles">
 
-            <h4 class="productos_detalles-titulo">guitarra gibson les paul collection</h4>
+       
+            <h4 class="productos_detalles-titulo"> <%= title %></h4>
             <div>
                 <a href="/products/edit/1"><button class="btn--crear-cuenta">editar producto</button></a>
             </div>
@@ -86,7 +39,7 @@
                             <article  class="main__section__productos--producto detalle-producto">
 
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/guitarra1.webp" alt="Guitarra">
+                                        <img src="/img/productos/<%= image1 %>" alt="<%= title %>">
                                     </figure>
                                    
                             </article>
@@ -96,7 +49,7 @@
                             <article  class="main__section__productos--producto detalle-producto">
                                 
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/guitarra2.webp" alt="Amplificador">
+                                        <img src="/img/productos/<%= image2 %>" alt="<%= title %>">
                                     </figure>
                                 
                             </article>
@@ -105,7 +58,7 @@
                             <article  class="main__section__productos--producto detalle-producto">
                                 
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/guitarra3.webp" alt="Amplificador">
+                                        <img src="/img/productos/<%=image3%>" alt="<%= title %>">
                                     </figure>
                                 
                             </article>
@@ -127,7 +80,7 @@
 
         <section class="detalles_producto">
             <article class="detalle-producto-precio">
-                <h5>Precio: $992.789</h5>
+                <h5>Precio: $ <%= price %></h5>
             </article>
             <article class="detalle-producto-comprar">
                 <a href="#">COMPRAR</a>
@@ -138,37 +91,28 @@
             <article class="detalle-producto-medios">
                 <h5>Medios de pago:</h5>
                 <figure>
-                    <img src="img/productos/mediosdepagodetalleproducto.png" alt="Medios de pago">
+                    <img src="/img/productos/mediosdepagodetalleproducto.png" alt="Medios de pago">
                 </figure>
             </article>
 
             <article class="detalle_producto-descripcion">
                 <hr>
                 <h5>Decripción:</h5>
-                <p>Gibson es una de las marcas con mayor tradición en el mercado: más de 100 años en la fabricación de guitarras. Se fundamenta a la calidad, la innovación y la excelencia del sonido para que los amantes de la música disfruten la compañía de una Gibson. <a href="">mas...</a></p>
-                <p class="descripcion-mas">Una forma para cada estilo musical
-                    Esta Les Paul cuenta con pastillas, tono independiente y controles de volumen para cada elemento, lo que produce distintos resultados. El punto fuerte en su sonido es ser distorsionado, denso, contundente, potente y redondo. Es ideal para el rock sureño, rock de los 70, blues, jazz, heavy metal y punk.</p>
+                <p><%= description %>></p>
                     <hr>
             </article>
             <article class="detalle_producto-caracteristicas">
              
                 <h5>Caracteristicas:</h5>
                 <div class="detalle_producto-caracteristicas-grisClaro">
-                    <h6>Marca</h6>
-                    <p>Gibson</p>
-                </div>
-                <div class="detalle_producto-caracteristicas-grisOscuro">
                     <h6>Modelo</h6>
-                    <p>Modern Colection</p>
-                </div>
-                <div class="detalle_producto-caracteristicas-grisClaro">
-                    <h6>Origen</h6>
-                    <p>Japon</p>
+                    <p><%= subtitle %> </p>
                 </div>
                 <div class="detalle_producto-caracteristicas-grisOscuro">
-                    <h6>Dimenciones</h6>
-                    <p>100x40</p>
+                    <h6>Color</h6>
+                    <p> <%= colour %> </p>
                 </div>
+
             </article>
  </section>
 
