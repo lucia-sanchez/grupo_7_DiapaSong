@@ -1,33 +1,40 @@
-const fs=require('fs');
-const products=require('../data/products.json');
-const categories=require('../data/productsCategories.json');
-const colours=require('../data/colours.json')
+const fs = require('fs');
+const products = require('../data/products.json');
+const categories = require('../data/productsCategories.json');
+const colours = require('../data/colours.json')
 
 
-module.exports={
-   products: (req,res) =>{
+module.exports = {
+    products: (req, res) => {
         return res.render('products', {
-            title: "Productos"
+            title: "Productos",
+            products
         })
-   },
-    detail: (req,res) =>{
+
+    },  
+    detail: (req, res) => {
+        const products = JSON.parse(fs.readFileSync("./data/products.json", "utf-8"))
+        const { id } = req.params;
+        const product = products.find(product => product.id === +id);
+
         return res.render('productDetail', {
-            title: 'Detalle de Producto'
+            title: 'Detalle de Producto',
+            ...product
         });
     },
-    create: (req,res)=>{
-        res.render('create',{
+    create: (req, res) => {
+        res.render('create', {
             title: 'Crear Producto',
             categories,
             colours
         });
-        
+
     },
-    saveCreate: (req,res)=>{
-        const {title,subtitle,tipo,condition,description,price,image1,image2,image3,image4,image5,news,sale,category,colour,height,width} = req.body;
+    saveCreate: (req, res) => {
+        const { title, subtitle, tipo, condition, description, price, image1, image2, image3, image4, image5, news, sale, category, colour, height, width } = req.body;
 
         const newProduct = {
-            id: products[products.length -1].id + 1,
+            id: products[products.length - 1].id + 1,
             title: title.trim(),
             subtitle: subtitle.trim(),
             ticket: tipo === "ticket" && true,
@@ -45,75 +52,75 @@ module.exports={
             colour,
             height: +height,
             width: +width
-            };
+        };
 
-            products.push(newProduct)
-        
-        fs.writeFileSync('./data/products.json',JSON.stringify(products, null, 3),'utf-8')
-        
+        products.push(newProduct)
+
+        fs.writeFileSync('./data/products.json', JSON.stringify(products, null, 3), 'utf-8')
+
         res.redirect('/products')
     },
-    edit: (req,res)=>{
+    edit: (req, res) => {
         const { id } = req.params;
 
-    const product = products.find(product => product.id === +id);
-    return res.render('update', {
-      ...product,
-      categories,
-      colours
-    })
+        const product = products.find(product => product.id === +id);
+        return res.render('update', {
+            ...product,
+            categories,
+            colours
+        })
     },
-    update: (req,res)=>{
+    update: (req, res) => {
         /* recibo la info del formulario */
-    const { title,subtitle,tipo,condition,description,price,image1,image2,image3,image4,image5,news,sale,category,colour,height,width } = req.body;
-    
-    const id = +req.params.id
+        const { title, subtitle, tipo, condition, description, price, image1, image2, image3, image4, image5, news, sale, category, colour, height, width } = req.body;
 
-    /* recupero los datos del producto */
-    const product = products.find(product => product.id === +id);
+        const id = +req.params.id
 
-    /* guardo en un objeto la información modificada */
-    const productUpdated = {
-      id,
-      title: title.trim(),
-      subtitle: subtitle.trim(),
-      ticket: tipo === "ticket" && true,
-      product: tipo === "product" && true,
-      description: description.trim(),
-      price: +price,
-      image1: product.image1,
-      image2: product.image2,
-      image3: product.image3,
-      image4: product.image4,
-      image5: product.image5,
-      category,
-      colour,
-      news: condition === "news" && true,
-      sale: condition === "sale" && true,
-      height: +height,
-      width: +width
-    };
+        /* recupero los datos del producto */
+        const product = products.find(product => product.id === +id);
 
-    /* actualizar mi array de productos */
-    const productsModified = products.map(product => {
-      if(product.id === id){
-        return productUpdated
-      }
-      return product
-    });
+        /* guardo en un objeto la información modificada */
+        const productUpdated = {
+            id,
+            title: title.trim(),
+            subtitle: subtitle.trim(),
+            ticket: tipo === "ticket" && true,
+            product: tipo === "product" && true,
+            description: description.trim(),
+            price: +price,
+            image1: product.image1,
+            image2: product.image2,
+            image3: product.image3,
+            image4: product.image4,
+            image5: product.image5,
+            category,
+            colour,
+            news: condition === "news" && true,
+            sale: condition === "sale" && true,
+            height: +height,
+            width: +width
+        };
 
-    //console.log(productsModified);
+        /* actualizar mi array de productos */
+        const productsModified = products.map(product => {
+            if (product.id === id) {
+                return productUpdated
+            }
+            return product
+        });
 
-    /* guardar los cambios */
-    fs.writeFileSync('./data/products.json',JSON.stringify(productsModified, null, 3),'utf-8')
-    
-    return res.redirect('/products') //*/detail/${id}*/
-},
-    removeConfirm: (req,res)=>{
+        //console.log(productsModified);
 
-},
-    remove: (req,res)=>{
+        /* guardar los cambios */
+        fs.writeFileSync('./data/products.json', JSON.stringify(productsModified, null, 3), 'utf-8')
 
-}
-    
+        return res.redirect('/products') //*/detail/${id}*/
+    },
+    removeConfirm: (req, res) => {
+
+    },
+    remove: (req, res) => {
+
+    }
+
 }
