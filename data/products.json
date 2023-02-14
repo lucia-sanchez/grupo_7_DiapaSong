@@ -6,7 +6,7 @@
       "ticket": false,
       "product": true,
       "description": "Gibson es una de las marcas con mayor tradición en el mercado: más de 100 años en la fabricación de guitarras. Se fundamenta a la calidad, la innovación y la excelencia del sonido para que los amantes de la música disfruten la compañía de una Gibson.",
-      "price": 300.000,
+      "price": 300,
       "image1": "guitarra1.webp",
       "image2": "guitarra2.webp",
       "image3": "guitarra3.webp",
@@ -86,7 +86,7 @@
       "ticket": false,
       "product": true,
       "description": "* 'Sweet spot' amplio y patrón cardioide constante en toda la gama de frecuencias\r\n* Adecuado especialmente para discurso y grabaciones de voces\r\n* Atenuación natural de bajos\r\n* Doble diafragma de oro de 24 quilates\r\n* Incluye suspensión con pantalla antivientos fija, bolsa y estuche de metal\r\n* Pantalla antivientos interna para reducir el ruido del viento y de la respiración",
-      "price": 750.000,
+      "price": 750,
       "image1": "micro1.webp",
       "image2": "micro1.webp",
       "image3": "micro1.webp",
@@ -97,5 +97,4 @@
       "height": 200,
       "width": 200
    }
-
 ]
