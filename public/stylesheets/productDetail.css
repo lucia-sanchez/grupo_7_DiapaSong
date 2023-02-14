@@ -95,7 +95,13 @@ height: 35px;
 line-height: 35px;
 
     }
-    
+.product-buttons{
+    display: flex;
+    margin: 0, auto;
+    justify-content: center;
+    gap: 10px;
+}
+
     @media (min-width: 768px) {
 
     }
@@ -110,8 +116,3 @@ height: auto;
         }
         
         }
-.product-buttons{
-    display: flex;
-    margin: 0, auto;
-    justify-content: center;
-}

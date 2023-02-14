@@ -71,6 +71,9 @@ form p{
     justify-content: flex-start;
     margin: 0;
 }
+.form__delete{
+    padding: 0;
+}
 /* TABLET */
 @media (min-width: 768px) {
 
