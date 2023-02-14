@@ -1,0 +1,57 @@
+[
+   {
+      "id": 0,
+      "name": "",
+      "email": "",
+      "password": "",
+      "password2": "",
+      "identifyid": "",
+      "birthdate": "",
+      "tel": "",
+      "preferedgenre": "",
+      "preferedinstruments": "",
+      "news": "",
+      "terms": ""
+   },
+   {
+      "id": 1,
+      "name": "Luis Barrantes",
+      "email": "luiyibarrantes@gmail.com",
+      "password": "12341234",
+      "password2": "12341234",
+      "identifyid": 12341234,
+      "birthdate": null,
+      "tel": 1158761351,
+      "preferedgenre": [
+         "latino",
+         "jazz"
+      ],
+      "preferedinstruments": [
+         "cuerda",
+         "electrónico"
+      ],
+      "news": "on",
+      "terms": "on"
+   },
+   {
+      "id": 2,
+      "name": "Luis Barrantes",
+      "email": "luiyibarrantes@gmail.com",
+      "password": "12341234",
+      "password2": "12341234",
+      "identifyid": 12341234,
+      "birthdate": null,
+      "tel": 1158761351,
+      "preferedgenre": [
+         "latino",
+         "metal",
+         "cumbia"
+      ],
+      "preferedinstruments": [
+         "cuerda",
+         "percusión",
+         "electrónico"
+      ],
+      "terms": "on"
+   }
+]
