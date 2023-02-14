@@ -22,15 +22,8 @@
 
        
             <h4 class="productos_detalles-titulo"> <%= title %></h4>
-            <div>
-                <a href="/products/edit/1"><button class="btn--crear-cuenta">editar producto</button></a>
-            </div>
-            <div>
-                <form action="/products/remove/<%=id%>?_method=DELETE" method="POST">
-                    <button class="btn--crear-cuenta">eliminar producto</button>
-                </form>
-                
-            </div>
+            
+          
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="main__section__productos-superior">
@@ -78,6 +71,12 @@
             </section>
             <div>
                 <a href="/products/edit/<%= id %>"><button class="btn--crear-cuenta">editar producto</button></a>
+            </div>
+            <div>
+                <form action="/products/remove/<%=id%>?_method=DELETE" method="POST">
+                    <button class="btn--crear-cuenta">eliminar producto</button>
+                </form>
+                
             </div>
         <section class="detalles_producto">
             <article class="detalle-producto-precio">

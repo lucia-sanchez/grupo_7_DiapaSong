@@ -6,18 +6,9 @@
       "ticket": false,
       "product": true,
       "description": "Gibson es una de las marcas con mayor tradición en el mercado: más de 100 años en la fabricación de guitarras. Se fundamenta a la calidad, la innovación y la excelencia del sonido para que los amantes de la música disfruten la compañía de una Gibson.",
-<<<<<<< HEAD
-      "price": 300,
-      "image1": "guitarra1.webp",
-      "image2": "guitarra2.webp",
-      "image3": "guitarra3.webp",
-      "image4": null,
-      "image5": null,
-=======
       "price": 336,
       "mainImage": "guitarra1.webp",
       "images": "guitarra2.webp",
->>>>>>> develop
       "category": "Cuerdas",
       "colour": "Rojo",
       "news": false,
@@ -65,20 +56,10 @@
       "subtitle": "Jupiter Jts-1100q",
       "ticket": false,
       "product": true,
-<<<<<<< HEAD
-      "description": "prueba de editado",
-      "price": 300,
-      "image1": null,
-      "image2": null,
-      "image3": null,
-      "image4": null,
-      "image5": null,
-=======
       "description": "SAXO TENOR JUPITER JTS1100Q. Se convierte en una alternativa de gran calidad. Incorpora detalles como el codo desmontable y zapatillas de alta gama entre otros. La articulación en el paso SI/DO# facilita la ejecución en las notas graves.",
       "price": 800,
       "mainImage": "saxo1.webp",
       "images": "saxo2.webp",
->>>>>>> develop
       "news": true,
       "sale": false,
       "category": "Vientos",
@@ -94,17 +75,6 @@
       "product": true,
       "description": "* 'Sweet spot' amplio y patrón cardioide constante en toda la gama de frecuencias\r\n* Adecuado especialmente para discurso y grabaciones de voces\r\n* Atenuación natural de bajos\r\n* Doble diafragma de oro de 24 quilates\r\n* Incluye suspensión con pantalla antivientos fija, bolsa y estuche de metal\r\n* Pantalla antivientos interna para reducir el ruido del viento y de la respiración",
       "price": 750,
-<<<<<<< HEAD
-      "image1": "micro1.webp",
-      "image2": "micro1.webp",
-      "image3": "micro1.webp",
-      "image4": null,
-      "image5": null,
-      "news": true,
-      "sale": false,
-      "height": 200,
-      "width": 200
-=======
       "mainImage": "micro1.webp",
       "images": "micro1.webp",
       "news": true,
@@ -113,23 +83,5 @@
       "colour": "Negro",
       "stock": 6,
       "model": "sasdasf"
-   },
-   {
-      "id": 6,
-      "title": "asads",
-      "subtitle": "asdasd",
-      "ticket": false,
-      "product": true,
-      "description": "asdasdasd",
-      "price": 1234,
-      "mainImage": null,
-      "images": null,
-      "news": true,
-      "sale": false,
-      "category": "Vientos",
-      "colour": "Blanco",
-      "model": "asdfaf",
-      "stock": 20
->>>>>>> develop
    }
 ]

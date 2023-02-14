@@ -120,8 +120,10 @@ module.exports = {
         //filtro para generar un nuevo array con todos los productos menos el que deseo eliminar
         productsModified = products.filter(product=> product.id !== +id)
         //vuelvo a leer el json para que se actualice la vista
-        fs.writeFileSync('./data/products.json',JSON.stringify(productsModified, null, 3),'utf-8')
-        return res.redirect('./products')
+        fs.writeFileSync('./data/products.json', JSON.stringify(productsModified, null, 3), 'utf-8')
+        //redirecciono a la pag de productos para mostrar que el articulo eliminado ya no esta en el listado
+        res.redirect('/products')
     }
+    
 
 }
