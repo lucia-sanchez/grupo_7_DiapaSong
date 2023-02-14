@@ -1,11 +1,14 @@
 .productos_detalles-titulo{
+    color: black;
 text-transform: uppercase;
 text-align: center;
 padding:5px;
 }
+
 .detalle-producto figure img{
 width: auto;
 height: 370px;
+
 }
 .detalles_producto{
     display: flex;
@@ -13,6 +16,7 @@ height: 370px;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+   
     }
 .detalle-producto-precio, .detalle-producto-comprar, .detalle-producto-agregar {
   display: flex;
@@ -55,24 +59,59 @@ padding: 10px;
 .detalle_producto-caracteristicas-grisClaro{
 display: flex;
 flex-direction: row;
-background: rgba(255, 252, 252, 0.2);
+background: rgb(145, 144, 144);
+height: 35px;
+line-height: 35px;
+
 
 }
 .detalle_producto-caracteristicas-grisOscuro{
     display: flex;
     flex-direction: row;
-    background: rgba(58, 56, 56, 0.2);
+    background: rgb(58, 56, 56);
+    height: 35px;
+line-height: 35px;
     }
 .detalle_producto-caracteristicas-grisClaro h6, .detalle_producto-caracteristicas-grisOscuro h6{
     font-weight: bolder;
     align-self: center;
 text-align: left;
 width: 50%;
+text-transform: uppercase;
+padding-left: 10px;
+color: rgb(255, 255, 255);
+height: 35px;
+line-height: 35px;
 }
 .detalle_producto-caracteristicas-grisClaro p, .detalle_producto-caracteristicas-grisOscuro p{
-    color: white;
-  
-    align-self: center;
+    color: rgb(93, 92, 92);
+    text-transform: uppercase;
+    padding-left: 10px;
 text-align: left;
 width: 50%;
+color: rgb(255, 255, 255);
+border-left: 1px white solid;
+height: 35px;
+line-height: 35px;
+
     }
+    
+    @media (min-width: 768px) {
+
+    }
+    @media (min-width: 1024px){
+        .main__section__productos-superior{
+justify-content: center;
+flex-wrap: nowrap;
+
+        }
+        .detalle-producto figure img{
+height: auto;
+        }
+        
+        }
+.product-buttons{
+    display: flex;
+    margin: 0, auto;
+    justify-content: center;
+}

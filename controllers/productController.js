@@ -6,6 +6,7 @@ const colours = require('../data/colours.json')
 
 module.exports = {
     products: (req, res) => {
+        const products = JSON.parse(fs.readFileSync("./data/products.json", "utf-8"))
         return res.render('products', {
             title: "Productos",
             products
@@ -111,10 +112,17 @@ module.exports = {
         return res.redirect('/') //*/detail/${id}*/
     },
     removeConfirm: (req, res) => {
-
     },
     remove: (req, res) => {
-
+        //rescato el parametro que recibo por id
+        const {id} =req.params;
+        //filtro para generar un nuevo array con todos los productos menos el que deseo eliminar
+        productsModified = products.filter(product=> product.id !== +id)
+        //vuelvo a leer el json para que se actualice la vista
+        fs.writeFileSync('./data/products.json', JSON.stringify(productsModified, null, 3), 'utf-8')
+        //redirecciono a la pag de productos para mostrar que el articulo eliminado ya no esta en el listado
+        res.redirect('/products')
     }
+};
+    
 
-}

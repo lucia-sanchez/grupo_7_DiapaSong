@@ -13,7 +13,7 @@
       "colour": "Rojo",
       "news": false,
       "sale": true,
-      "model": "sasdasf",
+      "model": "ds12hss",
       "stock": 3
    },
    {
@@ -30,7 +30,7 @@
       "colour": "Negro",
       "news": true,
       "sale": false,
-      "model": "sasdasf",
+      "model": "gtd543",
       "stock": 5
    },
    {
@@ -47,7 +47,7 @@
       "colour": "Negro",
       "news": true,
       "sale": false,
-      "model": "sasdasf",
+      "model": "hdts345",
       "stock": 2
    },
    {
@@ -65,7 +65,7 @@
       "category": "Vientos",
       "colour": "Amarillo",
       "stock": 9,
-      "model": "sasdasf"
+      "model": "cdf53j"
    },
    {
       "id": 5,
@@ -82,23 +82,23 @@
       "category": "Electrónicos",
       "colour": "Negro",
       "stock": 6,
-      "model": "sasdasf"
+      "model": "dfe98j"
    },
    {
       "id": 6,
-      "title": "asads",
-      "subtitle": "asdasd",
+      "title": "yghkj",
+      "subtitle": "dghkj",
       "ticket": false,
       "product": true,
-      "description": "asdasdasd",
-      "price": 1234,
+      "description": "dghkjghdkj",
+      "price": 60000,
       "mainImage": null,
       "images": null,
       "news": true,
       "sale": false,
       "category": "Vientos",
-      "colour": "Blanco",
-      "model": "asdfaf",
-      "stock": 20
+      "colour": "Rojo",
+      "model": "",
+      "stock": 0
    }
 ]
