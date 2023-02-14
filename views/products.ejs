@@ -25,12 +25,12 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
           
-<% products.forEach(({id,image1, price, title, subtitle, category}) => { %>
+<% products.forEach(({id,mainImage, price, title, subtitle, category}) => { %>
 <div class="<%= id === 1 ? "carousel-item-active" : "carousel-item" %>">
                             <article class="main__section__productos--producto">
                                  <a href="/products/detail/<%= id %>">
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/<%= image1 %> " alt=" <%= category %> ">
+                                        <img src="img/productos/<%= mainImage %> " alt=" <%= category %> ">
                                     </figure>
                                     <div class="datos_productos">
                                         <span class="agregar-al-carrito">Ver Detalles<i

@@ -30,7 +30,7 @@
                             <article  class="main__section__productos--producto detalle-producto">
 
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="/img/productos/<%= image1 %>" alt="<%= title %>">
+                                        <img src="/img/productos/<%= mainImage %>" alt="<%= title %>">
                                     </figure>
                             
                             </article>
@@ -40,7 +40,7 @@
                             <article  class="main__section__productos--producto detalle-producto">
                                 
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="/img/productos/<%= image2 %>" alt="<%= title %>">
+                                        <img src="/img/productos/<%= images %>" alt="<%= title %>">
                                     </figure>
                                 
                             </article>
@@ -49,7 +49,7 @@
                             <article  class="main__section__productos--producto detalle-producto">
                                 
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="/img/productos/<%=image3%>" alt="<%= title %>">
+                                        <img src="/img/default.jpg" alt="default">
                                     </figure>
                                 
                             </article>
@@ -68,7 +68,7 @@
                 </div>
             </section>
             <div>
-                <a href="/products/edit/1"><button class="btn--crear-cuenta">editar producto</button></a>
+                <a href="/products/edit/<%= id %>"><button class="btn--crear-cuenta">editar producto</button></a>
             </div>
         <section class="detalles_producto">
             <article class="detalle-producto-precio">

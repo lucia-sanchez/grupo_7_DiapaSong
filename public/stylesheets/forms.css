@@ -33,6 +33,13 @@ form input {
     border-radius: 5px;
     height: 30px;
 }
+form textarea{
+    resize: none;
+    width: 250px;
+}
+form p{
+    margin: 0;
+}
 ::placeholder{
     text-align: center;
     font-size: small;    
