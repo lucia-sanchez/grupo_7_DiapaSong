@@ -113,8 +113,20 @@ module.exports = {
     removeConfirm: (req, res) => {
 
     },
-    remove: (req, res) => {
+	remove: (req, res) => {
 
-    }
+        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
-}
+        //recibo dato de id
+		const {id} = req.params;
+
+        //filtro resultados
+		const productDelete = products.filter(product => product.id !== + id)
+
+		//guarda cambios
+		fs.writeFileSync('./data/products.json', JSON.stringify(productDelete, null, 3), "utf-8");
+        
+        //redirecciona a vista productos
+		return res.redirect("products")
+	}
+};

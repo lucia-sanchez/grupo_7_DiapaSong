@@ -11,6 +11,6 @@ router.get('/', products)
       .get('/edit/:id',edit)
       .put('/update/:id',update)
       .get('/remove/:id',removeConfirm)
-      .delete('/remove/:id',remove)
+      .delete('/remove/:id', remove)
 
 module.exports = router;            
