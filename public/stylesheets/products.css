@@ -203,12 +203,14 @@ height: 400px;
     padding: 0;
     border: 2px black solid;
     box-shadow: 1px 1x 1px rgb(5, 5, 5);
-    box-shadow: none;
+   
+
 }
 .main__section__productos--producto:hover a {
     box-shadow: 1px 1px 20px rgb(7, 7, 7);
     text-decoration: none;
     font-weight: bold;
+  
 
     
 }

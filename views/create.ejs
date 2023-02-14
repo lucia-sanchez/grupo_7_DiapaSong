@@ -52,12 +52,11 @@
                         <label for="description">descripcíon</label>
                             <textarea name="description" id="description"  rows="3"></textarea>
                     </div>
-                    <div class="form__create--image-box">
-                        <label for="image">imagenes</label>
-                        <% for( let i = 1; i < 6; i++ ) { %>
-                        <input type="file" name="image" id="image<%= i %> ">
-                        <!-- <img id="blah" src="#" alt="imagen <%= i %> " /> -->
-                        <% } %>
+                    <div class="form__create--image-box">                        
+                        <label for="mainImage">imagen principal</label>
+                        <input type="file" name="mainImage" id="mainImage">
+                        <label for="images">imagenes</label>
+                        <input type="file" name="images" id="images" multiple>
                     </div>
                     
                         <h4>características</h4>
@@ -70,12 +69,12 @@
                         </select>
                         </div>
                         <div>
-                            <label for="height">alto</label>
-                            <input type="number" name="height" id="height"><p>cm.</p>
+                            <label for="stock">stock</label>
+                            <input type="number" name="stock" id="stock"><p>un.</p>
                         </div>
                         <div>
-                            <label for="width">ancho</label>
-                            <input type="number" name="width" id="width"><p>cm.</p>
+                            <label for="model">modelo</label>
+                            <input type="text" name="model" id="model">
                         </div>
                     
                     <div>

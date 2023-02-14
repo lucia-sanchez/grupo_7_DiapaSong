@@ -32,7 +32,7 @@ module.exports = {
 
     },
     saveCreate: (req, res) => {
-        const { title, subtitle, tipo, condition, description, price, image1, image2, image3, image4, image5, news, sale, category, colour, height, width } = req.body;
+        const { title, subtitle, tipo, condition, description, price, mainImage, images, news, sale, category, colour, model, stock } = req.body;
 
         const newProduct = {
             id: products[products.length - 1].id + 1,
@@ -42,17 +42,14 @@ module.exports = {
             product: tipo === "product" && true,
             description: description.trim(),
             price: +price,
-            image1: null,
-            image2: null,
-            image3: null,
-            image4: null,
-            image5: null,
+            mainImage: null,
+            images: null,
             news: condition === "news" && true,
             sale: condition === "sale" && true,
             category,
             colour,
-            height: +height,
-            width: +width
+            model: model,
+            stock: +stock
         };
 
         products.push(newProduct)
@@ -73,7 +70,7 @@ module.exports = {
     },
     update: (req, res) => {
         /* recibo la info del formulario */
-        const { title, subtitle, tipo, condition, description, price, image1, image2, image3, image4, image5, news, sale, category, colour, height, width } = req.body;
+        const { title, subtitle, tipo, condition, description, price, mainImage, images, news, sale, category, colour, model, stock } = req.body;
 
         const id = +req.params.id
 
@@ -89,17 +86,14 @@ module.exports = {
             product: tipo === "product" && true,
             description: description.trim(),
             price: +price,
-            image1: product.image1,
-            image2: product.image2,
-            image3: product.image3,
-            image4: product.image4,
-            image5: product.image5,
+            mainImage: product.mainImage,
+            images: product.images,            
             category,
             colour,
             news: condition === "news" && true,
             sale: condition === "sale" && true,
-            height: +height,
-            width: +width
+            model: model,
+            stock: +stock
         };
 
         /* actualizar mi array de productos */
@@ -115,7 +109,7 @@ module.exports = {
         /* guardar los cambios */
         fs.writeFileSync('./data/products.json', JSON.stringify(productsModified, null, 3), 'utf-8')
 
-        return res.redirect('/products') //*/detail/${id}*/
+        return res.redirect('/') //*/detail/${id}*/
     },
     removeConfirm: (req, res) => {
 

@@ -24,14 +24,13 @@
             <h2 class="subtitulo_productos">Destacados!</h2>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="main__section__productos-superior">
           
-<% products.forEach(({id,image1, price, title, subtitle, category}) => { %>
-<div class="carousel-item-active">
+<% products.forEach(({id,mainImage, price, title, subtitle, category}) => { %>
+<div class="<%= id === 1 ? "carousel-item-active" : "carousel-item" %>">
                             <article class="main__section__productos--producto">
                                  <a href="/products/detail/<%= id %>">
                                     <figure class="main__section__productos__producto--imagen">
-                                        <img src="img/productos/<%= image1 %> " alt=" <%= category %> ">
+                                        <img src="img/productos/<%= mainImage %> " alt=" <%= category %> ">
                                     </figure>
                                     <div class="datos_productos">
                                         <span class="agregar-al-carrito">Ver Detalles<i
@@ -45,9 +44,6 @@
                             </article>
                         </div>
 <% }) %>
-
-
-
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"
@@ -77,7 +73,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-        <script src="../javascript/dinamic.js"></script>
+            <script src="../javascript/dinamic.js"></script>
     </div>
 </body>
 

@@ -273,26 +273,23 @@
         margin-bottom: 5px;
         align-self: flex-start;
         margin-left: 0;
-        width: 200px;
-
+        width: 150px;
     }
 
     .header--logo h1 {
-        font-size: 15px;
+        font-size: 10px;
     }
 
     .header__section--user-navigation {
         order: 2;
         width: auto;
-        margin-top: 35px;
+        margin-top: 43px;
         align-self: flex-start;
-
     }
 
     .header__section--user-navigation i {
-        font-size: 35px;
+        font-size: 25px;
         padding: 0 15px;
-
     }
 
     .header__section--user-navigation i:hover {
@@ -316,6 +313,7 @@
         align-self: center;
         padding: 15px 0;
         margin-top: 25px;
+        margin-left: 5px;
     }
 
     .header--search-bar .lupa i {
@@ -334,7 +332,7 @@
         padding:0;
         background: none;
         position: relative;
-        top: -25px;
+        top: -10px;
         left: 160px;
     }
 
