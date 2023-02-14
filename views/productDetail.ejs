@@ -60,15 +60,7 @@
                 </a>
                 </div>
             </section>
-            <div>
-                <a href="/products/edit/<%= id %>"><button class="btn--crear-cuenta">editar producto</button></a>
-            </div>
-            <div>
-                <form action="/products/remove/<%=id%>?_method=DELETE" method="POST">
-                    <button class="btn--crear-cuenta">eliminar producto</button>
-                </form>
-                
-            </div>
+            
         <section class="detalles_producto">
             <article class="detalle-producto-precio">
                 <h5>Precio: $ <%= price %></h5>
@@ -109,9 +101,23 @@
                 </div>
 
             </article>
+           <div class="product-buttons">
             <div>
                 <a href="/products/edit/1"><button class="btn--crear-cuenta">editar producto</button></a>
+                
             </div>
+                <div>
+                    <form action="/products/remove/<%=id%>?_method=DELETE" method="POST">
+                        <button class="btn--crear-cuenta">eliminar producto</button>
+                    </form>
+                </div>
+            </div>
+            
+           
+            
+                
+                
+        
  </section>
 </main>
 <!-- FOOTER -->

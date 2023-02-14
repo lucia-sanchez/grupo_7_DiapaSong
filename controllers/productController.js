@@ -112,6 +112,8 @@ module.exports = {
         return res.redirect('/') //*/detail/${id}*/
     },
     removeConfirm: (req, res) => {
+    },
+    remove: (req, res) => {
         //rescato el parametro que recibo por id
         const {id} =req.params;
         //filtro para generar un nuevo array con todos los productos menos el que deseo eliminar

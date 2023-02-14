@@ -83,22 +83,5 @@
       "colour": "Negro",
       "stock": 6,
       "model": "dfe98j"
-   },
-   {
-      "id": 6,
-      "title": "asads",
-      "subtitle": "asdasd",
-      "ticket": false,
-      "product": true,
-      "description": "asdasdasd",
-      "price": 1234,
-      "mainImage": null,
-      "images": null,
-      "news": true,
-      "sale": false,
-      "category": "Vientos",
-      "colour": "Blanco",
-      "model": "asd09f",
-      "stock": 20
    }
 ]
