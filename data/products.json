@@ -83,5 +83,22 @@
       "colour": "Negro",
       "stock": 6,
       "model": "dfe98j"
+   },
+   {
+      "id": 6,
+      "title": "yghkj",
+      "subtitle": "dghkj",
+      "ticket": false,
+      "product": true,
+      "description": "dghkjghdkj",
+      "price": 60000,
+      "mainImage": null,
+      "images": null,
+      "news": true,
+      "sale": false,
+      "category": "Vientos",
+      "colour": "Rojo",
+      "model": "",
+      "stock": 0
    }
 ]
