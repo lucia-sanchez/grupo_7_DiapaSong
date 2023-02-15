@@ -53,5 +53,46 @@
          "electrónico"
       ],
       "terms": "on"
+   },
+   {
+      "id": 3,
+      "name": "Luisana Acosta",
+      "email": "luisana@info.com.ar",
+      "password": "12345678",
+      "password2": "12345678",
+      "identifyid": 14568795,
+      "birthdate": null,
+      "tel": 11547895,
+      "preferedgenre": [
+         "latino",
+         "rock",
+         "jazz"
+      ],
+      "preferedinstruments": "cuerda",
+      "news": "on",
+      "terms": "on"
+   },
+   {
+      "id": 4,
+      "name": "Marta Rulo",
+      "email": "marta@rulo.net",
+      "password": "12345678",
+      "password2": "12345678",
+      "identifyid": 10854796,
+      "birthdate": null,
+      "tel": 116457832,
+      "preferedgenre": [
+         "latino",
+         "clásico",
+         "folklore",
+         "jazz",
+         "alternativo"
+      ],
+      "preferedinstruments": [
+         "viento",
+         "percusión"
+      ],
+      "news": "on",
+      "terms": "on"
    }
 ]

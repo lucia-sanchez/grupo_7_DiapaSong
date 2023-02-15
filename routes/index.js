@@ -1,10 +1,13 @@
 var express = require('express');
-const {index, search, productCart} = require('../controllers/indexController');
+const {index, search, productCart, blog, faq} = require('../controllers/indexController');
 var router = express.Router();
 
 /* / */
-router.get('/', index);
-router.get('/search', search);
-router.get('/productCart', productCart);
+router
+    .get('/', index)
+    .get('/search', search)
+    .get('/productCart', productCart)
+    .get('/blog', blog)
+    .get('/faq', faq)
 
 module.exports = router;

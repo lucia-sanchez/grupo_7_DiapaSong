@@ -26,5 +26,15 @@ module.exports ={
         return res.render('productCart',{
             title:"Carrito"
         });
+    },
+    blog: (req,res) =>{
+        return res.render('blog',{
+            title: 'Blog de Música'
+        })
+    },
+    faq: (req,res) =>{
+        return res.render('faq',{
+            title: 'Preguntas Frecuentes'
+        })
     }
 }
