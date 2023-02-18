@@ -15,6 +15,8 @@
     text-transform: uppercase;
     color: black;
     font-weight: 900;
+    background-color:rgb(138, 116, 151);
+    border-bottom: 3px white solid
 }
 /*NAVBAR*/
 .main_section_nav_categorias{
@@ -115,7 +117,13 @@ font-weight: bold;
 .productos__main .carousel-control-prev, .productos__main .carousel-control-next{
     display: none;
 }   
-
+.subtitulo_productos{
+    font-size: 40px;
+    letter-spacing: 2px;
+   height: 100px;
+   line-height: 100px;
+   
+}
 
 
 /*MAIN PRODUCTOS*/
@@ -136,7 +144,7 @@ min-width: auto;
 height: 400px;
 }
 .main__section__productos{
- width: auto;
+ width:80%;
    background-color: rgb(147, 120, 172);
     display: flex;
     flex-direction: row;
@@ -144,6 +152,10 @@ height: 400px;
    padding-bottom: 100px;
     justify-content: center;
 
+
+}
+.carousel-inner{
+    width: 100%;
 }
 .main__section__productos--producto{
    

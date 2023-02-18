@@ -1,5 +1,6 @@
 const fs = require('fs');
 const products = require('../data/products.json');
+
 const categories = require('../data/productsCategories.json');
 const colours = require('../data/colours.json')
 
@@ -7,7 +8,12 @@ const colours = require('../data/colours.json')
 module.exports = {
     products: (req, res) => {
         const products = JSON.parse(fs.readFileSync("./data/products.json", "utf-8"))
+        const CategoryFilt = req.params.category
+        const product = products.filter(product => product.category === CategoryFilt);
+           
         return res.render('products', {
+            product,
+            CategoryFilt,
             title: "Productos",
             products
         })
@@ -123,6 +129,5 @@ module.exports = {
         //redirecciono a la pag de productos para mostrar que el articulo eliminado ya no esta en el listado
         res.redirect('/products')
     }
-};
-    
+}
 

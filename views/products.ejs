@@ -19,20 +19,21 @@
     <!-- Productos -->
     <section class="main__section__productos">
 
-      <h2 class="subtitulo_productos">Destacados!</h2>
+     
+          
+<% if (CategoryFilt) { %>
+   <h2 class="subtitulo_productos"><%= CategoryFilt %></h2>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-        
-
-          <% products.forEach(({id,mainImage, price, title, subtitle, category}) => { %>
+ <% product.forEach(({id,mainImage, price, title, subtitle, category}) => { %>
           <div class="<%= id === 1 ? "carousel-item-active" : "carousel-item" %>">
             <article class="main__section__productos--producto">
-              <a href="/products/detail/<%= id %>">
+              <a href="/productDetail/<%= id %>">
                 <figure class="main__section__productos__producto--imagen">
-                  <img src="img/productos/<%= mainImage %> " alt=" <%= category %> ">
+                  <img src="/img/productos/<%= mainImage %> " alt=" <%= category %> ">
                 </figure>
                 <div class="datos_productos">
-                  <span class="agregar-al-carrito"> Mas informacion
+                  <span class="agregar-al-carrito"> Más información
                     <i class="fa-sharp fa-solid fa-circle-info carrito_prod"></i> </span>
                   <h3 class="main__section__productos__producto--precio">$ <%= price %> </h3>
                   <h4 class="main__section__productos__producto--marca"><%= title %> </h4>
@@ -43,6 +44,35 @@
             </article>
           </div>
           <% }) %>
+<% } else{%>
+   <h2 class="subtitulo_productos">Destacados!</h2>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+  <% products.forEach(({id,mainImage, price, title, subtitle, category}) => { %>
+   
+    <div class="<%= id === 1 ? "carousel-item-active" : "carousel-item" %>">
+      <article class="main__section__productos--producto">
+        <a href="detail/<%= id %>">
+          <figure class="main__section__productos__producto--imagen">
+            <img src="/img/productos/<%= mainImage %> " alt=" <%= category %> ">
+          </figure>
+          <div class="datos_productos">
+            <span class="agregar-al-carrito"> Más información
+              <i class="fa-sharp fa-solid fa-circle-info carrito_prod"></i> </span>
+            <h3 class="main__section__productos__producto--precio">$ <%= price %> </h3>
+            <h4 class="main__section__productos__producto--marca"><%= title %> </h4>
+            <p class="main__section__productos__producto--modelo"><%= subtitle %> </p>
+          </div>
+        </a>
+
+      </article>
+    </div>
+    <% }) %>
+
+  <% } %>
+  <div>
+    <a href="./products/create"><button class="btn--crear-prod">crear producto</button></a>
+  </div>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" data-touch="true">
