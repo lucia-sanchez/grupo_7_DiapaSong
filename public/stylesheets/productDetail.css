@@ -2,7 +2,17 @@
     color: black;
 text-transform: uppercase;
 text-align: center;
+font-size: 40px;
+letter-spacing: 2px;
+height: 100px;
+line-height: 100px;
+
 padding:5px;
+width: 100%;
+color: black;
+font-weight: 900;
+background-color:rgb(138, 116, 151);
+border-bottom: 3px white solid
 }
 
 .detalle-producto figure img{
@@ -114,5 +124,6 @@ flex-wrap: nowrap;
         .detalle-producto figure img{
 height: auto;
         }
+       
         
         }

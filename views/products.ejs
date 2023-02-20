@@ -28,7 +28,7 @@
  <% product.forEach(({id,mainImage, price, title, subtitle, category}) => { %>
           <div class="<%= id === 1 ? "carousel-item-active" : "carousel-item" %>">
             <article class="main__section__productos--producto">
-              <a href="/productDetail/<%= id %>">
+              <a href="/products/detail/<%= id %>">
                 <figure class="main__section__productos__producto--imagen">
                   <img src="/img/productos/<%= mainImage %> " alt=" <%= category %> ">
                 </figure>
@@ -52,7 +52,7 @@
    
     <div class="<%= id === 1 ? "carousel-item-active" : "carousel-item" %>">
       <article class="main__section__productos--producto">
-        <a href="detail/<%= id %>">
+        <a href="/products/detail/<%= id %>">
           <figure class="main__section__productos__producto--imagen">
             <img src="/img/productos/<%= mainImage %> " alt=" <%= category %> ">
           </figure>
