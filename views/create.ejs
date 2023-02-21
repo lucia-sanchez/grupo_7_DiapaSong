@@ -13,6 +13,7 @@
             <h1>crear producto</h1>
             <div class="create__main__section__div--form-box">
                 <form action="/products/create" method="post" class="form__create">
+                    <!-- TIPO -->
                     <h5>tipo</h5>
                     <div class="form__create--radio">
                         
@@ -21,6 +22,7 @@
                         <input type="radio" name="tipo" id="product" value="product" checked>
                         <label for="product">instrumento</label>
                     </div>
+                    <!-- CONDICION -->
                     <h5>condición</h5>
                     <div class="form__create--radio">
                         
@@ -31,14 +33,17 @@
                         Oferta
                         </label>
                     </div>
+                    <!-- TÍTULO -->
                     <div>
                         <label for="title">título</label>
                         <input type="text" name="title" id="title" required>
                     </div>
+                    <!-- SUTÍTULO -->
                     <div>
                         <label for="subtitle">sub-título</label>
                         <input type="text" name="subtitle" id="subtitle" required>
                     </div>
+                    <!-- CATEGORÍA -->
                     <div>
                         <label for="category">categoría</label>
                         <select name="category" id="category">
@@ -47,11 +52,13 @@
                                 <option value="<%= name %>"><%= name %> </option>
                                 <% }) %>
                             </select>
-                        </div>
+                    </div>
+                    <!-- DESCRIPCIÓN -->
                     <div>
                         <label for="description">descripcíon</label>
                             <textarea name="description" id="description"  rows="3"></textarea>
                     </div>
+
                     <div class="form__create--image-box">                        
                         <label for="mainImage">imagen principal</label>
                         <input type="file" name="mainImage" id="mainImage">
@@ -59,24 +66,26 @@
                         <input type="file" name="images" id="images" multiple>
                     </div>
                     
-                        <h4>características</h4>
-                        <div class="form__create--characteristics"><label for="colour">color</label>
-                        <select name="colour" id="colour">
+                    <h4>características</h4>
+                    
+                        <div>
+                            <label for="colour">color</label>
+                            <select name="colour" id="colour">
                             <option value="" selected hidden>Elegir color...</option>
                             <% colours.forEach(({name}) => { %>
                                 <option value="<%= name %>"><%= name %> </option>
                                 <% }) %>
-                        </select>
+                            </select>
                         </div>
                         <div>
-                            <label for="stock">stock</label>
-                            <input type="number" name="stock" id="stock"><p>un.</p>
-                        </div>
-                        <div>
-                            <label for="model">modelo</label>
-                            <input type="text" name="model" id="model">
+                        <label for="model">modelo</label>
+                        <input type="text" name="model" id="model">
                         </div>
                     
+                    <div>
+                        <label for="stock">stock</label>
+                        <input type="number" name="stock" id="stock"><p>un.</p>
+                    </div>
                     <div>
                         <label for="price">precio</label>
                         <input type="number" name="price" id="price"><p>$</p>

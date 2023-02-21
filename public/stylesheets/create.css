@@ -19,39 +19,70 @@ background-color: aqua;
 
 .create__main__section__div--form-box {}
 
-.form__create input {
-
-width: 34%;
+.form__create div{
+    display: flex;
 }
 
-.form__create h5 {
-    margin:0
+.form__create div input{
+    display: flex;
+    width: 40%;
+}
+.form__create div input:focus{
+    display: flex;
+    width: 55%;
+    transition: all 500ms;
+    box-shadow: 3px 3px 10px 5px rgba(127, 30, 139, 0.568);    
+    outline:none
 }
 
 .form__create--radio {
     align-self: center;
 }
-.form__create--image-box{
+.form__create .form__create--radio label{
+    
+width: 40%;
+    
+justify-content: flex-start;
+}
+.form__create .form__create--radio input{
+    width: 15px;
+}
+.form__create div label{
+    display: flex;
+    width: 31%;
+}
+
+
+
+.form__create h5 {
+    margin:0
+}
+
+.form__create .form__create--image-box{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
 }
-.form__create--image-box label{
-    width: 46%;
+.form__create .form__create--image-box label{
 }
-.form__create--image-box input{
+.form__create .form__create--image-box input{
     width: 50%;
     display: flex;
     justify-content: flex-end;
 }
-.form__create--characteristics {/* flex-wrap: wrap; */}
-.form__create--characteristics div{}
-.form__create--characteristics h4{
-    
-/* width: 100%; */
+.form__create .form__create--image-box input:focus{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    transition: none;
+    box-shadow: none;
 }
-.form__create--characteristics select{
+.form__create textarea:focus{
+    width: 55%;
+    transition: all 500ms;
+    box-shadow: 3px 3px 10px 5px rgba(127, 30, 139, 0.568);    
+    outline:none
 }
+.form__create select{width: 40%;}
 .form__create--characteristics input{width: 110px;}
 .form__create-btn-box{
     align-self: center;

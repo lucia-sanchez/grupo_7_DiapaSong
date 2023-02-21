@@ -35,7 +35,8 @@ form input {
 }
 form textarea{
     resize: none;
-    width: 250px;
+    width: 40%;
+    outline: none;
 }
 form p{
     margin: 0;
