@@ -1,0 +1,3 @@
+.products--search{display: flex;flex-direction: row;flex-wrap: wrap; columns: 10px;}
+.product__search--card{width:30%;display: flex;flex-direction: row; justify-content: space-around; align-items: center;
+margin:  0 auto; column-gap: 10px;}
