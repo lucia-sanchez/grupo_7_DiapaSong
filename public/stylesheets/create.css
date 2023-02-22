@@ -23,9 +23,24 @@ background-color: aqua;
     display: flex;
 }
 
+.form__create{
+    overflow: hidden;
+  position: relative;
+}
+.form__create--background{
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 .form__create div input{
     display: flex;
     width: 40%;
+    background-color: aliceblue;
+    opacity: 0.9;
 }
 .form__create div input:focus{
     display: flex;
@@ -46,6 +61,11 @@ justify-content: flex-start;
 }
 .form__create .form__create--radio input{
     width: 15px;
+    
+}
+.form__create .form__create--radio input:focus{
+    box-shadow: none;
+    width: 15px;
 }
 .form__create div label{
     display: flex;
@@ -65,7 +85,7 @@ justify-content: flex-start;
 .form__create .form__create--image-box label{
 }
 .form__create .form__create--image-box input{
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: flex-end;
 }

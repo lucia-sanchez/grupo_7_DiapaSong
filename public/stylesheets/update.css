@@ -1,0 +1,40 @@
+.form__update .form__create--image-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.form__update .form__create--image-box input{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+.form__update div label{
+    display: flex;
+    width: 31%;
+}
+.form__update .form__create--radio label{
+    
+    width: 40%;
+        
+    justify-content: flex-start;
+    }
+.form__update .form__create--radio input{
+        width: 15px;
+        
+    }
+.form__update .form__create--radio input:focus{
+        box-shadow: none;
+        width: 15px;
+    }
+.form__update div input{
+        display: flex;
+        width: 40%;
+        background-color: aliceblue;
+        opacity: 0.9;
+    }
+.form__update div input:focus{
+        display: flex;
+        width: 55%;
+        transition: all 500ms;
+        box-shadow: 3px 3px 10px 5px rgba(127, 30, 139, 0.568);    
+        outline:none
+    }
