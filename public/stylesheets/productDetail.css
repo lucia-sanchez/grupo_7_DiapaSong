@@ -111,19 +111,23 @@ line-height: 35px;
     justify-content: center;
     gap: 10px;
 }
+.main__section__productos__producto--imagen-detail{
+    height: 600px;
+    width: auto;
+    background-color:white;
+    margin: 20px;
+ }
+ .main__section__productos__producto--imagen-detail img{
+    height: 600px;
+    width: auto;
+ }
 
     @media (min-width: 768px) {
 
     }
-    @media (min-width: 1024px){
-        .main__section__productos-superior{
-justify-content: center;
-flex-wrap: nowrap;
+    @media (min-width: 1024px)
 
-        }
-        .detalle-producto figure img{
-height: auto;
-        }
-       
+    {
+     
         
         }
