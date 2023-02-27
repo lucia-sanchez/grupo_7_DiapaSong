@@ -142,7 +142,6 @@
     top: 18px;
     right: 25px;
     color: rgb(239, 177, 241);
-
 }
 
 .header--whatsapp-icon {
@@ -304,8 +303,7 @@
         width: auto;
         margin-top: 10px;
         align-self: flex-start;
-
-
+        margin-bottom: 0;
     }
 
     .header--search-bar input {
@@ -346,10 +344,9 @@
     }
 
     .header__nav ul li {
-       
-        margin: 0;
-        justify-content: flex-start;
-        padding: 13px 10px;
+        margin: 0;    
+        justify-content: flex-start;    
+        padding: 0px 10px;
     }
 
 
