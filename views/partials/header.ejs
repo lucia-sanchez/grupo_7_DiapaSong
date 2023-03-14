@@ -13,7 +13,8 @@
     <!--Iconos navegacion -->
     <section class="header__section--user-navigation">
         <% if (locals.userLogin) { %>
-            <a href="/users/profile">Hola <%= userLogin.name %><i class="fa-solid fa-user"></i></a>
+            <a href="/users/profile">Hola <%= userLogin.name %><i class="fa-regular fa-user"></i></a>
+            <a href="/users/profile">Salir<i class="fa-solid fa-xmark"></i></a>
         <% }else{ %>
         <a href="/users/login"><i class="fa-solid fa-user"></i></a>
         <% } %>

@@ -52,10 +52,16 @@ module.exports={
             console.log(req.session);
             return res.redirect('/')
         }else{
-           return res.render('login',{errors: errors.mapped()
+           return res.render('users/login',{
+            title: 'Inicio de Sesión',
+            errors: errors.mapped()
         })
         }
         
+    },
+    logOut:(req,res)=>{
+        req.session.destroy();
+        return res.redirect('/')
     },
     password: (req,res)=>{
         return res.render('password',{
