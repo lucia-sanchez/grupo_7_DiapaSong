@@ -1,5 +1,7 @@
-
+const fs = require('fs');
+const path = require('path');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const products = require('../data/products.json');
 
 module.exports ={
     index: (req,res) =>{
@@ -9,16 +11,20 @@ module.exports ={
     },
     search: (req,res) => {
         const {keywords} = req.query;
+ 
         const searchProduct = products.filter(({title, subtitle, description, model}) => 
                 title.toLowerCase().includes(keywords.toLowerCase())||
                 subtitle.toLowerCase().includes(keywords.toLowerCase())||
                 description.toLowerCase().includes(keywords.toLowerCase())||
                 model.toLowerCase().includes(keywords.toLowerCase()));
 
-        return res.render("result",{
-            ...searchProduct,
+        return res.render("results",{
+            searchProduct,
             toThousand,
-            keywords
+            keywords,
+            title: "Resultado de la busqueda",
+            
+
        }) 
        
     },

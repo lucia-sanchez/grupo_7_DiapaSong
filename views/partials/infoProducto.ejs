@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('./head') %> 
+
+<body>
+    
+        <!-- Producto -->
+      
+        <section class="main__section__productos_search">
+            <h4 class="productos_search--titulo"> <%= title %></h4>
+    
+                <article  class="product__search--card">
+                   
+                    <figure class="productos_search--img">
+                         <img class="search--img" src="/img/productos/<%= mainImage %>" alt="<%= title %>">
+                    </figure>
+                </article> 
+
+            <div class="product__search--card--buttons">
+             
+                <article class="product__search--card--precio">
+                    <h5>Precio: $ <%= price %></h5>
+                </article>
+
+                <article class="product__search--card--comprar">
+                    <a href="../productDetail/:id">ver mas</a>
+                </article>
+
+                <article class="product__search--card--agregar">
+                    <a href="/productCart" >Agregar al carrito</a>
+                </article>
+            </div>  
+           
+        </section>
+    
+</main>
+
+   
+   <!--Slick script-->
+<%- include('./scripts') %>
+</body>
+
+</html>

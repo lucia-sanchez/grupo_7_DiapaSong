@@ -13,8 +13,8 @@ router.get('/', products)
       .post('/create', uploadProductsImage.fields([{name:'mainImage'},{name:'images'}]), saveCreate)
       .get('/edit/:id', /*checkUserAdmin,*/ edit)
       .put('/update/:id', uploadProductsImage.fields([{name:'mainImage'},{name:'images'}]),update)
-      .get('/remove/:id', /*checkUserAdmin,*/ removeConfirm)
       .delete('/remove/:id', remove )
+       // .get('/remove/:id', /*checkUserAdmin,*/ removeConfirm)
       .get('/:category?', products)
       
 

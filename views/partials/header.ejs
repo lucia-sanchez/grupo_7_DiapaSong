@@ -12,15 +12,20 @@
     </figure>
     <!--Iconos navegacion -->
     <section class="header__section--user-navigation">
+        <% if (locals.userLogin) { %>
+            <a href="/users/profile">Hola <%= userLogin.name %><i class="fa-regular fa-user"></i></a>
+            <a href="/users/profile">Salir<i class="fa-solid fa-xmark"></i></a>
+        <% }else{ %>
         <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+        <% } %>
         <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
         <a class="header_redes" href="#"><i class="fa-brands fa-facebook"></i></a>
         <a class="header_redes" href="#"><i class="fa-brands fa-instagram"></i></a>
     </section>
     <!-- Buscador -->
-    <form class="header--search-bar" action="">
-        <input type="text" name="search-bar" placeholder="¿Que buscas?" id="search-bar">
-        <a class="lupa" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
+    <form class="header--search-bar" action="/search" method="GET">
+        <input type="text" name="keywords" placeholder="¿Que buscas?" id="search-bar">
+        <a class="lupa" href="/search"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
     </form>
     <!-- Icono Whatsap -->
     <div class="header--whatsapp-icon">

@@ -1,6 +1,8 @@
 const fs = require('fs');
 const users = require('../data/users.json');
 
+
+
 module.exports={
     register: (req,res)=>{
         return res.render('register', {
@@ -8,15 +10,15 @@ module.exports={
         });
     },
     saveRegister: (req,res)=>{
-        const {name,email,password,password2,identifyid,birthdate,tel,preferedgenre,preferedinstruments,news,terms}=req.body;
+        const {name,email,password,rol,identifyid,birthdate,tel,preferedgenre,preferedinstruments,news,terms}=req.body;
 
         const newUser={
-                id: users[users.length - 1].id + 1,
+                id: users.length ? users[users.length - 1].id + 1 : 1,
                 name: name.trim(),
                 email: email.trim(),
                 password: password,
-                password2: password2,
                 identifyid: +identifyid,
+                rol: rol.trim(),
                 birthdate: +birthdate,
                 tel: +tel,
                 preferedgenre: preferedgenre,
@@ -35,6 +37,31 @@ module.exports={
         return res.render('login',{
             title: "Inicio de sesión"
         });
+    },
+    processlogin:(req,res) =>{
+        const errors = validationResults(req);
+        if(errors.isEmpty()){
+
+            const {id,name,rol} =readJSON('users.json').find(user => user.email === req.body.email);
+
+            req.session.userLogin = {
+                id,
+                name,
+                rol
+            }
+            console.log(req.session);
+            return res.redirect('/')
+        }else{
+           return res.render('users/login',{
+            title: 'Inicio de Sesión',
+            errors: errors.mapped()
+        })
+        }
+        
+    },
+    logOut:(req,res)=>{
+        req.session.destroy();
+        return res.redirect('/')
     },
     password: (req,res)=>{
         return res.render('password',{
