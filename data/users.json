@@ -1,25 +1,11 @@
 [
    {
-      "id": 0,
-      "name": "",
-      "email": "",
-      "password": "",
-      "password2": "",
-      "identifyid": "",
-      "birthdate": "",
-      "tel": "",
-      "preferedgenre": "",
-      "preferedinstruments": "",
-      "news": "",
-      "terms": ""
-   },
-   {
       "id": 1,
       "name": "Luis Barrantes",
       "email": "luiyibarrantes@gmail.com",
       "password": "12341234",
-      "password2": "12341234",
       "identifyid": 12341234,
+
       "birthdate": null,
       "tel": 1158761351,
       "preferedgenre": [
@@ -35,13 +21,13 @@
    },
    {
       "id": 2,
-      "name": "Luis Barrantes",
-      "email": "luiyibarrantes@gmail.com",
-      "password": "12341234",
-      "password2": "12341234",
-      "identifyid": 12341234,
+      "name": "Lucia Sanchez",
+      "email": "lucia@gmail.com",
+      "password": "123123",
+      "identifyid": 123123,
+      "rol": "admin",
       "birthdate": null,
-      "tel": 1158761351,
+      "tel": 22311322,
       "preferedgenre": [
          "latino",
          "metal",
@@ -59,8 +45,8 @@
       "name": "Luisana Acosta",
       "email": "luisana@info.com.ar",
       "password": "12345678",
-      "password2": "12345678",
       "identifyid": 14568795,
+      "rol": "user",
       "birthdate": null,
       "tel": 11547895,
       "preferedgenre": [
@@ -77,8 +63,8 @@
       "name": "Marta Rulo",
       "email": "marta@rulo.net",
       "password": "12345678",
-      "password2": "12345678",
       "identifyid": 10854796,
+      "rol": "user",
       "birthdate": null,
       "tel": 116457832,
       "preferedgenre": [

@@ -12,7 +12,11 @@
     </figure>
     <!--Iconos navegacion -->
     <section class="header__section--user-navigation">
+        <% if (locals.userLogin) { %>
+            <a href="/users/profile">Hola <%= userLogin.name %><i class="fa-solid fa-user"></i></a>
+        <% }else{ %>
         <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+        <% } %>
         <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
         <a class="header_redes" href="#"><i class="fa-brands fa-facebook"></i></a>
         <a class="header_redes" href="#"><i class="fa-brands fa-instagram"></i></a>

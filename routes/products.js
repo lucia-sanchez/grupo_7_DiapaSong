@@ -11,7 +11,6 @@ router.get('/', products)
       .post('/create',uploadProductsImage.fields([{name:'mainImage'},{name:'images'}]), saveCreate)
       .get('/edit/:id',edit)
       .put('/update/:id', uploadProductsImage.fields([{name:'mainImage'},{name:'images'}]),update)
-      .get('/remove/:id',removeConfirm)
       .delete('/remove/:id', remove )
       .get('/:category', products)
       

@@ -97,8 +97,8 @@
                 
             </div>
                 <div>
-                    <form class="form__delete" action="/products/remove/<%=id%>?_method=DELETE" method="POST">
-                        <button class="btn--crear-cuenta">eliminar producto</button>
+                    <form class="form__delete" id="form_delete" action="/products/remove/<%=id%>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn--crear-cuenta">eliminar producto</button>
                     </form>
                 </div>
             </div>
@@ -124,6 +124,9 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
             <script src="../javascript/dinamic.js"></script>
+            <!-- SweetAlert2 -->
+	        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+            <script src="/javascript/alert_delete.js"></script>
     </div>
 </body>
 
