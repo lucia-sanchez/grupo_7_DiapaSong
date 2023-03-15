@@ -294,7 +294,7 @@ header .header__section--user-navigation-logged{
         width: auto;
         text-align: center;
         position: relative;
-        right:50px;
+        /* right:50px; */
         top: 35px;
         justify-content: center;
         float: left;
@@ -329,6 +329,12 @@ header .header__section--user-navigation-logged{
         margin: 0 14px -4px;
         text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
     }
+    .header .header__section--user-navigation-logged{
+        width: 200px;
+        position: relative;
+        right: -35px;
+       
+    }
 
 
     .header--search-bar {
@@ -357,13 +363,13 @@ header .header__section--user-navigation-logged{
         display: flex;
         justify-content: flex-start;
         margin: 0;
-        width: auto;
+        width: 800px;
         order: 3;
         padding:0;
         background: none;
         position: relative;
         top: -10px;
-        left: 140px;
+        left: 106px;
     }
 
     .header__nav ul {
@@ -436,24 +442,28 @@ header .header__section--user-navigation-logged{
         z-index: 100;
         background: linear-gradient(63deg, rgb(36, 12, 65) 11%, rgb(6, 2, 75) 21%, rgb(68, 9, 128) 37%, rgb(127, 26, 185) 56%, rgb(124, 14, 175) 74%, rgb(36, 6, 44) 100%);
         display: flex;
-        justify-content: center;
-        flex-wrap: nowrap;
         height: 80px;
         transition: all 1s;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
     }
     .header-scroll .header--search-bar {
-        width: 170px;
+        display: flex;
+        width: 15%;
         padding: 0;
-        position: relative;
-        top: -20px;
-        
-        left: -15px;
-        
+        /* position: relative; */
+        top: 20px;
+        left: 4px;
+        margin: 0;
     }
     .header-scroll .header--search-bar input {
-        width: 140px;
-       
-      
+        width: 100%;
+        margin: 0;
+    }
+    .header-scroll .header--search-bar .lupa{
+        top: -7px;
+        right: 34px;
     }
     .header-scroll .header--search-bar .lupa i{
         font-size: 15px;
@@ -464,16 +474,27 @@ header .header__section--user-navigation-logged{
         text-align: left;
         }
     .header-scroll .header__nav {
-        width: 400px;
-        top: -2px;
-        left: -25px
+        width: 51%;
+        top: 0px;
+        left: -23px;
     }
-
+    .header-scroll .header__nav ul {
+        width: 32%;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        /* min-width: 400px; */
+        align-items: center;
+    }
+    
     .header-scroll .header__nav ul li {
         margin: 0;
         justify-content: flex-start;
-        padding: 5px;
-
+        padding: 0 4px;
+    }
+    .header-scroll .header__nav ul li a{
+        font-size: small;
     }
      body.header-scroll {
         padding-top: 300px;
@@ -481,7 +502,7 @@ header .header__section--user-navigation-logged{
     }
     .header-scroll .header--logo {
         top: 0;
-        margin-left: -300px;
+        /* margin-left: -300px; */
     }
 
     .header-scroll .header--logo img {
@@ -508,7 +529,10 @@ header .header__section--user-navigation-logged{
         margin-top: 10px;
 
     }
-
+    .header-scroll .header__section--user-navigation-logged{
+        right: 0;
+        order: 4;
+    }
     .scroll_main_space_top{
         background-color:var(--colorFondoBody);
         padding-top: 190px !important;

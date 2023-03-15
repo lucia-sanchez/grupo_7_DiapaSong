@@ -57,10 +57,23 @@
 .btn--login,
 .btn--register {
     background-color: rgb(243 238 238);
-    border: 3px solid #000000;
+    border: 2px solid #000000;
     border-radius: 15px;
     text-transform: uppercase;
-    padding: 15px;
+    padding: 5px;
+    width: 200px;
+    transition: all 0.5s;
+    text-align: center;
+    background: rgba(255, 252, 252, 0.5);
+}
+
+.btn--register:hover{
+    background-color: rgb(150 119 255 / 36%);
+    box-shadow: 0px 0px 18px 1px rgb(129 129 129);
+    width: 230px;
+    font-size: large;
+    text-decoration: none;
+    color:#000000
 }
 
 /* TABLET */
