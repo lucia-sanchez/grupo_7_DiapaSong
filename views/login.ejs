@@ -18,17 +18,19 @@
                 <!-- E-MAIL -->
                 <div>
                     <label for="email">email</label>
-                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail" required>
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail">
+                    <small class="login__formbox__div__errors"><%= (locals.errors && errors.email) && errors.email.msg %></small>
                 </div>
                 <!-- PASSWORD -->
                 <div>
                     <label for="password">contraseña</label>
                     <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña"
-                        minlength="8" required>
+                        >
+                        <small class="login__formbox__div__errors"><%= (locals.errors && errors.password) && errors.password.msg %></small>
                 </div>
                 <!-- BOTONES LOGIN Y register -->
                 <div class="login__formbox--btn-box">
-                    <button class="btn--crear-cuenta" type="submit"><a href="/">iniciar sesión</a></button>
+                    <button class="btn--crear-cuenta" type="submit"><!-- <a href="/"> -->iniciar sesión<!-- </a> --></button>
 
                     <button class="btn--crear-cuenta" type="reset"><a href="/users/register">crear cuenta</a></button>
                 </div>

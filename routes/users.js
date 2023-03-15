@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {register,login,processlogin,password,saveRegister, logOut} = require('../controllers/userController');
+const {register,login,processlogin,password,saveRegister, logOut, profile} = require('../controllers/userController');
 const loginUserValidator = require('../validations/loginUserValidator');
 const checkUserGuest = require('../middlewares/checkUserGuest');
 /* users */
@@ -10,6 +10,7 @@ router
         .post('/register', saveRegister)
         .get('/login', /*checkUserGuest,*/ login)
         .post('/login', loginUserValidator, processlogin)
+        .get('/profile', profile)
         .get('/password', password)
         .get('/logOut', logOut)
 

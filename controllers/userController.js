@@ -1,7 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 const users = require('../data/users.json');
-
-
+const {validationResult} = require('express-validator');
+const {hashSync} = require('bcryptjs')
 
 module.exports={
     register: (req,res)=>{
@@ -16,7 +17,7 @@ module.exports={
                 id: users.length ? users[users.length - 1].id + 1 : 1,
                 name: name.trim(),
                 email: email.trim(),
-                password: password,
+                password: hashSync(password,12),
                 identifyid: +identifyid,
                 rol: rol.trim(),
                 birthdate: +birthdate,
@@ -39,10 +40,10 @@ module.exports={
         });
     },
     processlogin:(req,res) =>{
-        const errors = validationResults(req);
+        const errors = validationResult(req);
         if(errors.isEmpty()){
 
-            const {id,name,rol} =readJSON('users.json').find(user => user.email === req.body.email);
+            const {id,name,rol} = JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id,
@@ -52,7 +53,10 @@ module.exports={
             console.log(req.session);
             return res.redirect('/')
         }else{
-           return res.render('users/login',{
+            //return res.send(errors)
+            
+            //return res.send(JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email))
+           return res.render('login',{
             title: 'Inicio de Sesión',
             errors: errors.mapped()
         })
@@ -67,5 +71,13 @@ module.exports={
         return res.render('password',{
             title: "Recuperar Contraseña"
         });
+    },
+    profile : (req,res) => {
+        return res.send(req.session)
+        return res.render('user',{
+            title : "Perfil de usuario",
+            name: req.session.userLogin.name
+        
+        })
     }
 }

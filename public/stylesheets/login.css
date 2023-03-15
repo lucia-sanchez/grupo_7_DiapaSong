@@ -36,6 +36,9 @@
     flex-direction: column;
     width: 100%;
 }
+.login__formbox__div__errors{
+    color: red
+}
 
 .login__formbox label {
     width: 100%;

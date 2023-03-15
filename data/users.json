@@ -5,7 +5,7 @@
       "email": "luiyibarrantes@gmail.com",
       "password": "12341234",
       "identifyid": 12341234,
-
+      "rol": "admin",
       "birthdate": null,
       "tel": 1158761351,
       "preferedgenre": [
