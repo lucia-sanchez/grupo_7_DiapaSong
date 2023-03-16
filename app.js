@@ -12,6 +12,7 @@ const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const ticketsRouter = require('./routes/tickets');
 const localsUserCheck = require('./middlewares/localsUserCheck');
+const cookieCheck = require("./middlewares/cookieCheck");
 
 const app = express();
 
@@ -31,6 +32,7 @@ app
   resave: false,
   saveUninitialized: true
 }))
+.use(cookieCheck)
 .use(localsUserCheck)
 
 //RUTAS
