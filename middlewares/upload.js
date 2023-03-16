@@ -14,6 +14,20 @@ const uploadProductsImage = multer({
     storage: storageProductsImage
 });
 
+const storageUserImage = multer.diskStorage({
+    destination : function (req,file,callback) {
+        callback(null, 'public/img/users')
+    },
+    filename: function (req,file,callback) {
+        callback(null, `${Date.now()}_user_${path.extname(file.originalname)}`)
+    }
+});
+
+const uploadUserImage = multer({
+    storage: storageUserImage
+});
+
 module.exports = {
-    uploadProductsImage
+    uploadProductsImage, 
+    uploadUserImage
 }

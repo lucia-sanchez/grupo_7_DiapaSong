@@ -15,19 +15,20 @@ module.exports={
 
         const newUser={
                 id: users.length ? users[users.length - 1].id + 1 : 1,
+                mainImage : req.file? req.file.filename : null,
                 name: name.trim(),
                 email: email.trim(),
                 password: hashSync(password,12),
                 identifyid: +identifyid,
-                rol: rol.trim(),
-                birthdate: +birthdate,
+                rol: "user",
+                birthdate: birthdate,
                 tel: +tel,
                 preferedgenre: preferedgenre,
                 preferedinstruments: preferedinstruments,
                 news: news,
                 terms: terms
                         }
-        
+        //return console.log(req.file);// res.send();
         users.push(newUser);
 
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 3), 'utf-8')
@@ -50,6 +51,11 @@ module.exports={
                 name,
                 rol
             }
+
+            if(req.body.remember){
+                res.cookie('userDiapasong',req.session.userLogin,{maxAge: 1000*60} )
+           }
+
             console.log(req.session);
             return res.redirect('/')
         }else{
@@ -73,7 +79,7 @@ module.exports={
         });
     },
     profile : (req,res) => {
-        return res.send(req.session)
+        //return res.send(req.session.userLogin.name)
         return res.render('user',{
             title : "Perfil de usuario",
             name: req.session.userLogin.name
