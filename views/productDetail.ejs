@@ -72,7 +72,8 @@
               </p>
             </div>
           </article>
-          <div class="product-buttons">
+          <% if (locals.userLogin === "admin") { %>
+            <div class="product-buttons">
             <div>
               <a href="/products/edit/<%=id%>"><button class="btn--crear-cuenta">editar producto</button></a>
             </div>
@@ -82,6 +83,9 @@
                     </form>
                 </div>
             </div>
+    
+        <% } %>
+         
           </div>
         </section> </div>
       </main>

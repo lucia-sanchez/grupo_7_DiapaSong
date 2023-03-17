@@ -8,9 +8,9 @@ const { uploadUserImage } = require('../middlewares/upload');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 /* users */
 router
-        .get('/register', /*checkUserGuest,*/ register)
+        .get('/register', checkUserGuest, register)
         .post('/register',uploadUserImage.single('mainImage'), saveRegister)
-        .get('/login', /*checkUserGuest,*/ login)
+        .get('/login', checkUserGuest, login)
         .post('/login', loginUserValidator, processlogin)
         .get('/profile', checkUserLogin, profile)
         .get('/password', password)

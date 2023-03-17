@@ -92,9 +92,13 @@
                         <span class="sr-only">Next</span>
                       </a>
               </div>
-              <div class="productos--crearProductos">
+              <% if (locals.userLogin === "admin") { %>
+                <div class="productos--crearProductos">
           <a href="/products/create" ><button class="btn--crear-prod">crear
               producto</button></a>
+        
+            <% } %>
+              
         </div>
         </section>
         
