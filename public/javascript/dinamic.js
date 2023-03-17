@@ -8,7 +8,7 @@ window.addEventListener("scroll", function () {
     header.classList.toggle("header-scroll", window.scrollY > 1);
 });
 
-//Menu desplegable//
+//Menu desplegable header//
 const btnmenu = document.querySelector("#iconomenu");
 
 const menu = document.querySelector("#header_nav");
@@ -19,4 +19,4 @@ btnmenu.addEventListener("click", function () {
 $('.carousel').carousel({
     interval: 0
   })
-  
+

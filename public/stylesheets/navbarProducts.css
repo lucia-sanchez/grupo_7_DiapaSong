@@ -1,6 +1,8 @@
-.main_section_nav_categorias{
-    display: none;
-}
+.menuCatMobile{
+  background-color: rgb(147, 120, 172);
+margin-bottom: 2px;}
+
+
 
     
 @media (min-width: 768px) {
@@ -8,17 +10,22 @@
 }
 @media (min-width: 1024px){
     /*NABBAR*/
+ 
+    .menuCatMobile{
+      background: none
+      }
 .main__section__nav{
     display: flex;
      flex-direction: column;
      width: 190px;
  
    margin-right: 8px;
-   background-color: rgb(147, 120, 172);
+   
  }
  .main_section_nav_categorias{
      display: flex;
- padding-left: 10px;}
+ padding-left: 10px;
+ background-color: rgb(147, 120, 172);;}
  
  .main__section__nav--titulo{
  background-color: black;

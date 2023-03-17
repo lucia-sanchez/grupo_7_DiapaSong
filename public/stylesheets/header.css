@@ -123,7 +123,7 @@ header .header__section--user-navigation-logged{
 }
 
 .mostrar-menu {
-    display: flex;
+    display: flex;   
     margin-right: 0;
     position: fixed;
     top: 190px;
@@ -309,15 +309,24 @@ header .header__section--user-navigation-logged{
     }
 
     .header--logo {
-flex-direction: column;
-width: auto;
-text-align: center;
-position: relative;
-right: -23px;
-top: 24px;
-justify-content: center;
-float: left;
-}
+
+flex-direction: column;
+
+width: auto;
+
+text-align: center;
+
+position: relative;
+
+right: -23px;
+
+top: 24px;
+
+justify-content: center;
+
+float: left;
+
+}
 
     .header--logo img {
         margin-bottom: 5px;

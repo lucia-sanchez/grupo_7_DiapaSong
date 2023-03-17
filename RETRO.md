@@ -12,4 +12,4 @@
 
 ## Retrospective Sprint 4
 
-![Retrospective-Sprint3](/design/Retro-sprint4.jpg)
+![Retrospective-Sprint4](/design/Retro-sprint4.jpg)
