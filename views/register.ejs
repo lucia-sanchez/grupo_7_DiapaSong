@@ -43,8 +43,10 @@
                 <!-- NOMBRE Y APELLIDO -->
                 <div>
                     <label for="name">nombre y apellido</label>
-                    <input type="text" name="name" id="name" placeholder="Juan Perez" required>
+                    <input type="text" name="name" id="name" placeholder="Juan Perez"  value="<%= locals.old && old.name ? old.name : null %>">
+                    
                 </div>
+                <small class="login__formbox__div__errors"><%= locals.errors && errors.name ?  errors.name.msg : null %></small>
                 <!-- IMAGEN -->
                 <div class="form__create--image-box">                        
                     <label for="mainImage">imagen de perfil</label>
@@ -53,36 +55,40 @@
                 <!-- E-MAIL -->
                 <div>
                     <label for="email">email</label>
-                    <input type="email" name="email" id="email" placeholder="Juanperez@ejemplo.com" required>
-                </div>
+                    <input type="email" name="email" id="email" placeholder="Juanperez@ejemplo.com" value="<%= (locals.old && old.email) && old.email  %>">
+                    
+                </div><small class="login__formbox__div__errors"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 <!-- PASSWORD -->
                 <div>
                     <label for="password">contraseña</label>
                     <input type="password" name="password" id="password" placeholder="Minimo 8 caracteres alfanumericos"
-                        minlength="8" required>
-                </div>
+                        >
+                    
+                </div><small class="login__formbox__div__errors"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
                 <!-- CONFIRMAR PASSWORD -->
                 <div>
                     <label for="password2">confirmar contraseña</label>
                     <input type="password" name="password2" id="password2"
-                        placeholder="Debe coincidir con tu contraseña" required>
-                </div>
+                        placeholder="Debe coincidir con tu contraseña" >
+                    
+                </div><small class="login__formbox__div__errors"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
                 <!-- DNI -->
                 <div>
                     <label for="identifyid">documento</label>
                     <input type="number" name="identifyid" id="identifyid"
-                        placeholder="Ingresa tu DNI sin espacios ni guiones" minlength="7" maxlength="8" required>
-                </div>
+                        placeholder="Ingresa tu DNI sin espacios ni guiones" >
+                    
+                </div><small class="login__formbox__div__errors"><%= locals.errors && errors.identifyid ? errors.identifyid.msg : null %></small>
                 <!-- FECHA DE NACIMIENTO -->
                 <div>
                     <label for="birthdate">fecha de nacimiento</label>
-                    <input type="date" name="birthdate" id="birthdate" required>
+                    <input type="date" name="birthdate" id="birthdate">
                 </div>
                 <!-- TELEFONO -->
                 <div>
                     <label for="tel">telefono</label>
                     <input type="tel" name="tel" id="tel" placeholder="Ingresa codigo de area seguido de tu teléfono"
-                        required>
+                        >
                 </div>
                 <!-- CHECKBOX GENEROS -->
                 <div class="form__checkbox">
@@ -132,9 +138,10 @@
                 </div>
                 <!-- CHECKBOX TERMINOS Y CONDICIONES -->
                 <div class="form__checkbox--terminos">
-                    <input type="checkbox" name="terms" id="terms" required>
+                    <input type="checkbox" name="terms" id="terms" <%= (locals.old && old.terms === true) && 'checked' %>>
                     <label for="terms">Acepto terminos y condiciones</label>
-                </div>
+                    
+                </div><small class="login__formbox__div__errors"><%= locals.errors && errors.terms ? errors.terms.msg : null %></small>
                 <!-- BOTON CREAR CUENTA -->
                 <div class="form__btn-box">
                     <button class="btn--crear-cuenta" type="submit">crear cuenta</button>

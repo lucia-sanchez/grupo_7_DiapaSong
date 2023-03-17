@@ -6,10 +6,11 @@ const loginUserValidator = require('../validations/loginUserValidator');
 const checkUserGuest = require('../middlewares/checkUserGuest');
 const { uploadUserImage } = require('../middlewares/upload');
 const checkUserLogin = require('../middlewares/checkUserLogin');
+const registerUserValidator = require('../validations/registerUserValidator');
 /* users */
 router
-        .get('/register', checkUserGuest, register)
-        .post('/register',uploadUserImage.single('mainImage'), saveRegister)
+        .get('/register', checkUserGuest,  register)
+        .post('/register', registerUserValidator, uploadUserImage.single('mainImage'), saveRegister)
         .get('/login', checkUserGuest, login)
         .post('/login', loginUserValidator, processlogin)
         .get('/profile', checkUserLogin, profile)

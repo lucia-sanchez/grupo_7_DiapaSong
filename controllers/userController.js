@@ -11,6 +11,11 @@ module.exports={
         });
     },
     saveRegister: (req,res)=>{
+
+        const errors = validationResult(req);
+
+        if(errors.isEmpty()){
+
         const {name,email,password,rol,identifyid,birthdate,tel,preferedgenre,preferedinstruments,news,terms}=req.body;
 
         const newUser={
@@ -33,7 +38,21 @@ module.exports={
 
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 3), 'utf-8')
         /* return console.log(req.body) */
-        return res.redirect('/users/login')
+        return res.redirect('/login')
+
+        }else{
+            console.log(req.body)
+            
+            console.log(errors.mapped());
+            return res.send({title: "Registro de Usuario",        
+            errors: errors.mapped(),
+            old : req.body})/* res.render('register', {
+            title: "Registro de Usuario",        
+            errors: errors.mapped(),
+            old : req.body,
+            
+            } ) */ 
+        }
     },
     login: (req,res)=>{
         return res.render('login',{
