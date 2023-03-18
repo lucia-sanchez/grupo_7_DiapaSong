@@ -38,7 +38,7 @@ module.exports={
 
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 3), 'utf-8')
         /* return console.log(req.body) */
-        return res.redirect('/login')
+        return res.redirect('/users/login')
 
         }else{
             console.log(req.body)
