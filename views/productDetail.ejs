@@ -1,100 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <!-- HEAD -->
-<%- include('./partials/head') %> 
+<%- include('./partials/head') %>
 
-<body>
-    
-<!-- HEADER -->
+  <body>
+    <!-- HEADER -->
+    <%- include('./partials/header') %>
 
-<%- include('./partials/header') %> 
-
-    <!-- Main -->
-    <main class="productos__main productos__main-detail" id="space_complement">
+      <!-- Main -->
+      <main class="productos__main productos__main-detail" id="space_complement">
         <section class="main__section__nav">
-            <!-- Menu navegacion -->
-            <%- include('./partials/navbarProducts') %> 
+          <!-- Menu navegacion -->
+          <%- include('./partials/navbarProducts') %>
         </section>
         <!-- Productos -->
-      
+        <div class="main__section-product">
         <section class="main__section__productos main__section__productos-detalles">
-  <h4 class="productos_detalles-titulo"> <%= title %></h4>
-       
-            
-            
-          
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="main__section__productos-superior">
-                        
-                        <div class="carousel-item active">
-                            <article  class="main__section__productos--producto detalle-producto">
+          <h4 class="productos_detalles-titulo">
+            <%= title %>
+          </h4>
 
-                                    <figure class="main__section__productos__producto--imagen">
-                                        <img src="/img/productos/<%= mainImage %>" alt="<%= title %>">
-                                    </figure>
-                                   
-                            </article>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"
-                    data-touch="true">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                </div>
-            </section>
-            
+          <figure class="main__section__productos__producto--imagen-detail">
+            <img src="/img/productos/<%= mainImage %>" alt="<%= title %>" />
+          </figure>
+        </section>
+     
         <section class="detalles_producto">
-            <article class="detalle-producto-precio">
-                <h5>Precio: $ <%= price %></h5>
-            </article>
-            <article class="detalle-producto-comprar">
-                <a href="#">COMPRAR</a>
-            </article>
-            <article class="detalle-producto-agregar">
-                <a href="/productCart" >Agregar al carrito</a>
-            </article>
-            <article class="detalle-producto-medios">
-                <h5>Medios de pago:</h5>
-                <figure>
-                    <img src="/img/productos/mediosdepagodetalleproducto.png" alt="Medios de pago">
-                </figure>
-            </article>
+          <article class="detalle-producto-precio">
+            <h5>Precio: $ <%= price %>
+            </h5>
+          </article>
+          <article class="detalle-producto-comprar">
+            <a href="#">COMPRAR</a>
+          </article>
+          <article class="detalle-producto-agregar">
+            <a href="/productCart">Agregar al carrito</a>
+          </article>
+          <article class="detalle-producto-medios">
+            <h5>Medios de pago:</h5>
+            <figure>
+              <img src="/img/productos/mediosdepagodetalleproducto.png" alt="Medios de pago" />
+            </figure>
+          </article>
 
-            <article class="detalle_producto-descripcion">
-                <hr>
-                <h5>Decripción:</h5>
-                <p><%= description %>></p>
-                    <hr>
-            </article>
-            <article class="detalle_producto-caracteristicas">
-             
-                <h5>Caracteristicas:</h5>
-                <div class="detalle_producto-caracteristicas-grisClaro">
-                    <h6>Modelo</h6>
-                    <p><%= model %> </p>
-                </div>
-                <div class="detalle_producto-caracteristicas-grisOscuro">
-                    <h6>Color</h6>
-                    <p> <%= colour %> </p>
-                </div>
-                <div class="detalle_producto-caracteristicas-grisClaro">
-                    <h6>stock</h6>
-                    <p><%= stock %> </p>
-                </div>
-
-            </article>
-           <div class="product-buttons">
+          <article class="detalle_producto-descripcion">
+            <hr />
+            <h5>Decripción:</h5>
+            <p>
+              <%= description %>>
+            </p>
+            <hr />
+          </article>
+          <article class="detalle_producto-caracteristicas">
+            <h5>Caracteristicas:</h5>
+            <div class="detalle_producto-caracteristicas-grisClaro">
+              <h6>Modelo</h6>
+              <p>
+                <%= model %>
+              </p>
+            </div>
+            <div class="detalle_producto-caracteristicas-grisOscuro">
+              <h6>Color</h6>
+              <p>
+                <%= colour %>
+              </p>
+            </div>
+            <div class="detalle_producto-caracteristicas-grisClaro">
+              <h6>stock</h6>
+              <p>
+                <%= stock %>
+              </p>
+            </div>
+          </article>
+          <% if (locals.userLogin === "admin") { %>
+            <div class="product-buttons">
             <div>
-                <a href="/products/edit/<%=id%>"><button class="btn--crear-cuenta">editar producto</button></a>
-                
+              <a href="/products/edit/<%=id%>"><button class="btn--crear-cuenta">editar producto</button></a>
             </div>
                 <div>
                     <form class="form__delete" id="form_delete" action="/products/remove/<%=id%>?_method=DELETE" method="POST">
@@ -102,25 +83,23 @@
                     </form>
                 </div>
             </div>
-            
-           
-            
-                
-                
-        
- </section>
-</main>
-<!-- FOOTER -->
-<%- include('./partials/footer') %> 
     
-    <div class="eliminar_carrousel">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        <% } %>
+         
+          </div>
+        </section> </div>
+      </main>
+      <!-- FOOTER -->
+      <%- include('./partials/footer') %>
+
+        <div class="eliminar_carrousel">
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
             <script src="../javascript/dinamic.js"></script>

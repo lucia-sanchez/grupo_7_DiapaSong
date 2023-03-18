@@ -5,7 +5,7 @@
       "email": "luiyibarrantes@gmail.com",
       "password": "12341234",
       "identifyid": 12341234,
-
+      "rol": "admin",
       "birthdate": null,
       "tel": 1158761351,
       "preferedgenre": [
@@ -78,6 +78,21 @@
          "viento",
          "percusión"
       ],
+      "news": "on",
+      "terms": "on"
+   },
+   {
+      "id": 5,
+      "mainImage": "1678922516694_user_.jpg",
+      "name": "luiyi",
+      "email": "luiyiadmin@admin.com",
+      "password": "$2a$12$QV69DXFfifOxXLgHjAhBbOuRZF3ePbQd8J4N0KgsXJWUXdD0AdBqy",
+      "identifyid": 12341234,
+      "rol": "admin",
+      "birthdate": "1234-03-12",
+      "tel": 12341324,
+      "preferedgenre": "latino",
+      "preferedinstruments": "cuerda",
       "news": "on",
       "terms": "on"
    }

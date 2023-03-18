@@ -1,7 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 const users = require('../data/users.json');
-
-
+const {validationResult} = require('express-validator');
+const {hashSync} = require('bcryptjs')
 
 module.exports={
     register: (req,res)=>{
@@ -14,19 +15,20 @@ module.exports={
 
         const newUser={
                 id: users.length ? users[users.length - 1].id + 1 : 1,
+                mainImage : req.file? req.file.filename : null,
                 name: name.trim(),
                 email: email.trim(),
-                password: password,
+                password: hashSync(password,12),
                 identifyid: +identifyid,
-                rol: rol.trim(),
-                birthdate: +birthdate,
+                rol: "user",
+                birthdate: birthdate,
                 tel: +tel,
                 preferedgenre: preferedgenre,
                 preferedinstruments: preferedinstruments,
                 news: news,
                 terms: terms
                         }
-        
+        //return console.log(req.file);// res.send();
         users.push(newUser);
 
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 3), 'utf-8')
@@ -39,20 +41,28 @@ module.exports={
         });
     },
     processlogin:(req,res) =>{
-        const errors = validationResults(req);
+        const errors = validationResult(req);
         if(errors.isEmpty()){
 
-            const {id,name,rol} =readJSON('users.json').find(user => user.email === req.body.email);
+            const {id,name,rol} = JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id,
                 name,
                 rol
             }
+
+            if(req.body.remember){
+                res.cookie('userDiapasong',req.session.userLogin,{maxAge: 1000*60} )
+           }
+
             console.log(req.session);
             return res.redirect('/')
         }else{
-           return res.render('users/login',{
+            //return res.send(errors)
+            
+            //return res.send(JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email))
+           return res.render('login',{
             title: 'Inicio de Sesión',
             errors: errors.mapped()
         })
@@ -67,5 +77,13 @@ module.exports={
         return res.render('password',{
             title: "Recuperar Contraseña"
         });
+    },
+    profile : (req,res) => {
+        //return res.send(req.session.userLogin.name)
+        return res.render('user',{
+            title : "Perfil de usuario",
+            name: req.session.userLogin.name
+        
+        })
     }
 }
