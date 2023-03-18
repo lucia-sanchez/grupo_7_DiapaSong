@@ -77,6 +77,9 @@
     display: flex;
     justify-content: center;
 }
+.register__formbox__div__errors{
+    color: red
+}
 /* TABLET */
 @media (min-width: 768px) {
     .register__main__section {

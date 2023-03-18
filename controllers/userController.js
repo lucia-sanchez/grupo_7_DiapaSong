@@ -44,14 +44,14 @@ module.exports={
             console.log(req.body)
             
             console.log(errors.mapped());
-            return res.send({title: "Registro de Usuario",        
-            errors: errors.mapped(),
-            old : req.body})/* res.render('register', {
+            return res.render('register', {
             title: "Registro de Usuario",        
             errors: errors.mapped(),
             old : req.body,
             
-            } ) */ 
+            } )/* res.send({title: "Registro de Usuario",        
+            errors: errors.mapped(),
+            old : req.body}) */ 
         }
     },
     login: (req,res)=>{

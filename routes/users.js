@@ -10,7 +10,7 @@ const registerUserValidator = require('../validations/registerUserValidator');
 /* users */
 router
         .get('/register', checkUserGuest,  register)
-        .post('/register', registerUserValidator, uploadUserImage.single('mainImage'), saveRegister)
+        .post('/register',  uploadUserImage.single('mainImage'), registerUserValidator, saveRegister)
         .get('/login', checkUserGuest, login)
         .post('/login', loginUserValidator, processlogin)
         .get('/profile', checkUserLogin, profile)
