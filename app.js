@@ -32,8 +32,8 @@ app
   resave: false,
   saveUninitialized: true
 }))
-.use(cookieCheck)
-.use(localsUserCheck)
+.use(cookieCheck) //cargo en session lo que hay en la cookie
+.use(localsUserCheck) //cargo en locals lo que hay en session
 
 //RUTAS
 app.use('/', indexRouter);

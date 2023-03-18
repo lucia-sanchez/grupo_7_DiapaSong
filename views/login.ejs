@@ -18,21 +18,26 @@
                 <!-- E-MAIL -->
                 <div>
                     <label for="email">email</label>
-                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail">
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail" value="<%= (locals.old && old.email) && old.email%>">
                     <small class="login__formbox__div__errors"><%= (locals.errors && errors.email) && errors.email.msg %></small>
                 </div>
                 <!-- PASSWORD -->
                 <div>
                     <label for="password">contraseña</label>
-                    <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña"
-                        >
+                    <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
                         <small class="login__formbox__div__errors"><%= (locals.errors && errors.password) && errors.password.msg %></small>
                 </div>
+                <label for="remember" class="form__checkbox--novedades">
+                <input type="checkbox"  name="remember" id="remember" class="form__checkbox--novedades">
+                  Recuerdame</label>
                 <!-- BOTONES LOGIN Y register -->
                 <div class="login__formbox--btn-box">
                     <button class="btn--crear-cuenta" type="submit"><!-- <a href="/"> -->iniciar sesión<!-- </a> --></button>
 
                     <a href="/users/register" class="btn--register" >crear cuenta</a>
+                </div>
+                <div>
+                    
                 </div>
 
             </form>

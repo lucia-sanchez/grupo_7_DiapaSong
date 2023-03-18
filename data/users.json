@@ -95,5 +95,28 @@
       "preferedinstruments": "cuerda",
       "news": "on",
       "terms": "on"
+   },
+   {
+      "id": 6,
+      "mainImage": null,
+      "name": "Lucia Sanchez",
+      "email": "lucia@admin.com",
+      "password": "$2a$12$HGCdkSx2o5YnN6sdYhO3TepH4nx6EmN2cAe30HLHAWsvzy.cm5Fbq",
+      "identifyid": 35206384,
+      "rol": "admin",
+      "birthdate": "1990-08-03",
+      "tel": 0,
+      "preferedgenre": [
+         "latino",
+         "rock",
+         "jazz",
+         "alternativo"
+      ],
+      "preferedinstruments": [
+         "cuerda",
+         "percusión"
+      ],
+      "news": "on",
+      "terms": "on"
    }
 ]

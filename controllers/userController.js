@@ -61,21 +61,25 @@ module.exports={
     },
     processlogin:(req,res) =>{
         const errors = validationResult(req);
+        
+
         if(errors.isEmpty()){
 
-            const {id,name,rol} = JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email);
+            const {id,name,rol, } = JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email);
 
             req.session.userLogin = {
                 id,
                 name,
-                rol
+                rol,
+    
+               
             }
 
             if(req.body.remember){
                 res.cookie('userDiapasong',req.session.userLogin,{maxAge: 1000*60} )
            }
 
-            console.log(req.session);
+            //console.log(req.session);
             return res.redirect('/')
         }else{
             //return res.send(errors)
@@ -83,7 +87,8 @@ module.exports={
             //return res.send(JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email))
            return res.render('login',{
             title: 'Inicio de Sesión',
-            errors: errors.mapped()
+            errors: errors.mapped(),
+            old : req.body,
         })
         }
         

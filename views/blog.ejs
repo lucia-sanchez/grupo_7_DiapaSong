@@ -13,48 +13,7 @@
 <!-- VISTA FAQ -->
 <body class="faq">
     <!-- HEADER -->
-    <header class="header">
-
-        <!-- Icono menu -->
-        <button class="header--btn-menu" id="iconomenu">
-            <i class="fa-solid fa-bars ubtn" id="iconomenu"></i>
-        </button>
-        <!-- Logo -->
-        <figure class="header--logo">
-            <a href="/"><img src="img/logoDiapasong.png" alt="Image-logo">
-                <h1>Instrumentos Musicales</h1>
-            </a>
-        </figure>
-        <!--Iconos navegacion -->
-        <section class="header__section--user-navigation">
-            <a href="/login"><i class="fa-solid fa-user"></i></a>
-            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a class="header_redes" href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a class="header_redes" href="#"><i class="fa-brands fa-instagram"></i></a>
-        </section>
-        <!-- Buscador -->
-        <form class="header--search-bar" action="">
-            <input type="text" name="search-bar" placeholder="¿Que buscas?" id="search-bar">
-            <a class="lupa" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
-        </form>
-        <!-- Icono Whatsap -->
-        <div class="header--whatsapp-icon">
-            <a href="#"><i class="fa-solid fa-phone"></i><span class="Whatsapp-text">Whatsapp</span></a>
-
-
-        </div>
-
-        <!-- Menu -->
-        <nav class="header__nav" id="header_nav">
-            <ul>
-                <li class="productos_btn"><a href="/products">Productos</a></li>
-                <li class="blob_btn"><a href="/blog">Blog</a></li>
-                <li class="entradas_btn"><a href="tickets">Entradas</a></li>
-                <li class="envios_btn"><a href="/#about">Quienes somos!</a></li>
-                <li class="faq_btn"><a href="/faq">Faq</a></li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/header') %> 
     <!-- MAIN -->
     <main>
         <h1>BLOG EN CONSTRUCCIÓN</h1>
