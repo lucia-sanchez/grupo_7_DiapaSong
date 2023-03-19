@@ -13,7 +13,7 @@ router
         .post('/register',  uploadUserImage.single('mainImage'), registerUserValidator, saveRegister)
         .get('/login', checkUserGuest, login)
         .post('/login', loginUserValidator, processlogin)
-        .get('/profile', checkUserLogin, profile)
+        .get('/profile', checkUserLogin, uploadUserImage.single('mainImage'), profile)
         .get('/password', password)
         .get('/logOut', logOut)
 

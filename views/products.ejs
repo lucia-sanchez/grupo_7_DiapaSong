@@ -84,7 +84,7 @@
                         </div>
                       </div>
               </div>
-              <% if (locals.userLogin === "admin") { %>
+              <% if (locals.userLogin && locals.userLogin.rol === "admin") { %>
                 <div class="productos--crearProductos">
           <a href="/products/create" ><button class="btn--crear-prod">crear
               producto</button></a>

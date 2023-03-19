@@ -20,7 +20,7 @@ module.exports={
 
         const newUser={
                 id: users.length ? users[users.length - 1].id + 1 : 1,
-                mainImage : req.file? req.file.filename : null,
+                mainImage : req.file? req.file.filename : '/img/user-default',
                 name: name.trim(),
                 email: email.trim(),
                 password: hashSync(password,12),
@@ -79,13 +79,12 @@ module.exports={
                 res.cookie('userDiapasong',req.session.userLogin,{maxAge: 1000*60} )
            }
 
-            //console.log(req.session);
             return res.redirect('/')
         }else{
             //return res.send(errors)
-            
-            //return res.send(JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email))
-           return res.render('login',{
+            const {name,email,password,rol,identifyid,birthdate,tel,preferedgenre,preferedinstruments,news,terms}=(JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email))
+
+            return res.render('login',{
             title: 'Inicio de Sesión',
             errors: errors.mapped(),
             old : req.body,
@@ -103,10 +102,15 @@ module.exports={
         });
     },
     profile : (req,res) => {
-        //return res.send(req.session.userLogin.name)
+       
+        const users = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"))
+        const { email } = req.params;
+        const user = users.find(user => user.email === email);
         return res.render('user',{
             title : "Perfil de usuario",
-            name: req.session.userLogin.name
+            name: req.session.userLogin.name,
+            ...user
+            
         
         })
     }

@@ -1,0 +1,15 @@
+.user_main_container{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+.user_main_card-img{
+    display: flex;
+    flex-direction:column;
+}
+.user-img{
+    width: 200px;
+}
+.user_main data{
+
+}

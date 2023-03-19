@@ -98,7 +98,7 @@
    },
    {
       "id": 6,
-      "mainImage": null,
+      "mainImage": "/img/user-default",
       "name": "Lucia Sanchez",
       "email": "lucia@admin.com",
       "password": "$2a$12$HGCdkSx2o5YnN6sdYhO3TepH4nx6EmN2cAe30HLHAWsvzy.cm5Fbq",
@@ -116,6 +116,21 @@
          "cuerda",
          "percusión"
       ],
+      "news": "on",
+      "terms": "on"
+   },
+   {
+      "id": 7,
+      "mainImage": "/img/user-default",
+      "name": "Cerati Infinito",
+      "email": "cerati@infinito.net",
+      "password": "$2a$12$YovWrOYTWu0W.GHlAGm6q.2TM8n6qRowbC0eMHPQL7WMKpCr0wpNW",
+      "identifyid": 58585858,
+      "rol": "user",
+      "birthdate": "1254-12-25",
+      "tel": 5478521266,
+      "preferedgenre": "rock",
+      "preferedinstruments": "cuerda",
       "news": "on",
       "terms": "on"
    }
