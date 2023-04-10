@@ -3,6 +3,8 @@ const path = require('path');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const products = require('../data/products.json');
 
+const db = require("../database/models")
+
 module.exports ={
     index: (req,res) =>{
         return res.render('index', {

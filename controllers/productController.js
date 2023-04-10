@@ -4,6 +4,7 @@ const products = require('../data/products.json');
 const categories = require('../data/productsCategories.json');
 const colours = require('../data/colours.json')
 
+const db = require("../database/models")
 
 module.exports = {
     products: (req, res) => {

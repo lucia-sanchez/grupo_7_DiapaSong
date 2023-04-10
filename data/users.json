@@ -133,5 +133,32 @@
       "preferedinstruments": "cuerda",
       "news": "on",
       "terms": "on"
+   },
+   {
+      "id": 8,
+      "mainImage": "/img/user-default",
+      "name": "Maximiliano Alonso",
+      "email": "elgrungemaxi1986@gmail.com",
+      "password": "$2a$12$41O.5xFcLxGRY77Js8tEi.WItpz.P23fpmiX6X9tv5ApaSiSZjWe.",
+      "identifyid": 32547235,
+      "rol": "admin",
+      "birthdate": "1986-09-12",
+      "tel": 123456789,
+      "preferedgenre": [
+         "punk",
+         "clásico",
+         "rock",
+         "metal",
+         "jazz",
+         "alternativo"
+      ],
+      "preferedinstruments": [
+         "cuerda",
+         "viento",
+         "percusión",
+         "electrónico"
+      ],
+      "news": "on",
+      "terms": "on"
    }
 ]

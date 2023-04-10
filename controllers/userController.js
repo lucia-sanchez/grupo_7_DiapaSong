@@ -4,6 +4,8 @@ const users = require('../data/users.json');
 const {validationResult} = require('express-validator');
 const {hashSync} = require('bcryptjs')
 
+const db = require("../database/models") 
+
 module.exports={
     register: (req,res)=>{
         return res.render('register', {
