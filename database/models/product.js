@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     /**
@@ -11,43 +9,45 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Product.hasMany(models.Category, {
-         as: "categories",
-         foreignKey : "idCategory",
-         onDelete : "cascade"
+      Product.belongsTo(models.Category, {
+        as: "categories",
+        foreignKey: "idCategory",
+        onDelete: "cascade",
       });
-        
-      Product.hasMany(models.Color,{
-        foreignKey : 'idColor',
-        as : 'color',
-        onDelete : "cascade"
+      Product.belongsTo(models.Color, {
+        as: "color",
+        foreignKey: "idColor",
+        onDelete: "cascade",
       });
-      Product.hasMany(models.Condition,{
-        foreignKey : 'idCondition',
-        as : 'condition',
-        onDelete : "cascade"
+      Product.belongsTo(models.Condition, {
+        as: "condition",
+        foreignKey: "idCondition",
+        onDelete: "cascade",
       });
-      Product.hasMany(models.Category,{
-        foreignKey : 'idCategory',
-        as : 'category',
-        onDelete : "cascade"
+      Product.belongsTo(models.ProductType, {
+        as: "productType",
+        foreignKey: "idProductType",
+        onDelete: "cascade",
       });
     }
   }
-  Product.init({
-    title: DataTypes.STRING,
-    subtitle: DataTypes.STRING,
-    description: DataTypes.STRING,
-    model: DataTypes.STRING,
-    stock: DataTypes.INTEGER,
-    price: DataTypes.DECIMAL,
-    idProductType: DataTypes.INTEGER,
-    idCondition: DataTypes.INTEGER,
-    idCategory: DataTypes.INTEGER,
-    idColor: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Product',
-  });
+  Product.init(
+    {
+      title: DataTypes.STRING,
+      subtitle: DataTypes.STRING,
+      description: DataTypes.STRING,
+      model: DataTypes.STRING,
+      stock: DataTypes.INTEGER,
+      price: DataTypes.DECIMAL,
+      idProductType: DataTypes.INTEGER,
+      idCondition: DataTypes.INTEGER,
+      idCategory: DataTypes.INTEGER,
+      idColor: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "Product",
+    }
+  );
   return Product;
 };

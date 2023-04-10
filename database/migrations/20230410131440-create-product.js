@@ -32,7 +32,6 @@ module.exports = {
         type: Sequelize.DECIMAL(10,2)
       },
       idProductType: {
-        allowNull: false,
         type: Sequelize.INTEGER,
         references : {
           model :{
@@ -42,7 +41,6 @@ module.exports = {
         }
       },
       idCondition: {
-        allowNull: false,
         type: Sequelize.INTEGER,
         references : {
           model :{
@@ -52,7 +50,6 @@ module.exports = {
         }
       },
       idCategory: {
-        allowNull: false,
         type: Sequelize.INTEGER,
         references : {
           model :{
@@ -70,9 +67,11 @@ module.exports = {
           key : 'id'
         }
       },
+      
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        onDelete : "cascade"
       },
       updatedAt: {
         allowNull: true,

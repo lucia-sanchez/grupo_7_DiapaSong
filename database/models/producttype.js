@@ -11,11 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      ProductType.belongsTo(models.Product, {
+      ProductType.hasMany(models.Product, {
         as: "productType",
-        onDelete : "cascade"
+        foreignKey: "idProductType"
      });
-      
     }
   }
   ProductType.init({

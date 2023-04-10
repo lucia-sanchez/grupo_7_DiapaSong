@@ -11,9 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Condition.belongsTo(models.Product, {
-        as: "condition",
-        onDelete : "cascade"
+      Condition.hasMany(models.Product, {
+        as: "ProductCondition",
+        foreignKey: "idCondition"
+       
      });
     }
   }
