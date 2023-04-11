@@ -32,6 +32,7 @@ module.exports = {
         type: Sequelize.DECIMAL(10,2)
       },
       idProductType: {
+        
         type: Sequelize.INTEGER,
         references : {
           model :{
@@ -41,6 +42,7 @@ module.exports = {
         }
       },
       idCondition: {
+        
         type: Sequelize.INTEGER,
         references : {
           model :{
@@ -50,6 +52,7 @@ module.exports = {
         }
       },
       idCategory: {
+        
         type: Sequelize.INTEGER,
         references : {
           model :{
@@ -59,6 +62,7 @@ module.exports = {
         }
       },
       idColor: {
+        
         type: Sequelize.INTEGER,
         references : {
           model :{
@@ -70,8 +74,7 @@ module.exports = {
       
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-        onDelete : "cascade"
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: true,

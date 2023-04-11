@@ -12,8 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Color.hasMany(models.Product, {
-        as: "productColor",
-        foreignKey: "idColor"
+        as: "products",
+        foreignKey: "idColor",
+        onDelete: "cascade"
         
      });
     }
