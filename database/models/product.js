@@ -33,8 +33,12 @@ module.exports = (sequelize, DataTypes) => {
         as: "images",
         foreignKey: "idProduct",
         onDelete: "cascade"
-       
      });
+     Product.hasMany(models.Cart, {
+      as: "cart",
+      foreignKey: "productId",
+      onDelete: "cascade",
+    });
     }
   }
   Product.init(
