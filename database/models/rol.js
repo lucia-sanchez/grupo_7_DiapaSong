@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Rol.belongsTo(models.User, {
+      Rol.hasMany(models.User, {
         as: "users",
         foreignKey: "rolId",
         onDelete: "cascade",

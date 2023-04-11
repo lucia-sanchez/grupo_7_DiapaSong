@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       totalPrice: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
       },
       productId: {
         type: Sequelize.INTEGER
@@ -26,8 +26,12 @@ module.exports = {
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
+      },
+      deletedAt: {
+         allowNull: true,
+         type: Sequelize.DATE
       }
     });
   },
