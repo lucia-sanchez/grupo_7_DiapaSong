@@ -7,7 +7,6 @@ module.exports = {
       "Carts",
       [
         {
-          
           units:15,
           totalPrice:150 ,
           idProduct:2 ,
