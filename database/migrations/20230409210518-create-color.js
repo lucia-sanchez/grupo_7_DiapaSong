@@ -13,7 +13,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(55)
       },
-      colour: {
+      color: {
         allowNull: false,
         type: Sequelize.STRING(55)
       },

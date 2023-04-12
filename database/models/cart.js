@@ -11,27 +11,27 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Cart.hasMany(models.Product, {
+      Cart.belongsTo(models.Product, {
         as: "product",
-        foreignKey: "productId",
-        onDelete: "cascade",
+        foreignKey: "idProduct",
+       
       });
       Cart.belongsTo(models.Sale, {
         as: "sale",
         foreignKey: "saleId",
-        onDelete: "cascade",
+       
       });
       Cart.hasMany(models.StatusCart,{
         as: "cart",
         foreignKey: "saleId",
-        onDelete: "cascade",
+       
       })
     }
   }
   Cart.init({
     units: DataTypes.INTEGER,
     totalPrice: DataTypes.DECIMAL,
-    productId: DataTypes.INTEGER,
+    idProduct: DataTypes.INTEGER,
     saleId: DataTypes.INTEGER
   }, {
     sequelize,

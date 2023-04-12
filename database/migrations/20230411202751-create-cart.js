@@ -1,4 +1,7 @@
 'use strict';
+
+const product = require('../models/product');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -15,7 +18,8 @@ module.exports = {
       totalPrice: {
         type: Sequelize.DECIMAL(10,2)
       },
-      productId: {
+      idProduct: {
+        allowNull:false,
         type: Sequelize.INTEGER
       },
       saleId: {
@@ -32,6 +36,9 @@ module.exports = {
       deletedAt: {
          allowNull: true,
          type: Sequelize.DATE
+      },
+      ProductId:{
+        type: Sequelize.DATE
       }
     });
   },

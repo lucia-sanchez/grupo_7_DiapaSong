@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: "cascade",
       });
       Product.belongsTo(models.Color, {
-        as: "color",
+        as: "colors",
         foreignKey: "idColor",
         onDelete: "cascade",
       });
@@ -34,10 +34,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "idProduct",
         onDelete: "cascade"
      });
-     Product.belongsTo(models.Cart, {
-      as: "cart",
-      foreignKey: "productId",
-      onDelete: "cascade",
+     Product.hasMany(models.Cart, {
+      as: "carts",
+     
     });
     }
   }

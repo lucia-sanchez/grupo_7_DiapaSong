@@ -11,10 +11,10 @@ const productsJson = products.map(({title,subtitle,description,price,model,stock
     price,
     model,
     stock,
-    idProductType:null,
-    idCondition:null,
-    idCategory:null,
-    idColor:null,
+    idProductType:1,
+    idCondition:2,
+    idCategory:2,
+    idColor:5,
     createdAt:new Date()
   }
 })
