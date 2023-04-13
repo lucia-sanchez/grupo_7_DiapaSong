@@ -7,10 +7,10 @@ module.exports = {
       "Users",
       [
     {
-      name: "Fulano",   
+      name: "Admin",   
       profileImage:null,
-      email: "Fulano@yahoo.com", 
-      password: "12345678", 
+      email: "admin", 
+      password: "admin", 
       identifyId:"01",    
       birthdate:null,
       phone:"1231231231",   
