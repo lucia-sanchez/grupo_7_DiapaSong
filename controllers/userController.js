@@ -8,9 +8,32 @@ const db = require("../database/models")
 
 module.exports={
     register: (req,res)=>{
-        return res.render('register', {
+        const genres = db.Genre.findAll({
+            order: [["id"]],
+            attributes: ["genre", "id"],
+          });
+      
+          const instruments = db.Instrument.findAll({
+            order: [["id"]],
+            attributes: ["instrument", "id"],
+          });
+      
+          Promise.all([genres, instruments])
+            .then(([genres, instruments]) => {
+                //return res.send(/*req.session.userLogin res.locals  req.cookies genres*/instruments)
+                return res.render("register", {
+                title: "Registro de Usuario",
+                genres,
+                instruments,
+              });
+            })
+            .catch((error) => console.log(error));
+
+
+
+        /* return res.render('register', {
             title: "Registro de Usuario"
-        });
+        }); */
     },
     saveRegister: (req,res)=>{
 
@@ -35,7 +58,8 @@ module.exports={
                 news: news,
                 terms: terms
                         }
-        //return console.log(req.file);// res.send();
+        //return console.log(req.file);
+        // res.send();
         users.push(newUser);
 
         fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 3), 'utf-8')
@@ -43,15 +67,36 @@ module.exports={
         return res.redirect('/users/login')
 
         }else{
-            console.log(req.body)
-            
-            console.log(errors.mapped());
-            return res.render('register', {
+            const genres = db.Genre.findAll({
+                order: [["id"]],
+                attributes: ["genre", "id"],
+              });
+          
+              const instruments = db.Instrument.findAll({
+                order: [["id"]],
+                attributes: ["instrument", "id"],
+              });
+          
+              Promise.all([genres, instruments])
+                .then(([genres, instruments]) => {
+                    //return res.send(/*req.session.userLogin res.locals  req.cookies genres req.body errors.mapped()*/instruments)
+                    return res.render("register", {
+                    title: "Registro de Usuario",
+                    genres,
+                    instruments,
+                    errors: errors.mapped(),
+                    old : req.body
+                  });
+                })
+                .catch((error) => console.log(error));
+
+            /*res.send(  )*/
+            //console.log()            
+            //console.log();
+            /*return res.render('register', {
             title: "Registro de Usuario",        
-            errors: errors.mapped(),
-            old : req.body,
-            
-            } )/* res.send({title: "Registro de Usuario",        
+            ,            
+            } ) res.send({title: "Registro de Usuario",        
             errors: errors.mapped(),
             old : req.body}) */ 
         }

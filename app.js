@@ -34,6 +34,10 @@ app
 }))
 .use(cookieCheck) //cargo en session lo que hay en la cookie
 .use(localsUserCheck) //cargo en locals lo que hay en session
+.use((req,res,next) => {
+  req.session.message = null
+  next()
+})
 
 //RUTAS
 app.use('/', indexRouter);
