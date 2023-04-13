@@ -96,9 +96,9 @@
                 <div class="form__checkbox">
                     <p>generos que te gustan</p>
                     <div>
-                        <% genres.forEach(genre => { %>
-                            <input type="checkbox" name="preferedgenre" id="<%= genre.genre %>" value="<%= genre.genre %>" <%= locals.old && old.preferedgenre && old.preferedgenre.includes(genre.genre) ? 'checked':'' %>>
-                            <label for="<%= genre.genre %>"><%= genre.genre %></label>
+                        <% genres.forEach(({genre}) => { %>
+                            <input type="checkbox" name="preferedgenre" id="<%= genre %>" value="<%= genre %>" <%= locals.old && old.preferedgenre && old.preferedgenre.includes(genre) ? 'checked':'' %>>
+                            <label for="<%= genre %>"><%= genre %></label>
                         <% }) %>                          
                     </div>
                 </div>
@@ -107,9 +107,9 @@
                     <p>instrumentos que te interesan</p>
 
                     <div>
-                        <% instruments.forEach(instrument => { %>
-                            <input type="checkbox" name="preferedinstruments" id="<%= instrument.instrument %>" value="<%= instrument.instrument %>" <%= locals.old && old.preferedinstruments && old.preferedinstruments.includes(instrument.instrument) ? 'checked':'' %>>
-                        <label for="<%= instrument.instrument %>"><%= instrument.instrument %></label>
+                        <% instruments.forEach(({instrument}) => { %>
+                            <input type="checkbox" name="preferedinstruments" id="<%= instrument %>" value="<%= instrument %>" <%= locals.old && old.preferedinstruments && old.preferedinstruments.includes(instrument) ? 'checked':'' %>>
+                        <label for="<%= instrument %>"><%= instrument %></label>
                         <% }) %>                    
                     </div>
                 </div>
