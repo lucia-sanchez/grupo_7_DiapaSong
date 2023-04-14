@@ -33,9 +33,9 @@ module.exports = {
       news: {
         type: Sequelize.INTEGER
       },
-      terms: {
+      /* terms: {
         type: Sequelize.INTEGER
-      },
+      }, */
       rolId: {
         allowNull: false,
         type: Sequelize.INTEGER,
