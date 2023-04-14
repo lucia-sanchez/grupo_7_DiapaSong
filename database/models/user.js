@@ -42,8 +42,8 @@ module.exports = (sequelize, DataTypes) => {
     identifyId: DataTypes.INTEGER,
     birthdate: DataTypes.DATE,
     phone: DataTypes.INTEGER,
-    news: DataTypes.INTEGER,
-    terms: DataTypes.INTEGER,
+    news: DataTypes.BOOLEAN,
+    /* terms: DataTypes.INTEGER, */
     rolId: DataTypes.INTEGER
   }, {
     sequelize,
