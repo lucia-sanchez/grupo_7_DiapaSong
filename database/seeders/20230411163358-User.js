@@ -15,7 +15,7 @@ module.exports = {
       birthdate:null,
       phone:"1231231231",   
       news:null,
-      terms:null,
+      /* terms:null, */
       rolId: 1,
       createdAt: new Date()       
     },
@@ -28,7 +28,7 @@ module.exports = {
       birthdate:null,   
       phone:"198789865",   
       news:null,
-      terms:null,
+      /* terms:null, */
       rolId: 2,
       createdAt: new Date()
     }
