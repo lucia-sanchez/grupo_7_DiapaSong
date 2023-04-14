@@ -152,23 +152,29 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            const { id, name, rol, } = JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email);
+            db.User.findOne({
+                where : {
+                    email : req.body.email
+                }
+            })
+            .then( ({id, name, rolId}) => {
 
-            req.session.userLogin = {
-                id,
-                name,
-                rol,
-            }
+                req.session.userLogin = {
+                    id,
+                    name,
+                    rol : rolId
+                };
 
-            if (req.body.remember) {
-                res.cookie('userDiapasong', req.session.userLogin, { maxAge: 1000 * 60 })
-            }
-
-            return res.redirect('/')
+                if(req.body.remember){
+                    res.cookie('userDiapasong',req.session.userLogin,{maxAge: 10000*60} )
+               }
+    
+                return res.redirect('/')
+            })
+            .catch(error => console.log(error))
+            
         } else {
             //return res.send(errors)
-            const { name, email, password, rol, identifyid, birthdate, tel, preferedgenre, preferedinstruments, news, terms } = (JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => user.email === req.body.email))
-
             return res.render('login', {
                 title: 'Inicio de Sesión',
                 errors: errors.mapped(),
@@ -187,8 +193,30 @@ module.exports = {
         });
     },
     profile: (req, res) => {
+        //return console.log(req.session.userLogin.id);
+        db.User.findByPk(req.session.userLogin.id,{
+            attributes : ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
+            include : [
+                {
+                    association : 'genre',
+                    attributes : ['genreId']
+                },
+                {
+                    association : 'instrument',
+                    attributes : ['instrumentId']
+                }
+            ],
 
-        const users = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"))
+        })
+            .then(user => {
+                //return res.send(user)
+                return res.render('user',{
+                    title : "Perfil de usuario",
+                    user
+                })
+            })
+            .catch(error => console.log(error))
+        /* const users = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"))
         const { email } = req.params;
         const user = users.find(user => user.email === email);
         return res.render('user', {
@@ -197,6 +225,6 @@ module.exports = {
             ...user
 
 
-        })
+        }) */
     }
 }
