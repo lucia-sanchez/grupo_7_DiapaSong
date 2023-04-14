@@ -4,31 +4,42 @@ const products = require('../data/products.json');
 const categories = require('../data/productsCategories.json');
 const colours = require('../data/colours.json')
 
-const db = require("../database/models")
+const db = require("../database/models");
+const { log } = require('console');
 
 module.exports = {
     products: (req, res) => {
-        const products = JSON.parse(fs.readFileSync("./data/products.json", "utf-8"))
-        const CategoryFilt = req.params.category
-        const product = products.filter(product => product.category === CategoryFilt);
-           
-        return res.render('products', {
-            product,
-            CategoryFilt,
-            title: "Productos",
-            products
+        db.Product.findAll({
+            include:[ "categories","colors","condition","productType","images","carts"]
         })
+        
+        .then((products)=>{
+        const CategoryFilt = req.params.category
+        const product = products.filter(product => product.category === CategoryFilt); 
+            return res.render('products', {
+                product,
+                CategoryFilt,
+                title: "Productos",
+                products
+            })
+        })   
+        .catch((error)=> console.log(error))
 
-    },  
+    },    
     detail: (req, res) => {
-        const products = JSON.parse(fs.readFileSync("./data/products.json", "utf-8"))
         const { id } = req.params;
-        const product = products.find(product => product.id === +id);
-
-        return res.render('productDetail', {
-            title: 'Detalle de Producto',
-            ...product
-        });
+        //const product = products.find(product => product.id === +id);
+        db.Product.findByPk(id, {
+            include:[ "categories","colors","condition","productType","images","carts"]
+        })
+        .then((products)=>{
+            return res.send(products)
+            return res.render('productDetail', {
+                title: 'Detalle de Producto',
+                ...products.dataValues
+            });
+        })
+        .catch((error)=> console.log(error))
     },
     create: (req, res) => {
         res.render('create', {
