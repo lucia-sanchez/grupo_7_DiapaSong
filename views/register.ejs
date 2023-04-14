@@ -96,26 +96,10 @@
                 <div class="form__checkbox">
                     <p>generos que te gustan</p>
                     <div>
-                        <input type="checkbox" name="preferedgenre" id="latino" value="latino" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('latino') ? 'checked':'' %>>
-                        <label for="latino">latino</label>
-                        <input type="checkbox" name="preferedgenre" id="punk" value="punk" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('punk') ? 'checked':'' %>>
-                        <label for="punk">punk</label>
-                        <input type="checkbox" name="preferedgenre" id="clásico" value="clásico" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('clásico') ? 'checked':'' %>>
-                        <label for="clásico">clásico</label>
-                        <input type="checkbox" name="preferedgenre" id="rock" value="rock" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('rock') ? 'checked':'' %>>
-                        <label for="rock">rock</label>
-                        <input type="checkbox" name="preferedgenre" id="metal" value="metal" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('metal') ? 'checked':'' %>>
-                        <label for="metal">metal</label>
-                        <input type="checkbox" name="preferedgenre" id="folklore" value="folklore" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('folklore') ? 'checked':'' %>>
-                        <label for="folklore">folklore</label>
-                        <input type="checkbox" name="preferedgenre" id="jazz" value="jazz" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('jazz') ? 'checked':'' %>>
-                        <label for="jazz">jazz</label>
-                        <input type="checkbox" name="preferedgenre" id="pop" value="pop" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('pop') ? 'checked':'' %>>
-                        <label for="pop">pop</label>
-                        <input type="checkbox" name="preferedgenre" id="cumbia" value="cumbia" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('cumbia') ? 'checked':'' %>>
-                        <label for="cumbia">cumbia</label>
-                        <input type="checkbox" name="preferedgenre" id="alternativo" value="alternativo" <%= locals.old && old.preferedgenre && old.preferedgenre.includes('alternativo') ? 'checked':'' %>>
-                        <label for="alternativo">alternativo</label>
+                        <% genres.forEach(({genre}) => { %>
+                            <input type="checkbox" name="preferedgenre" id="<%= genre %>" value="<%= genre %>" <%= locals.old && old.preferedgenre && old.preferedgenre.includes(genre) ? 'checked':'' %>>
+                            <label for="<%= genre %>"><%= genre %></label>
+                        <% }) %>                          
                     </div>
                 </div>
                 <!-- CHECKBOX INSTRUMENTOS -->
@@ -123,14 +107,10 @@
                     <p>instrumentos que te interesan</p>
 
                     <div>
-                        <input type="checkbox" name="preferedinstruments" id="cuerda" value="cuerda" <%= locals.old && old.preferedinstruments && old.preferedinstruments.includes('cuerda') ? 'checked':'' %>>
-                        <label for="cuerda">cuerda</label>
-                        <input type="checkbox" name="preferedinstruments" id="viento" value="viento" <%= locals.old && old.preferedinstruments && old.preferedinstruments.includes('viento') ? 'checked':'' %>>
-                        <label for="viento">viento</label>
-                        <input type="checkbox" name="preferedinstruments" id="percusión" value="percusión" <%= locals.old && old.preferedinstruments && old.preferedinstruments.includes('percusión') ? 'checked':'' %>>
-                        <label for="percusión">percusión</label>
-                        <input type="checkbox" name="preferedinstruments" id="electrónico" value="electrónico" <%= locals.old && old.preferedinstruments && old.preferedinstruments.includes('electrónico')? 'checked':'' %>>
-                        <label for="electrónico">electrónico</label>
+                        <% instruments.forEach(({instrument}) => { %>
+                            <input type="checkbox" name="preferedinstruments" id="<%= instrument %>" value="<%= instrument %>" <%= locals.old && old.preferedinstruments && old.preferedinstruments.includes(instrument) ? 'checked':'' %>>
+                        <label for="<%= instrument %>"><%= instrument %></label>
+                        <% }) %>                    
                     </div>
                 </div>
                 <!-- CHECKBOX NOVEDADES Y OFERTAS -->

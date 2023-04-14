@@ -4,6 +4,7 @@ const { check, body } = require('express-validator');
 const users = require('../data/users.json');
 const { compareSync } = require('bcryptjs');
 const userController = require('../controllers/userController');
+const db = require('../database/models')
 
 module.exports = [
     check('email')
@@ -11,9 +12,17 @@ module.exports = [
         .isEmail().withMessage('El email tiene un formato incorrecto'),
     body('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
-        .custom((value, { req }) => {
-            let user = JSON.parse(fs.readFileSync("./data/users.json", "utf-8")).find(user => /* user.email === req.body.email && user.password === value || */ user.email === req.body.email && compareSync(value, user.password));
+        .custom((value, {req}) => {
 
-            return user
-        }).withMessage('Credenciales Invalidas')
+            return db.User.findOne({
+                where : {
+                    email : req.body.email
+                }
+            }).then(user => {
+                if(!user || !compareSync(value, user.password)){
+                    return Promise.reject()
+                }
+            }).catch(error => Promise.reject('Credenciales inválidas'))
+           
+        })
 ]

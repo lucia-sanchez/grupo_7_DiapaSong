@@ -30,6 +30,10 @@ module.exports = {
           genre: "Metal",
 
           createdAt: new Date(),
+        },{
+          genre: "Folklore",
+
+          createdAt: new Date(),
         },
         {
           genre: "Jazz",

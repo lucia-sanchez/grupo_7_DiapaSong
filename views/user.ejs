@@ -10,7 +10,7 @@
     <%- include('./partials/header') %>
       <!-- Main -->
 <main>
-<h2>Bienvenido <%= name %></h2>
+<h2>Bienvenido <%= user.name %></h2>
 <div class="user_main_container">
   <div class="user_main_card-img">
     <form class="register__form"  method="post" enctype="multipart/form-data">
@@ -30,7 +30,7 @@
     <hr>
     
       <div>
-       Nombre y Apellido: <%= name %> <i class="fa-solid fa-pen-to-square"></i>
+       Nombre y Apellido: <%= user.name %> <i class="fa-solid fa-pen-to-square"></i>
        
 
        
