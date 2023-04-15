@@ -14,7 +14,8 @@ module.exports = {
         
         .then((products)=>{
         const CategoryFilt = req.params.category
-        const product = products.filter(product => product.category === CategoryFilt); 
+        const product = products.filter(product => product.categories? product.categories.category === CategoryFilt : false/* product.categories.category?  */); 
+            //return res.send(/*CategoryFilt   products*/product)
             return res.render('products', {
                 product,
                 CategoryFilt,
