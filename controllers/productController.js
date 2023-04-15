@@ -52,7 +52,7 @@ module.exports = {
     saveCreate: (req, res) => {
         const { title, subtitle, tipo, condition, description, price, mainImage, images, news, sale, category, colour, model, stock } = req.body;
 
-        const newProduct = {
+        const newProduct = db.Product.create({
             id: products[products.length - 1].id + 1,
             title: title.trim(),
             subtitle: subtitle.trim(),
@@ -68,13 +68,12 @@ module.exports = {
             colour,
             model: model,
             stock: +stock
-        };
+        }).then(newProduct=>{
+            res.redirect('/products')
+        })
 
-        products.push(newProduct)
-
-        fs.writeFileSync('./data/products.json', JSON.stringify(products, null, 3), 'utf-8')
-
-        res.redirect('/products')
+        .catch((error)=> console.log(error))
+        
     },
     edit: (req, res) => {
         const { id } = req.params;
@@ -83,11 +82,14 @@ module.exports = {
         const product = db.Product.findByPk(id,{
             include: [ "categories","colors","condition","productType","images","carts"]
         })
-        return res.send(product)
-        return res.render('update', {
-            ...product
-            
+        .then((product)=>{
+            //return res.send(product)
+            return res.render('update', {
+                ...product.dataValues
+                
+            })
         })
+        .catch((error) => console.log(error));
     },
     update: (req, res) => {
         /* recibo la info del formulario */
@@ -99,7 +101,7 @@ module.exports = {
         const product = products.find(product => product.id === +id);
 
         /* guardo en un objeto la información modificada */
-        const productUpdated = {
+        const productUpdated = db.Product.update({
             id,
             title: title.trim(),
             subtitle: subtitle.trim(),
@@ -115,7 +117,9 @@ module.exports = {
             sale: condition === "sale" && true,
             model: model,
             stock: +stock
-        };
+        }).then(product=>{
+
+        });
         
 
         /* actualizar mi array de productos */
