@@ -42,14 +42,33 @@ module.exports = {
     },
     create: (req, res) => {
 
-        res.render('create', {
-            title: 'Crear Producto',
-            categories,
-            colours
-        });
+        const colors = db.Colors.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+          });
+      
+          const category = db.Category.findAll({
+            order: [["name"]],
+            attributes: ["category", "id"],
+          });
+      
+          Promise.all([colors, category])
+            .then(([colors, category]) => {
 
+        return res.render('create', {
+            title: 'Crear Producto',
+            colors,
+            category
+        })
+    })
+        .catch((error) => console.log(error))
     },
     saveCreate: (req, res) => {
+
+        const errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+
         const { title, subtitle, tipo, condition, description, price, mainImage, images, news, sale, category, colour, model, stock } = req.body;
 
         const newProduct = db.Product.create({
@@ -68,12 +87,16 @@ module.exports = {
             colour,
             model: model,
             stock: +stock
-        }).then(newProduct=>{
-            res.redirect('/products')
-        })
-
-        .catch((error)=> console.log(error))
         
+        }).then(newProduct =>{
+            db.Product.create({
+
+            })
+            return res.redirect('/products')
+        })
+    
+        .catch((error)=> console.log(error))
+    } 
     },
     edit: (req, res) => {
         const { id } = req.params;
