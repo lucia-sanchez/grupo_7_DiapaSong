@@ -31,6 +31,19 @@ module.exports = {
       /* terms:null, */
       rolId: 2,
       createdAt: new Date()
+    },
+    {
+      name: "Lucia Sanchez",   
+      profileImage:null, 
+      email: "lucia@admin.com", 
+      password: "12345678", 
+      identifyId:"123456789",    
+      birthdate:"1990-08-03 00:00:00",   
+      phone:"2235577185",   
+      news:null,
+      /* terms:null, */
+      rolId: "1",
+      createdAt: new Date()
     }
   
       ],

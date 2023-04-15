@@ -1,8 +1,7 @@
 const fs = require('fs');
-const products = require('../data/products.json');
-
-const categories = require('../data/productsCategories.json');
-const colours = require('../data/colours.json')
+//const products = require('../data/products.json');
+//const categories = require('../data/productsCategories.json');
+//const colours = require('../data/colours.json')
 
 const db = require("../database/models");
 const { log } = require('console');
@@ -33,7 +32,7 @@ module.exports = {
             include:[ "categories","colors","condition","productType","images","carts"]
         })
         .then((products)=>{
-            return res.send(products)
+            //return res.send(products)
             return res.render('productDetail', {
                 title: 'Detalle de Producto',
                 ...products.dataValues
@@ -42,6 +41,7 @@ module.exports = {
         .catch((error)=> console.log(error))
     },
     create: (req, res) => {
+
         res.render('create', {
             title: 'Crear Producto',
             categories,
@@ -78,12 +78,15 @@ module.exports = {
     },
     edit: (req, res) => {
         const { id } = req.params;
+        
 
-        const product = products.find(product => product.id === +id);
+        const product = db.Product.findByPk(id,{
+            include: [ "categories","colors","condition","productType","images","carts"]
+        })
+        return res.send(product)
         return res.render('update', {
-            ...product,
-            categories,
-            colours
+            ...product
+            
         })
     },
     update: (req, res) => {
@@ -113,6 +116,7 @@ module.exports = {
             model: model,
             stock: +stock
         };
+        
 
         /* actualizar mi array de productos */
         const productsModified = products.map(product => {
@@ -132,7 +136,7 @@ module.exports = {
    
     remove: (req, res) => {
         //rescato el parametro que recibo por id
-        const {id} =req.params;
+        const id =req.params.id;
         //filtro para generar un nuevo array con todos los productos menos el que deseo eliminar
         productsModified = products.filter(product=> product.id !== +id)
         //confirmo si se desea eliminar

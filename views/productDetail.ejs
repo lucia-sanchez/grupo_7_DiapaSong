@@ -21,7 +21,7 @@
           </h4>
 
           <figure class="main__section__productos__producto--imagen-detail">
-            <img src="/img/productos/<%= mainImage %>" alt="<%= title %>" />
+            <img src="/img/productos/<%= images.name %>" alt="<%= title %>" />
           </figure>
         </section>
      
@@ -62,7 +62,7 @@
             <div class="detalle_producto-caracteristicas-grisOscuro">
               <h6>Color</h6>
               <p>
-                <%= colour %>
+                <%= colors.name %>
               </p>
             </div>
             <div class="detalle_producto-caracteristicas-grisClaro">
@@ -72,7 +72,7 @@
               </p>
             </div>
           </article>
-          <% if (locals.userLogin && locals.userLogin.rol === "admin") { %>
+          <% if (locals.userLogin && locals.userLogin.rol == "1") { %>
             <div class="product-buttons">
             <div>
               <a href="/products/edit/<%=id%>"><button class="btn--crear-cuenta">editar producto</button></a>
