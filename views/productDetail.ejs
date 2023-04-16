@@ -21,7 +21,7 @@
           </h4>
 
           <figure class="main__section__productos__producto--imagen-detail">
-            <img src="/img/productos/<%= images.name %>" alt="<%= title %>" />
+            <img src="/img/productos/<%= images[0].name %>" alt="<%= title %>" />
           </figure>
         </section>
      
@@ -62,7 +62,7 @@
             <div class="detalle_producto-caracteristicas-grisOscuro">
               <h6>Color</h6>
               <p>
-                <%= colors.name %>
+                <%= colors?colors.name:null %>
               </p>
             </div>
             <div class="detalle_producto-caracteristicas-grisClaro">
