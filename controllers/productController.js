@@ -5,6 +5,8 @@ const fs = require('fs');
 
 const db = require("../database/models");
 const { log } = require('console');
+const { validationResult } = require('express-validator');
+const product = require('../database/models/product');
 
 module.exports = {
     products: (req, res) => {
@@ -43,53 +45,66 @@ module.exports = {
     },
     create: (req, res) => {
 
-        const colors = db.Colors.findAll({
+        const colors = db.Color.findAll({
             order: [["name"]],
-            attributes: ["name", "id"],
-          });
-      
+            attributes: ["name", "id"]
+          })
           const category = db.Category.findAll({
-            order: [["name"]],
+            order: [["category"]],
             attributes: ["category", "id"],
-          });
+          })
       
           Promise.all([colors, category])
             .then(([colors, category]) => {
 
-        return res.render('create', {
+        return res.render("create", {
             title: 'Crear Producto',
             colors,
             category
         })
     })
-        .catch((error) => console.log(error))
+        .catch((error) => console.log(error));
     },
     saveCreate: (req, res) => {
 
         const errors = validationResult(req);
 
+        if (!req.files.length && !req.fileValidationError) {
+            errors.errors.push({
+              value: "",
+              msg: "El producto debe tener por lo menos una imagen",
+              param: "images",
+              location: "files",
+            });
+          }
+      
+          if (req.fileValidationError) {
+            errors.errors.push({
+              value: "",
+              msg: req.fileValidationError,
+              param: "images",
+              location: "files",
+            });
+          }
         if (errors.isEmpty()) {
-
-        const { title, subtitle, tipo, condition, description, price, mainImage, images, news, sale, category, colour, model, stock } = req.body;
+//return res.send(req.body)
+        const { title, subtitle, condition, description, idProductType, price, mainImage, images, category, colors, model, stock } = req.body;
 
         const newProduct = db.Product.create({
-            id: products[products.length - 1].id + 1,
             title: title.trim(),
             subtitle: subtitle.trim(),
-            ticket: tipo === "ticket" && true,
-            product: tipo === "product" && true,
+            idProductType: tipo ? true : false,
+            condition: condition ? true : false,
             description: description.trim(),
-            price: +price,
+            price,
             mainImage : req.files && req.files.mainImage ? req.files.mainImage[0].filename : null,
             images: req.files && req.files.images ? req.files.images.map(file=> file.filename) : [],
-            news: condition === "news" && true,
-            sale: condition === "sale" && true,
-            category,
-            colour,
-            model: model,
-            stock: +stock
+            idCategory: category,
+            idColor: colors,
+            model,
+            stock,
         
-        }).then(newProduct =>{
+        }).then(product =>{
             db.Product.create({
 
             })
@@ -101,28 +116,52 @@ module.exports = {
     },
     edit: (req, res) => {
         const { id } = req.params;
-        
 
         const product = db.Product.findByPk(id,{
-            include: [ "categories","colors","condition","productType","images","carts"]
+            include : ['images', ]
         })
-        .then((product)=>{
-            //return res.send(product)
-            return res.render('update', {
-                ...product.dataValues
-                
-            })
+
+        const colors = db.Color.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"]
+          })
+          const category = db.Category.findAll({
+            order: [["category"]],
+            attributes: ["category", "id"],
+          })
+      
+          Promise.all([colors, category, product])
+            .then(([colors, category, product]) => {
+
+        return res.render("update", {
+            title: 'Editar Producto',
+            colors,
+            category,
+            ...product.dataValues
         })
+    })
+               
         .catch((error) => console.log(error));
     },
     update: (req, res) => {
+        const errors = validationResult(req);
+
+        if (req.fileValidationError) {
+          errors.errors.push({
+            value: "",
+            msg: req.fileValidationError,
+            param: "images",
+            location: "files",
+          });
+        }
+        if (errors.isEmpty()) {
         /* recibo la info del formulario */
         const { title, subtitle, tipo, condition, description, price, mainImage, images, news, sale, category, colour, model, stock } = req.body;
 
-        const id = +req.params.id
+        const id = +req.params.id;
 
         /* recupero los datos del producto */
-        const product = products.find(product => product.id === +id);
+        //const product = products.find(product => product.id === +id);
 
         /* guardo en un objeto la información modificada */
         const productUpdated = db.Product.update({
@@ -141,25 +180,19 @@ module.exports = {
             sale: condition === "sale" && true,
             model: model,
             stock: +stock
-        }).then(product=>{
-
-        });
+        },
+        {
+            where:{
+                id,
+            },
+        }
+        ).then(()=>{
+            return res.redirect('/') //*/detail/${id}*/
+        })
         
-
-        /* actualizar mi array de productos */
-        const productsModified = products.map(product => {
-            if (product.id === id) {
-                return productUpdated
-            }
-            return product
-        });
-
-        //console.log(productsModified);
-
-        /* guardar los cambios */
-        fs.writeFileSync('./data/products.json', JSON.stringify(productsModified, null, 3), 'utf-8')
-
-        return res.redirect('/') //*/detail/${id}*/
+        .catch(error => console.log(error))
+       
+        }
     },
    
     remove: (req, res) => {

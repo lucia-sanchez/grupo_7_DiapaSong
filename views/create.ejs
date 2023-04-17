@@ -37,20 +37,20 @@
                     <!-- TÍTULO -->
                     <div>
                         <label for="title">título</label>
-                        <input type="text" name="title" id="title" required>
+                        <input type="text" name="title" id="title">
                     </div>
                     <!-- SUTÍTULO -->
                     <div>
                         <label for="subtitle">sub-título</label>
-                        <input type="text" name="subtitle" id="subtitle" required>
+                        <input type="text" name="subtitle" id="subtitle" >
                     </div>
                     <!-- CATEGORÍA -->
                     <div>
                         <label for="category">categoría</label>
                         <select name="category" id="category">
                             <option value="" selected hidden>Elegir categoría...</option>
-                            <% categories.forEach(({name}) => { %>
-                                <option value="<%= name %>"><%= name %> </option>
+                            <% category.forEach(({category, id}) => { %>
+                                <option value="<%= id %>"><%= category %> </option>
                                 <% }) %>
                             </select>
                     </div>
@@ -70,11 +70,11 @@
                     <h4>características</h4>
                     
                         <div>
-                            <label for="colour">color</label>
-                            <select name="colour" id="colour">
+                            <label for="colors">color</label>
+                            <select name="colors" id="colors">
                             <option value="" selected hidden>Elegir color...</option>
-                            <% colours.forEach(({name}) => { %>
-                                <option value="<%= name %>"><%= name %> </option>
+                            <% colors.forEach(({name, id}) => { %>
+                                <option value="<%= id %>"> <%= name %> </option>
                                 <% }) %>
                             </select>
                         </div>
