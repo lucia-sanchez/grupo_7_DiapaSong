@@ -104,15 +104,12 @@ module.exports = {
             model,
             stock,
         
-        }).then(product =>{
-            db.Product.create({
-
-            })
-            return res.redirect('/products')
+        }).then((product) =>{
+                      
         })
     
         .catch((error)=> console.log(error))
-    } 
+        }
     },
     edit: (req, res) => {
         const { id } = req.params;
@@ -192,6 +189,42 @@ module.exports = {
         
         .catch(error => console.log(error))
        
+        } else{
+            const { id } = req.params;
+
+      if (req.files.length) {
+        req.files.forEach((file) => {
+          fs.existsSync(`./public/images/courses/${file.filename}`) &&
+            fs.unlinkSync(`./public/images/courses/${file.filename}`);
+        });
+      }
+            const product = db.Product.findByPk(id,{
+                include : ['images', ]
+            })
+    
+            const colors = db.Color.findAll({
+                order: [["name"]],
+                attributes: ["name", "id"]
+              })
+              const category = db.Category.findAll({
+                order: [["category"]],
+                attributes: ["category", "id"],
+              })
+          
+              Promise.all([colors, category, product])
+                .then(([colors, category, product]) => {
+    
+            return res.render("update", {
+                title: 'Editar Producto',
+                colors,
+                category,
+                ...product.dataValues,
+                errors: errors.mapped(),
+                old: req.body,
+            })
+        })
+                   
+            .catch((error) => console.log(error));
         }
     },
    
