@@ -9,7 +9,7 @@ module.exports = {
       createdAt:new Date()
       },
       {
-        condition: "Usado",
+        condition: "Oferta",
         createdAt:new Date()
       }
     ], {});

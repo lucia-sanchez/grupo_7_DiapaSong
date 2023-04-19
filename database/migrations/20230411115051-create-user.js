@@ -28,7 +28,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       phone: {
-        type: Sequelize.INTEGER(55)
+        type: Sequelize.BIGINT
       },
       news: {
         type: Sequelize.INTEGER

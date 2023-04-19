@@ -26,13 +26,13 @@
             </h2>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
-                <% product.forEach(({id,mainImage, price, title, subtitle, category})=> { %>
+                <% product.forEach(({id,images, price, title, subtitle, category})=> { %>
                   
                   <div class="Products--all" >
                     <article class="main__section__productos--producto">
                       <a href="/products/detail/<%= id %>">
                         <figure class="main__section__productos__producto--imagen">
-                          <img src="/img/productos/<%= mainImage %> " alt=" <%= category %> ">
+                          <img src="/img/productos/<%= images[0].name %> " alt=" <%= category %> ">
                         </figure>
                         <div class="datos_productos">
                           <span class="agregar-al-carrito"> Más información
@@ -54,13 +54,13 @@
                       <h2 class="subtitulo_productos">Destacados!</h2>
                       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                          <% products.forEach(({id,mainImage, price, title, subtitle, category})=> { %>
+                          <% products.forEach(({id,images, price, title, subtitle, category})=> { %>
 
                             <div class="Products--all" >
                               <article class="main__section__productos--producto">
                                 <a href="/products/detail/<%= id %>">
                                   <figure class="main__section__productos__producto--imagen">
-                                    <img src="/img/productos/<%= mainImage %> " alt=" <%= category %> ">
+                                    <img src="/img/productos/<%= images[0].name %>" alt=" <%= category %> ">
                                   </figure>
                                   <div class="datos_productos">
                                     <span class="agregar-al-carrito"> Más información
@@ -83,7 +83,10 @@
 
                         </div>
                       </div>
-              </div><a href="/products/create" ><button class="btn--crear-prod">crear
+              </div>
+              <% if (locals.userLogin && locals.userLogin.rol == "1") { %>
+                <div class="productos--crearProductos">
+          <a href="/products/create" ><button class="btn--crear-prod">crear
               producto</button></a>
               <% if (locals.userLogin && locals.userLogin.rol) { %>
                 <div class="productos--crearProductos">

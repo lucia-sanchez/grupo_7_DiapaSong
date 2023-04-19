@@ -2,19 +2,23 @@ const express = require('express');
 const router = express.Router();
 
 
-const{detail,products,create,saveCreate,edit,update,removeConfirm,remove} = require('../controllers/productController');
+const{detail,products,create,saveCreate,edit,update,remove} = require('../controllers/productController');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 
 const { uploadProductsImage } = require('../middlewares/upload');
+const productValidator = require('../validations/productValidator');
 
 /* /products */
 router.get('/', products)
       .get('/detail/:id?', detail)
-      .get('/create', checkUserAdmin, create)
-      .post('/create', uploadProductsImage.fields([{name:'mainImage'},{name:'images'}]), saveCreate)
-      .get('/edit/:id', checkUserAdmin, edit)
-      .put('/update/:id', uploadProductsImage.fields([{name:'mainImage'},{name:'images'}]),update)
-      .delete('/remove/:id',checkUserAdmin, remove )
+      .get('/create',  create)
+      //checkUserAdmin,
+      .post('/create', uploadProductsImage, productValidator, saveCreate) 
+      .get('/edit/:id', edit)
+      //checkUserAdmin,
+      .put('/update/:id', uploadProductsImage/* .fields([{name:'mainImage'},{name:'images'}]) */,update)
+      .delete('/remove/:id',remove )
+      //checkUserAdmin, 
       .get('/:category?', products) 
       
 

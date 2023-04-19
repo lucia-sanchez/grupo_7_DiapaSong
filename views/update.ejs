@@ -16,17 +16,17 @@
                     <h5>tipo</h5>
                     <div class="form__create--radio">
                         
-                        <input type="radio" name="tipo" id="ticket" value="ticket"<%= ticket && 'checked' %>>
+                        <input type="radio" name="tipo" id="ticket" value="ticket"<%= idProductType && 'checked' %>>
                         <label for="ticket">entrada</label>
-                        <input type="radio" name="tipo" id="product" value="product"<%= product && 'checked'%>>
+                        <input type="radio" name="tipo" id="product" value="product"<%= idProductType && 'checked'%>>
                         <label for="product">instrumento</label>
                     </div>
                     <h5>condición</h5>
                     <div class="form__create--radio">
                         
-                        <input type="radio" name="condition" id="new" value="news"<%= news && 'checked'  %>>
+                        <input type="radio" name="condition" id="new" value="news"<%= idCondition && 'checked'  %>>
                         <label for="new">Nuevo</label>
-                        <input  type="radio" name="condition" id="sale" value="sale"<%= sale && 'checked'  %>>
+                        <input  type="radio" name="condition" id="sale" value="sale"<%= idCondition && 'checked'  %>>
                         <label  for="sale">
                         Oferta
                         </label>
@@ -42,8 +42,8 @@
                     <div>
                         <label for="category">categoría</label>
                         <select name="category" id="category">
-                            <% categories.forEach(({name}) => { %>
-                                <option value="<%= name %>"<%= category === name && 'selected' %>><%= name %> </option>
+                            <% category.forEach(({category}) => { %>
+                                <option value="<%= category %>"<%= category === category && 'selected' %>><%= category %> </option>
                                 <% }) %>
                             </select>
                         </div>
@@ -62,8 +62,8 @@
                         <div class="form__create--characteristics"><label for="colour">color</label>
                         <select name="colour" id="colour">
                             
-                            <% colours.forEach(({name}) => { %>
-                                <option value="<%= name %>"<%= colour === name && 'selected' %>><%= name %> </option>
+                            <% colors.forEach(({name}) => { %>
+                                <option value="<%= name %>"<%= colors === name && 'selected' %>><%= name %> </option>
                                 <% }) %>
                         </select>
                         </div>
