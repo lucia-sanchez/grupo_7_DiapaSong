@@ -181,7 +181,6 @@ module.exports = {
         const product = db.Product.findByPk(id, {
             include: ['images',]
         })
-
         const colors = db.Color.findAll({
             order: [["name"]],
             attributes: ["name", "id"]
@@ -190,13 +189,24 @@ module.exports = {
             order: [["category"]],
             attributes: ["category", "id"],
         })
+        const productType = db.ProductType.findAll({
+            order: [["type"]],
+            attributes: ["type", "id"],
+        })
+        const condition = db.Condition.findAll({
+            order: [["condition"]],
+            attributes: ["condition", "id"],
+        })
+        
 
         Promise.all([colors, category, product])
             .then(([colors, category, product]) => {
 
                 return res.render("update", {
                     title: 'Editar Producto',
+                    condition,
                     colors,
+                    productType,
                     category,
                     ...product.dataValues
                 })
@@ -216,46 +226,32 @@ module.exports = {
             });
         }
         if (errors.isEmpty()) {
-            /* recibo la info del formulario */
-            const { title, subtitle, tipo, condition, description, price, mainImage, images, news, sale, category, colour, model, stock } = req.body;
-
+            const { title, subtitle, condition, description, tipo, price, category, colors, model, stock } = req.body;
             const id = +req.params.id;
 
-            /* recupero los datos del producto */
-            //const product = products.find(product => product.id === +id);
-
-            /* guardo en un objeto la información modificada */
             const productUpdated = db.Product.update({
-                id,
+                idProductType: tipo === "product" ? 1 : 2,
+                idCondition: condition === "news" ? 1 : 2,
                 title: title.trim(),
                 subtitle: subtitle.trim(),
-                ticket: tipo === "ticket" && true,
-                product: tipo === "product" && true,
+                idCategory: category,
                 description: description.trim(),
-                price: +price,
-                mainImage: req.files && req.files.mainImage ? req.files.mainImage[0].filename : product.mainImage,
-                images: req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
-                category,
-                colour,
-                news: condition === "news" && true,
-                sale: condition === "sale" && true,
-                model: model,
-                stock: +stock
+                idColor: colors,    
+                stock,
+                model,
+                price,
             },
-                {
-                    where: {
-                        id,
-                    },
-                }
+             { where: {id,}}
+
             ).then(() => {
+                return res.send({colors,tipo, condition,title,subtitle,description,stock,model,price,category })
                 return res.redirect('/') //*/detail/${id}*/
             })
-
                 .catch(error => console.log(error))
 
-        } else {
+        } 
+        else {
             const { id } = req.params;
-
             if (req.files.length) {
                 req.files.forEach((file) => {
                     fs.existsSync(`./public/images/courses/${file.filename}`) &&
@@ -291,8 +287,23 @@ module.exports = {
                 .catch((error) => console.log(error));
         }
     },
+    remove: async(req, res) => {
+        const id = req.params.id;
+          
+        try {
+          const product = await db.Product.findByPk(id);
+          const images = await db.Image.findAll({ where: { idProduct: product.id } });
+          await Promise.all(images.map(image => image.destroy()));
 
-    remove: (req, res) => {
+         
+          product.destroy(); // Eliminar el producto y la imagen
+          
+          return res.redirect('/')
+        } catch (error) {
+          console.error(error);
+        }
+      }
+/*     remove: (req, res) => {
         //rescato el parametro que recibo por id
         const id = req.params.id;
         //filtro para generar un nuevo array con todos los productos menos el que deseo eliminar
@@ -303,6 +314,6 @@ module.exports = {
         fs.writeFileSync('./data/products.json', JSON.stringify(productsModified, null, 3), 'utf-8')
         //redirecciono a la pag de productos para mostrar que el articulo eliminado ya no esta en el listado
         res.redirect('/products')
-    }
+    } */
 }
 

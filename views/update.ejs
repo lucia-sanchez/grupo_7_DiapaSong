@@ -42,8 +42,8 @@
                     <div>
                         <label for="category">categoría</label>
                         <select name="category" id="category">
-                            <% category.forEach(({category}) => { %>
-                                <option value="<%= category %>"<%= category === category && 'selected' %>><%= category %> </option>
+                            <% category.forEach(({category, id}) => { %>
+                                <option value="<%= id %>"<%= id === category.id && 'selected' %>><%= category %> </option>
                                 <% }) %>
                             </select>
                         </div>
@@ -59,11 +59,11 @@
                     </div>
                     
                         <h4>características</h4>
-                        <div class="form__create--characteristics"><label for="colour">color</label>
-                        <select name="colour" id="colour">
+                        <div class="form__create--characteristics"><label for="colors">color</label>
+                        <select name="colors" id="colors">
                             
-                            <% colors.forEach(({name}) => { %>
-                                <option value="<%= name %>"<%= colors === name && 'selected' %>><%= name %> </option>
+                            <% colors.forEach(({name, id}) => { %>
+                                <option value="<%= id %>"<%= id === colors.id && 'selected' %>><%= name %> </option>
                                 <% }) %>
                         </select>
                         </div>
