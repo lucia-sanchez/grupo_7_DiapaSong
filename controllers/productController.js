@@ -244,8 +244,9 @@ module.exports = {
              { where: {id,}}
 
             ).then(() => {
-                return res.send({colors,tipo, condition,title,subtitle,description,stock,model,price,category })
-                return res.redirect('/') //*/detail/${id}*/
+               /*  return res.send({colors,tipo, condition,title,subtitle,description,stock,model,price,category }) */
+
+                return res.redirect('/products')
             })
                 .catch(error => console.log(error))
 
@@ -298,7 +299,7 @@ module.exports = {
          
           product.destroy(); // Eliminar el producto y la imagen
           
-          return res.redirect('/')
+          return res.redirect('/products')
         } catch (error) {
           console.error(error);
         }
