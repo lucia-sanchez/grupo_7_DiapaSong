@@ -13,11 +13,11 @@
             <h4 >Resultados de la búsqueda: <%=keywords%></h4>
         </div>
         <div class="product__search--card">
-        <% if (searchProduct.length) { %>
-            <% searchProduct.forEach(({title, subtitle, description, model, mainImage, price, category, colour, stock, id}) => { %>
+        <% if (products.length) { %>
+            <% products.forEach(({title, subtitle, description, model, images, price, category, colour, stock, id}) => { %>
          
                 <%- include('./partials/infoProducto',{
-                  title, subtitle, description, model, mainImage, price, category, colour, stock, id
+                  title, subtitle, description, model, images, price, category, colour, stock, id
                 }) %>
 
             <% }) %>
