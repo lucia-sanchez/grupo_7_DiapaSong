@@ -43,7 +43,7 @@
                         <label for="category">categoría</label>
                         <select name="category" id="category">
                             <% category.forEach(({category, id}) => { %>
-                                <option value="<%= id %>"<%= id === category.id && 'selected' %>><%= category %> </option>
+                                <option value="<%= id %>"<%= id === categories.id && 'selected' %>><%= category %> </option>
                                 <% }) %>
                             </select>
                         </div>
@@ -62,9 +62,10 @@
                         <div class="form__create--characteristics"><label for="colors">color</label>
                         <select name="colors" id="colors">
                             
-                            <% colors.forEach(({name, id}) => { %>
-                                <option value="<%= id %>"<%= id === colors.id && 'selected' %>><%= name %> </option>
-                                <% }) %>
+                            <% colorsSelect.forEach(({name, id}) => { %>
+                                <option value="<%= id %>" <%= colors.id === id ? 'selected' : null %>><%= name %></option>
+                              <% }) %>
+
                         </select>
                         </div>
                         <div>

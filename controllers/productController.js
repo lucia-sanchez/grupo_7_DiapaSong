@@ -179,9 +179,9 @@ module.exports = {
         const { id } = req.params;
 
         const product = db.Product.findByPk(id, {
-            include: ['images',]
+            include: ['images', "categories","colors"]
         })
-        const colors = db.Color.findAll({
+        const colorsSelect = db.Color.findAll({
             order: [["name"]],
             attributes: ["name", "id"]
         })
@@ -189,24 +189,13 @@ module.exports = {
             order: [["category"]],
             attributes: ["category", "id"],
         })
-        const productType = db.ProductType.findAll({
-            order: [["type"]],
-            attributes: ["type", "id"],
-        })
-        const condition = db.Condition.findAll({
-            order: [["condition"]],
-            attributes: ["condition", "id"],
-        })
-        
 
-        Promise.all([colors, category, product])
-            .then(([colors, category, product]) => {
+        Promise.all([colorsSelect, category, product])
+            .then(([colorsSelect, category, product]) => {
 
                 return res.render("update", {
                     title: 'Editar Producto',
-                    condition,
-                    colors,
-                    productType,
+                    colorsSelect,
                     category,
                     ...product.dataValues
                 })
@@ -243,7 +232,8 @@ module.exports = {
             },
              { where: {id,}}
 
-            ).then(() => {
+            )
+            .then(() => {
                /*  return res.send({colors,tipo, condition,title,subtitle,description,stock,model,price,category }) */
 
                 return res.redirect('/products')
@@ -255,8 +245,8 @@ module.exports = {
             const { id } = req.params;
             if (req.files.length) {
                 req.files.forEach((file) => {
-                    fs.existsSync(`./public/images/courses/${file.filename}`) &&
-                        fs.unlinkSync(`./public/images/courses/${file.filename}`);
+                    fs.existsSync(`./img/productos/${file.filename}`) &&
+                        fs.unlinkSync(`./img/productos/${file.filename}`);
                 });
             }
             const product = db.Product.findByPk(id, {

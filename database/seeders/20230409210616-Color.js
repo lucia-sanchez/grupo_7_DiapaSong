@@ -8,6 +8,11 @@ module.exports = {
       "Colors",
       [
         {
+          name: "No especifica",
+          color: "",
+          createdAt: new Date()
+        },
+        {
           name: "Blanco",
           color: "#FFFFFF",
           createdAt: new Date()
