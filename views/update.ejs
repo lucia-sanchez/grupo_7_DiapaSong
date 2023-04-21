@@ -12,46 +12,55 @@
             
             <h1>editar producto</h1>
             <div class="create__main__section__div--form-box">
-                <form action="/products/update/<%= id %>?_method=PUT" method="post" class="form__update" enctype="multipart/form-data">
+                <!--  -->
+                <form action="/products/update/<%= product.id %>?_method=PUT" method="post" class="form__update" enctype="multipart/form-data">
                     <h5>tipo</h5>
                     <div class="form__create--radio">
                         
-                        <input type="radio" name="tipo" id="ticket" value="ticket"<%= idProductType && 'checked' %>>
+                        <input type="radio" name="tipo" id="ticket" value="ticket"<%= product.idProductType===2 ? 'checked' : null %>>
                         <label for="ticket">entrada</label>
-                        <input type="radio" name="tipo" id="product" value="product"<%= idProductType && 'checked'%>>
+                        <input type="radio" name="tipo" id="product" value="product"<%= product.idProductType===1 ? 'checked' : null%>>
                         <label for="product">instrumento</label>
                     </div>
                     <h5>condición</h5>
                     <div class="form__create--radio">
                         
-                        <input type="radio" name="condition" id="new" value="news"<%= idCondition && 'checked'  %>>
+                        <input type="radio" name="condition" id="new" value="news"<%= product.idCondition===1 ?  'checked' : null %>>
                         <label for="new">Nuevo</label>
-                        <input  type="radio" name="condition" id="sale" value="sale"<%= idCondition && 'checked'  %>>
+                        <input  type="radio" name="condition" id="sale" value="sale"<%= product.idCondition===2? 'checked' : null %>>
                         <label  for="sale">
                         Oferta
                         </label>
                     </div>
                     <div>
                         <label for="title">título</label>
-                        <input type="text" name="title" id="title" required value="<%= title %>">
+                        <input type="text" name="title" id="title" required value="<%= product.title %>">
                     </div>
                     <div>
                         <label for="subtitle">sub-título</label>
-                        <input type="text" name="subtitle" id="subtitle" required value="<%= subtitle %>">
+                        <input type="text" name="subtitle" id="subtitle" required value="<%= product.subtitle %>">
                     </div>
                     <div>
                         <label for="category">categoría</label>
                         <select name="category" id="category">
                             <% category.forEach(({category, id}) => { %>
-                                <option value="<%= id %>"<%= id === categories.id && 'selected' %>><%= category %> </option>
+                                <option value="<%= id %>"<%= id === product.categories.id && 'selected' %>><%= category %> </option>
                                 <% }) %>
                             </select>
                         </div>
                     <div>
                         <label for="description">descripcíon</label>
-                            <textarea name="description" id="description"  rows="3"><%= description %> </textarea>
+                            <textarea name="description" id="description"  rows="3"><%= product.description %> </textarea>
                     </div>
                     <div class="form__create--image-box">
+                        <!--  -->
+                        <% product.images.forEach(image => { %>
+                         <label for="preview" class="form__update__label--preview__image">
+                            <!--  -->
+                            <img src="/img/productos/<%= image.name %>" alt=""></img>
+                            <input type="radio" name="preview" id="" class="form__update__input--preview__image" value="<%= image.id %>" <%= image.main===1? 'checked':null %>></label>
+                        <% }) %>
+
                         <label for="mainImage">imagen principal</label>
                         <input type="file" name="mainImage" id="mainImage">
                         <label for="images">imagenes</label>
@@ -63,23 +72,23 @@
                         <select name="colors" id="colors">
                             
                             <% colorsSelect.forEach(({name, id}) => { %>
-                                <option value="<%= id %>" <%= colors.id === id ? 'selected' : null %>><%= name %></option>
+                                <option value="<%= id %>" <%= product.colors.id === id ? 'selected' : null %>><%= name %></option>
                               <% }) %>
 
                         </select>
                         </div>
                         <div>
                             <label for="stock">stock</label>
-                            <input type="number" name="stock" id="stock" value="<%= stock %>"><p>un.</p>
+                            <input type="number" name="stock" id="stock" value="<%= product.stock %>"><p>un.</p>
                         </div>
                         <div>
                             <label for="model">modelo</label>
-                            <input type="text" name="model" id="model" value="<%= model %>">
+                            <input type="text" name="model" id="model" value="<%= product.model %>">
                         </div>
                     
                     <div>
                         <label for="price">precio</label>
-                        <input type="number" name="price" id="price" value="<%= price %>"><p>$</p>
+                        <input type="number" name="price" id="price" value="<%= product.price %>"><p>$</p>
                     </div>
                     <div class="form__create-btn-box">
                         <button class="btn--crear-cuenta" type="submit">editar</button>

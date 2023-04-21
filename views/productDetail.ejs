@@ -21,7 +21,7 @@
           </h4>
 
           <figure class="main__section__productos__producto--imagen-detail">
-            <img src="/img/productos/<%= images[0].name %>" alt="<%= title %>" />
+            <img src="/img/productos/<%= images.find((image)=>image.main==1).name %>" alt="<%= title %>" />
           </figure>
         </section>
      
