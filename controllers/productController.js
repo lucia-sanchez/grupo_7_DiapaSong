@@ -3,6 +3,7 @@ const fs = require("fs");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const product = require("../database/models/product");
+const Op = db.Sequelize.Op 
 
 module.exports = {
   products: (req, res) => {
@@ -56,11 +57,12 @@ module.exports = {
         "carts",
       ],
     })
-      .then((products) => {
-        //return res.send(products)
+      .then((product) => {
+       // return res.send(product.images)
+       
         return res.render("productDetail", {
           title: "Detalle de Producto",
-          ...products.dataValues,
+          ...product.dataValues,
         });
       })
       .catch((error) => console.log(error));
@@ -223,12 +225,14 @@ module.exports = {
     });
 
     Promise.all([colorsSelect, category, product])
-      .then(([colorsSelect, category, product]) => {
+      .then(([colorsSelect, category, product]) => { 
+        // return res.send(/*body errors req. req.fileValidationError res.locals req.files*/product)
         return res.render("update", {
           title: "Editar Producto",
           colorsSelect,
           category,
-          ...product.dataValues,
+          product
+          //...product.dataValues,
         });
       })
 
@@ -237,16 +241,7 @@ module.exports = {
   update: (req, res) => {
     const errors = validationResult(req);
 
-    if (req.fileValidationError) {
-      errors.errors.push({
-        value: "",
-        msg: req.fileValidationError,
-        param: "images",
-        location: "files",
-      });
-    }
-    if (errors.isEmpty()) {
-      const {
+        const {
         title,
         subtitle,
         condition,
@@ -257,6 +252,7 @@ module.exports = {
         colors,
         model,
         stock,
+        preview
       } = req.body;
       const id = +req.params.id;
 
@@ -277,34 +273,61 @@ module.exports = {
           where: { id },
         }
       )
-        .then(() => {
-          return res.redirect("/products");
-        })
-        .catch((error) => console.log(error));
-    } else {
-      const colors = db.Color.findAll({
-        order: [["name"]],
-        attributes: ["name", "id"],
-      });
-      const category = db.Category.findAll({
-        order: [["category"]],
-        attributes: ["category", "id"],
-      });
+      /* SI VIENEN IMAGENES POR REQ.FILES POR INPUT MAINIMAGE O IMAGES SE ACTUALIZA LA TALA DE IMAGENES */
+        if (req.files.mainImage||req.files.images||(req.files.mainImage&&req.files.images)) {
+            /* SI VIENE UNA MAINIMAGE */
+            if (req.files.mainImage) {
+                db.Image.update(
+                    { name: req.files.mainImage[0].filename },
+                    { where: { main: 1, idProduct: id } }
+                  );
+            }
+            /* O SI VIENEN IMAGES (SECUNDARIAS) */
+            if (req.files.images) {
+                // DESTRUYE LAS IMAGENES QUE EXISTIAN
+                db.Image.destroy({
+                  where: {
+                    main: 0,
+                    idProduct: id
+                  }
+                }).then(() => {
 
-      Promise.all([colors, category, product])
-        .then(([colors, category, product]) => {
-          return res.render("update", {
-            title: "Editar Producto",
-            colors,
-            category,
-            ...product.dataValues,
-            errors: errors.mapped(),
-            old: req.body,
-          });
-        })
+                  // CREA IMAGENES SECUNDRIAS NUEVAS
+                  req.files.images.forEach(image => {
+                    db.Image.create({
+                      name: image.filename,
+                      main: 0,
+                      idProduct: id
+                    });
+                  });
+                });
+              }
+            
+            //return res.send(req.files) return res.redirect(`/products/detail/${id}`);
+            return res.redirect(`/`);
+        }
 
+        // SI NO VIENEN IMAGENES POR INPUTS SE PUEDE CAMBIAR CUAL ES LA IMAGEN PRINCIPAL DESDE LAS VISTAS PREVIAS DEL INPUT TIPO RADIO(PERVIEW)
+      const imagesUpdate = db.Image.update({
+                main:0,
+                
+            },
+            {where:{idProduct:id}}).then(()=>{
+                db.Image.update({
+                    main:1,
+                    
+                },
+                {where:{id:preview}})
+            }
+                )      
+        
+            Promise.all([productUpdated, imagesUpdate, /* product */])
+            .then(([productUpdated, imagesUpdate, /* product */]) => {  
+              // return res.send(/*body errors req. req.fileValidationError res.locals  product imagesUpdate imagesUpdate*/req.files)
+               return res.redirect(`/`);
+            })
         .catch((error) => console.log(error));
-    }
+    
   },
   remove: async (req, res) => {
     const id = req.params.id;
