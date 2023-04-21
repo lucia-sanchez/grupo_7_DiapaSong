@@ -57,9 +57,23 @@ module.exports = {
         "carts",
       ],
     })
-      .then((product) => {
-       // return res.send(product.images)
-       
+      .then((product) => { 
+        //return res.send(product)
+        if (!product) {
+            return res.render("productDetail", {
+                title: "Producto no disponible",
+                title:'Producto no disponible',
+                price:'',
+                description: '',
+                model:'',
+                stock:'',
+                images:'',
+                colors:''
+              });
+            /* return res.render('error',
+            {message:"Error 404 - El producto al que intentas acceder no se encuentra disponible ",
+            error:{status:404}}); */
+          }
         return res.render("productDetail", {
           title: "Detalle de Producto",
           ...product.dataValues,

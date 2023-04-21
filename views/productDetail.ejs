@@ -21,18 +21,23 @@
           </h4>
 
           <figure class="main__section__productos__producto--imagen-detail">
-            <img src="/img/productos/<%= images.find((image)=>image.main==1).name %>" alt="<%= title %>" />
+            <img src="/img/productos/<%=images ? images.find((image)=>image.main==1).name : 'no-product.jpg' %>" alt="<%= title %>" />
           </figure>
         </section>
-     
+     <% if (title=="Producto no disponible") { %>
+           <% } else { %>
         <section class="detalles_producto">
           <article class="detalle-producto-precio">
             <h5>Precio: $ <%= price %>
             </h5>
           </article>
+          
+          
+           
           <article class="detalle-producto-comprar">
             <a href="#">COMPRAR</a>
           </article>
+          
           <article class="detalle-producto-agregar">
             <a href="/productCart">Agregar al carrito</a>
           </article>
@@ -71,7 +76,7 @@
                 <%= stock %>
               </p>
             </div>
-          </article>
+          </article><% } %> 
           <% if (locals.userLogin && locals.userLogin.rol == "1") { %>
             <div class="product-buttons">
             <div>
