@@ -1,5 +1,6 @@
 .form__update .form__create--image-box{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .form__update .form__create--image-box input{
@@ -38,3 +39,24 @@
         box-shadow: 3px 3px 10px 5px rgba(127, 30, 139, 0.568);    
         outline:none
     }
+.form__update .form__update__label--preview__image{
+    
+width: 21%;
+    
+flex-direction: column;
+    
+align-items: center;
+}
+.form__update .form__update__label--preview__image img{
+    width: 73px;
+    height: 90px;
+    }
+.form__update .form__update__label--preview__image .form__update__input--preview__image{
+
+width: 19px;
+
+align-content: flex-end;
+}
+.form__update .form__update__label--preview__image .form__update__input--preview__image:focus{
+ box-shadow: none;
+}
