@@ -16,10 +16,10 @@
         <!-- Productos -->
         <div class="main__section-product">
         <section class="main__section__productos main__section__productos-detalles">
-          <h4 class="productos_detalles-titulo">
-            <%= title %>
-          </h4>
-
+          <div class="productos_detalles-titulo">
+            <%= title %> <br>
+           <h5><%= subtitle %></h5> 
+          </div>
           <figure class="main__section__productos__producto--imagen-detail">
             <img src="/img/productos/<%= images.find((image)=>image.main==1).name %>" alt="<%= title %>" />
           </figure>

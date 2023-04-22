@@ -71,14 +71,16 @@
     transition: all 0.2s;
 }
 header .header__section--user-navigation-logged{
-    width: 25%;
+    width: 100%;
+order: -1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-around;
     color: white;
 }
 .header__section--user-navigation-logged div{
     display: flex;
+    padding: 5px;
     justify-content: flex-end;
     flex-wrap: wrap;
 }
@@ -318,7 +320,7 @@ text-align: center;
 
 position: relative;
 
-right: -23px;
+right: -33px;
 
 top: 24px;
 
