@@ -18,14 +18,16 @@ margin-bottom: 2px;}
     display: flex;
      flex-direction: column;
      width: 190px;
- 
+
    margin-right: 8px;
    
  }
  .main_section_nav_categorias{
      display: flex;
  padding-left: 10px;
- background-color: rgb(147, 120, 172);;}
+ background-color: rgb(147, 120, 172);
+ height: 750px
+}
  
  .main__section__nav--titulo{
  background-color: black;

@@ -110,6 +110,7 @@ font-weight: bold;
     letter-spacing: 2px;
    height: 80px;
    line-height: 80px;
+  
 
    
 }
@@ -128,6 +129,7 @@ font-weight: bold;
 }
 .Products--all{
     float: left;
+    padding-left:10px
 }
 .main__section__productos-superior{
     display: flex;
@@ -138,19 +140,22 @@ min-width: auto;
 height: 400px;
 }
 .main__section__productos{
- width:80%;
+
    background-color: rgb(147, 120, 172);
     display: flex;
+    align-items: center;
+    align-self: center;
     flex-direction: row;
     flex-wrap: wrap;
    padding-bottom: 100px;
-    justify-content: center;
+
+   
 
 
 }
 .carousel-inner{
     width: 100%;
-    padding-left: 75px;
+    
 }
 .main__section__productos--producto{
    
@@ -161,6 +166,7 @@ height: 400px;
     box-shadow: 1px 1px 8px rgb(0, 0, 0);
     float: left;
     margin: 5px;   
+    
 
 }
 .main__section__productos--producto:hover{
