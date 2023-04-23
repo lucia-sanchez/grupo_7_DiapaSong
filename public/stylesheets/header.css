@@ -563,7 +563,7 @@ float: left;
     }
     .header-scroll .header__section--user-navigation-logged{
        
-        width: 250px;
+      
     justify-content: flex-end;
         right: 0;
         order: 4;

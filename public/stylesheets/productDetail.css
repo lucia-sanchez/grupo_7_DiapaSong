@@ -119,7 +119,7 @@ line-height: 35px;
     }
     @media (min-width: 1024px) {
     .main__section__productos-detalles{
-        width: 900px;
+        width: 700px;
         height: 700px;
        background-color:  rgb(95, 58, 142)
     }
@@ -140,7 +140,8 @@ line-height: 35px;
             padding: 10px;
          }
         .main__section-product{
-  height: 770px;
+  height:auto;
+
             border-radius: 5px;
             display: flex;
             padding: 20px;
