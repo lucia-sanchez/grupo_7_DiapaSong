@@ -17,3 +17,7 @@
 ## Retrospective Sprint 5
 
 ![Retrospective-Sprint5](/design/Retro-sprint5.jpg)
+
+## Retrospective Sprint 6
+
+![Retrospective-Sprint6](/design/Retro-sprint6.jpg)
