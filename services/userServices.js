@@ -9,7 +9,6 @@ module.exports ={
     getAllUsers : async (req)=>{
         try{
             let {count, rows: users} = await db.User.findAndCountAll({
-                    attributes : ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
                     include : [
                         {
                             association : 'genre',
@@ -18,12 +17,12 @@ module.exports ={
                         {
                             association : 'instrument',
                             attributes : ['instrumentId']
-                        }
+                        }    
                     ],
-                    exclude :[     
-                        'passord','createdAt','updatedAt'    
-                 ]
-        
+                    attributes :{
+                    include: ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId',literalQueryUrlImage(req,'users','profileImage', 'urlImage')], 
+                    exclude :['passord','createdAt','updatedAt']
+                    }
                 })
 
             return {
