@@ -6,14 +6,20 @@ module.exports = {
       const count = await db.Product.count();
       const products = await db.Product.findAll({
         include: [
-          
-           {association: "colors",
+          {
+            association: "colors",
             attributes: {
-            exclude: ["id", "createdAt", "updatedAt", "color"]}},
-        
-          {association: "categories",
+              exclude: ["id", "createdAt", "updatedAt", "color"],
+            },
+          },
+
+          {
+            association: "categories",
             attributes: {
-              exclude: ["id", "createdAt", "updatedAt"]}},
+              exclude: ["id", "createdAt", "updatedAt"],
+            },
+          },
+  
         ],
         attributes: ["id", "title", "description"],
       });
@@ -28,22 +34,33 @@ module.exports = {
       };
     }
   },
-  getOneProduct: async (id,req) => {
+  getOneProduct: async (id, req) => {
     try {
       const product = await db.Product.findByPk(id, {
         include: [
-           {association: "colors",
+          {
+            association: "colors",
             attributes: {
-            exclude: ["id", "createdAt", "updatedAt","color"]}},
-        
-          {association: "categories",
+              exclude: ["id", "createdAt", "updatedAt", "color"],
+            },
+          },
+
+          {
+            association: "categories",
             attributes: {
-              exclude: ["id", "createdAt", "updatedAt"]}},
+              exclude: ["id", "createdAt", "updatedAt"],
+            },
+          },
+          {
+            association: 'images',
+            attributes: [ 'name'],
+          },
+          
         ],
         attributes: ["id", "title", "description"],
       });
       return {
-        product
+        product,
       };
     } catch (error) {
       throw {
