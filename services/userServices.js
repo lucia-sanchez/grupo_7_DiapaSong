@@ -8,26 +8,55 @@ const createResponseError = require("../helpers/createResponseError");
 module.exports ={
     getAllUsers : async (req)=>{
         try{
-            const users = await db.User.findAll({
-                atributes:{
-                    excluide: ['password', 'creadedAt', 'UpdatedAt'],
-                    incluide:[
-                        'id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'
-                    ]
-                }
-            })
+            let {count, rows: users} = await db.User.findAndCountAll({
+                    attributes : ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
+                    include : [
+                        {
+                            association : 'genre',
+                            attributes : ['genreId']
+                        },
+                        {
+                            association : 'instrument',
+                            attributes : ['instrumentId']
+                        }
+                    ],
+                    exclude :[     
+                        'passord','createdAt','updatedAt'    
+                 ]
+        
+                })
 
-            return users
+            return {
+                count,
+                users
+            }
         }catch(error){
             return createResponseError()    
             }
         },
 
-        getUserById: async () =>{
+        getUserById: async (id) =>{
             try{
-
+                let user = db.User.findByPk(id,{
+                    attributes : ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
+                    include : [
+                        {
+                            association : 'genre',
+                            attributes : ['genreId']
+                        },
+                        {
+                            association : 'instrument',
+                            attributes : ['instrumentId']
+                        }
+                    ],
+                    exclude :[     
+                           'passord','createdAt','updatedAt'    
+                    ]
+        
+                })
+                return user
             }catch(error){
-                return createResponseError(error)
+                return createResponseError()
             }
         }
     }

@@ -10,7 +10,7 @@ const registerUserValidator = require('../../validations/registerUserValidator')
 /* api/users */
 router
 .get('/', list)
-.get('/users/:id', userDetail)
+.get('/:id', userDetail)
       
 
 module.exports = router;
