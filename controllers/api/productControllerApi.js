@@ -1,6 +1,6 @@
 const {validationResult} = require('express-validator');
 const createResponseError = require("../../helpers/createResponseErrors");
-const {getAllProducts} = require("../../services/productsServices");
+const {getAllProducts, getOneProduct} = require("../../services/productsServices");
 
 module.exports = {
   list: async (req, res) => {
@@ -10,7 +10,8 @@ module.exports = {
       
       return res.status(200).json({
         ok: true,
-       count:products,
+       data:products,
+      
         meta: {
           status: 200,
           total: products.length,
@@ -21,4 +22,25 @@ module.exports = {
       return createResponseError(res, error);
       
     }
-  }}
+  },
+  detail: async (req, res) => {
+    try {
+      
+      const product = await getOneProduct(req.params.id, req)
+
+      
+      return res.status(200).json({
+        ok: true,
+       data:product,
+        meta: {
+          status: 200,
+          total: 1,
+          url: `/api/products/${req.params.id}`,
+        },
+      });
+    } catch (error) {
+      return createResponseError(res, error);
+      
+    }
+  }
+}
