@@ -14,6 +14,9 @@ const ticketsRouter = require('./routes/tickets');
 const localsUserCheck = require('./middlewares/localsUserCheck');
 const cookieCheck = require("./middlewares/cookieCheck");
 
+//APIS
+const apiUserRouter = require('./routes/apis/users');
+
 const app = express();
 
 // view engine setup
@@ -45,6 +48,8 @@ app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/tickets', ticketsRouter);
 
+/* APIS */
+app.use('/api/users', apiUserRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
