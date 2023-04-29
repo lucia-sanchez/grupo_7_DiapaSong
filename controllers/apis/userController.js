@@ -8,10 +8,10 @@ const createResponseError = require("../../helpers/createResponseError");
 module.exports = {
     list: async (req,res) =>{
         //cambiar el limite para probar
-        const limit = 2;
+        const limit = 10;
         const page = parseInt(req.query.page)?parseInt(req.query.page):1;
         //const {count} = await getAllUsers()
-        if (isNaN(req.query.page) || req.query.page == 0 /* < 1 || page > count / limit */) {
+        if (req.query.page && isNaN(req.query.page) || req.query.page == 0 /* < 1 || page > count / limit */) {
         return res.status(400).json({ status:400,
             message: 'La página que buscas no existe, la consulta de pagina debe ser un numero mayor que 0' 
         });
@@ -26,9 +26,12 @@ module.exports = {
                 message: 'La página que buscas no existe' 
              });}
         return res.status(200).json({
-        ok: true,            
-        data :{count,next : nextPageUrl,
-            previous: prevPageUrl, users},
+        ok: true, 
+        next : nextPageUrl,
+        previous: prevPageUrl,           
+        data :{count,
+            
+             users},
         meta : {
             status: 200,
             total : users.length,
