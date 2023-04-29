@@ -1,9 +1,5 @@
-const fs = require('fs');
-const path = require('path');
-const { validationResult } = require('express-validator');
-const { hashSync } = require('bcryptjs')
 const {getAllUsers, getUserById} = require('../../services/userServices');
-const createResponseError = require("../../helpers/createResponseError");
+const createResponseErrors = require('../../helpers/createResponseErrors');
 
 module.exports = {
     list: async (req,res) =>{
@@ -41,7 +37,7 @@ module.exports = {
 
     }catch (error) {
         console.log(error)
-        return createResponseError(res, error)
+        return createResponseErrors(res, error)
        }
 },
 userDetail : async (req,res) =>{
@@ -65,8 +61,7 @@ userDetail : async (req,res) =>{
         })
 
     }catch(error){
-        console.log(error)
-        return createResponseError(res, error)
+        return createResponseErrors(res, error)
     }
 }
 }

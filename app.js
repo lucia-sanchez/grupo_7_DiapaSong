@@ -13,10 +13,10 @@ const productsRouter = require('./routes/products');
 const ticketsRouter = require('./routes/tickets');
 const localsUserCheck = require('./middlewares/localsUserCheck');
 const cookieCheck = require("./middlewares/cookieCheck");
-
-const productsApiRouter = require('./routes/apis/productsApi');
 //APIS
+const productsApiRouter = require('./routes/apis/productsApi');
 const apiUserRouter = require('./routes/apis/users');
+
 const app = express();
 
 // view engine setup
@@ -49,10 +49,7 @@ app.use('/products', productsRouter);
 app.use('/tickets', ticketsRouter);
 
 //RUTAS APIs
-
 app.use('/api/products', productsApiRouter);
-
-/* APIS */
 app.use('/api/users', apiUserRouter);
 
 // catch 404 and forward to error handler

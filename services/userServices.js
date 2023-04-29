@@ -1,27 +1,16 @@
 const db = require("../database/models");
 const literalQueryUrlImage = require('../helpers/literalQueryUrlImage')
-const { validationResult } = require('express-validator');
-const { hashSync } = require('bcryptjs');
-const createResponseError = require("../helpers/createResponseError");
+const createResponseErrors = require("../helpers/createResponseErrors");
 
 
 module.exports ={
     getAllUsers : async (req,limit, offset )=>{
         try{
             let {count, rows: users} = await db.User.findAndCountAll({
-                    include : [
-                        {
-                            association : 'genre',
-                            attributes : ['genreId']
-                        },
-                        {
-                            association : 'instrument',
-                            attributes : ['instrumentId']
-                        }    
-                    ],
+              
                     attributes :{
-                    include: ['id', 'name', 'profileImage', 'email', /* 'password', */ 'identifyId', 'birthdate', 'phone', 'news', 'rolId',literalQueryUrlImage(req,'users','profileImage', 'urlImage')], 
-                    exclude :['password','createdAt','updatedAt']
+                    include: ['id', 'name', 'email', literalQueryUrlImage(req,'users','profileImage', 'urlImage')], 
+                    exclude :['password','createdAt','updatedAt','identifyId', 'birthdate', 'phone', 'news', 'rolId','profilImage']
                     },
                     limit,
                     offset ,
@@ -32,14 +21,14 @@ module.exports ={
                 users
             }
         }catch(error){
-            return createResponseError()    
+            return createResponseErrors()    
             }
         },
 
         getUserById: async (id) =>{
             try{
                 let user = db.User.findByPk(id,{
-                    attributes : ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
+                    attributes : ['id', 'name', 'profileImage', 'email',  'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
                     include : [
                         {
                             association : 'genre',
@@ -51,13 +40,13 @@ module.exports ={
                         }
                     ],
                     exclude :[     
-                           'passord','createdAt','updatedAt'    
+                           'password','createdAt','updatedAt'    
                     ]
         
                 })
                 return user
             }catch(error){
-                return createResponseError()
+                return createResponseErrors()
             }
         }
     }
