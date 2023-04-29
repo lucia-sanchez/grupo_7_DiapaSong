@@ -14,7 +14,12 @@ const ticketsRouter = require('./routes/tickets');
 const localsUserCheck = require('./middlewares/localsUserCheck');
 const cookieCheck = require("./middlewares/cookieCheck");
 
+<<<<<<< HEAD
 const productsApiRouter = require('./routes/api/productsApi');
+=======
+//APIS
+const apiUserRouter = require('./routes/apis/users');
+>>>>>>> develop
 
 const app = express();
 
@@ -47,10 +52,15 @@ app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/tickets', ticketsRouter);
 
+<<<<<<< HEAD
 //RUTAS APIs
 
 app.use('/api/products', productsApiRouter);
 
+=======
+/* APIS */
+app.use('/api/users', apiUserRouter);
+>>>>>>> develop
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
