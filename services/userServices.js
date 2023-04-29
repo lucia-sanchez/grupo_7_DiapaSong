@@ -6,7 +6,7 @@ const createResponseError = require("../helpers/createResponseError");
 
 
 module.exports ={
-    getAllUsers : async (req)=>{
+    getAllUsers : async (req,limit, offset )=>{
         try{
             let {count, rows: users} = await db.User.findAndCountAll({
                     include : [
@@ -20,9 +20,11 @@ module.exports ={
                         }    
                     ],
                     attributes :{
-                    include: ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId',literalQueryUrlImage(req,'users','profileImage', 'urlImage')], 
-                    exclude :['passord','createdAt','updatedAt']
-                    }
+                    include: ['id', 'name', 'profileImage', 'email', /* 'password', */ 'identifyId', 'birthdate', 'phone', 'news', 'rolId',literalQueryUrlImage(req,'users','profileImage', 'urlImage')], 
+                    exclude :['password','createdAt','updatedAt']
+                    },
+                    limit,
+                    offset ,
                 })
 
             return {
