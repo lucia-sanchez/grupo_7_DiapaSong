@@ -43,7 +43,6 @@ module.exports = {
     try {
       
       const product = await getOneProduct(req.params.id, req)
-
       
       return res.status(200).json({
         ok: true,
