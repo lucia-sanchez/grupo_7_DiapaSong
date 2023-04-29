@@ -1,10 +1,11 @@
 const { Association } = require("sequelize");
 const db = require("../database/models");
 module.exports = {
-  getAllProducts: async (req) => {
+  getAllProducts: async (/* req, */ limit, offset) => {
     try {
-      const count = await db.Product.count();
-      const products = await db.Product.findAll({
+      /* const count = await db.Product.count();
+      const products = await db.Product.findAll */
+      const {count, rows : products} = await db.Product.findAndCountAll({
         include: [
           {
             association: "colors",
@@ -22,6 +23,8 @@ module.exports = {
   
         ],
         attributes: ["id", "title", "description"],
+        limit,
+        offset
       });
       return {
         count,
