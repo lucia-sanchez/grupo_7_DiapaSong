@@ -3,15 +3,14 @@
 <!-- HEAD -->
 <%- include('./partials/head') %> 
 
-<body>
 
 <!-- HEADER -->
 <%- include('./partials/header') %> 
+<h4 class="productos_search--titulo">Resultados de la búsqueda: <%=keywords%></h4>
 
 <div class="container products--search">
     
-            <h4 >Resultados de la búsqueda: <%=keywords%></h4>
-        </div>
+    </div>    
         <div class="product__search--card">
         <% if (products.length) { %>
             <% products.forEach(({title, subtitle, description, model, images, price, category, colour, stock, id}) => { %>
@@ -23,14 +22,12 @@
             <% }) %>
         
         <% } else { %>
-
-        <div class="col-12">
-            <h2  style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+        </div>
+        <div class="header">
+            <p class="productos_search--error--text">No hay productos que coincidan con esa búsqueda</p>
         </div>
         <% } %>
-        
-    </div>
-
+        </div>
 
 
 </body>
