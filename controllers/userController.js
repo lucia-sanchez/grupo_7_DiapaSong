@@ -39,7 +39,7 @@ module.exports = {
                 , news, birthdate } = req.body;
 
             const newUser = db.User.create({
-                profileImage: req.file ? `${req.file.filename}` : 'user-default',
+                profileImage: req.file ? `${req.file.filename}` : "user-default.png",
                 name,
                 email,
                 password: hashSync(password, 12),

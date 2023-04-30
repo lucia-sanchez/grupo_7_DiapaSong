@@ -10,7 +10,7 @@ module.exports ={
               
                     attributes :{
                     include: ['id', 'name', 'email', literalQueryUrlImage(req,'users','profileImage', 'urlImage')], 
-                    exclude :['password','createdAt','updatedAt','identifyId', 'birthdate', 'phone', 'news', 'rolId','profilImage']
+                    exclude :['password','createdAt','updatedAt','identifyId', 'birthdate', 'phone', 'news', 'rolId','profileImage']
                     },
                     limit,
                     offset ,
