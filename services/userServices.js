@@ -9,7 +9,7 @@ module.exports ={
             let {count, rows: users} = await db.User.findAndCountAll({
               
                     attributes :{
-                    include: ['id', 'name', 'email', literalQueryUrlImage(req,'','profileImage', 'urlImage')], 
+                    include: ['id', 'name', 'email', literalQueryUrlImage(req,'users','profileImage', 'urlImage')], 
                     exclude :['password','createdAt','updatedAt','identifyId', 'birthdate', 'phone', 'news', 'rolId','profilImage']
                     },
                     limit,
