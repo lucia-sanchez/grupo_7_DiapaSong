@@ -6,7 +6,6 @@ window.addEventListener("scroll", function () {
       main.classList.toggle("scroll_main_space_top", window.scrollY > 1);
       header.classList.toggle("header-scroll", window.scrollY > 1);
       navBar.classList.toggle("fixed", window.scrollY > 1);
-      
 });
 
 

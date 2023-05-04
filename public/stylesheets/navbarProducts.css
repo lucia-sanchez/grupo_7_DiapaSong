@@ -83,11 +83,21 @@ cursor: pointer;
       .fixed{
        position: relative;
       width: 155px;
+    
       }
       .fixed .divFix{
         position: fixed;
+        top:88px;
+        bottom: 0;
+        z-index:1;
         
-        top:85px
+        
+        
+      }
+.spaceComplementFixed{
+  background-color: red;
+  
+        height: 800px;
       }
       
 }

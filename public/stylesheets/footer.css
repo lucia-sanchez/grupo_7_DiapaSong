@@ -2,8 +2,8 @@
 .footer {
     width: 100%;
     text-transform: capitalize;
+    z-index: 2;
 }
-
 .footer a {
     color: white;
 }
@@ -18,6 +18,7 @@
     gap: 5px;
     flex-wrap: wrap;
     justify-content: space-around;
+ 
 }
 
 .footer__logo {
@@ -144,7 +145,11 @@
 
 /* DESKTOP */
 @media (min-width: 1024px) {
-    .footer {}
+    .footer {
+        z-index: 2;
+        position: relative;
+        background: linear-gradient(180deg, rgba(34, 142, 255) 0%, rgba(33, 224, 255) 100%);
+    }
 
     .footer__bottom {}
 
@@ -180,4 +185,5 @@ align-content: flex-start;
         height: 286px;
         justify-content: space-between;
     }
+
 }

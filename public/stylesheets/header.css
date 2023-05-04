@@ -182,7 +182,6 @@ header .header__section--user-navigation-logged{
 
 .header--whatsapp-icon a i {
     color: rgb(255, 255, 255);
-    ;
     font-size: 22px;
     -webkit-text-stroke: 2px rgb(0, 0, 0);
 }
@@ -300,6 +299,17 @@ header .header__section--user-navigation-logged{
         transition: all 0.2s;
         z-index: 110;
     }
+    @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .header--whatsapp-icon:hover a i{
+        animation: rotate 1s linear infinite;
+      }
     
     .header_redes {
         display: flex;
@@ -455,10 +465,11 @@ float: left;
         display: flex;
         position: fixed;
         z-index: 1;
-        bottom: 33px;
+        bottom: 30px;
         right: 75px;
         padding: 5px;
         border-radius: 10px;
+        color:black;
         background-color: rgb(75, 216, 47);
         animation: animacion 0.5s ease 0s 1 normal forwards;
         transition: all 1s;
@@ -571,7 +582,7 @@ float: left;
         width: 220px;
         height: auto;
         top:0;
-        padding: 0;
+        padding: 0 0 3px 0;
     }
   
     .scroll_main_space_top{
