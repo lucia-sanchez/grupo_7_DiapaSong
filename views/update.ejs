@@ -16,126 +16,153 @@
                         <!--  -->
                         <form action="/products/update/<%= product.id %>?_method=PUT" method="post" class="form__update"
                             enctype="multipart/form-data">
-                            <!-- TIPO -->
-                            <h5>tipo</h5>
-                            <div class="form__create--radio">
+                            <img class="form__create--background" src="/img/backgroundDiapasong.png" alt="">
+                            <section class="form__update__section">
+                                <!-- TIPO -->
+                                <h5>tipo</h5>
+                                <div class="form__create--radio">
 
-                                <input type="radio" name="tipo" id="ticket" value="ticket" <%=product.idProductType===2
-                                    ? 'checked' : null %>>
-                                <label for="ticket">entrada</label>
-                                <input type="radio" name="tipo" id="product" value="product"
-                                    <%=product.idProductType===1 ? 'checked' : null%>>
-                                <label for="product">instrumento</label>
-                            </div>
-                            <!-- CONDICION -->
-                            <h5>condición</h5>
-                            <div class="form__create--radio">
+                                    <input type="radio" name="tipo" id="ticket" value="ticket"
+                                        <%=product.idProductType===2 ? 'checked' : null %>>
+                                    <label for="ticket">entrada</label>
+                                    <input type="radio" name="tipo" id="product" value="product"
+                                        <%=product.idProductType===1 ? 'checked' : null%>>
+                                    <label for="product">instrumento</label>
+                                </div>
+                                <!-- CONDICION -->
+                                <h5>condición</h5>
+                                <div class="form__create--radio">
 
-                                <input type="radio" name="condition" id="new" value="news" <%=product.idCondition===1
-                                    ? 'checked' : null %>>
-                                <label for="new">Nuevo</label>
-                                <input type="radio" name="condition" id="sale" value="sale"
-                                    <%=product.idCondition===2? 'checked' : null %>>
-                                <label for="sale">
-                                    Oferta
-                                </label>
-                            </div>
-                            <!-- TÍTULO -->
-                            <div>
-                                <label for="title">título</label>
-                                <input type="text" name="title" id="title" value="<%= product.title %>">
-                                <small class="register__formbox__div__errors">
-                                    <%= locals.errors && errors.title ? errors.title.msg : null %>
-                                </small>
-                            </div>
-                            <!-- SUTÍTULO -->
-                            <div>
-                                <label for="subtitle">sub-título</label>
-                                <input type="text" name="subtitle" id="subtitle" required
-                                    value="<%= product.subtitle %>">
-                                <small class="register__formbox__div__errors">
-                                    <%= locals.errors && errors.subtitle ? errors.subtitle.msg : null %>
-                                </small>
-                            </div>
-                            <!-- CATEGORÍA -->
-                            <div>
-                                <label for="category">categoría</label>
-                                <select name="category" id="category">
-                                    <% category.forEach(({category, id})=> { %>
-                                        <option value="<%= id %>" <%=id===product.categories.id && 'selected' %>><%=
-                                                category %>
-                                        </option>
-                                        <% }) %>
-                                </select>
-                            </div>
-                            <!-- DESCRIPCIÓN -->
-                            <div>
-                                <label for="description">descripcíon</label>
-                                <textarea name="description" id="description"
-                                    rows="3"><%= product.description %> </textarea>
-                                <small class="register__formbox__div__errors">
-                                    <%= locals.errors && errors.description ? errors.description.msg : null %>
-                                </small>
-                            </div>
+                                    <input type="radio" name="condition" id="new" value="news"
+                                        <%=product.idCondition===1 ? 'checked' : null %>>
+                                    <label for="new">Nuevo</label>
+                                    <input type="radio" name="condition" id="sale" value="sale"
+                                        <%=product.idCondition===2? 'checked' : null %>>
+                                    <label for="sale">
+                                        Oferta
+                                    </label>
+                                </div>
+                                <!-- TÍTULO -->
+                                <div>
+                                    <label for="title">título</label>
+                                    <input type="text" name="title" id="title"
+                                        value="<%= locals.old && old.title ? old.title : product.title  %>">
+                                    <small class="register__formbox__div__errors">
+                                        <%= locals.errors && errors.title ? errors.title.msg : null %>
+                                    </small>
+                                </div>
+                                <!-- SUTÍTULO -->
+                                <div>
+                                    <label for="subtitle">sub-título</label>
+                                    <input type="text" name="subtitle" id="subtitle"
+                                        value="<%= locals.old && old.subtitle ? old.subtitle : product.subtitle %>">
+                                    <small class="register__formbox__div__errors">
+                                        <%= locals.errors && errors.subtitle ? errors.subtitle.msg : null %>
+                                    </small>
+                                </div>
+                                <!-- CATEGORÍA -->
+                                <div>
+                                    <label for="category">categoría</label>
+                                    <select name="category" id="category">
+                                        <% category.forEach(({category, id})=> { %>
+                                            <option value="<%= id %>" <%=id===product.categories.id && 'selected' %>><%=
+                                                    category %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                    <small class="register__formbox__div__errors">
+
+                                    </small>
+                                </div>
+                                <!-- DESCRIPCIÓN -->
+                                <div>
+                                    <label for="description">descripcíon</label>
+                                    <textarea name="description" id="description"
+                                        rows="3"><%= locals.old && old.description ? old.description : product.description %> </textarea>
+                                    <small class="register__formbox__div__errors">
+                                        <%= locals.errors && errors.description ? errors.description.msg : null %>
+                                    </small>
+                                </div>
+                            </section>
+
                             <!-- IMAGEN -->
                             <div class="form__create--image-box">
                                 <!-- VISTAS PREVIAS CAMBIO IMAGEN PRINCIPAL -->
-                                <% product.images.forEach(image=> { %>
-                                    <label for="preview" class="form__update__label--preview__image">
-                                        
-                                        <img src="/img/productos/<%= image.name %>" alt=""></img>
-                                        <input type="radio" name="preview" id=""
-                                            class="form__update__input--preview__image" value="<%= image.id %>"
-                                            <%=image.main===1? 'checked' :null %>></label>
-                                    <% }) %>
-                                        <!-- PRINCIPAL -->
-                                        <label for="mainImage">imagen principal</label>
-                                        <input type="file" name="mainImage" id="mainImage">
-                                        <!-- SECUNDARIAS -->
-                                        <label for="images">imagenes</label>
-                                        <input type="file" name="images" id="images" multiple>
-                                        <small class="register__formbox__div__errors">
-                                            <%= locals.errors && errors.mainImage ? errors.mainImage.msg : null %>
-                                        </small><small class="register__formbox__div__errors">
-                                            <%= locals.errors && errors.images ? errors.images.msg : null %>
-                                        </small>
+                                <p>elegir imagen principal</p>
+                                <div class="form__create--imagebox-previews">
+                                    <% product.images.forEach(image=> { %>
+                                        <label for="preview" class="form__update__label--preview__image">
+
+                                            <img src="/img/productos/<%= image.name %>" alt=""></img>
+                                            <input type="radio" name="preview" id=""
+                                                class="form__update__input--preview__image" value="<%= image.id %>"
+                                                <%=image.main===1? 'checked' :null %>></label>
+                                        <% }) %>
+                                </div>
+                                <!-- BOTONES CARGA IMAGEN -->
+                                <div class="form__create--imagebox-previews">
+                                    <!-- PRINCIPAL -->
+                                    <label class="btn__add-image" for="mainImage">cambiar imagen principal</label>
+                                    <input hidden type="file" name="mainImage" id="mainImage">
+                                    <!-- SECUNDARIAS -->
+                                    <label class="btn__add-image" for="images">cambiar imagenes secundarias</label>
+                                    <input hidden type="file" name="images" id="images" multiple>
+
+                                </div>
+                                <small class="register__formbox__div__errors">
+                                    <%= locals.errors && errors.mainImage ? errors.mainImage.msg : null %>
+                                </small><small class="register__formbox__div__errors">
+                                    <%= locals.errors && errors.images ? errors.images.msg : null %>
+                                </small>
                             </div>
 
                             <h4>características</h4>
                             <!-- COLOR -->
-                            <div class="form__create--characteristics"><label for="colors">color</label>
-                                <select name="colors" id="colors">
+                            <section class="form__update__section">
+                                <div class="form__create--characteristics">
+                                    <label for="colors">color</label>
+                                    <select name="colors" id="colors">
 
-                                    <% colorsSelect.forEach(({name, id})=> { %>
-                                        <option value="<%= id %>" <%=product.colors.id===id ? 'selected' : null %>><%=
-                                                name %>
-                                        </option>
-                                        <% }) %>
-                                </select>
-                            </div>
-                            <!-- STOCK -->
-                            <div>
-                                <label for="stock">stock</label>
-                                <input type="number" name="stock" id="stock" value="<%= product.stock %>">
-                                <p>un.</p>
+                                        <% colorsSelect.forEach(({name, id})=> { %>
+                                            <option value="<%= id %>" <%=product.colors.id===id ? 'selected' : null %>>
+                                                <%= name %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                                <!-- STOCK -->
+                                <div class="form__create--characteristics">
+                                    <label for="stock">stock</label>
+                                    <input type="number" name="stock" id="stock" value="<%= product.stock %>">
+                                    <p>un.</p>
+
+                                </div>
                                 <small class="register__formbox__div__errors">
                                     <%= locals.errors && errors.stock ? errors.stock.msg : null %>
                                 </small>
-                            </div>
-                            <!-- MODELO -->
-                            <div>
-                                <label for="model">modelo</label>
-                                <input type="text" name="model" id="model" value="<%= product.model %>">
-                            </div>
-                            <!-- PRECIO -->
-                            <div>
-                                <label for="price">precio</label>
-                                <input type="number" name="price" id="price" value="<%= product.price %>">
-                                <p>$</p>
+                                <!-- MODELO -->
+                                <div class="form__create--characteristics">
+                                    <label for="model">modelo</label>
+                                    <input type="text" name="model" id="model" value="<%= product.model %>">
+                                    <p> </p>
+
+                                </div>
+                                <small class="register__formbox__div__errors">
+
+                                </small>
+                                <!-- PRECIO -->
+                                <div class="form__create--characteristics">
+                                    <label for="price">precio</label>
+                                    <input type="number" name="price" id="price" value="<%= product.price %>">
+                                    <p>$</p>
+
+                                </div>
                                 <small class="register__formbox__div__errors">
                                     <%= locals.errors && errors.price ? errors.price.msg : null %>
                                 </small>
-                            </div>
+                            </section>
+
+                            <!-- BOTON FORMULARIO -->
                             <div class="form__create-btn-box">
                                 <button class="btn--crear-cuenta" type="submit">editar</button>
                             </div>

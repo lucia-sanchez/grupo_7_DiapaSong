@@ -315,6 +315,10 @@ header .header__section--user-navigation-logged{
         display: flex;
     }
 
+    .header_redes:hover{
+        text-decoration: none;
+    }
+
     .header--btn-menu {
         display: none;
     }
