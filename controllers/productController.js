@@ -116,6 +116,7 @@ module.exports = {
         location: "files",
       });
     }
+    //return res.send(req.files)
     if (errors.isEmpty()) {
       /* SI NO HAY ERRORES EN EL FORMULARIO SE PROCEDE A CREAR EL PRODUCTO Y REDIRIGIR A LA VISTA PRODUCTS */
       //return res.send(req.body)
