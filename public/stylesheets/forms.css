@@ -11,9 +11,12 @@ form {
 
 form div {
     display: flex;
-    gap: 10px;
+    column-gap: 10px;
+    /* gap: 10px; */
     align-items: center;
     padding: 0px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 form label {
@@ -35,8 +38,14 @@ form input {
 }
 form textarea{
     resize: none;
-    width: 40%;
+    width: 60%;
     outline: none;
+    display: flex;
+    width: 160px;
+    background-color: aliceblue;
+    opacity: 0.9;
+    box-shadow: inset 0px 0px 3px 1px #4b008278;
+    border: none;
 }
 form p{
     margin: 0;

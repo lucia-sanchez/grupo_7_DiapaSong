@@ -67,15 +67,17 @@ width:180px;
   }
   .btn--crear-prod{
     margin-top: 20px;
-        width: 190px;
-        background: rgba(255, 252, 252, 0.5);
-        /* border: 1px solid #000000; */
-        border-radius: 15px;
-        text-transform: uppercase;
-        transition: all 0.5s;
-        padding: 5px;
-    
-      }
+    width: 100px;
+    background: rgb(254 254 254);
+    /* border: 1px solid #000000; */
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    padding: 5px;
+    position: fixed;
+    top: 210px;
+    right: 60px;
+    }
       .btn--crear-prod:hover{
 cursor: pointer;
     

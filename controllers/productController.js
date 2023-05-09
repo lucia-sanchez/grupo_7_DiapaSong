@@ -3,7 +3,7 @@ const fs = require("fs");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const product = require("../database/models/product");
-const Op = db.Sequelize.Op 
+const Op = db.Sequelize.Op
 
 module.exports = {
   products: (req, res) => {
@@ -58,8 +58,8 @@ module.exports = {
       ],
     })
       .then((product) => {
-       // return res.send(product.images)
-       
+        // return res.send(product.images)
+
         return res.render("productDetail", {
           title: "Detalle de Producto",
           ...product.dataValues,
@@ -116,6 +116,7 @@ module.exports = {
         location: "files",
       });
     }
+    //return res.send(req.files)
     if (errors.isEmpty()) {
       /* SI NO HAY ERRORES EN EL FORMULARIO SE PROCEDE A CREAR EL PRODUCTO Y REDIRIGIR A LA VISTA PRODUCTS */
       //return res.send(req.body)
@@ -225,7 +226,7 @@ module.exports = {
     });
 
     Promise.all([colorsSelect, category, product])
-      .then(([colorsSelect, category, product]) => { 
+      .then(([colorsSelect, category, product]) => {
         // return res.send(/*body errors req. req.fileValidationError res.locals req.files*/product)
         return res.render("update", {
           title: "Editar Producto",
@@ -240,22 +241,21 @@ module.exports = {
   },
   update: (req, res) => {
     const errors = validationResult(req);
-
-        const {
-        title,
-        subtitle,
-        condition,
-        description,
-        tipo,
-        price,
-        category,
-        colors,
-        model,
-        stock,
-        preview
-      } = req.body;
-      const id = +req.params.id;
-
+    const {
+      title,
+      subtitle,
+      condition,
+      description,
+      tipo,
+      price,
+      category,
+      colors,
+      model,
+      stock,
+      preview
+    } = req.body;
+    const id = +req.params.id;
+    if (errors.isEmpty()) {
       const productUpdated = db.Product.update(
         {
           idProductType: tipo === "product" ? 1 : 2,
@@ -273,61 +273,93 @@ module.exports = {
           where: { id },
         }
       )
-      /* SI VIENEN IMAGENES POR REQ.FILES POR INPUT MAINIMAGE O IMAGES SE ACTUALIZA LA TALA DE IMAGENES */
-        if (req.files.mainImage||req.files.images||(req.files.mainImage&&req.files.images)) {
-            /* SI VIENE UNA MAINIMAGE */
-            if (req.files.mainImage) {
-                db.Image.update(
-                    { name: req.files.mainImage[0].filename },
-                    { where: { main: 1, idProduct: id } }
-                  );
+      /* SI VIENEN IMAGENES POR REQ.FILES POR INPUT MAINIMAGE O IMAGES SE ACTUALIZA LA TABLA DE IMAGENES */
+      if (req.files.mainImage || req.files.images || (req.files.mainImage && req.files.images)) {
+        /* SI VIENE UNA MAINIMAGE */
+        if (req.files.mainImage) {
+          db.Image.update(
+            { name: req.files.mainImage[0].filename },
+            { where: { main: 1, idProduct: id } }
+          );
+        }
+        /* O SI VIENEN IMAGES (SECUNDARIAS) */
+        if (req.files.images) {
+          // DESTRUYE LAS IMAGENES QUE EXISTIAN
+          db.Image.destroy({
+            where: {
+              main: 0,
+              idProduct: id
             }
-            /* O SI VIENEN IMAGES (SECUNDARIAS) */
-            if (req.files.images) {
-                // DESTRUYE LAS IMAGENES QUE EXISTIAN
-                db.Image.destroy({
-                  where: {
-                    main: 0,
-                    idProduct: id
-                  }
-                }).then(() => {
+          }).then(() => {
 
-                  // CREA IMAGENES SECUNDRIAS NUEVAS
-                  req.files.images.forEach(image => {
-                    db.Image.create({
-                      name: image.filename,
-                      main: 0,
-                      idProduct: id
-                    });
-                  });
-                });
-              }
-            
-            //return res.send(req.files) return res.redirect(`/products/detail/${id}`);
-            return res.redirect(`/`);
+            // CREA IMAGENES SECUNDRIAS NUEVAS
+            req.files.images.forEach(image => {
+              db.Image.create({
+                name: image.filename,
+                main: 0,
+                idProduct: id
+              });
+            });
+          }).catch((error) => console.log(error));
         }
 
-        // SI NO VIENEN IMAGENES POR INPUTS SE PUEDE CAMBIAR CUAL ES LA IMAGEN PRINCIPAL DESDE LAS VISTAS PREVIAS DEL INPUT TIPO RADIO(PERVIEW)
-      const imagesUpdate = db.Image.update({
-                main:0,
-                
-            },
-            {where:{idProduct:id}}).then(()=>{
-                db.Image.update({
-                    main:1,
-                    
-                },
-                {where:{id:preview}})
-            }
-                )      
-        
-            Promise.all([productUpdated, imagesUpdate, /* product */])
-            .then(([productUpdated, imagesUpdate, /* product */]) => {  
-              // return res.send(/*body errors req. req.fileValidationError res.locals  product imagesUpdate imagesUpdate*/req.files)
-               return res.redirect(`/`);
-            })
+        //return res.send(req.files) return res.redirect(`/products/detail/${id}`);
+        return res.redirect(`/`);
+      }
+      // SI NO VIENEN IMAGENES POR INPUTS SE PUEDE CAMBIAR CUAL ES LA IMAGEN PRINCIPAL DESDE LAS VISTAS PREVIAS DEL INPUT TIPO RADIO(PREVIEW)
+    const imagesUpdate = db.Image.update({
+      main: 0,
+
+    },
+      { where: { idProduct: id } }).then(() => {
+        db.Image.update({
+          main: 1,
+
+        },
+          { where: { id: preview } })
+      }
+      )
+
+    Promise.all([productUpdated, imagesUpdate, /* product */])
+      .then(([productUpdated, imagesUpdate, /* product */]) => {
+        // return res.send(/*body errors req. req.fileValidationError res.locals  product imagesUpdate imagesUpdate*/req.files)
+        return res.redirect(`/`);
+      })
+      .catch((error) => console.log(error));
+    } else {
+      /* SI HAY ALGUN ERROR EN EL FORMULARIO SE VUELVE A CARGAR LA VISTA, EL PRODUCTO, COLORES, CATEGORIAS Y ERROERS */
+      const product = db.Product.findByPk(id, {
+        include: ["images", "categories", "colors"],
+      });
+      const colorsSelect = db.Color.findAll({
+        order: [["name"]],
+        attributes: ["name", "id"],
+      });
+      const category = db.Category.findAll({
+        order: [["category"]],
+        attributes: ["category", "id"],
+      });
+  
+      Promise.all([colorsSelect, category, product])
+        .then(([colorsSelect, category, product]) => {
+          // return res.send(/*body errors req. req.fileValidationError res.locals req.files*/product)
+          return res.render("update", {
+            title: "Editar Producto",
+            colorsSelect,
+            category,
+            product,
+            errors: errors.mapped(),
+            old: req.body,
+            //...product.dataValues,
+          });
+        })
+  
         .catch((error) => console.log(error));
+    }
+
+
     
+
   },
   remove: async (req, res) => {
     const id = req.params.id;
@@ -346,7 +378,7 @@ module.exports = {
       console.error(error);
     }
   }
- 
+
   /*     remove: (req, res) => {
         //rescato el parametro que recibo por id
         const id = req.params.id;
