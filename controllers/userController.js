@@ -56,7 +56,7 @@ module.exports = {
                 , news, birthdate } = req.body;
 
             const newUser = db.User.create({
-                profileImage: req.file ? `${req.file.filename}` : "user-default.png",
+                profileImage: req.files ? `${req.files.mainImage[0].filename}` : "user-default.png",
                 name,
                 email,
                 password: hashSync(password, 12),
@@ -139,7 +139,7 @@ module.exports = {
                 attributes: ["instrument", "id"],
             });
 
-            if (/* .length */req.files && fs.existsSync(`./public/img/users/${req.files.mainImage[0].filename}`)) {
+            if (/* .length */(req.files && req.files.mainImage) && fs.existsSync(`./public/img/users/${req.files.mainImage[0].filename}`)) {
                 fs.unlinkSync(`./public/img/users/${req.files.mainImage[0].filename}`);
                 //req.file.forEach((file) => {});
             }
@@ -153,8 +153,8 @@ module.exports = {
               }
 
             Promise.all([genres, instruments])
-                .then(([genres, instruments]) => { 
-                    //return res.send(req.files/*req.session.userLogin res.locals  req.cookies //  // instruments req.body genres .filename fs.existsSync(`./public/img/users/${req.file.filename}`) errors.mapped()*/)
+                .then(([genres, instruments]) => {
+                    // return res.send(req.files/*req.session.userLogin res.locals  req.cookies //  // instruments req.body genres .filename fs.existsSync(`./public/img/users/${req.file.filename}`) errors.mapped()*/)
                     return res.render("register", {
                         title: "Registro de Usuario",
                         genres,

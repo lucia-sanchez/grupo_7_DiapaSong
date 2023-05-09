@@ -54,6 +54,7 @@
     justify-content: flex-start;
 }
 .form__btn-box{
+    width: 100%;
     justify-content: center;
     padding: 15px;
 }
@@ -121,16 +122,18 @@ align-items: center;
     flex-wrap: wrap;
     position: relative;
     height: 390px;
+    gap: 0px;
 }
 .register__form div{
-    
-width: 50%;
-    
-margin: 0;
+    width: 50%;
+    margin: 0;
+    padding-bottom: 1px;
 }
 .register__form .form__checkbox{
     
-width: 40%;
+width: 49%;
+}
+.register__form .form__btn-box{
 }
 .form__checkbox--novedades{
 }
