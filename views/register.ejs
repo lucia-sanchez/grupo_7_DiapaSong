@@ -50,7 +50,10 @@
                 <!-- IMAGEN -->
                 <div class="form__create--image-box">                        
                     <label for="mainImage">imagen de perfil</label>
-                    <input type="file" name="mainImage" id="mainImage">                    
+                    <input type="file" name="mainImage" id="mainImage">
+                    <small class="register__formbox__div__errors">
+                        <%= locals.errors && errors.mainImage ? errors.mainImage.msg : null %>
+                    </small>                    
                 </div>
                 <!-- E-MAIL -->
                 <div>
