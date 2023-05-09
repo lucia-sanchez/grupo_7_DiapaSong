@@ -39,12 +39,12 @@
                 </ul>
             </div>
             <!-- FORMULARIO REGISTRO DE USUARIO -->
-            <form class="register__form" action="register" method="post" enctype="multipart/form-data">
+            <form class="register__form" action="register" method="post" enctype="multipart/form-data" id="form-register">
                 <!-- NOMBRE Y APELLIDO -->
                 <div>
                     <label for="name">nombre y apellido</label>
                     <input type="text" name="name" id="name" placeholder="Juan Perez"  value="<%= locals.old && old.name ? old.name : null %>">
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.name ?  errors.name.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="errorName"><%= locals.errors && errors.name ?  errors.name.msg : null %></small>
                 </div>
                 
                 <!-- IMAGEN -->
@@ -64,6 +64,14 @@
                     <input type="password" name="password" id="password" placeholder="Minimo 8 caracteres alfanumericos"
                     value="<%= (locals.old && old.password) && old.password  %>"  >
                     <small class="register__formbox__div__errors"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <ul id="msgPassword" hidden class="register__formbox__div__errors">
+                        <li id="mayus">Una mayuscula</li>
+                        <li id="minus">Una minuscula</li>
+                        <li id="num">Una número</li>
+                        <li id="esp">Una caracter especial ($@%*?&-_)</li>
+                        <li id="min">Minimo de 6 caracteres</li>
+                        <li id="max">Maximo de 12 caracteres</li>
+                    </ul>
                 </div>
                 <!-- CONFIRMAR PASSWORD -->
                 <div>
@@ -136,12 +144,14 @@
             </div>
         </section>
     </main>
+    <script src="/javascript/formRegister.js"></script>
    
 <!-- FOOTER -->
 <%- include('./partials/footer') %> 
 
    <!--Slick script-->
    <%- include('./partials/scripts') %>
+  
 </body>
 
 </html>
