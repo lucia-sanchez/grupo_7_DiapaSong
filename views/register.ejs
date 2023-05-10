@@ -59,19 +59,19 @@
                 <div>
                     <label for="email">email</label>
                     <input type="email" name="email" id="email" placeholder="Juanperez@ejemplo.com" value="<%= (locals.old && old.email) && old.email  %>">
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="error-email"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 </div>
                 <!-- PASSWORD -->
                 <div>
                     <label for="password">contraseña</label>
                     <input type="password" name="password" id="password" placeholder="Minimo 8 caracteres alfanumericos"
                     value="<%= (locals.old && old.password) && old.password  %>"  >
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="error-password"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
                     <ul id="msgPassword" hidden class="register__formbox__div__errors">
                         <li id="mayus">Una mayuscula</li>
                         <li id="minus">Una minuscula</li>
-                        <li id="num">Una número</li>
-                        <li id="esp">Una caracter especial ($@%*?&-_)</li>
+                        <li id="num">Un número</li>
+                        <li id="esp">Un caracter especial ($@%*?&)</li>
                         <li id="min">Minimo de 6 caracteres</li>
                         <li id="max">Maximo de 12 caracteres</li>
                     </ul>
@@ -147,13 +147,13 @@
             </div>
         </section>
     </main>
-    <script src="/javascript/formRegister.js"></script>
+<script src="/javascript/formRegister.js"></script>
    
 <!-- FOOTER -->
 <%- include('./partials/footer') %> 
 
-   <!--Slick script-->
-   <%- include('./partials/scripts') %>
+<!--Slick script-->
+<%- include('./partials/scripts') %>
   
 </body>
 
