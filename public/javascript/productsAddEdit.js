@@ -84,10 +84,10 @@ $("description").addEventListener("blur", function (event) {
         event
       );
       break;
-    case this.value.trim().length < 50:
+    case this.value.trim().length >= 20 && this.value.trim().length <=500 :
       msgError(
         "descriptionError",
-        "La descrpcion debe ser de entre 20 y 500",
+        "La descrpcion debe ser de entre 20 y 500 caracteres",
         event
       );
       break;
@@ -101,9 +101,34 @@ $("description").addEventListener("focus", function (event) {
   cleanError("descriptionError", event);
 });
 
-//IMAGENES
 
+//IMAGEN PRINCIPAL
+const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
+$("mainImage").addEventListener('change', function () {
+  switch (true) {
+    case !regExExt.exec(this.value):
+      $('mainImageError').innerHTML = "Solo se admiten imágenes jpg | jpeg | png | gif | webp"
+      break;
+    default:    
+    $('mainImageError').innerHTML = null         
+  }})
+
+//IMAGENES SECUNDARIAS
+$("images").addEventListener('change', function () {
+  switch (true) {
+    case !regExExt.exec(this.value):
+      $('imagesError').innerHTML = "Solo se admiten imágenes jpg | jpeg | png | gif | webp"
+      break;
+      case this.files.length > 3:
+        $('imagesError').innerHTML = "Solo se admiten un máximo de 3 imagenes"
+     alert("asdasdasdasdasdasdasdasd")  
+      break;
+        
+   
+    default:        
+    $('imagesError').innerHTML = null     
+  }})
 
 //COLOR
 $("colors").addEventListener('blur', function (event) {
@@ -157,3 +182,11 @@ $("price").addEventListener("blur", function (event) {
 $("price").addEventListener("focus", function (event) {
   cleanError("priceError", event);
 });
+
+
+
+/* 
+
+$("agregarProducto")
+
+ */
