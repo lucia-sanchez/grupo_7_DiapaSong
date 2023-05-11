@@ -47,7 +47,7 @@
                                     <label for="title">título</label>
                                     <input type="text" name="title" id="title"
                                         value="<%= locals.old && old.title ? old.title : product.title  %>">
-                                    <small class="register__formbox__div__errors">
+                                    <small class="register__formbox__div__errors" id="titleError">
                                         <%= locals.errors && errors.title ? errors.title.msg : null %>
                                     </small>
                                 </div>
@@ -56,7 +56,7 @@
                                     <label for="subtitle">sub-título</label>
                                     <input type="text" name="subtitle" id="subtitle"
                                         value="<%= locals.old && old.subtitle ? old.subtitle : product.subtitle %>">
-                                    <small class="register__formbox__div__errors">
+                                    <small class="register__formbox__div__errors" id="subTitleError">
                                         <%= locals.errors && errors.subtitle ? errors.subtitle.msg : null %>
                                     </small>
                                 </div>
@@ -70,7 +70,7 @@
                                             </option>
                                             <% }) %>
                                     </select>
-                                    <small class="register__formbox__div__errors">
+                                    <small class="register__formbox__div__errors" id="categoryError">
 
                                     </small>
                                 </div>
@@ -79,7 +79,7 @@
                                     <label for="description">descripcíon</label>
                                     <textarea name="description" id="description"
                                         rows="3"><%= locals.old && old.description ? old.description : product.description %> </textarea>
-                                    <small class="register__formbox__div__errors">
+                                    <small class="register__formbox__div__errors" id="descriptionError">
                                         <%= locals.errors && errors.description ? errors.description.msg : null %>
                                     </small>
                                 </div>
@@ -137,7 +137,7 @@
                                     <p>un.</p>
 
                                 </div>
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="stockError">
                                     <%= locals.errors && errors.stock ? errors.stock.msg : null %>
                                 </small>
                                 <!-- MODELO -->
@@ -157,7 +157,7 @@
                                     <p>$</p>
 
                                 </div>
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="priceError">
                                     <%= locals.errors && errors.price ? errors.price.msg : null %>
                                 </small>
                             </section>
@@ -175,6 +175,6 @@
 
                 <!-- SCRIPTS -->
                 <%- include('./partials/scripts') %>
-    </body>
-
+                <script src="/javascript/productsAddEdit.js"></script>
+</body>
 </html>
