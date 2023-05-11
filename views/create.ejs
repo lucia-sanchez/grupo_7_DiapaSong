@@ -14,7 +14,7 @@
                     <h1>crear producto</h1>
                     <div class="create__main__section__div--form-box">
                         <form class="form__create" action="/products/create" method="post"
-                            enctype="multipart/form-data">
+                            enctype="multipart/form-data" id="formProduct">
                             <img class="form__create--background" src="/img/backgroundDiapasong.png" alt="">
                             <!-- TIPO -->
                             <h5>tipo</h5>
@@ -41,7 +41,7 @@
                                 <label for="title">título</label>
                                 <input type="text" name="title" id="title"
                                     value="<%= locals.old && old.title ? old.title : null %>">
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="titleError">
                                     <%= locals.errors && errors.title ? errors.title.msg : null %>
                                 </small>
                             </div>
@@ -50,7 +50,7 @@
                                 <label for="subtitle">sub-título</label>
                                 <input type="text" name="subtitle" id="subtitle"
                                     value="<%= locals.old && old.subtitle ? old.subtitle : null %>">
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="subTitleError">
                                     <%= locals.errors && errors.subtitle ? errors.subtitle.msg : null %>
                                 </small>
                             </div>
@@ -65,7 +65,7 @@
                                         </option>
                                         <% }) %>
                                 </select>
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="categoryError">
                                     <%= locals.errors && errors.category ? errors.category.msg : null %>
                                 </small>
                             </div>
@@ -74,7 +74,7 @@
                                 <label for="description">descripcíon</label>
                                 <textarea name="description" id="description"
                                     rows="3"><%= locals.old && old.description ? old.description : null %></textarea>
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="descriptionError">
                                     <%= locals.errors && errors.description ? errors.description.msg : null %>
                                 </small>
                             </div>
@@ -105,7 +105,7 @@
                                         </option>
                                         <% }) %>
                                 </select>
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="colorsError">
                                     <%= locals.errors && errors.colors ? errors.colors.msg : null %>
                                 </small>
                             </div>
@@ -119,7 +119,7 @@
                                 <label for="stock">stock</label>
                                 <input type="number" name="stock" id="stock">
                                 <p>un.</p>
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="stockError">
                                     <%= locals.errors && errors.stock ? errors.stock.msg : null %>
                                 </small>
                             </div>
@@ -128,7 +128,7 @@
                                 <label for="price">precio</label>
                                 <input type="number" name="price" id="price">
                                 <p>$</p>
-                                <small class="register__formbox__div__errors">
+                                <small class="register__formbox__div__errors" id="priceError">
                                     <%= locals.errors && errors.price ? errors.price.msg : null %>
                                 </small>
                             </div>
@@ -154,6 +154,7 @@
                     } */
                 </script>
                 <%- include('./partials/scripts') %>
+                <script src="../javascript/productsAddEdit.js"></script>
     </body>
 
 </html>
