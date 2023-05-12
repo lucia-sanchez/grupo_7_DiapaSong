@@ -84,7 +84,7 @@ $("description").addEventListener("blur", function (event) {
         event
       );
       break;
-    case this.value.trim().length >= 20 && this.value.trim().length <=500 :
+    case this.value.trim().length <= 20 && this.value.trim().length >=500 :
       msgError(
         "descriptionError",
         "La descrpcion debe ser de entre 20 y 500 caracteres",
