@@ -3,7 +3,7 @@ const db = require("../database/models");
 const literalQueryUrlImage = require("../helpers/literalQueryUrlImage");
 
 module.exports = {
-  getAllProducts: async (/* req, */ limit, offset) => {
+  getAllProducts: async (/**/ req,  limit, offset) => {
     try {
       /* const count = await db.Product.count();
       const products = await db.Product.findAll */
@@ -29,7 +29,9 @@ module.exports = {
           },
           {
             association: 'images',
-            attributes: [ 'name'],
+            attributes: 
+              {exclude: [ "main", "id", "createdAt", "updatedAt", "idProduct", "name"],
+                include: [literalQueryUrlImage(req, "productos", "images.name", "urlImage")]},
           },
         ],
         attributes: ["id", "title", "description"],
@@ -45,7 +47,7 @@ module.exports = {
     } catch (error) {
       throw {
         status: 500,
-        message: "error.message",
+        message: error.message,
       };
     }
   },
@@ -82,7 +84,7 @@ module.exports = {
     } catch (error) {
       throw {
         status: 500,
-        message: "error.message",
+        message: error.messag,
       };
     }
   },

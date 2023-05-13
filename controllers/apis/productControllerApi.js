@@ -13,7 +13,7 @@ module.exports = {
     });
 }
     try {
-      const /* products */{count, products} = await getAllProducts(limit,(page-1)*limit);
+      const /* products */{count, products} = await getAllProducts(/**/ req, limit,(page-1)*limit);
       //Math.ceil(count / limit) lo uso para redondear el numero siguiente en la division de cantidad (count) y el limite (limit) de registros que quiero mostrar por pagina, lo tuve que usar para que me muestre la ultima pagina si queda un resto mayor que 0 y menor al limite y si no hay mas no la muestra
       const nextPageUrl = count < limit || /* page+1 > count/limit || */ page >= Math.ceil(count / limit) ? null : `http://localhost:3000/api/products?page=${page + 1}`;
       const prevPageUrl = page === 1 ? null : `http://localhost:3000/api/products?page=${page - 1}`;
