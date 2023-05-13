@@ -104,15 +104,16 @@
                                     <!-- PRINCIPAL -->
                                     <label class="btn__add-image" for="mainImage">cambiar imagen principal</label>
                                     <input hidden type="file" name="mainImage" id="mainImage">
-                                     <small class="register__formbox__div__errors" id="mainImageError">
-                                    <%= locals.errors && errors.mainImage ? errors.mainImage.msg : null %>
-                                </small>
-                                <!-- SECUNDARIAS -->
+
+                                    <!-- SECUNDARIAS -->
                                     <label class="btn__add-image" for="images">cambiar imagenes secundarias</label>
                                     <input hidden type="file" name="images" id="images" multiple>
 
                                 </div>
-                               <small class="register__formbox__div__errors" id="imagesError">
+                                <small class="register__formbox__div__errors" id="mainImageError">
+                                    <%= locals.errors && errors.mainImage ? errors.mainImage.msg : null %>
+                                </small>
+                                <small class="register__formbox__div__errors" id="imagesError">
                                     <%= locals.errors && errors.images ? errors.images.msg : null %>
                                 </small>
                             </div>
@@ -176,6 +177,7 @@
 
                 <!-- SCRIPTS -->
                 <%- include('./partials/scripts') %>
-                <script src="/javascript/productsAddEdit.js"></script>
-</body>
+                    <script src="/javascript/productsAddEdit.js"></script>
+    </body>
+
 </html>
