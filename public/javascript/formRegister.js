@@ -9,7 +9,7 @@ const exRegs = {
   exRegMax: /.{13}/,
   exRegDate: /^(?:3[01]|[12][0-9]|0?[1-9])([\-/.])(0?[1-9]|1[1-2])\1\d{4}$/
 };
-let regExLetter = /^[A-Z]+$/i;
+let regExLetter = /^[A-Z\s\s]+$/i;
 let regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}[^'\s]/;
 let regExEmail= /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 
@@ -70,7 +70,7 @@ switch (true) {
         msgError('error-name', "Solo caracteres alfabeticos",e)
           break
     default:
-        this.classList.add('validInput')
+        this.classList.add('is-valid')
         checkedFields()
           break;
       }
@@ -93,7 +93,7 @@ switch (true) {
           $('error-image').innerHTML = "Solo una imagen"
           break
           default:
-              this.classList.add('validInput')
+              this.classList.add('is-valid')
               checkedFields()
               break;
       }
@@ -216,7 +216,7 @@ switch (true) {
               msgError('error-identifyid', "Ingrese su número de DNI sin puntos, solo carácteres numéricos",e)
                 break
           default:
-              this.classList.add('validInput')
+              this.classList.add('is-valid')
               checkedFields()
                 break;
             }
@@ -240,7 +240,7 @@ switch (true) {
               msgError('error-birthdate', "Ingresa la fecha con formato DD/MM/AAAA",e)
                 break
           default:
-              this.classList.add('validInput')
+              this.classList.add('is-valid')
               checkedFields()
                 break;
               }
