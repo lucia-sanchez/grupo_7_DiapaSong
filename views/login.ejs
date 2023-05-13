@@ -14,7 +14,7 @@
         <section class="login__main__section">
             <!-- TITULO SITIO -->
             <h3 class="login__main__section--title">inicia sesión o crea una cuenta</h3>
-            <form class="login__formbox" action="" method="POST">
+            <form class="login__formbox" id="login-form" action="" method="POST">
                 <!-- E-MAIL -->
                 <div>
                     <label for="email">email</label>
@@ -32,7 +32,7 @@
                   Recuerdame</label>
                 <!-- BOTONES LOGIN Y register -->
                 <div class="login__formbox--btn-box">
-                    <button class="btn--crear-cuenta" type="submit"><!-- <a href="/"> -->iniciar sesión<!-- </a> --></button>
+                    <button class="btn--crear-cuenta" id="login-btn" type="submit"><!-- <a href="/"> -->iniciar sesión<!-- </a> --></button>
 
                     <a href="/users/register" class="btn--register" >crear cuenta</a>
                 </div>
@@ -54,6 +54,16 @@
 
     <!--Slick script-->
 <%- include('./partials/scripts') %>
-</body>
+<script>
+/* CAPTURO ELEMENTOS DEL FORMLARIO */
+const $ = id => document.getElementById(id)
 
+const loginForm = $('login-form')
+const email = $('email')
+const password = $('password')
+const loginBtn = $('login-btn')
+
+
+</script>
+</body>
 </html>
