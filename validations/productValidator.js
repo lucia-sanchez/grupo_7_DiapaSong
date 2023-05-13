@@ -6,13 +6,13 @@ const db = require('../database/models')
 module.exports = [
     check('title')
         .notEmpty().withMessage('El título es obligatorio').bail()
-        .isLength({ min: 2 }).withMessage('Mínimo de dos letras').bail()
+        .isLength({ min: 2 }).withMessage('Mínimo de cinco letras').bail()
         .isAlpha('es-ES', {
             ignore: " "
         }).withMessage('Solo caracteres alfabéticos'),
     check('subtitle')
         .notEmpty().withMessage('El subtítulo es obligatorio').bail()
-        .isLength({ min: 2 }).withMessage('Mínimo de dos letras'),
+        .isLength({ min: 2 }).withMessage('Mínimo de cinco letras'),
     check('category')
         .notEmpty()/* .equals('on') */.withMessage('Debes elegir una categoría'),
     check('description')

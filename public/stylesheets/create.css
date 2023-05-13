@@ -1,4 +1,12 @@
 /* MOBILE FIRST */
+.create__main__section__div--form-box div .is-invalid{
+    border: 2px rgb(233, 53, 53) solid;
+   
+}
+.create__main__section__div--form-box div  .is-valid{
+    border: 2px rgb(0, 255, 128) solid;
+}
+
 .create__main {
     display: flex;
     flex-direction: column;
@@ -67,8 +75,10 @@
 }
 
 .form__create .form__create--radio label {
-width: 20%;
-justify-content: center;
+
+width: 20%;
+
+justify-content: center;
 }
 
 .form__create .form__create--radio input {
