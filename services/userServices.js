@@ -48,6 +48,22 @@ module.exports ={
             }catch(error){
                 return createResponseErrors()
             }
+        },
+        verifyUserByEmail : async (email) => {
+            try {
+    
+                let user = await db.User.findOne({
+                    where : {
+                        email
+                    }
+                })
+    
+                return user ? true : false
+                
+            } catch (error) {
+                console.log(error);
+                return createResponseErrors()
+            }
         }
     }
 
