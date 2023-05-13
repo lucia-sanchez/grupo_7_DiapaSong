@@ -1,4 +1,4 @@
-const {getAllUsers, getUserById} = require('../../services/userServices');
+const {getAllUsers, getUserById, verifyUserByEmail} = require('../../services/userServices');
 const createResponseErrors = require('../../helpers/createResponseErrors');
 
 module.exports = {
@@ -63,5 +63,22 @@ userDetail : async (req,res) =>{
     }catch(error){
         return createResponseErrors(res, error)
     }
-}
+},
+    verifyEmail : async (req,res)=>{
+        try{
+            let existUser = await verifyUserByEmail(req.body.email)
+
+            return res.status(200).json({
+                ok:true,
+                data: {
+                    existUser
+                }
+               
+            })
+
+        }catch(error){
+            return createResponseErrors(res, error)
+        }
+    }
+
 }

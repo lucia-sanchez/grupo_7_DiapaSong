@@ -1,9 +1,18 @@
 const $ = (id) => document.getElementById(id);
 
+const exRegs = {
+  exRegMayu: /[A-Z]/,
+  exRegMinu: /[a-z]/,
+  exRegNum: /[0-9]/,
+  exRegEsp: /[$@!%*?&]/,
+  exRegMin: /.{6,}/,
+  exRegMax: /.{13}/,
+  exRegDate: /^(?:3[01]|[12][0-9]|0?[1-9])([\-/.])(0?[1-9]|1[1-2])\1\d{4}$/
+};
 let regExLetter = /^[A-Z]+$/i;
-let regExPass =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}[^'\s]/;
-let regExEmail =
-  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+let regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}[^'\s]/;
+let regExEmail= /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+
 
   const msgError = (element, message, { target }) => {
     $(element).innerHTML = message;
@@ -30,12 +39,12 @@ let regExEmail =
           return result.data.existUser
         
         } catch (error) {
-        console.error
+        console.log(error)
     }
 };
 
   const checkedFields = () => {
-    const elements = $("formRegister").elements;
+    const elements = $("form-register").elements;
   $("error-form").innerHTML = null;
 
   for (let i = 0; i < elements.length - 2; i++) {
@@ -93,11 +102,9 @@ switch (true) {
       cleanError('error-image', e)
     })
     
-  
-  
-
     //EMAIL VALIDATION
     $("email").addEventListener("blur", async function (e) {
+      verifyEmail(this.value.trim())
       switch (true) {
         case !this.value.trim():
           msgError("error-email", "El email es obligatorio", e);
@@ -146,14 +153,6 @@ switch (true) {
       $("msgPassword").hidden = false;
     });
     
-    const exRegs = {
-      exRegMayu: /[A-Z]/,
-      exRegMinu: /[a-z]/,
-      exRegNum: /[0-9]/,
-      exRegEsp: /[$@!%*?&]/,
-      exRegMin: /.{6,}/,
-      exRegMax: /.{13}/,
-    };
     
     const validPassword = (element, exReg, value) => {
       if (!exReg.test(value)) {
@@ -227,11 +226,29 @@ switch (true) {
             cleanError('error-identifyid', e)
           });
       
-
-
-
-
-
+    //  BIRTHDATE VALIDATION 
+    $('birthdate').addEventListener('blur', function(e){
+      switch (true) {
+          case !this.value.trim():
+              msgError('error-birthdate', 'La fecha de nacimiento es obligatoria', e)  
+              break;
+      
+          case this.value.trim().length === 8 :
+              msgError('error-birthdate', "Ingresa la fecha con formato DD/MM/AAAA",e)
+                break
+          case !exRegDate.test(this.value.trim()):
+              msgError('error-birthdate', "Ingresa la fecha con formato DD/MM/AAAA",e)
+                break
+          default:
+              this.classList.add('validInput')
+              checkedFields()
+                break;
+              }
+            });
+          
+            $('name').addEventListener('focus', function(e) {
+              cleanError('error-name', e)
+            });
 
     //TERMS VALIDATION
     $("terms").addEventListener("click", function (e) {

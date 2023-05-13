@@ -94,7 +94,7 @@
                 <div>
                     <label for="birthdate">fecha de nacimiento</label>
                     <input type="date" name="birthdate" id="birthdate"value="<%= (locals.old && old.birthdate) && old.birthdate  %>">
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.birthdate ? errors.birthdate.msg : null %></small>
+                    <small class="register__formbox__div__errors"id="error-birthdate" ><%= locals.errors && errors.birthdate ? errors.birthdate.msg : null %></small>
                 </div>
                 
                 <!-- TELEFONO -->
