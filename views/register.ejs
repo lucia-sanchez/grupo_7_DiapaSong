@@ -39,19 +39,19 @@
                 </ul>
             </div>
             <!-- FORMULARIO REGISTRO DE USUARIO -->
-            <form class="register__form" action="register" method="post" enctype="multipart/form-data">
+            <form class="register__form" action="register" method="post" enctype="multipart/form-data" id="form-register">
                 <!-- NOMBRE Y APELLIDO -->
                 <div>
                     <label for="name">nombre y apellido</label>
                     <input type="text" name="name" id="name" placeholder="Juan Perez"  value="<%= locals.old && old.name ? old.name : null %>">
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.name ?  errors.name.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="error-name"><%= locals.errors && errors.name ?  errors.name.msg : null %></small>
                 </div>
                 
                 <!-- IMAGEN -->
                 <div class="form__create--image-box">                        
                     <label for="mainImage">imagen de perfil</label>
                     <input type="file" name="mainImage" id="mainImage">
-                    <small class="register__formbox__div__errors">
+                    <small class="register__formbox__div__errors" id="error-image">
                         <%= locals.errors && errors.mainImage ? errors.mainImage.msg : null %>
                     </small>                    
                 </div>
@@ -59,34 +59,42 @@
                 <div>
                     <label for="email">email</label>
                     <input type="email" name="email" id="email" placeholder="Juanperez@ejemplo.com" value="<%= (locals.old && old.email) && old.email  %>">
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="error-email"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
                 </div>
                 <!-- PASSWORD -->
                 <div>
                     <label for="password">contraseña</label>
                     <input type="password" name="password" id="password" placeholder="Minimo 8 caracteres alfanumericos"
                     value="<%= (locals.old && old.password) && old.password  %>"  >
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="error-password"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                    <ul id="msgPassword" hidden class="register__formbox__div__errors">
+                        <li id="mayus">Una mayuscula</li>
+                        <li id="minus">Una minuscula</li>
+                        <li id="num">Un número</li>
+                        <li id="esp">Un caracter especial ($@%*?&)</li>
+                        <li id="min">Minimo de 6 caracteres</li>
+                        <li id="max">Maximo de 12 caracteres</li>
+                    </ul>
                 </div>
                 <!-- CONFIRMAR PASSWORD -->
                 <div>
                     <label for="password2">confirmar contraseña</label>
                     <input type="password" name="password2" id="password2"
                         placeholder="Debe coincidir con tu contraseña" value="<%= (locals.old && old.password2) && old.password2  %>">
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="error-password2"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
                 </div>
                 <!-- DNI -->
                 <div>
                     <label for="identifyid">documento</label>
                     <input type="number" name="identifyid" id="identifyid"
                         placeholder="Ingresa tu DNI sin espacios ni guiones" value="<%= (locals.old && old.identifyid) && old.identifyid  %>">
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.identifyid ? errors.identifyid.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="error-identifyid"><%= locals.errors && errors.identifyid ? errors.identifyid.msg : null %></small>
                 </div>
                 <!-- FECHA DE NACIMIENTO -->
                 <div>
                     <label for="birthdate">fecha de nacimiento</label>
                     <input type="date" name="birthdate" id="birthdate"value="<%= (locals.old && old.birthdate) && old.birthdate  %>">
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.birthdate ? errors.birthdate.msg : null %></small>
+                    <small class="register__formbox__div__errors"id="error-birthdate" ><%= locals.errors && errors.birthdate ? errors.birthdate.msg : null %></small>
                 </div>
                 
                 <!-- TELEFONO -->
@@ -125,10 +133,11 @@
                 <div class="form__checkbox--terminos">
                     <input type="checkbox" name="terms" id="terms" <%= (locals.old && old.terms === 'on') && 'checked' %>>
                     <label for="terms">Acepto terminos y condiciones</label>
-                    <small class="register__formbox__div__errors"><%= locals.errors && errors.terms ? errors.terms.msg : null %></small>
+                    <small class="register__formbox__div__errors" id="error-terms"><%= locals.errors && errors.terms ? errors.terms.msg : null %></small>
                 </div>
                 <!-- BOTON CREAR CUENTA -->
                 <div class="form__btn-box">
+                    <small class="register__formbox__div__errors" id="error-form">  </small>
                     <button class="btn--crear-cuenta" type="submit">crear cuenta</button>
                 </div>
 
@@ -139,12 +148,14 @@
             </div>
         </section>
     </main>
+<script src="/javascript/formRegister.js"></script>
    
 <!-- FOOTER -->
 <%- include('./partials/footer') %> 
 
-   <!--Slick script-->
-   <%- include('./partials/scripts') %>
+<!--Slick script-->
+<%- include('./partials/scripts') %>
+  
 </body>
 
 </html>

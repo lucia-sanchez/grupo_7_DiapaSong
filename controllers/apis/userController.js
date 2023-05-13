@@ -69,14 +69,14 @@ module.exports = {
             return createResponseErrors(res, error)
         }
     },
-    verifyEmail : async (req,res) => {
+    verifyEmail: async (req, res) => {
         try {
 
             let existUser = await verifyUserByEmail(req.body.email);
             //return console.log(req.body);
             return res.status(200).json({
-                ok : true,
-                data : {
+                ok: true,
+                data: {
                     existUser
                 }
             })
@@ -84,10 +84,10 @@ module.exports = {
         } catch (error) {
             console.log(error)
             return res.status(error.status || 500).json({
-                ok : false,
-                error : {
-                    status : error.status || 500,
-                    message : error.message || "Upss, hubo un error"
+                ok: false,
+                error: {
+                    status: error.status || 500,
+                    message: error.message || "Upss, hubo un error"
                 }
             })
         }
