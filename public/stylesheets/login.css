@@ -76,6 +76,14 @@
     color:#000000
 }
 
+.login__main__section .login__formbox div .is-invalid{
+    border: 2px rgb(233, 53, 53) solid;
+       
+}
+.login__main__section .login__formbox div .is-valid{
+    border: 2px rgb(0, 255, 128) solid;
+}
+
 /* TABLET */
 @media (min-width: 768px) {
     .login__formbox {
