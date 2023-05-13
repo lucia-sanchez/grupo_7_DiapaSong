@@ -2,68 +2,66 @@
 <html lang="es">
 
 <!-- HEAD -->
-<%- include('./partials/head') %> 
+<%- include('./partials/head') %>
 
-<body class="login">
-    
-<!-- HEADER -->
-<%- include('./partials/header') %> 
+    <body class="login">
 
-    <!-- MAIN -->
-    <main class="login__main">
-        <section class="login__main__section">
-            <!-- TITULO SITIO -->
-            <h3 class="login__main__section--title">inicia sesión o crea una cuenta</h3>
-            <form class="login__formbox" id="login-form" action="" method="POST">
-                <!-- E-MAIL -->
-                <div>
-                    <label for="email">email</label>
-                    <input type="email" name="email" id="email" placeholder="Ingresa tu mail" value="<%= (locals.old && old.email) && old.email%>">
-                    <small class="login__formbox__div__errors"><%= (locals.errors && errors.email) && errors.email.msg %></small>
-                </div>
-                <!-- PASSWORD -->
-                <div>
-                    <label for="password">contraseña</label>
-                    <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
-                        <small class="login__formbox__div__errors"><%= (locals.errors && errors.password) && errors.password.msg %></small>
-                </div>
-                <label for="remember" class="form__checkbox--novedades">
-                <input type="checkbox"  name="remember" id="remember" class="form__checkbox--novedades">
-                  Recuerdame</label>
-                <!-- BOTONES LOGIN Y register -->
-                <div class="login__formbox--btn-box">
-                    <button class="btn--crear-cuenta" id="login-btn" type="submit"><!-- <a href="/"> -->iniciar sesión<!-- </a> --></button>
+        <!-- HEADER -->
+        <%- include('./partials/header') %>
 
-                    <a href="/users/register" class="btn--register" >crear cuenta</a>
-                </div>
-                <div>
-                    
-                </div>
+            <!-- MAIN -->
+            <main class="login__main">
+                <section class="login__main__section">
+                    <!-- TITULO SITIO -->
+                    <h3 class="login__main__section--title">inicia sesión o crea una cuenta</h3>
+                    <form class="login__formbox" id="login-form" action="" method="POST">
+                        <!-- E-MAIL -->
+                        <div>
+                            <label for="email">email</label>
+                            <input type="email" name="email" id="email" placeholder="Ingresa tu mail"
+                                value="<%= (locals.old && old.email) && old.email%>">
+                            <small class="login__formbox__div__errors" id="error-email">
+                                <%= (locals.errors && errors.email) && errors.email.msg %>
+                            </small>
+                        </div>
+                        <!-- PASSWORD -->
+                        <div>
+                            <label for="password">contraseña</label>
+                            <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
+                            <small class="login__formbox__div__errors" id="error-password">
+                                <%= (locals.errors && errors.password) && errors.password.msg %>
+                            </small>
+                        </div>
+                        <label for="remember" class="form__checkbox--novedades">
+                            <input type="checkbox" name="remember" id="remember" class="form__checkbox--novedades">
+                            Recuerdame</label>
+                        <!-- BOTONES LOGIN Y register -->
+                        <div class="login__formbox--btn-box">
+                            <small class="register__formbox__div__errors" id="error-form"> </small>
+                            <button class="btn--crear-cuenta" id="login-btn" type="submit"><!-- <a href="/"> -->iniciar
+                                sesión<!-- </a> --></button>
 
-            </form>
-            <!-- OLVIDA CONTRASEÑA -->
-            <div class="login__main__section--forget-password">
-                <p>¿Olvidaste tu contraseña? Recuperala<a href="/users/password"> aquí.</a></p>
-            </div>
-        </section>
+                            <a href="/users/register" class="btn--register">crear cuenta</a>
+                        </div>
+                        <div>
 
-    </main>
-    <!-- FOOTER -->
- <!-- FOOTER -->
-<%- include('./partials/footer') %> 
+                        </div>
 
-    <!--Slick script-->
-<%- include('./partials/scripts') %>
-<script>
-/* CAPTURO ELEMENTOS DEL FORMLARIO */
-const $ = id => document.getElementById(id)
+                    </form>
+                    <!-- OLVIDA CONTRASEÑA -->
+                    <div class="login__main__section--forget-password">
+                        <p>¿Olvidaste tu contraseña? Recuperala<a href="/users/password"> aquí.</a></p>
+                    </div>
+                </section>
 
-const loginForm = $('login-form')
-const email = $('email')
-const password = $('password')
-const loginBtn = $('login-btn')
+            </main>
+            <!-- FOOTER -->
+            <%- include('./partials/footer') %>
+            
+            <!--Slick script-->
+            <%- include('./partials/scripts') %>
+            
+            <script src="/javascript/formLogin.js"></script>
+    </body>
 
-
-</script>
-</body>
 </html>
