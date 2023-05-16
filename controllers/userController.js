@@ -33,13 +33,30 @@ module.exports = {
 
         const errors = validationResult(req);
 
+        /* if (!req.files.mainImage && !req.fileValidationError) {
+            errors.errors.push({
+                value: "",
+                msg: "El producto debe tener una imagen principal",
+                param: "mainImage",
+                location: "files",
+            });
+        } */
+        if (req.fileValidationError) {
+            errors.errors.push({
+                value: "",
+                msg: req.fileValidationError,
+                param: "mainImage",
+                location: "files",
+            });
+        }
+
         if (errors.isEmpty()) {
 
             const { name, email, password, identifyid, tel, preferedgenre, preferedinstruments
                 , news, birthdate } = req.body;
 
             const newUser = db.User.create({
-                profileImage: req.file ? `/img/${req.file.filename}` : '/img/user-default',
+                profileImage: req.files ? `${req.files.mainImage[0].filename}` : "user-default.png",
                 name,
                 email,
                 password: hashSync(password, 12),
@@ -122,14 +139,22 @@ module.exports = {
                 attributes: ["instrument", "id"],
             });
 
-            if (/* .length */req.file && fs.existsSync(`./public/img/users/${req.file.filename}`)) {
-                fs.unlinkSync(`./public/img/users/${req.file.filename}`);
+            if (/* .length */(req.files && req.files.mainImage) && fs.existsSync(`./public/img/users/${req.files.mainImage[0].filename}`)) {
+                fs.unlinkSync(`./public/img/users/${req.files.mainImage[0].filename}`);
                 //req.file.forEach((file) => {});
             }
+            if (req.files && req.files.mainImage) {
+                req.files.mainImage.forEach((image) => {
+                  const imagePath = `./public/img/productos/${image.filename}`;
+                  if (fs.existsSync(imagePath)) {
+                    fs.unlinkSync(imagePath);
+                  }
+                });
+              }
 
             Promise.all([genres, instruments])
                 .then(([genres, instruments]) => {
-                    //return res.send(/*req.session.userLogin res.locals  req.cookies //  errors.//mapped() instruments req.body genres req.file.filename*/ fs.existsSync(`./public/img/users/${req.file.filename}`))
+                    // return res.send(req.files/*req.session.userLogin res.locals  req.cookies //  // instruments req.body genres .filename fs.existsSync(`./public/img/users/${req.file.filename}`) errors.mapped()*/)
                     return res.render("register", {
                         title: "Registro de Usuario",
                         genres,
@@ -153,26 +178,26 @@ module.exports = {
         if (errors.isEmpty()) {
 
             db.User.findOne({
-                where : {
-                    email : req.body.email
+                where: {
+                    email: req.body.email
                 }
             })
-            .then( ({id, name, rolId}) => {
+                .then(({ id, name, rolId }) => {
 
-                req.session.userLogin = {
-                    id,
-                    name,
-                    rol : rolId
-                };
+                    req.session.userLogin = {
+                        id,
+                        name,
+                        rol: rolId
+                    };
 
-                if(req.body.remember){
-                    res.cookie('userDiapasong',req.session.userLogin,{maxAge: 10000*60} )
-               }
-    
-                return res.redirect('/')
-            })
-            .catch(error => console.log(error))
-            
+                    if (req.body.remember) {
+                        res.cookie('userDiapasong', req.session.userLogin, { maxAge: 10000 * 60 })
+                    }
+
+                    return res.redirect('/')
+                })
+                .catch(error => console.log(error))
+
         } else {
             //return res.send(errors)
             return res.render('login', {
@@ -194,24 +219,24 @@ module.exports = {
     },
     profile: (req, res) => {
         //return console.log(req.session.userLogin.id);
-        db.User.findByPk(req.session.userLogin.id,{
-            attributes : ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
-            include : [
+        db.User.findByPk(req.session.userLogin.id, {
+            attributes: ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
+            include: [
                 {
-                    association : 'genre',
-                    attributes : ['genreId']
+                    association: 'genre',
+                    attributes: ['genreId']
                 },
                 {
-                    association : 'instrument',
-                    attributes : ['instrumentId']
+                    association: 'instrument',
+                    attributes: ['instrumentId']
                 }
             ],
 
         })
             .then(user => {
                 //return res.send(user)
-                return res.render('user',{
-                    title : "Perfil de usuario",
+                return res.render('user', {
+                    title: "Perfil de usuario",
                     user
                 })
             })

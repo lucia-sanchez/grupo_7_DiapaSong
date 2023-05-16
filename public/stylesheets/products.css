@@ -23,10 +23,6 @@
 .submenu--categorias{
     display: none;
 }
-.main_section_nav_categorias{
-   
-
-    }
     .main_section_nav_categorias ul li a{
         color: rgb(255, 255, 255);
     
@@ -69,7 +65,6 @@ margin: 10px;
     padding: 15px;
     justify-content: center;
     align-self: center;
-    
 }
 .main__section__productos__producto--imagen img{
     height: 180px;
@@ -144,7 +139,6 @@ height: 400px;
    background-color: rgb(147, 120, 172);
     display: flex;
     align-items: center;
-    align-self: center;
     flex-direction: row;
     flex-wrap: wrap;
    padding-bottom: 100px;

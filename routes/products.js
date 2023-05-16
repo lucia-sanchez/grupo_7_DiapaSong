@@ -16,7 +16,7 @@ router.get('/', products)
       .post('/create', uploadProductsImage, productValidator, saveCreate) 
       .get('/edit/:id', edit)
       //checkUserAdmin,
-      .put('/update/:id', uploadProductsImage/* .fields([{name:'mainImage'},{name:'images'}]) */,update)
+      .put('/update/:id', uploadProductsImage/* .fields([{name:'mainImage'},{name:'images'}]) */,productValidator,update)
       .delete('/remove/:id',remove )
       //checkUserAdmin, 
       .get('/:category?', products) 

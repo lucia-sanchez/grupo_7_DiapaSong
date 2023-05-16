@@ -1,127 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- HEAD -->
-<%- include('./partials/head') %> 
-<body>
-    <!-- HEADER -->
-<%- include('./partials/header') %> 
-    <!-- Main -->
-    <main class="create__main">
-        <section class="admin_panel">panel administrador en construcción</section>
-        <section class="create__main__section">
-            
-            <h1>crear producto</h1>
-            <div class="create__main__section__div--form-box">
-                <form class="form__create" action="/products/create" method="post"  enctype="multipart/form-data">
-                    <img class="form__create--background" src="/img/backgroundDiapasong.png" alt="">
-                    <!-- TIPO -->
-                    <h5>tipo</h5>
-                    <div class="form__create--radio">
-                        
-                        <input type="radio" name="tipo" id="ticket" value="ticket">
-                        <label for="ticket">entrada</label>
-                        <input type="radio" name="tipo" id="product" value="product" checked>
-                        <label for="product">instrumento</label>
-                    </div>
-                    <!-- CONDICION -->
-                    <h5>condición</h5>
-                    <div class="form__create--radio">
-                        
-                        <input type="radio" name="condition" id="new" value="news" checked>
-                        <label for="new">Nuevo</label>
-                        <input  type="radio" name="condition" id="sale" value="sale" >
-                        <label  for="sale">
-                        Oferta
-                        </label>
-                    </div>
-                    <!-- TÍTULO -->
-                    <div>
-                        <label for="title">título</label>
-                        <input type="text" name="title" id="title" value="<%= locals.old && old.title ? old.title : null %>">
-                        <small class="register__formbox__div__errors"><%= locals.errors && errors.title ?  errors.title.msg : null %></small>
-                    </div>
-                    <!-- SUTÍTULO -->
-                    <div>
-                        <label for="subtitle">sub-título</label>
-                        <input type="text" name="subtitle" id="subtitle" value="<%= locals.old && old.subtitle ? old.subtitle : null %>">
-                        <small class="register__formbox__div__errors"><%= locals.errors && errors.subtitle ?  errors.subtitle.msg : null %></small>
-                    </div>
-                    <!-- CATEGORÍA -->
-                    <div>
-                        <label for="category">categoría</label>
-                        <select name="category" id="category">
-                            <option value="" selected hidden>Elegir categoría...</option>
-                            <% category.forEach(({category, id}) => { %>
-                                <option value="<%= id %>" <%= locals.old && old.category && old.category == id ? 'selected' : null %> > <%= category %> </option>
-                                <% }) %>
-                            </select>
-                            <small class="register__formbox__div__errors"><%= locals.errors && errors.category ?  errors.category.msg : null %></small>
-                    </div>
-                    <!-- DESCRIPCIÓN -->
-                    <div>
-                        <label for="description">descripcíon</label>
-                            <textarea name="description" id="description"  rows="3"><%= locals.old && old.description ? old.description : null %></textarea>
-                            <small class="register__formbox__div__errors"><%= locals.errors && errors.description ?  errors.description.msg : null %></small>
-                    </div>
-                    <!-- IMAGEN -->
-                    <div class="form__create--image-box">                        
-                        <label for="mainImage">imagen principal</label>
-                        <input type="file" name="mainImage" id="mainImage">
-                        
-                        <label for="images">imagenes</label>
-                        <input type="file" name="images" id="images" multiple>
-                        <small class="register__formbox__div__errors"><%= locals.errors && errors.mainImage ?  errors.mainImage.msg : null %></small><small class="register__formbox__div__errors"><%= locals.errors && errors.images ?  errors.images.msg : null %></small>
-                    </div>
-                    
-                    <h4>características</h4>
-                        <!-- COLOR -->
-                        <div>
-                            <label for="colors">color</label>
-                            <select name="colors" id="colors">
-                            <option value="" selected hidden>Elegir color...</option>
-                            <% colors.forEach(({name, id}) => { %>
-                                <option value="<%= id %>"   <%= locals.old && old.colors && old.colors == id ? 'selected' : null %> > <%= name %> </option>
-                                <% }) %>
-                            </select>
-                            <small class="register__formbox__div__errors"><%= locals.errors && errors.colors ?  errors.colors.msg : null %></small>
-                        </div>
-                        <!-- MODELO -->
-                        <div>
-                        <label for="model">modelo</label>
-                        <input type="text" name="model" id="model">
-                        </div>
-                    <!-- STOCK -->
-                    <div>
-                        <label for="stock">stock</label>
-                        <input type="number" name="stock" id="stock"><p>un.</p>
-                        <small class="register__formbox__div__errors"><%= locals.errors && errors.stock ?  errors.stock.msg : null %></small>
-                    </div>
-                    <!-- PRECIO -->
-                    <div>
-                        <label for="price">precio</label>
-                        <input type="number" name="price" id="price"><p>$</p>
-                        <small class="register__formbox__div__errors"><%= locals.errors && errors.price ?  errors.price.msg : null %></small>
-                    </div>
-                    <!-- BOTÓN -->
-                    <div class="form__create-btn-box">
-                        <button class="btn--crear-cuenta" type="submit">publicar</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-    <!-- FOOTER -->
-<%- include('./partials/footer') %> 
-    
+<%- include('./partials/head') %>
 
-<script>
-    /* vista previa de imagen cargada */
-/*     image1.onchange = evt => {
-  const [file] = image1.files
-  if (file) {
-    blah.src = URL.createObjectURL(file)
-  }
-} */
-</script>
-</body>
+    <body>
+        <!-- HEADER -->
+        <%- include('./partials/header') %>
+            <!-- Main -->
+            <main class="create__main">
+                <section class="admin_panel">panel administrador en construcción</section>
+                <section class="create__main__section">
+
+                    <h1>crear producto</h1>
+                    <div class="create__main__section__div--form-box" id="formError">
+                        <form class="form__create" action="/products/create" method="post"
+                            enctype="multipart/form-data" id="formProducts">
+                            <img class="form__create--background" src="/img/backgroundDiapasong.png" alt="">
+                            <!-- TIPO -->
+                            <h5>tipo</h5>
+                            <div class="form__create--radio">
+
+                                <input type="radio" name="tipo" id="ticket" value="ticket">
+                                <label for="ticket">entrada</label>
+                                <input type="radio" name="tipo" id="product" value="product" checked>
+                                <label for="product">instrumento</label>
+                            </div>
+                            <!-- CONDICION -->
+                            <h5>condición</h5>
+                            <div class="form__create--radio">
+
+                                <input type="radio" name="condition" id="new" value="news" checked>
+                                <label for="new">Nuevo</label>
+                                <input type="radio" name="condition" id="sale" value="sale">
+                                <label for="sale">
+                                    Oferta
+                                </label>
+                            </div>
+                            <!-- TÍTULO -->
+                            <div>
+                                <label for="title">título</label>
+                                <input type="text" name="title" id="title"
+                                    value="<%= locals.old && old.title ? old.title : null %>">
+                                <small class="register__formbox__div__errors" id="titleError">
+                                    <%= locals.errors && errors.title ? errors.title.msg : null %>
+                                </small>
+                            </div>
+                            <!-- SUTÍTULO -->
+                            <div>
+                                <label for="subtitle">sub-título</label>
+                                <input type="text" name="subtitle" id="subtitle"
+                                    value="<%= locals.old && old.subtitle ? old.subtitle : null %>">
+                                <small class="register__formbox__div__errors" id="subTitleError">
+                                    <%= locals.errors && errors.subtitle ? errors.subtitle.msg : null %>
+                                </small>
+                            </div>
+                            <!-- CATEGORÍA -->
+                            <div>
+                                <label for="category">categoría</label>
+                                <select name="category" id="category">
+                                    <option value="" selected hidden>Elegir categoría...</option>
+                                    <% category.forEach(({category, id})=> { %>
+                                        <option value="<%= id %>" <%=locals.old && old.category && old.category==id
+                                            ? 'selected' : null %> > <%= category %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <small class="register__formbox__div__errors" id="categoryError">
+                                    <%= locals.errors && errors.category ? errors.category.msg : null %>
+                                </small>
+                            </div>
+                            <!-- DESCRIPCIÓN -->
+                            <div>
+                                <label for="description">descripcíon</label>
+                                <textarea name="description" id="description"
+                                    rows="3"><%= locals.old && old.description ? old.description : null %></textarea>
+                                <small class="register__formbox__div__errors" id="descriptionError">
+                                    <%= locals.errors && errors.description ? errors.description.msg : null %>
+                                </small>
+                            </div>
+                            <!-- IMAGEN -->
+                            <div class="form__create--image-box">
+                                <!-- PRINCIPAL -->
+                                <label for="mainImage">imagen principal</label>
+                                <input type="file" name="mainImage" id="mainImage">
+                                <small class="register__formbox__div__errors" id="mainImageError">
+                                    <%= locals.errors && errors.mainImage ? errors.mainImage.msg : null %>
+                                </small>
+                                <!-- SECUNDARIAS -->
+                                <label for="images">imagenes</label>
+                                <input type="file" name="images" id="images" multiple>
+                                <small class="register__formbox__div__errors" id="imagesError">
+                                    <%= locals.errors && errors.images ? errors.images.msg : null %>
+                                </small>
+                            </div>
+
+                            <h4>características</h4>
+                            <!-- COLOR -->
+                            <div>
+                                <label for="colors">color</label>
+                                <select name="colors" id="colors">
+                                    <option value="" selected hidden>Elegir color...</option>
+                                    <% colors.forEach(({name, id})=> { %>
+                                        <option value="<%= id %>" <%=locals.old && old.colors && old.colors==id
+                                            ? 'selected' : null %> > <%= name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <small class="register__formbox__div__errors" id="colorsError">
+                                    <%= locals.errors && errors.colors ? errors.colors.msg : null %>
+                                </small>
+                            </div>
+                            <!-- MODELO -->
+                            <div>
+                                <label for="model">modelo</label>
+                                <input type="text" name="model" id="model">
+                            </div>
+                            <!-- STOCK -->
+                            <div>
+                                <label for="stock">stock</label>
+                                <input type="number" name="stock" id="stock">
+                                <p>un.</p>
+                                <small class="register__formbox__div__errors" id="stockError">
+                                    <%= locals.errors && errors.stock ? errors.stock.msg : null %>
+                                </small>
+                            </div>
+                            <!-- PRECIO -->
+                            <div>
+                                <label for="price">precio</label>
+                                <input type="number" name="price" id="price">
+                                <p>$</p>
+                                <small class="register__formbox__div__errors" id="priceError">
+                                    <%= locals.errors && errors.price ? errors.price.msg : null %>
+                                </small>
+                            </div>
+                            <!-- BOTÓN -->
+                            <div class="form__create-btn-box">
+                                <button class="btn--crear-cuenta" type="submit" id="agregarProducto">publicar</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
+            <!-- FOOTER -->
+            <%- include('./partials/footer') %>
+
+
+                <script>
+                    /* vista previa de imagen cargada */
+                    /*     image1.onchange = evt => {
+                      const [file] = image1.files
+                      if (file) {
+                        blah.src = URL.createObjectURL(file)
+                      }
+                    } */
+                </script>
+                <script src="/javascript/productsAddEdit.js"></script>
+                <%- include('./partials/scripts') %>
+                
+    </body>
+
 </html>

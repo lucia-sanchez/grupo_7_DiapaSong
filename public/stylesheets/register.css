@@ -54,6 +54,7 @@
     justify-content: flex-start;
 }
 .form__btn-box{
+    width: 100%;
     justify-content: center;
     padding: 15px;
 }
@@ -78,8 +79,20 @@
     justify-content: center;
 }
 .register__formbox__div__errors{
-    color: red
+    color: red;
+    width: 100%;
+    display: flex;
+    text-shadow: 0px 0px 1px black;
+    justify-content: center;
 }
+.register__main__section .register__form div .is-invalid{
+    border: 2px rgb(233, 53, 53) solid;
+       
+}
+.register__main__section .register__form div .is-valid{
+    border: 2px rgb(0, 255, 128) solid;
+}
+
 /* TABLET */
 @media (min-width: 768px) {
     .register__main__section {
@@ -117,16 +130,21 @@ align-items: center;
     flex-wrap: wrap;
     position: relative;
     height: 390px;
+    gap: 0px;
 }
 .register__form div{
     
 width: 50%;
     
 margin: 0;
+    
+padding-bottom: 1px;
 }
 .register__form .form__checkbox{
     
-width: 40%;
+width: 49%;
+}
+.register__form .form__btn-box{
 }
 .form__checkbox--novedades{
 }
