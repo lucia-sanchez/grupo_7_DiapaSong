@@ -1,202 +1,207 @@
 /* MOBILE FIRST */
-.create__main__section__div--form-box div .is-invalid{
-    border: 2px rgb(233, 53, 53) solid;
-   
+
+.create__main__section__div--form-box div .is-invalid {
+  border: 2px rgb(233, 53, 53) solid;
 }
-.create__main__section__div--form-box div  .is-valid{
-    border: 2px rgb(0, 255, 128) solid;
+.create__main__section__div--form-box div .is-valid {
+  border: 2px rgb(0, 255, 128) solid;
 }
 
 .create__main {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .admin_panel {
-
-    background-color: aqua;
+  background-color: aqua;
 }
 
 .create__main h1 {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .create__main__section {
-    text-align: center;
+  text-align: center;
 }
 
-.create__main__section__div--form-box {}
+.create__main__section__div--form-box {
+}
 
 .form__create div {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .form__create {
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 0 10px 4px #4b008259;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 10px 4px #4b008259;
 }
 
 .form__create--background {
-    opacity: 0.6;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    border-radius: 17px;
+  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 17px;
 }
 
 .form__create div input {
-    display: flex;
-    width: 40%;
-    background-color: aliceblue;
-    opacity: 0.9;
-    border: none;
-    box-shadow: inset 0 0 4px 1px #4b0082b0;
+  display: flex;
+  width: 40%;
+  background-color: aliceblue;
+  opacity: 0.9;
+  border: none;
+  box-shadow: inset 0 0 4px 1px #4b0082b0;
 }
 
 .form__create div input:focus {
-    display: flex;
-    width: 50%;
-    transition: all 500ms;
-    box-shadow: 3px 3px 10px 5px rgba(127, 30, 139, 0.568);
-    outline: none
+  display: flex;
+  width: 50%;
+  transition: all 500ms;
+  box-shadow: 3px 3px 10px 5px rgba(127, 30, 139, 0.568);
+  outline: none;
 }
+.create__main__div--radio {
+  background-color: rgb(25, 25, 155, 0.2);
+  display: flex;
+  align-content: center;
+  border-radius: 10px;
+  padding-left: 5px;
 
+}
 .form__create--radio {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3px;
+  flex-wrap: wrap;
+  align-content: center;
 }
-
+.form__create--radio h6 {
+  padding: 6px 20px 0 0;
+}
 .form__create .form__create--radio label {
-
-width: 20%;
-
-justify-content: center;
+  width: 20%;
+  justify-content: left;
 }
 
 .form__create .form__create--radio input {
-    width: 15px;
-    box-shadow: none;
+  width: 15px;
+  box-shadow: none;
+  justify-content: right;
 }
 
 .form__create .form__create--radio input:focus {
-    box-shadow: none;
-    width: 15px;
+  box-shadow: none;
+  width: 15px;
 }
 
 .form__create div label {
-    display: flex;
-    width: 31%;
+  display: flex;
+  width: 31%;
 }
 
-
-
 .form__create h5 {
-    margin: 0
+  margin: 0;
 }
 
 .form__create .form__create--image-box {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.form__create .form__create--image-box label {}
+.form__create .form__create--image-box label {
+}
 
 .form__create .form__create--image-box input {
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .form__create .form__create--image-box input:focus {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    transition: none;
-    box-shadow: none;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  transition: none;
+  box-shadow: none;
 }
 
 .form__create textarea:focus {
-    width: 50%;
-    transition: all 500ms;
-    box-shadow: 3px 3px 10px 5px rgba(127, 30, 139, 0.568);
-    outline: none
+  width: 50%;
+  transition: all 500ms;
+  box-shadow: 3px 3px 10px 5px rgba(127, 30, 139, 0.568);
+  outline: none;
 }
 
 .form__create select {
-    width: 40%;
-    border: none;
-    border-radius: 5px;
-    box-shadow: inset 0 0 3px 1px #4b008233;
+  width: 40%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 0 3px 1px #4b008233;
 }
 
 .form__create--characteristics input {
-    width: 110px;
+  width: 110px;
 }
 .form__update div select {
-    display: flex;
-    width: 150px;
-    background-color: aliceblue;
-    opacity: 0.9;
-    border-radius: 5px;
-    /* border: 1px solid; */
-    height: 30px;
-    cursor: pointer;
-    box-shadow: inset 0 0 1px 2px #4b008229;
+  display: flex;
+  width: 150px;
+  background-color: aliceblue;
+  opacity: 0.9;
+  border-radius: 5px;
+  /* border: 1px solid; */
+  height: 30px;
+  cursor: pointer;
+  box-shadow: inset 0 0 1px 2px #4b008229;
 }
 
 .form__create-btn-box {
-    align-self: center;
-    width: 40%;
-    justify-content: center;
+  align-self: center;
+  width: 40%;
+  justify-content: center;
 }
-
-
 
 /* TABLET */
 @media (min-width: 768px) {
-    .form__create label {
+  .form__create label {
+    width: 40%;
+  }
 
-        width: 40%;
-    }
+  .form__create--image-box label {
+    width: 40%;
+  }
 
-    .form__create--image-box label {
-        width: 40%;
-    }
-
-    .form__create--image-box input {
-        width: 50%;
-        margin-right: 8%;
-    }
+  .form__create--image-box input {
+    width: 50%;
+    margin-right: 8%;
+  }
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
-    .admin_panel {
-        width: 15%;
-    }
+  .admin_panel {
+    width: 15%;
+  }
 
-    .create__main {
+  .create__main {
+    display: flex;
 
-        display: flex;
+    flex-direction: row;
 
-        flex-direction: row;
+    flex-wrap: nowrap;
 
-        flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 
-        justify-content: space-between;
-    }
+  .create__main__section {
+    width: 80%;
+  }
 
-    .create__main__section {
-        width: 80%;
-    }
-
-    .create__main__section__div--form-box {}
+  .create__main__section__div--form-box {
+  }
+  .form__create--radio  {
+margin: 5px 35%
+  
+  }
 }

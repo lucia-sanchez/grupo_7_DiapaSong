@@ -13,28 +13,31 @@
 
                     <h1>crear producto</h1>
                     <div class="create__main__section__div--form-box" id="formError">
-                        <form class="form__create" action="/products/create" method="post"
-                            enctype="multipart/form-data" id="formProducts">
+                        <form class="form__create" action="/products/create" method="post" enctype="multipart/form-data"
+                            id="formProducts">
                             <img class="form__create--background" src="/img/backgroundDiapasong.png" alt="">
-                            <!-- TIPO -->
-                            <h5>tipo</h5>
-                            <div class="form__create--radio">
 
-                                <input type="radio" name="tipo" id="ticket" value="ticket">
-                                <label for="ticket">entrada</label>
-                                <input type="radio" name="tipo" id="product" value="product" checked>
-                                <label for="product">instrumento</label>
-                            </div>
-                            <!-- CONDICION -->
-                            <h5>condición</h5>
-                            <div class="form__create--radio">
-
-                                <input type="radio" name="condition" id="new" value="news" checked>
-                                <label for="new">Nuevo</label>
-                                <input type="radio" name="condition" id="sale" value="sale">
-                                <label for="sale">
-                                    Oferta
-                                </label>
+                            <div class="create__main__div--radio">
+                                <!-- TIPO -->
+                                <div class="form__create--radio">
+                                    <h6 class="title-radio">tipo</h6>
+                                    <div>
+                                        <input type="radio" name="tipo" id="ticket" value="ticket">
+                                        <label for="ticket">entrada</label>
+                                        <input type="radio" name="tipo" id="product" value="product" checked>
+                                        <label for="product">instrumento</label>
+                                    </div>
+                                </div>
+                                <!-- CONDICION -->
+                                <div class="form__create--radio">
+                                    <h6>condición</h6>
+                                    <div>
+                                        <input type="radio" name="condition" id="new" value="news" checked>
+                                        <label for="new">Nuevo</label>
+                                        <input type="radio" name="condition" id="sale" value="sale">
+                                        <label for="sale">Oferta</label>
+                                    </div>
+                                </div>
                             </div>
                             <!-- TÍTULO -->
                             <div>
@@ -154,9 +157,9 @@
                       }
                     } */
                 </script>
-                <script src="/javascript/productsAddEdit.js"></script>
+                <script src="/javascript/productsAdd.js"></script>
                 <%- include('./partials/scripts') %>
-                
+
     </body>
 
 </html>
