@@ -9,43 +9,50 @@
     <!-- HEADER -->
     <%- include('./partials/header') %>
       <!-- Main -->
-<main>
-<h2>Bienvenido <%= user.name %></h2>
-<div class="user_main_container">
-  <div class="user_main_card-img">
-    <form class="register__form"  method="post" enctype="multipart/form-data">
-  <div>
-    <img src="/img/users/<%= user.profileImage %>" alt="imagen-usuario" class="user-img">
+      <main>
     
-  </div>
-</form>
-  <div>
-    <button class="btn--crear-cuenta">CAMBIAR IMAGEN</button>
-  </div>
+        <div class="user_main_container">
+          <h2>Bienvenid@ <%= user.name %>
+          </h2>
+          <div class="user_main_card-img">
+            <form class="register__form user_registry-image" method="post" enctype="multipart/form-data">
+              <div>
+                <img src="/img/users/<%= user.profileImage %>" alt="imagen-usuario" class="user-img">
+              </div>
+            </form>
 
-  
+            
 
-  </div>
-  <div class="user_main data">
-    <h4>Datos Personales</h4>
-    <hr>
-    
-      <div>
-       Nombre y Apellido: <%= user.name %> <i class="fa-solid fa-pen-to-square"></i>
-       
+          </div>
+          <div class="user_main data">
 
-       
-    </div>
-   
-</div>
-</main>
+            <h4>Datos Personales</h4>
+            <hr class="hr-user">
+
+            <div>
+              <ul>
+                <li> <strong>Nombre y Apellido: </strong> <%= user.name %></li>
+                <li> <strong>Email: </strong> <%= user.email %></li>
+                <li> <strong>Fecha de nacimiento: </strong> <%= user.birthdate %></li>
+                <li> <strong>DNI: </strong> <%= user.identifyId  %></li>
+                <li> <strong>Telefono: </strong> <%= user.phone  %></li>
+                
+                
+              </ul>
+              
+
+            </div>
+
+          </div>
+
+      </main>
 
       <!-- FOOTER -->
       <%- include('./partials/footer') %>
 
         <div class="eliminar_carrousel">
-          
-        
+
+
         </div>
   </body>
 

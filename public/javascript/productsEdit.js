@@ -191,6 +191,6 @@ $('formProducts').addEventListener('submit', function(event){
     }
  
 if (errors=false) {
-    this.submit()
+    event.submit()
 }
 })

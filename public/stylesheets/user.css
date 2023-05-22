@@ -1,6 +1,6 @@
 .user_main_container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     column-gap: 20px;
 }
 .user_main_card-img{
@@ -11,5 +11,36 @@
     width: 200px;
 }
 .user_main data{
+
+}
+
+@media (min-width: 1024px) {
+    .user_main_container h2{
+color: #000;
+    }
+    .user_main_container{
+        margin: 50px 200px;
+        padding: 50px;
+        justify-content: center;
+        flex-direction: column;
+        background:rgb(147, 86, 194);
+        border-radius: 30px;
+     
+    }
+    .hr-user{
+    width: 65%;
+    }
+    .user_registry-image{
+        width:auto;
+        height: auto;
+     position: absolute;
+        right: 20%;  
+        background:rgb(58, 19, 88);
+      
+    }
+    .user_registry-image img{
+        border-radius: 10px;
+    }
+
 
 }
