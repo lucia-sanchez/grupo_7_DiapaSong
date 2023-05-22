@@ -84,10 +84,10 @@ $("description").addEventListener("blur", function (event) {
         event
       );
       break;
-    case this.value.trim().length <= 20 && this.value.trim().length >=500 :
+    case this.value.trim().length <= 20 && this.value.trim().length >=1000 :
       msgError(
         "descriptionError",
-        "La descrpcion debe ser de entre 20 y 500 caracteres",
+        "La descrpcion debe ser de entre 20 y 1000 caracteres",
         event
       );
       break;
@@ -183,10 +183,16 @@ $("price").addEventListener("focus", function (event) {
   cleanError("priceError", event);
 });
 
+$('formProducts').addEventListener('submit', function(event){
+  event.preventDefault();
 
+  let error = false
 
-/* 
-
-$("agregarProducto")
-
- */
+  for (let i = 0; i < this.elements.length -1; i++) {
+      
+      if(!this.elements[i].value.trim() ) {
+          error = true
+      }
+  }
+  !error && this.submit()
+})

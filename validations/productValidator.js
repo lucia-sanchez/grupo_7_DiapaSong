@@ -17,7 +17,7 @@ module.exports = [
         .notEmpty()/* .equals('on') */.withMessage('Debes elegir una categoría'),
     check('description')
         .notEmpty().withMessage('La descripción es obligatoria').bail()
-        .isLength({ min: 20, max: 500 }).withMessage('Mínimo de 20 caracteres y maximo 500'),
+        .isLength({ min: 20, max: 1000 }).withMessage('Mínimo de 20 caracteres y maximo 1000'),
     check('colors')
         .notEmpty()/* .equals('on') */.withMessage('Debes elegir un color'),
     check('stock')
