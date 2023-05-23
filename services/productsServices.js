@@ -24,10 +24,6 @@ module.exports = {
           {
             association: "categories",
             attributes: {
-<<<<<<< HEAD
-              exclude: ["id", "createdAt", "updatedAt"]}},
-             
-=======
               exclude: ["id", "createdAt", "updatedAt"],
             },
           },
@@ -37,7 +33,6 @@ module.exports = {
               {exclude: [ "main", "id", "createdAt", "updatedAt", "idProduct", "name"],
                 include: [literalQueryUrlImage(req, "productos", "images.name", "urlImage")]},
           },
->>>>>>> develop
         ],
         attributes: ["id", "title", "description"],
 
@@ -76,16 +71,10 @@ module.exports = {
           {
             association: "categories",
             attributes: {
-<<<<<<< HEAD
               exclude: ["id", "createdAt", "updatedAt"]}},
               {association: "images",
               attributes: {
                 exclude: ["id", "createdAt", "updatedAt"]}},
-=======
-              exclude: ["id", "createdAt", "updatedAt"],
-            },
-          },
->>>>>>> develop
         ],
         attributes: ["id", "title", "description"],
       });
