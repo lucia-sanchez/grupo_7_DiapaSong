@@ -22,12 +22,27 @@ margin-bottom: 2px;}
    margin-right: 8px;
    
  }
+
  .main_section_nav_categorias{
      display: flex;
  padding-left: 10px;
  background-color: rgb(147, 120, 172);
- height: 750px;
+ height: 550px;
  text-decoration: none;
+
+}
+.main__section__nav--categoria span{
+  display: none;
+  width: 155px;
+  margin-left: -10px;
+  background-color: rgb(180, 147, 211);
+  font-size: 15px;
+  text-align: center;
+  padding: 5px;
+}
+.main__section__nav--categoria:hover span{
+display: flex;
+
 }
  
  .main__section__nav--titulo{
