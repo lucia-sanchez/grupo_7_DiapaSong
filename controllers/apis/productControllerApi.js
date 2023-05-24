@@ -18,19 +18,12 @@ module.exports = {
           message:
             "La página que buscas no existe, la consulta de pagina debe ser un numero mayor que 0",
         });
- 
-        
     } 
-
     try {
       const /* products */ { count, products } = await getAllProducts(
           /**/ req,
           limit,
        (page - 1) * limit,
-   
-      
-        
-     
         );
       //Math.ceil(count / limit) lo uso para redondear el numero siguiente en la division de cantidad (count) y el limite (limit) de registros que quiero mostrar por pagina, lo tuve que usar para que me muestre la ultima pagina si queda un resto mayor que 0 y menor al limite y si no hay mas no la muestra
       const nextPageUrl =
@@ -50,7 +43,9 @@ module.exports = {
           .status(400)
           .json({ status: 400, message: "La página que buscas no existe" });
       }
+
       const totalPages =  Math.ceil(count / limit) - 1;
+      
       return res.status(200).json({
         ok: true,
         nextPageUrl,
@@ -58,7 +53,6 @@ module.exports = {
         page,
         totalPages,
         
- 
         data: { count, products, page, totalPages},
 
         meta: {

@@ -15,12 +15,12 @@ const getProducts = ({ page = 1 } = {}) => {
 const paintProducts = (products) => {
   containerProducts.innerHTML = "";
 
-  products.forEach(({ id, images, category, price, title, subtitle }) => {
+  products.forEach(({ id, images, categories, price, title, subtitle }) => {
     const template = `<div class="Products--all">
                         <article class="main__section__productos--producto">
                       <a href="/products/detail/${id}">
                         <figure class="main__section__productos__producto--imagen">
-                          <img src="${images[0].urlImage}" alt="${category}">
+                          <img src="${images[0].urlImage}" alt="${categories.category}">
                         </figure>
                         <div class="datos_productos">
                           <span class="agregar-al-carrito"> Más información
@@ -115,10 +115,7 @@ btnPrev.addEventListener("click", async () => {
     paintProducts(products);
     paintItemPage({ numberPages: totalPages, itemActive: page });
     statusPrevAndNex({page, totalPages})
-    
   } catch (error) {
     console.log(error);
-    
   }
-
 })

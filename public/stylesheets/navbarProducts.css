@@ -39,10 +39,15 @@ display: none;
   display: none;
   width: 155px;
   margin-left: -10px;
-  background-color: rgb(180, 147, 211);
+  background-color: rgb(180, 147, 211, 0.7);
   font-size: 15px;
   text-align: center;
   padding: 5px;
+  border: 1px solid rgba(52, 0, 115, 0.692);
+  border-radius: 10px;
+  position: absolute;
+  left: 150px;
+  z-index: 100;
 }
 .main__section__nav--categoria:hover span{
 display: flex;

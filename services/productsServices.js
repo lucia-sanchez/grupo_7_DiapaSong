@@ -20,7 +20,7 @@ module.exports = {
               exclude: ["id", "createdAt", "updatedAt"],
             },
           },
-          {
+          { 
             association: "images",
             attributes: {
               exclude: [
