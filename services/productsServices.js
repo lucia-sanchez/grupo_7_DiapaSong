@@ -3,16 +3,9 @@ const db = require("../database/models");
 const literalQueryUrlImage = require("../helpers/literalQueryUrlImage");
 
 module.exports = {
-  getAllProducts: async (/**/ req,  limit, offset) => {
+  getAllProducts: async (/**/ req, limit, offset, page, totalPages) => {
     try {
-      /* const count = await db.Product.count();
-      const products = await db.Product.findAll */
-  /*     const images = await db.Image.findByPk(id, {
-        attributes: {
-          exclude: ["main", "id", "createdAt", "updatedAt", "idProduct"],
-          include: [literalQueryUrlImage(req, "productos", "name", "urlImage")],
-        },
-      }); */
+
       const { count, rows: products } = await db.Product.findAndCountAll({
         include: [
           {
@@ -28,21 +21,41 @@ module.exports = {
             },
           },
           {
-            association: 'images',
-            attributes: 
-              {exclude: [ "main", "id", "createdAt", "updatedAt", "idProduct", "name"],
-                include: [literalQueryUrlImage(req, "productos", "images.name", "urlImage")]},
+            association: "images",
+            attributes: {
+              exclude: [
+                "main",
+                "id",
+                "createdAt",
+                "updatedAt",
+                "idProduct",
+                "name",
+              ],
+              include: [
+                literalQueryUrlImage(
+                  req,
+                  "productos",
+                  "images.name",
+                  "urlImage"
+                ),
+              ],
+            },
           },
         ],
-        attributes: ["id", "title", "description"],
-
+        attributes: ["id", "title","subtitle", "description","price"],
         limit,
         offset,
+        totalPages,
+        page
       });
       return {
         count,
         products,
+        totalPages,
+        page
         
+        
+      
       };
     } catch (error) {
       throw {

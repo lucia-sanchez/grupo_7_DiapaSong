@@ -17,6 +17,7 @@
 
         </section>
         <!-- Productos -->
+
         <section class="main__section__productos">
 
 
@@ -27,79 +28,52 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <% product.forEach(({id,images, price, title, subtitle, category})=> { %>
-                  
-                  <div class="Products--all" >
-                    <article class="main__section__productos--producto">
-                      <a href="/products/detail/<%= id %>">
-                        <figure class="main__section__productos__producto--imagen">
-                          <img src="/img/productos/<%= images[0].name %> " alt=" <%= category %> ">
-                        </figure>
-                        <div class="datos_productos">
-                          <span class="agregar-al-carrito"> Más información
-                            <i class="fa-sharp fa-solid fa-circle-info carrito_prod"></i> </span>
-                          <h3 class="main__section__productos__producto--precio">$ <%= price %>
-                          </h3>
-                          <h4 class="main__section__productos__producto--marca">
-                            <%= title %>
-                          </h4>
-                          <p class="main__section__productos__producto--modelo">
-                            <%= subtitle %>
-                          </p>
-                        </div>
-                      </a>
-                    </article>
+
+                  <!-- ACA SE PAGINAN LOS PRODUCTOS -->
+                  <div id="container-products">
+
                   </div>
+
                   <% }) %>
                     <% } else{%>
                       <h2 class="subtitulo_productos">Destacados!</h2>
                       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
+
                           <% products.forEach(({id,images, price, title, subtitle, category})=> { %>
+                            
+                             <!-- ACA SE PAGINAN LOS PRODUCTOS -->
+                            <div id="container-products">
 
-                            <div class="Products--all" >
-                              <article class="main__section__productos--producto">
-                                <a href="/products/detail/<%= id %>">
-                                  <figure class="main__section__productos__producto--imagen">
-                                    <img src="/img/productos/<%= images[0].name %>" alt=" <%= category %> ">
-                                  </figure>
-                                  <div class="datos_productos">
-                                    <span class="agregar-al-carrito"> Más información
-                                      <i class="fa-sharp fa-solid fa-circle-info carrito_prod"></i> </span>
-                                    <h3 class="main__section__productos__producto--precio">$ <%= price %>
-                                    </h3>
-                                    <h4 class="main__section__productos__producto--marca">
-                                      <%= title %>
-                                    </h4>
-                                    <p class="main__section__productos__producto--modelo">
-                                      <%= subtitle %>
-                                    </p>
-                                  </div>
-                                </a>
-                              </article>
                             </div>
+
                             <% }) %>
-
                               <% } %>
-
                         </div>
                       </div>
+                      <div>
+
+                        <%- include('./partials/paginateProducts') %>
+
+                      </div>
               </div>
-              <% if (locals.userLogin && locals.userLogin.rol == "1") { %>
+              <% if (locals.userLogin && locals.userLogin.rol=="1" ) { %>
                 <div class="productos--crearProductos">
-          <a href="/products/create" ><button class="btn--crear-prod">crear
-              producto</button></a>
-        
-            <% } %>
-              
-        </div>
+                  <a href="/products/create"><button class="btn--crear-prod">crear
+                      producto</button></a>
+
+                  <% } %>
+
+                </div>
         </section>
-        
-        
+
+
       </main>
       <!-- FOOTER -->
       <%- include('./partials/footer') %>
         <!-- SCRIPTS -->
-      <%- include('./partials/scripts') %>
+        <%- include('./partials/scripts') %>
+          <script src="/javascript/paginateProducts.js"></script>
   </body>
 
 </html>
