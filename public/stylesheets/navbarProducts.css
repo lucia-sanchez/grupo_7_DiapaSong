@@ -5,8 +5,23 @@ margin-bottom: 2px;}
 
 .main__section__nav--categoria span{
 display: none;
+}
+.main__section__nav--titulo{
+  padding: 10px;
+cursor: pointer;
+margin-bottom: 5px;
+}
+.menuCatMobile{
+display: none;
+}
+.showCategories{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 
 }
+
 
     
 @media (min-width: 768px) {
@@ -14,8 +29,20 @@ display: none;
 }
 @media (min-width: 1024px){
     /*NABBAR*/
- 
+    .main__section__nav--titulo{
+      padding: 0;
+    cursor: default;
+    margin-bottom: 5px;
+    }
+    .showCategories{
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      text-align: left;
+    
+    }
     .menuCatMobile{
+      display: block;
       background: none
       }
 .main__section__nav{
