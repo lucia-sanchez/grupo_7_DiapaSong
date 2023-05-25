@@ -1,0 +1,88 @@
+.main__carrito{
+    padding: 20px;
+}
+.carrito__main__title{
+text-transform: uppercase;
+font-weight: 600;
+font-size: 1.5rem;
+}
+.carrito__main__container{
+    display: flex;
+    flex-direction: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.carrito__main__img img{
+   height:200px;
+
+}
+.carrito__main__desc{
+    text-transform: capitalize;
+
+
+}
+.carrito__main__cant{
+    display: flex;
+    flex-direction: row;
+   
+}
+.carrito__main__cant--resta{
+    border-radius: 5px 0 0 5px;
+}
+.carrito__main__cant--suma{
+    border-radius: 0 5px 5px 0;
+}
+.carrito__main__precio{
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.carrito__main__btn{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 90%;
+    align-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+.carrito__main__btn--contCompra .carrito__main__btn--pagar{
+width: 30%;
+}
+.carrito__main__totalCompra{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    position: relative;
+    right: 60px;
+}
+/*Media Query*/
+/*TABLET*/
+@media (min-width: 768px){
+
+.carrito__main__container {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 10px;
+        justify-content: space-evenly;
+    }
+.carrito__main__btn{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.carrito__main__btn--contCompra .carrito__main__btn--pagar{
+    width: 30%;
+    }
+}
+
+@media (min-width: 1024px){
+
+}
