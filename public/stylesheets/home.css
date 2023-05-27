@@ -146,6 +146,7 @@ hr{
         .home__carrurell--banner .carousel-control-prev, .home__carrurell--banner .carousel-control-next{
             display: flex;
             top: 120px;
+
            
         }
         .home__main__cardsCarrusel{
@@ -165,6 +166,11 @@ hr{
             width:60%;
             margin-bottom: 5%;
         }
+        .home__main__cardsCarrusel{
+            width: 
+            32%;
+           }
+        
     }
 /*DESKTOP*/
 @media (min-width: 1024px){
@@ -181,6 +187,8 @@ hr{
         padding-top: 0;
         margin-top: 0;
     }
-   
+   .home__main__cardsCarrusel{
+    width: 23%;
+   }
 
 }
