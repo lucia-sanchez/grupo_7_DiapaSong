@@ -1,0 +1,106 @@
+.menuCatMobile{
+  background-color: rgb(147, 120, 172);
+margin-bottom: 2px;}
+
+
+
+    
+@media (min-width: 768px) {
+
+}
+@media (min-width: 1024px){
+    /*NABBAR*/
+ 
+    .menuCatMobile{
+      background: none
+      }
+.main__section__nav{
+    display: flex;
+     flex-direction: column;
+     padding: 10px;
+     /* width: 190px; */
+
+   /* margin-right: 8px; */
+   
+ }
+ .main_section_nav_categorias{
+     display: flex;
+ padding-left: 10px;
+ background-color: rgb(147, 120, 172);
+ height: 750px;
+ text-decoration: none;
+}
+ 
+ .main__section__nav--titulo{
+ background-color: black;
+ color: white;
+ text-align: center;
+ text-transform: uppercase;
+ font-size: 18px;
+ }
+ .main__section__nav--categoria-titulo{
+ text-transform: uppercase;
+ font-weight: bold;
+ letter-spacing:3px;
+ margin-left: 0;
+ text-shadow: 1px 1px 2px black;
+ }
+ 
+ .main__section__nav--categoria ul li{
+ margin-left: 25px;
+ }
+ 
+ .main__section__nav--categoria ul{
+    border-left: 2px white solid;
+    margin-bottom:10px ;
+ 
+ }
+ .main__section__nav--categoria ul li a:hover{
+    text-decoration: none;
+    
+     letter-spacing: 1px;   
+ }
+ .main__section__nav--categoria ul a{
+ text-decoration: none; 
+  }
+  .btn--crear-prod{
+width:180px;
+  }
+  .btn--crear-prod{
+    margin-top: 20px;
+    width: 100px;
+    background: rgb(254 254 254);
+    /* border: 1px solid #000000; */
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    padding: 5px;
+    position: fixed;
+    top: 210px;
+    right: 60px;
+    }
+      .btn--crear-prod:hover{
+cursor: pointer;
+    
+      }
+      .fixed{
+       position: relative;
+      width: 155px;
+    
+      }
+      .fixed .divFix{
+        position: fixed;
+        top:88px;
+        bottom: 0;
+        z-index:1;
+        
+        
+        
+      }
+.spaceComplementFixed{
+  background-color: red;
+  
+        height: 800px;
+      }
+      
+}

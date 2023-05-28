@@ -1,0 +1,186 @@
+.home__main {
+    padding: 0;
+    
+}
+.home__carrurell--banner .carousel-control-prev{
+margin-left: 0;
+top: 40px;
+width: 30px;
+height: 30px;
+}
+.home__carrurell--banner .carousel-control-next{
+    position: absolute;
+    top: 40px;
+    left: inherit;
+    margin-left: 205px;
+    width: 30px;
+    height: 30px;
+}
+.home__main{
+    background-color: #e537fc7a;
+}
+.home__main__title{
+    color: black;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+.home__main__cardsCarrusel{
+    
+}
+.home__main__conteiner{
+    position: relative;
+    width: 100%;
+    /* border-radius: 10px;
+    background: rgb(2,0,36); */
+    background: linear-gradient(90deg, rgb(51 0 157) 3%, rgba(9,90,121,0.742734593837535) 68%, rgba(0,212,255,1) 100%);
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    /* margin-bottom: 10%; */
+}
+.home__main__conteiner--img-producto{
+    width: auto;
+    height: 300px;
+}
+.home__main__conteiner--descuento{
+    width: 110px;
+    height: 110px;
+    display: flex;
+    position: absolute;
+    bottom: 70px;
+    right: -50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(2,0,36,1) 17%, rgba(9,90,121,1) 69%, rgba(0,212,255,1) 100%);
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-around;
+    align-content: center;
+
+}
+.home__main__conteiner--descuento h2{
+color: white;
+font-weight: bold;
+text-transform: uppercase;
+
+}
+.home__main__conteiner--descripcion{
+    background-color: aliceblue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10%;
+    margin: 0 auto;
+    text-align: left;
+}
+.home__main__section--quienesSomos{
+    padding: 0 10%;
+}
+hr{
+    border: 2px solid black;
+    width: 100%;
+}
+.home__main__ubicacion{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+.home__main__ubicacion i{font-size: 1.5em;}
+.home__main__ubicacion--map{
+    margin-bottom: 10%;
+}
+.home__main__form{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: transparent;
+}
+.home__main__form--text{
+    width: 100%;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+}
+.home__main__form--button , .home__main__form--input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.home__main__form--button{
+    background-color: rgb(41, 51, 112);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.5s;
+    text-transform: uppercase;
+}
+.home__main__form--button:hover{
+    box-shadow: black 0px 0px 10px 0px;
+    background-color: linear-gradient(180deg, rgba(34,142,255,0.7) 0%, rgba(33,224,255,0.8) 100%);
+    ;
+}
+
+
+/*Media Query*/
+/*TABLET*/
+@media (min-width: 768px){
+        .home__carrurell--banner .carousel-control-prev, .home__carrurell--banner .carousel-control-next{
+            display: flex;
+            top: 120px;
+           
+        }
+        .home__main__cardsCarrusel{
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: center;
+            padding: 0 10%;
+        }
+        .home__main__conteiner{
+            /* width: 25%; */
+        }
+        .home__main__form{
+            width:60%;
+            margin-bottom: 5%;
+        }
+    }
+/*DESKTOP*/
+@media (min-width: 1024px){
+    .home__carrurell--banner .carousel-control-prev, .home__carrurell--banner .carousel-control-next{
+        display: flex;
+        top: 200px;
+    }
+    
+    .home__main__ubicacion--map{
+        width: 80%;
+    }
+    .home__main__form{
+        width: 60%;
+        padding-top: 0;
+        margin-top: 0;
+    }
+   
+
+}
