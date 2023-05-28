@@ -4,18 +4,18 @@ import { Metric } from "./Metric";
 export const ContentRowMovies = () => {
 
   const [state, setState] = useState({
-    courses : {
-      title: "Cursos",
+    products : {
+      title: "Productos",
       color: "primary",
       value: 0,
-      icon: "fa-film",
+      icon: "fa-guitar", /* <i class="fa-solid fa-guitars"></i> */
     },
-    chefs : {
+    /* chefs : {
       title: "Chefs",
       color: "success",
       value: 0,
       icon: "fa-award",
-    },
+    }, */
     users : {
       title: "Usuarios",
       color: "warning",
@@ -33,17 +33,17 @@ export const ContentRowMovies = () => {
         })
         .then(({ok, data}) => {
           if(ok){
-            const {totalCourses,totalChefs,totalUsers} = data;
+            const {totalProducts,/* totalChefs, */totalUsers} = data;
             setState({
               ...state,
-              courses : {
-                ...state.courses,
-                value : totalCourses
-              },
+              products : {
+                ...state.products,
+                value : totalProducts
+              }/* ,
               chefs : {
                 ...state.chefs,
                 value : totalChefs
-              },
+              } */,
               users : {
                 ...state.users,
                 value : totalUsers
@@ -64,8 +64,8 @@ export const ContentRowMovies = () => {
   return (
   <div className="row">
     
-    <Metric {...state.courses}/>
-    <Metric {...state.chefs}/>
+    <Metric {...state.products}/>
+   {/*  <Metric {...state.chefs}/> */}
     <Metric {...state.users}/>
     
     

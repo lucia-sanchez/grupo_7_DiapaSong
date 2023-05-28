@@ -10,7 +10,7 @@ export const SideBar = () => {
     >
       <Link
         className="sidebar-brand d-flex align-items-center justify-content-center"
-        to="/"
+        to="http://localhost:3000"
       >
         <div className="sidebar-brand-icon">
           <img
@@ -26,7 +26,7 @@ export const SideBar = () => {
       <li className="nav-item active">
         <a className="nav-link" href="/">
           <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard - Kitchening</span>
+          <span>Dashboard - Diapasong</span>
         </a>
       </li>
 
@@ -44,16 +44,16 @@ export const SideBar = () => {
       <li className="nav-item">
         <Link className="nav-link" to="/courses">
           <i className="fas fa-fw fa-chart-area"></i>
-          <span>Cursos</span>
+          <span>Productos</span>
         </Link>
       </li>
 
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <Link className="nav-link" to="/chefs">
           <i className="fas fa-fw fa-table"></i>
           <span>Chefs</span>
         </Link>
-      </li>
+      </li> */}
       <li className="nav-item">
         <Link className="nav-link" to="/users">
           <i className="fas fa-fw fa-table"></i>

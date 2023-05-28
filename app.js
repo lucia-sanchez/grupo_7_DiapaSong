@@ -16,6 +16,8 @@ const cookieCheck = require("./middlewares/cookieCheck");
 //APIS
 const productsApiRouter = require('./routes/apis/productsApi');
 const apiUserRouter = require('./routes/apis/users');
+const apiMainRouter = require('./routes/apis/mainApi');
+
 
 const app = express();
 
@@ -49,6 +51,7 @@ app.use('/products', productsRouter);
 app.use('/tickets', ticketsRouter);
 
 //RUTAS APIs
+app.use("/api", apiMainRouter)
 app.use('/api/products', productsApiRouter);
 app.use('/api/users', apiUserRouter);
 

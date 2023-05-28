@@ -88,4 +88,19 @@ module.exports = {
       };
     }
   },
+  getCountProducts : async () => {
+    try {
+
+      const totalProducts = await db.Product.count();
+
+      return totalProducts
+      
+    } catch (error) {
+      console.log(error);
+      throw {
+        status: 500,
+        message: error.message,
+      };
+    }
+  }
 };
