@@ -42,7 +42,8 @@ module.exports = {
             },
           },
         ],
-        attributes: ["id", "title","subtitle", "description","price"],
+        attributes: ["id", "title","subtitle", "description","price","stock"],
+
         limit,
         offset,
         totalPages,

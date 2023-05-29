@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
 
-export const CourseRow = ({id,title,chef,price,discount}) => {
+export const CourseRow = ({id,title,stock,price}) => {
     return (
         <tr>
             <th scope="row">{id}</th>
             <td>{title}</td>
-            <td>{chef.name}</td>
+            <td>{stock}</td>
             <td>{price}</td>
-            <td>{discount}</td>
+            <td>{}</td>
             <td>
                 <div className="d-flex justify-content-around">
                     <button className='btn btn-sm btn-success' style={{ width: '30px' }} ><i className='fas fa-edit'></i></button>
@@ -21,7 +21,7 @@ export const CourseRow = ({id,title,chef,price,discount}) => {
 CourseRow.propTypes = {
     id : PropTypes.number,
     title : PropTypes.string,
-    chef : PropTypes.object,
+    stock : PropTypes.number,
     price : PropTypes.number,
-    discount : PropTypes.number
+    /* discount : PropTypes.number */
 }

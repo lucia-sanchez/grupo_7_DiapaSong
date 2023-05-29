@@ -1,6 +1,7 @@
 export const UseFetch = async (endpoint, method = 'GET', data, token) => {
 
-    const apiURLBase = import.meta.env.VITE_API_URL_BASE
+    /* crear arhivo .env con el valor de variable =>'http://localhost:3000/api'*/
+    const apiURLBase =  import.meta.env.VITE_API_URL_BASE 
 
     const url = apiURLBase + endpoint // enpoint = "/courses"
     let response;
