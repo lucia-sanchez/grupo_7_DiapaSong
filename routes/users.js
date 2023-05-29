@@ -7,13 +7,14 @@ const checkUserGuest = require('../middlewares/checkUserGuest');
 const { uploadUserImage } = require('../middlewares/upload');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const registerUserValidator = require('../validations/registerUserValidator');
+const checkUserAdminToDashboard = require('../middlewares/checkUserAdminToDashboard');
 /* users */
 router
         .get('/register', checkUserGuest, register)
         .post('/register', uploadUserImage/* .single('mainImage') */, registerUserValidator, saveRegister)
         .get('/login', checkUserGuest, login)
         .post('/login', loginUserValidator, processlogin)
-        .get('/profile', checkUserLogin, uploadUserImage/* .single('mainImage') */, profile)
+        .get('/profile', checkUserAdminToDashboard, checkUserLogin, uploadUserImage/* .single('mainImage') */, profile)
         .get('/password', password)
         .get('/logOut', logOut)
 
