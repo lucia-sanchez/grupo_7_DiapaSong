@@ -34,7 +34,7 @@ module.exports = {
                 include: [literalQueryUrlImage(req, "productos", "images.name", "urlImage")]},
           },
         ],
-        attributes: ["id", "title", "description",'stock','price'],
+        attributes: ["id", "title","subtitle", "description","price","stock"],
 
         limit,
         offset,
