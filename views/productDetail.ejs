@@ -20,7 +20,7 @@
             <%= title %> <br>
            <h5><%= subtitle %></h5> 
           </div>
-          <figure class="main__section__productos__producto--imagen-detail">
+          <figure class="main__section__productos__producto--imagen-detail" id="product-image" >
             <img src="/img/productos/<%= images.find((image)=>image.main==1).name %>" alt="<%= title %>" />
           </figure>
         </section>
@@ -94,8 +94,10 @@
       <%- include('./partials/scripts') %>
             <!-- SweetAlert2 -->
 	        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+           <script src="/javascript/productDetail.js"></script>
             <script src="/javascript/alert_delete.js"></script>
             <script src="/javascript/dinamic.js"></script>
+           
 
    
 </body>
