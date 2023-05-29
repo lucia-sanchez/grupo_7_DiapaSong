@@ -1,7 +1,7 @@
 import { CourseRow } from "./CoursesRow";
 import PropTypes from 'prop-types'
 
-export const CoursesTable = ({courses}) => {
+export const CoursesTable = ({products}) => {
 
   return (
     <>
@@ -15,8 +15,8 @@ export const CoursesTable = ({courses}) => {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Curso</th>
-              <th scope="col">Chef</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Stock</th>
               <th scope="col">Precio</th>
               <th scope="col">Desc</th>
               <th scope="col">Acciones</th>
@@ -24,10 +24,10 @@ export const CoursesTable = ({courses}) => {
           </thead>
           <tbody>
             {
-              courses.map((course, index) => (
+              products.map((product, index) => (
                 <CourseRow
                 key={index}
-                  {...course}
+                  {...product}
                 />
               ))
             }

@@ -6,16 +6,16 @@ import { UseFetch } from "../hooks/UseFetch";
 export const Courses = () => {
   const [state, setState] = useState({
     loading: true,
-    courses: [],
+    products: [],
   });
 
   useEffect(() => {
-    UseFetch('/courses?limit=1000')
+    UseFetch('/products')/* ?limit=1000 */
       .then(({ok, data}) => {
         ok &&
         setState({
           loading : false,
-          courses : data.courses
+          products : data.products
         })
       })
       .catch(() => console.error)
@@ -26,7 +26,7 @@ export const Courses = () => {
         <div className="card-body">
           <div className="row">
             <div className="col-12 col-md-7">
-              <CoursesTable courses = {state.courses}/>
+              <CoursesTable products = {state.products}/>
             </div>
             <div className="col-12 col-md-5">
               <CourseAdd />
