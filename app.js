@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cors = require("cors");
+
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -37,6 +39,7 @@ app
   resave: false,
   saveUninitialized: true
 }))
+.use(cors())
 .use(cookieCheck) //cargo en session lo que hay en la cookie
 .use(localsUserCheck) //cargo en locals lo que hay en session
 .use((req,res,next) => {
