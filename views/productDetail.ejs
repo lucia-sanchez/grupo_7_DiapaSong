@@ -15,91 +15,103 @@
         </section>
         <!-- Productos -->
         <div class="main__section-product">
-        <section class="main__section__productos main__section__productos-detalles">
-          <div class="productos_detalles-titulo">
-            <%= title %> <br>
-           <h5><%= subtitle %></h5> 
-          </div>
-          <figure class="main__section__productos__producto--imagen-detail" id="product-image" >
-            <img src="/img/productos/<%= images.find((image)=>image.main==1).name %>" alt="<%= title %>" />
-          </figure>
-        </section>
-     
-        <section class="detalles_producto">
-          <article class="detalle-producto-precio">
-            <h5>Precio: $ <%= price %>
-            </h5>
-          </article>
-          <article class="detalle-producto-comprar">
-            <a href="#">COMPRAR</a>
-          </article>
-          <article class="detalle-producto-agregar">
-            <a href="/productCart">Agregar al carrito</a>
-          </article>
-          <article class="detalle-producto-medios">
-            <h5>Medios de pago:</h5>
-            <figure>
-              <img src="/img/productos/mediosdepagodetalleproducto.png" alt="Medios de pago" />
-            </figure>
-          </article>
+          <section class="main__section__productos main__section__productos-detalles">
+            <div class="productos_detalles-titulo">
+              <%= title %> <br>
+                <h5>
+                  <%= subtitle %>
+                </h5>
+                <div class="images-Detail">
+                  <figure class="main__section__productos__producto--imagen-detail" id="product-image" >
+                    <img src="/img/productos/<%= images.find((image)=>image.main==1).name %>" alt="<%= title %>"
+                    height="500px" class=" rounded-start" id="imgMain" style="object-fit:cover;">
+               </figure>
+               <!-- imagen secundaria -->
+               <figure class="imagenes-secundarias" >
+                <% images.filter((image)=> image.main === 0).forEach((image) => { %>
+                  <img src="/img/productos/<%= image.name %>" class="img-fluid" alt="..." style="object-fit: cover;"
+                    onclick="document.getElementById('imgMain').setAttribute('src',this.src)">
+                  <% }); %>
+            </figure></div>
+          </section>
 
-          <article class="detalle_producto-descripcion">
-            <hr />
-            <h5>Decripción:</h5>
-            <p>
-              <%= description %>>
-            </p>
-            <hr />
-          </article>
-          <article class="detalle_producto-caracteristicas">
-            <h5>Caracteristicas:</h5>
-            <div class="detalle_producto-caracteristicas-grisClaro">
-              <h6>Modelo</h6>
+          <section class="detalles_producto">
+            <article class="detalle-producto-precio">
+              <h5>Precio: $ <%= price %>
+              </h5>
+            </article>
+            <article class="detalle-producto-comprar">
+              <a href="#">COMPRAR</a>
+            </article>
+            <article class="detalle-producto-agregar">
+              <a href="/productCart">Agregar al carrito</a>
+            </article>
+            <article class="detalle-producto-medios">
+              <h5>Medios de pago:</h5>
+              <figure>
+                <img src="/img/productos/mediosdepagodetalleproducto.png" alt="Medios de pago" />
+              </figure>
+            </article>
+
+            <article class="detalle_producto-descripcion">
+              <hr />
+              <h5>Decripción:</h5>
               <p>
-                <%= model %>
+                <%= description %>>
               </p>
-            </div>
-            <div class="detalle_producto-caracteristicas-grisOscuro">
-              <h6>Color</h6>
-              <p>
-                <%= colors?colors.name:null %>
-              </p>
-            </div>
-            <div class="detalle_producto-caracteristicas-grisClaro">
-              <h6>stock</h6>
-              <p>
-                <%= stock %>
-              </p>
-            </div>
-          </article>
-          <% if (locals.userLogin && locals.userLogin.rol == "1") { %>
-            <div class="product-buttons">
-            <div>
-              <a href="/products/edit/<%=id%>"><button class="btn--crear-cuenta">editar producto</button></a>
-            </div>
+              <hr />
+            </article>
+            <article class="detalle_producto-caracteristicas">
+              <h5>Caracteristicas:</h5>
+              <div class="detalle_producto-caracteristicas-grisClaro">
+                <h6>Modelo</h6>
+                <p>
+                  <%= model %>
+                </p>
+              </div>
+              <div class="detalle_producto-caracteristicas-grisOscuro">
+                <h6>Color</h6>
+                <p>
+                  <%= colors?colors.name:null %>
+                </p>
+              </div>
+              <div class="detalle_producto-caracteristicas-grisClaro">
+                <h6>stock</h6>
+                <p>
+                  <%= stock %>
+                </p>
+              </div>
+            </article>
+            <% if (locals.userLogin && locals.userLogin.rol=="1" ) { %>
+              <div class="product-buttons">
                 <div>
-                    <form class="form__delete" id="form_delete" action="/products/remove/<%=id%>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn--crear-cuenta">eliminar producto</button>
-                    </form>
+                  <a href="/products/edit/<%=id%>"><button class="btn--crear-cuenta">editar producto</button></a>
                 </div>
-            </div>
-    
-        <% } %>
-         
-          </div>
-        </section> </div>
+                <div>
+                  <form class="form__delete" id="form_delete" action="/products/remove/<%=id%>?_method=DELETE"
+                    method="POST">
+                    <button type="submit" class="btn--crear-cuenta">eliminar producto</button>
+                  </form>
+                </div>
+              </div>
+
+              <% } %>
+
+        </div>
+        </section>
+        </div>
       </main>
       <!-- FOOTER -->
       <%- include('./partials/footer') %>
-      <%- include('./partials/scripts') %>
-            <!-- SweetAlert2 -->
-	        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
-           <script src="/javascript/productDetail.js"></script>
-            <script src="/javascript/alert_delete.js"></script>
-            <script src="/javascript/dinamic.js"></script>
-           
+        <%- include('./partials/scripts') %>
+          <!-- SweetAlert2 -->
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+          <script src="/javascript/productDetail.js"></script>
+          <script src="/javascript/alert_delete.js"></script>
+          <script src="/javascript/dinamic.js"></script>
 
-   
-</body>
+
+
+  </body>
 
 </html>
