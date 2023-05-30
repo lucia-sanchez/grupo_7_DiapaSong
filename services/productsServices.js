@@ -85,9 +85,10 @@ module.exports = {
           {
             association: "categories",
             attributes: {
-              exclude: ["id", "createdAt", "updatedAt"],
-            },
-          },
+              exclude: ["id", "createdAt", "updatedAt"]}},
+              {association: "images",
+              attributes: {
+                exclude: ["id", "createdAt", "updatedAt"]}},
         ],
         attributes: ["id", "title", "description"],
       });
