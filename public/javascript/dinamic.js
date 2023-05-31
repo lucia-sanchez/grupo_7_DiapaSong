@@ -15,7 +15,11 @@ const menu = document.querySelector("#header_nav");
 btnmenu.addEventListener("click", function () {
     menu.classList.toggle("mostrar-menu")
 })
-$('.carousel').carousel({
-    interval: 0
-  })
+
+const menuCategoria = document.querySelector(".main__section__nav--titulo");
+const menuOculto = document.querySelector(".menuCatMobile");
+menuCategoria.addEventListener("click", function () {
+  menuOculto.classList.toggle("showCategories")
+})
+
 

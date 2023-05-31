@@ -64,7 +64,22 @@ module.exports = {
             console.log(error);
             return createResponseErrors()
         }
+    },
+  getCountUsers : async () => {
+    try {
+
+      const totalUsers = await db.User.count();
+
+      return totalUsers
+      
+    } catch (error) {
+      console.log(error);
+      throw {
+        status: 500,
+        message: error.message,
+      };
     }
+  }
 }
 
 

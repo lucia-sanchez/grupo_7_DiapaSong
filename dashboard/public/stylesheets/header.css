@@ -1,0 +1,599 @@
+.header {
+    background: linear-gradient(63deg, rgb(36, 12, 65) 11%, rgb(6, 2, 75) 21%, rgb(68, 9, 128) 37%, rgb(127, 26, 185) 56%, rgb(124, 14, 175) 74%, rgb(36, 6, 44) 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 5px;
+}
+
+
+.header_div {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.header--btn-menu {
+    text-align: left;
+    padding-left: 20px;
+    width: 25%;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 1px rgb(196, 196, 196);
+}
+
+
+.header--logo {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    text-align: center;
+
+    justify-content: center;
+}
+
+.header--logo h1 {
+
+
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+
+}
+
+.header--logo img {
+    border: none;
+    width: 130px;
+    border-radius: 5px;
+    align-self: center;
+
+}
+
+.header__section--user-navigation {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header__section--user-navigation i {
+    font-size: 25px;
+    color: white;
+    padding: 5px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    transition: all 0.2s;
+}
+header .header__section--user-navigation-logged{
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+}
+.header__section--user-navigation-logged div{
+    display: flex;
+    padding: 5px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+.header__section--user-navigation-logged i {
+    font-size: 25px;
+    color: white;
+    padding: 5px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    transition: all 0.2s;
+}
+.header__section--user-navigation-logged a{
+    
+    color: white;
+}
+.header__nav {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0, 0.8);
+    width: 100%;
+    padding: 10px;
+    display: none;
+    margin-top: -800px;
+}
+
+.header__nav ul {
+    padding: 0;
+}
+
+.header__nav li {
+    color: white;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.header__nav li a {
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.mostrar-menu {
+    display: flex;   
+    margin-right: 0;
+    position: fixed;
+    top: 190px;
+    margin-top: 0;
+    transition: all 2s;
+    z-index: 1000;
+}
+
+.header--search-bar {
+    display: flex;
+    flex-direction: row;
+    background: none;
+    justify-content: center;
+    position: relative;
+    margin: -10px 0 15px 20px;
+}
+
+.header--search-bar input {
+    background: none;
+    padding: 3px;
+    margin-top: 15px;
+    margin-right: -10px;
+    border-radius: 50px;
+    border: 2px white solid;
+    color: white;
+    width: 220px;
+}
+
+.header--search-bar .lupa {
+    width: auto;
+    position: relative;
+    top: 18px;
+    right: 25px;
+    color: rgb(239, 177, 241);
+}
+
+.header--whatsapp-icon {
+    display: flex;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(75, 216, 47);
+    border: 2px black solid;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 100;
+}
+
+.header--whatsapp-icon a {
+    margin: 0 auto;
+    align-self: center;
+}
+
+.header--whatsapp-icon a i {
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
+}
+
+.header--whatsapp-icon:hover {
+    width: 50px;
+    height: 50px;
+    bottom: 22px;
+    right: 22px;
+    box-shadow: 0 0 15px rgb(99, 25, 168);
+}
+
+.header--whatsapp-icon span {
+    display: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 900;
+
+}
+
+.header_redes {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .header--btn-menu {
+        width: 10%;
+    }
+
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        width: 300px;
+        padding: 10px;
+        position: fixed;
+        top: 110px;
+        left: 0;
+        display: none;
+
+    }
+
+    .mostrar-menu {
+        display: flex;
+        margin-right: 0;
+    }
+
+    .header {
+        padding: 10px 0
+    }
+
+    .header--logo {
+        text-align: left;
+        width: 200px;
+        margin: 0
+    }
+
+    .header--logo img {
+        margin-bottom: 5px;
+        align-self: flex-start;
+        margin-left: 10px;
+    }
+
+    .header__section--user-navigation {
+        order: 2;
+        width: 200px;
+
+    }
+    .header__section--user-navigation-logged{
+        order: 2;
+        width: 200px;
+    }
+    .header__section--user-navigation-logged div{
+        width: 100%;
+    }
+    .header__section--user-navigation-logged i {
+        font-size: 25px;
+        color: white;
+        padding: 5px;
+        -webkit-text-stroke: 1px rgb(0, 0, 0);
+        transition: all 0.2s;
+    }
+    .header__section--user-navigation-logged a{
+        
+        color: white;
+    }
+
+    .header--search-bar {
+        width: 250px;
+    }
+
+    .header_redes {
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header{    
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .header--whatsapp-icon {
+        /*   display: flex; */
+        position: fixed;
+        /* bottom: -77px; */
+        right: 28px;
+        width: 45px;
+        height: 45px;
+        background-color: rgb(75, 216, 47);
+        border: 2px black solid;
+        border-radius: 50%;
+        transition: all 0.2s;
+        z-index: 110;
+    }
+    @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .header--whatsapp-icon:hover a i{
+        animation: rotate 1s linear infinite;
+      }
+    
+    .header_redes {
+        display: flex;
+    }
+
+    .header_redes:hover{
+        text-decoration: none;
+    }
+
+    .header--btn-menu {
+        display: none;
+    }
+
+    .header--logo {
+
+flex-direction: column;
+
+width: auto;
+
+text-align: center;
+
+position: relative;
+
+right: -33px;
+
+top: 24px;
+
+justify-content: center;
+
+float: left;
+
+}
+
+    .header--logo img {
+        margin-bottom: 5px;
+        align-self: flex-start;
+        margin-left: 0;
+        width: 150px;
+    }
+
+    .header--logo h1 {
+        font-size: 10px;
+    }
+
+    .header__section--user-navigation {
+        order: 2;
+        width: auto;
+        margin-top: 43px;
+        align-self: flex-start;
+    }
+
+    .header__section--user-navigation i {
+        font-size: 25px;
+        padding: 0 18px;
+    }
+
+    .header__section--user-navigation i:hover {
+        padding: 1px;
+        margin: 0 14px -4px;
+        text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    }
+    .header .header__section--user-navigation-logged{
+        width: 25%;
+        display: flex;
+        justify-content: flex-end;
+        background-color: rgb(0, 0, 0,0.3);
+        padding: 2px 8px;
+        position: relative;
+        
+    }
+
+
+    .header--search-bar {
+        width: auto;
+        margin-top: 7px;
+        align-self: flex-start;
+        margin-bottom: 0;
+        left: 25px;
+    }
+
+    .header--search-bar input {
+        width: 500px;
+        align-self: center;
+        padding: 15px 0;
+        margin-top: 25px;
+        margin-left: 5px;
+    }
+
+    .header--search-bar .lupa i {
+        font-size: 20px;
+        position: relative;
+        right: 10px;
+        top: 12px
+    }
+
+    .header__nav {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0px;
+        width: 50%;
+        order: 3;
+        padding:0;
+        background: none;
+        position: relative;
+        top: -10px;
+        left: 270px;
+    }
+
+    .header__nav ul {
+        width: 790px;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        min-width: 400px;
+    }
+
+    .header__nav ul li {
+        margin: 0;    
+        justify-content: flex-start;    
+        padding: 0px 10px;
+    }
+
+
+    .header__nav ul li a {
+        display: flex;
+        flex-wrap:nowrap;
+        padding: 10px 30px;
+        background-color: rgba(3, 3, 3, 0.3);
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-weight: 900;
+        transition: all 0.5s;
+    }
+
+    .header__nav ul li a:hover {
+        margin: 0 -8px;
+        padding: 10px 38px;
+        background-color: rgba(3, 3, 3, 0.8);
+        text-decoration: none;
+    }
+
+    @keyframes animacion {
+        0% {
+            opacity: 0;
+            transform: translateY(250px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .header--whatsapp-icon:hover span {
+        display: flex;
+        position: fixed;
+        z-index: 1;
+        bottom: 30px;
+        right: 75px;
+        padding: 5px;
+        border-radius: 10px;
+        color:black;
+        background-color: rgb(75, 216, 47);
+        animation: animacion 0.5s ease 0s 1 normal forwards;
+        transition: all 1s;
+    }
+
+
+
+    .header-scroll {
+        margin-bottom: 200px;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        background: linear-gradient(63deg, rgb(36, 12, 65) 11%, rgb(6, 2, 75) 21%, rgb(68, 9, 128) 37%, rgb(127, 26, 185) 56%, rgb(124, 14, 175) 74%, rgb(36, 6, 44) 100%);
+        display: flex;
+        height: 83px;
+        transition: all 1s;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header-scroll .header--search-bar {
+        display: flex;
+        width: 20%;
+        padding: 0;
+        /* position: relative; */
+        top: 15px;
+        left: 36px;
+        margin: 0;
+    }
+    .header-scroll .header--search-bar input {
+        width: 100%;
+        margin: 0;
+    }
+    .header-scroll .header--search-bar .lupa{
+        top: -7px;
+        right: 34px;
+    }
+    .header-scroll .header--search-bar .lupa i{
+        font-size: 15px;
+        right:0;
+    }
+    .header-scroll .header--search-bar input::placeholder {
+        display: flex;
+        text-align: left;
+        }
+    .header-scroll .header__nav {
+        width: 70%;
+        top: 0px;
+        left: 20px;
+     
+    }
+    .header-scroll .header__nav ul {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+    
+    .header-scroll .header__nav ul li {
+        margin: 0;
+        justify-content: flex-start;
+        padding: 5px 4px;
+    }
+    .header-scroll .header__nav ul li a{
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+     body.header-scroll {
+        padding-top: 300px;
+        background-color: black;
+    }
+    .header-scroll .header--logo {
+        top: 0;
+        /* margin-left: -300px; */
+    }
+
+    .header-scroll .header--logo img {
+        width: 100px;
+
+    }
+
+    .header-scroll .header--logo h1 {
+        display: none;
+        font-size: 12px;
+        margin-top: -5px;
+    }
+
+    .header-scroll .header__section--user-navigation {
+        order: 4;
+        width: 100px;
+        flex-direction: column;
+        width: 100px;
+        position: fixed;
+        bottom: 80px;
+        right: -25px;
+    }
+
+    .header-scroll .header__section--user-navigation i {
+        padding: 10px;
+     
+
+    }
+    .header-scroll .header__section--user-navigation-logged{
+        background-color: rgb(0, 0, 0,0.8);
+        align-self: center;
+        justify-content: space-around;
+        order: 4;
+        width: 220px;
+        height: auto;
+        top:0;
+        padding: 0 0 3px 0;
+    }
+  
+    .scroll_main_space_top{
+        background-color:var(--colorFondoBody);
+        padding-top: 190px !important;
+    
+    }
+
+}
