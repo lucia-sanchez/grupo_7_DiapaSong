@@ -1,7 +1,7 @@
-import { CourseRow } from "./CoursesRow";
+import { ProductsRow } from "./ProductsRow";
 import PropTypes from 'prop-types'
 
-export const CoursesTable = ({products}) => {
+export const ProductsTable = ({products}) => {
 
   return (
     <>
@@ -25,7 +25,7 @@ export const CoursesTable = ({products}) => {
           <tbody>
             {
               products.map((product, index) => (
-                <CourseRow
+                <ProductsRow
                 key={index}
                   {...product}
                 />
@@ -38,6 +38,6 @@ export const CoursesTable = ({products}) => {
     </>
   )
 }
-CoursesTable.propTypes = {
-  courses : PropTypes.array
+ProductsTable.propTypes = {
+  products : PropTypes.array
 }

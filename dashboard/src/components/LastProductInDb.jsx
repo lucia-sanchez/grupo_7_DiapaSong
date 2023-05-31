@@ -1,7 +1,7 @@
 import React from "react";
-import lastMovie from '/logoDiapasong.png'
+import lastProduct from '/logoDiapasong.png'
 
-export const LastMovieInDb = () => {
+export const LastProductInDb = () => {
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
@@ -15,7 +15,7 @@ export const LastMovieInDb = () => {
             <img
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: "40rem" }}
-              src={lastMovie}
+              src={lastProduct}
               alt=" Star Wars - Mandalorian "
             />
           </div>
@@ -28,7 +28,7 @@ export const LastMovieInDb = () => {
             aperiam voluptatum?
           </p>
           <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
-            View movie detail
+            View Product detail
           </a>
         </div>
       </div>

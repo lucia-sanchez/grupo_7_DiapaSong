@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 
-export const CourseRow = ({id,title,stock,price}) => {
+export const UsersRow = ({id,name,email}) => {
     return (
         <tr>
             <th scope="row">{id}</th>
-            <td>{title}</td>
-            <td>{stock}</td>
-            <td>{price}</td>
+            <td>{name}</td>
+            <td>{email}</td>
+            <td>{}</td>
+            <td>{}</td>
             <td>{}</td>
             <td>
                 <div className="d-flex justify-content-around">
@@ -18,10 +19,10 @@ export const CourseRow = ({id,title,stock,price}) => {
     )
 }
 
-CourseRow.propTypes = {
+UsersRow.propTypes = {
     id : PropTypes.number,
-    title : PropTypes.string,
-    stock : PropTypes.number,
-    price : PropTypes.number,
-    /* discount : PropTypes.number */
+    name : PropTypes.string,
+    email : PropTypes.string,
+    /*price : PropTypes.number,
+     discount : PropTypes.number */
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const CourseAdd = () => {
+export const UserAdd = () => {
 
   const [categories, setCategories] = useState([]);
   const [chefs, setChefs] = useState([]);
@@ -10,7 +10,7 @@ export const CourseAdd = () => {
     <>
       <div className='d-flex justify-content-between'>
 
-        <h4>Agregar Curso </h4>
+        <h4>Agregar Usuario </h4>
       </div>
       <hr />
       <form className="row">
