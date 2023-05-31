@@ -18,6 +18,7 @@ height: 30px;
 }
 .home__main{
     background-color: #e537fc7a;
+    width: 100%;
 }
 .home__main__title{
     color: black;

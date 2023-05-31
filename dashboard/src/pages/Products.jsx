@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { CourseAdd } from "../components/courses/CourseAdd";
-import { CoursesTable } from "../components/courses/CoursesTable";
+import { ProductAdd } from "../components/products/ProductAdd";
+import { ProductsTable } from "../components/products/ProductsTable";
 import { UseFetch } from "../hooks/UseFetch";
 
-export const Courses = () => {
+export const Products = () => {
   const [state, setState] = useState({
     loading: true,
     products: [],
@@ -26,10 +26,10 @@ export const Courses = () => {
         <div className="card-body">
           <div className="row">
             <div className="col-12 col-md-7">
-              <CoursesTable products = {state.products}/>
+              <ProductsTable products = {state.products}/>
             </div>
             <div className="col-12 col-md-5">
-              <CourseAdd />
+              <ProductAdd />
             </div>
           </div>
         </div>

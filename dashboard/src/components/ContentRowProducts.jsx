@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Metric } from "./Metric";
 
-export const ContentRowMovies = () => {
+export const ContentRowProducts = () => {
 
   const [state, setState] = useState({
     products : {
