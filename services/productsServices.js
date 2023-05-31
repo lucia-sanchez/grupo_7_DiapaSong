@@ -125,19 +125,43 @@ module.exports = {
     }
   },
 
-  createProduct: async (data) => {
+  createProduct: async (data, req) => {
     try {
+      const colors = db.Color.findAll({
+        order: [["name"]],
+        attributes: ["name", "id"],
+      });
+      const category = db.Category.findAll({
+        order: [["category"]],
+        attributes: ["category", "id"],
+      });
+      const main = await db.Image.create({
+        name: req.files.mainImage[0].filename,
+        main: req.files.mainImage ? 1 : 2,
+        idProduct: product.id,
+      });
+
+      const secondary = await Promise.all(
+        req.files.images.map((image) =>
+          db.Image.create({
+            name: image.filename,
+            main: 0,
+            idProduct: product.id,
+          })
+        )
+      );
       const newProduct = await db.Product.create({
         title: data.title.trim(),
-        /*     subtitle: data.subtitle.trim(),
-      idProductType: tipo === "product" ? 1 : 2,
-      idCondition: condition === "news" ? 1 : 2,
-      description: description.trim(),
-      price: data.price,
-      idCategory: data.category,
-      idColor: data.colors,
-      model: data.model,
-      stock: data.stock */
+        subtitle: data.subtitle.trim(),
+        idProductType: data.idProductType,
+        idCondition: data.idCondition,
+        description: data.description.trim(),
+        price: data.price,
+        idCategory: data.category,
+        idColor: data.colors,
+        model: data.model,
+        stock: data.stock,
+        image: data.image,
       });
 
       return newProduct;
@@ -152,18 +176,40 @@ module.exports = {
 
   updateProduct: async (id, data, image) => {
     try {
+      const colors = db.Color.findAll({
+        order: [["name"]],
+        attributes: ["name", "id"],
+      });
+      const category = db.Category.findAll({
+        order: [["category"]],
+        attributes: ["category", "id"],
+      });
+      const main = db.Image.create({
+        name: req.files.mainImage[0].filename,
+        main: req.files.mainImage ? 1 : 2,
+        idProduct: product.id,
+      });
+
+      const secondary = req.files.images.forEach((image) => {
+        db.Image.create({
+          name: image.filename,
+          main: 0,
+          idProduct: product.id,
+        });
+      });
       const productUpdated = await db.Product.update(
         {
           title: data.title.trim(),
           subtitle: data.subtitle.trim(),
-          idProductType: tipo === "product" ? 1 : 2,
-          idCondition: condition === "news" ? 1 : 2,
-          description: description.trim(),
+          idProductType: data.idProductType,
+          idCondition: data.idCondition,
+          description: data.description.trim(),
           price: data.price,
           idCategory: data.category,
           idColor: data.colors,
           model: data.model,
           stock: data.stock,
+          images: data.images,
         },
         {
           where: { id: id },
@@ -181,6 +227,9 @@ module.exports = {
 
   destroyProduct: async (id) => {
     try {
+      await db.Image.destroy({
+        where: { idProduct: id },
+      });
       const destroyProduct = await db.Product.destroy({
         where: { id: id },
         force: true,

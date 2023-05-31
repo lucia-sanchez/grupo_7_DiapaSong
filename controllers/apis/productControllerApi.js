@@ -84,13 +84,9 @@ module.exports = {
       return createResponseError(res, error);
     }
   },
-
-
-
-
   store : async (req,res) => {
     try {
-      /*   const errors = validationResult(req)
+        const errors = validationResult(req)
 
         if(req.fileValidationError){ 
             errors.errors.push({
@@ -113,7 +109,7 @@ module.exports = {
         if(!errors.isEmpty()) throw{
             status:400,
             message:errors.mapped()
-        } */
+        }
 
         const newProduct = await createProduct(req.body, req.file)
         return res.status(200).json({
