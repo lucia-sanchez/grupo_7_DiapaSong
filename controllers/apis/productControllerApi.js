@@ -45,7 +45,7 @@ module.exports = {
           .json({ status: 400, message: "La página que buscas no existe" });
       }
 
-      const totalPages = Math.ceil(count / limit) - 1;
+      const totalPages = Math.ceil(count / limit) ;
 
       return res.status(200).json({
         ok: true,
