@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { UseFetch } from "../../hooks/UseFetch";
 
 export const ProductAdd = () => {
 
   const [categories, setCategories] = useState([]);
-  const [chefs, setChefs] = useState([]);
+  const [colors, setColors] = useState([]);
 
+  useEffect(() => {
+    UseFetch('/categories')
+      .then(({ok, data}) => {
+        const {categories} = data;
+        ok &&
+        setCategories(categories)
+      })
+      UseFetch('/colors')
+      .then(({ok, data}) => {
+        const {colors} = data;
+        ok &&
+        setColors(colors)
+      })
+  }, []);
 
   return (
     <>
@@ -35,8 +50,8 @@ export const ProductAdd = () => {
           >
             <option hidden defaultValue value="">Seleccione...</option>
             {
-              chefs.map((chef, index) => (
-                <option value={chef} key={index}>{chef}</option>
+              colors.map((color, index) => (
+                <option value={color.id} key={index}>{color.name}</option>
               ))
             }
           </select>
@@ -53,7 +68,7 @@ export const ProductAdd = () => {
             <option hidden defaultValue value="">Seleccione...</option>
             {
               categories.map((category, index) => (
-                <option value={category} key={index}>{category}</option>
+                <option value={category.id} key={index}>{category.category}</option>
               ))
             }
           </select>
