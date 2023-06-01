@@ -4,6 +4,7 @@ const {
   getAllProducts,
   getOneProduct,
   createProduct,
+/*   createImageProduct, */
   updateProduct,
   destroyProduct
 } = require("../../services/productsServices");
@@ -84,42 +85,15 @@ module.exports = {
       return createResponseError(res, error);
     }
   },
-
-
-
-
   store : async (req,res) => {
     try {
-      /*   const errors = validationResult(req)
-
-        if(req.fileValidationError){ 
-            errors.errors.push({
-                value : "",
-                msg : req.fileValidationError,
-                param : "image",
-                location : "file"
-            })
-        }
-
-        if (!req.file){ 
-            errors.errors.push({ 
-                value : "",
-                msg : "Debes subir la imagen del producto",
-                param : "image",
-                location : "file"
-            })
-        }
-
-        if(!errors.isEmpty()) throw{
-            status:400,
-            message:errors.mapped()
-        } */
-
         const newProduct = await createProduct(req.body, req.file)
-        return res.status(200).json({
+/*         const newImage = await createImageProduct(req.files,newProduct.id)
+ */        return res.status(200).json({
             ok: true,            
             data : {
                 message:"Producto creado exitosamente",
+             /*    newImage, */
                 newProduct
             },
             meta : {
@@ -135,12 +109,10 @@ module.exports = {
     }
 },
 
+
 update : async (req,res) => {
     try {
-
         const errors = validationResult(req);
-
-    
         if(req.fileValidationError){
             errors.errors.push({
                 value : "",
@@ -149,12 +121,10 @@ update : async (req,res) => {
                 location : "file"
             })
         }
-
         if(!errors.isEmpty()) throw{
             status:400,
             message:errors.mapped()
         }
-
         const productUpdated = await updateProduct(req.params.id, req.body, req.file)
 
         return res.status(200).json({
