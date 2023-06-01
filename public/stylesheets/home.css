@@ -28,9 +28,9 @@ height: 30px;
     font-weight: bold;
 }
 .home__main__section--ofertas{
-    display: flex;
+    /*display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-evenly;*/
 }
 
 .home__main__conteiner{
@@ -72,7 +72,7 @@ text-transform: uppercase;
 
 }
 .home__main__cardsCarrusel{
-    width: 100%;
+    width: 100%;
 }
 .home__main__conteiner--descripcion{
     background-color: aliceblue;
@@ -160,24 +160,23 @@ hr{
            
         }
         .home__main__section--ofertas{
-            width: 100%;
+           /* width: 90%;
             display: flex;
             justify-content: start;
             gap: 5%;
-            flex-wrap: wrap;
-            flex-direction: row;
+            flex-direction: row;*/
         }
         .home__main__cardsCarrusel{
-            /* width: 100%; */
-            /* padding: 10px; */
-            /* display: flex; */
+            width: 100%;
+            display: flex;
+            gap: 7%;
+            justify-content: space-evenly;
         }
         .home__main__cardsHome{
-        
-           
+            width: 32% ;
         }
         .home__main__conteiner{
-            width: 32%;
+            
         }
         .home__main__form{
             width:60%;
@@ -207,15 +206,21 @@ hr{
         align-content: center;
     }
    .home__main__cardsCarrusel{
-    /* display: flex; */
+    width: 100%;
+    display: flex;
+    gap: 7%;
+    justify-content: space-evenly;
    }
    .home__main__conteiner{
-    width: 23%;
+    
+   }
+   .home__main__cardsHome{
+    width:23%;
    }
    .home__main__section--ofertas{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    /*display: flex;    
+    flex-direction: row;       
+    column-gap: 8%;*/
    }
    
 }
