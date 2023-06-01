@@ -214,6 +214,8 @@ hr{
    }
    .home__main__section--ofertas{
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
    }
    
 }

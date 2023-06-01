@@ -37,7 +37,7 @@
 
           <section class="detalles_producto">
             <section class="detalles_producto">
-              <% if (discount) { %>
+              <% if (discount > 0) { %>
                 
                 <article class="detalle-producto-precio">
                  
@@ -46,16 +46,18 @@
                     <span>$ <%= toThousand(price) %> </span>
                 </h5>
                 </article>
-                <% } else { %>
-                 
-                <p class="detalle-producto-precio">
-                  $ <%= toThousand(price) %> 
-                </p>
-                <% } %>
                 <article class="detalle-producto-precio">
                   <h5>Descuento: <%= discount %> %
                   </h5>
                 </article>
+                <% } else { %>
+                 
+                <article class="detalle-producto-precio">
+                <h5> $ <%= toThousand(price) %> 
+                </h5> 
+              </article>
+                <% } %>
+                
             <article class="detalle-producto-comprar">
               <a href="#">COMPRAR</a>
             </article>
