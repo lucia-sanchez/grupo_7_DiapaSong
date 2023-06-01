@@ -4,6 +4,7 @@ const {
   getAllProducts,
   getOneProduct,
   createProduct,
+/*   createImageProduct, */
   updateProduct,
   destroyProduct,
 } = require("../../services/productsServices");
@@ -84,46 +85,24 @@ module.exports = {
       return createResponseError(res, error);
     }
   },
-
-  store: async (req, res) => {
+  store : async (req,res) => {
     try {
-      /* validaciones */
-
-      const {
-        title,
-        subtitle,
-        idProductType,
-        idCondition,
-        description,
-        price,
-        categories,
-        colors,
-        model,
-        stock,
-      } = req.body;
-
-      let { id } = await createProduct({
-        title: title.trim(),
-        subtitle: subtitle.trim(),
-        idProductType,
-        idCondition,
-        description: description.trim(),
-        price: price,
-        idCategory: categories,
-        idColor: colors,
-        model: model,
-        stock: stock,
-      });
-
-      let product = await getOneProduct(req, id);
-
-      return res.status(200).json({
-        ok: true,
-        data: {
-          message: "El producto fue creado con éxito",
-          product,
-        },
-      });
+        const newProduct = await createProduct(req.body, req.file)
+/*         const newImage = await createImageProduct(req.files,newProduct.id)
+ */        return res.status(200).json({
+            ok: true,            
+            data : {
+                message:"Producto creado exitosamente",
+             /*    newImage, */
+                newProduct
+            },
+            meta : {
+                status: 200,
+                total : 1,
+                url : `/api/products/`
+            },
+        })
+        
     } catch (error) {
       return res.status(error.status || 500).json({
         ok: false,
@@ -133,44 +112,39 @@ module.exports = {
         },
       });
     }
-  },
-  update: async (req, res) => {
+},
+
+
+update : async (req,res) => {
     try {
-      const errors = validationResult(req);
+        const errors = validationResult(req);
+        if(req.fileValidationError){
+            errors.errors.push({
+                value : "",
+                msg : req.fileValidationError,
+                param : "icon",
+                location : "file"
+            })
+        }
+        if(!errors.isEmpty()) throw{
+            status:400,
+            message:errors.mapped()
+        }
+        const productUpdated = await updateProduct(req.params.id, req.body, req.file)
 
-      if (req.fileValidationError) {
-        errors.errors.push({
-          value: "",
-          msg: req.fileValidationError,
-          param: "icon",
-          location: "file",
-        });
-      }
-
-      if (!errors.isEmpty())
-        throw {
-          status: 400,
-          message: errors.mapped(),
-        };
-
-      const productUpdated = await updateProduct(
-        req.params.id,
-        req.body,
-        req.file
-      );
-
-      return res.status(200).json({
-        ok: true,
-        data: {
-          message: "Actualizado correctamente",
-          productUpdated,
-        },
-        meta: {
-          status: 200,
-          total: 1,
-          url: `/api/products/${req.params.id}`,
-        },
-      });
+        return res.status(200).json({
+            ok: true,            
+            data : {
+                message:"Actualizado correctamente",
+                productUpdated
+            },
+            meta : {
+                status: 200,
+                total : 1,
+                url : `/api/products/${req.params.id}` 
+            },
+        })
+        
     } catch (error) {
       console.log(error);
       return createResponseError(res, error);

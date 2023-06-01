@@ -2,15 +2,36 @@ const fs = require('fs');
 const path = require('path');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require("../database/models")
+const { validationResult } = require("express-validator");
+const product = require("../database/models/product");
 const Op = db.Sequelize.Op
 
 
 
 module.exports ={
-    index: (req,res) =>{
-        return res.render('index', {
-            title: "HOME"
-        });
+   index: (req,res) =>{
+        const saleProducts = db.Product.findAll({
+            where: {
+                discount: {
+                  [Op.ne]: 0,
+                },
+              },
+              include : [
+                {
+                    model: db.Image,
+                    as: "images",
+                    where: { main: 1 },
+                  }
+              ]
+        })
+        .then((saleProducts)=>{
+            return res.render('index', {
+                saleProducts,
+                title: "HOME"
+            });
+        })
+        .catch((error) => console.log(error));
+       
     },
     search: (req,res) => {
         /* CREO LA CONSTANTE CON LAS PALABRAS CLAVE DE BUSQUEDA */

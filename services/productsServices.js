@@ -124,35 +124,52 @@ module.exports = {
       };
     }
   },
+  createProduct: async ({
+    title,
+    subtitle,
+    description,
+    price,
+    idCategory,
+    idColor,
+    model,
+    stock,
+  }) => {
+    try {
+      const newProduct = await db.Product.create({
+        title: title.trim(),
+        subtitle: subtitle.trim(),
+        description: description.trim(),
+        price: price,
+        idCategory: idCategory,
+        idColor: idColor,
+        model: model,
+        stock: stock,
+      });
 
-  createProduct: async (product) => {
-try {
-
-  let newProduct = await db.Product.create(product)
-  return newProduct
-  
-} catch (error) {
-  console.log(error);
-  throw {
-    status: 500,
-    message: error.message
-  }
-}
-},
-  updateProduct: async (id, data, image) => {
+      return newProduct;
+    } catch (error) {
+      console.log(error);
+      throw {
+        status: 500,
+        message: error.message,
+      };
+    }
+  },
+  updateProduct: async (
+    id,
+    { title, subtitle, description, price, idCategory, idColor, model, stock }
+  ) => {
     try {
       const productUpdated = await db.Product.update(
         {
-          title: data.title.trim(),
-          subtitle: data.subtitle.trim(),
-          idProductType: tipo === "product" ? 1 : 2,
-          idCondition: condition === "news" ? 1 : 2,
-          description: description.trim(),
-          price: data.price,
-          idCategory: data.category,
-          idColor: data.colors,
-          model: data.model,
-          stock: data.stock,
+          title: title,
+          subtitle: subtitle,
+          description: description,
+          price: price,
+          idCategory: idCategory,
+          idColor: idColor,
+          model: model,
+          stock: stock,
         },
         {
           where: { id: id },
@@ -170,6 +187,9 @@ try {
 
   destroyProduct: async (id) => {
     try {
+      await db.Image.destroy({
+        where: { idProduct: id },
+      });
       const destroyProduct = await db.Product.destroy({
         where: { id: id },
         force: true,
