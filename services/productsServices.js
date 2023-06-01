@@ -124,44 +124,26 @@ module.exports = {
       };
     }
   },
-
-  createProduct: async (data, req) => {
+  createProduct: async ({
+    title,
+    subtitle,
+    description,
+    price,
+    idCategory,
+    idColor,
+    model,
+    stock,
+  }) => {
     try {
-      const colors = db.Color.findAll({
-        order: [["name"]],
-        attributes: ["name", "id"],
-      });
-      const category = db.Category.findAll({
-        order: [["category"]],
-        attributes: ["category", "id"],
-      });
-      const main = await db.Image.create({
-        name: req.files.mainImage[0].filename,
-        main: req.files.mainImage ? 1 : 2,
-        idProduct: product.id,
-      });
-
-      const secondary = await Promise.all(
-        req.files.images.map((image) =>
-          db.Image.create({
-            name: image.filename,
-            main: 0,
-            idProduct: product.id,
-          })
-        )
-      );
       const newProduct = await db.Product.create({
-        title: data.title.trim(),
-        subtitle: data.subtitle.trim(),
-        idProductType: data.idProductType,
-        idCondition: data.idCondition,
-        description: data.description.trim(),
-        price: data.price,
-        idCategory: data.category,
-        idColor: data.colors,
-        model: data.model,
-        stock: data.stock,
-        image: data.image,
+        title: title.trim(),
+        subtitle: subtitle.trim(),
+        description: description.trim(),
+        price: price,
+        idCategory: idCategory,
+        idColor: idColor,
+        model: model,
+        stock: stock,
       });
 
       return newProduct;
@@ -173,43 +155,21 @@ module.exports = {
       };
     }
   },
-
-  updateProduct: async (id, data, image) => {
+  updateProduct: async (
+    id,
+    { title, subtitle, description, price, idCategory, idColor, model, stock }
+  ) => {
     try {
-      const colors = db.Color.findAll({
-        order: [["name"]],
-        attributes: ["name", "id"],
-      });
-      const category = db.Category.findAll({
-        order: [["category"]],
-        attributes: ["category", "id"],
-      });
-      const main = db.Image.create({
-        name: req.files.mainImage[0].filename,
-        main: req.files.mainImage ? 1 : 2,
-        idProduct: product.id,
-      });
-
-      const secondary = req.files.images.forEach((image) => {
-        db.Image.create({
-          name: image.filename,
-          main: 0,
-          idProduct: product.id,
-        });
-      });
       const productUpdated = await db.Product.update(
         {
-          title: data.title.trim(),
-          subtitle: data.subtitle.trim(),
-          idProductType: data.idProductType,
-          idCondition: data.idCondition,
-          description: data.description.trim(),
-          price: data.price,
-          idCategory: data.category,
-          idColor: data.colors,
-          model: data.model,
-          stock: data.stock,
-          images: data.images,
+          title: title,
+          subtitle: subtitle,
+          description: description,
+          price: price,
+          idCategory: idCategory,
+          idColor: idColor,
+          model: model,
+          stock: stock,
         },
         {
           where: { id: id },
