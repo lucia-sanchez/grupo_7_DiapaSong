@@ -31,6 +31,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DECIMAL(10,2)
       },
+      discount: {
+        type: Sequelize.INTEGER
+      },
       idProductType: {
         
         type: Sequelize.INTEGER,
