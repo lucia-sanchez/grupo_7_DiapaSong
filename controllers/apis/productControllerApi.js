@@ -5,7 +5,7 @@ const {
   getOneProduct,
   createProduct,
   updateProduct,
-  destroyProduct
+  destroyProduct,
 } = require("../../services/productsServices");
 
 module.exports = {
@@ -45,7 +45,7 @@ module.exports = {
           .json({ status: 400, message: "La página que buscas no existe" });
       }
 
-      const totalPages = Math.ceil(count / limit) ;
+      const totalPages = Math.ceil(count / limit);
 
       return res.status(200).json({
         ok: true,
@@ -85,116 +85,116 @@ module.exports = {
     }
   },
 
-
-
-
-  store : async (req,res) => {
+  store: async (req, res) => {
     try {
-      /*   const errors = validationResult(req)
+      /* validaciones */
 
-        if(req.fileValidationError){ 
-            errors.errors.push({
-                value : "",
-                msg : req.fileValidationError,
-                param : "image",
-                location : "file"
-            })
-        }
+      const {
+        title,
+        subtitle,
+        idProductType,
+        idCondition,
+        description,
+        price,
+        categories,
+        colors,
+        model,
+        stock,
+      } = req.body;
 
-        if (!req.file){ 
-            errors.errors.push({ 
-                value : "",
-                msg : "Debes subir la imagen del producto",
-                param : "image",
-                location : "file"
-            })
-        }
+      let { id } = await createProduct({
+        title: title.trim(),
+        subtitle: subtitle.trim(),
+        idProductType,
+        idCondition,
+        description: description.trim(),
+        price: price,
+        idCategory: categories,
+        idColor: colors,
+        model: model,
+        stock: stock,
+      });
 
-        if(!errors.isEmpty()) throw{
-            status:400,
-            message:errors.mapped()
-        } */
+      let product = await getOneProduct(req, id);
 
-        const newProduct = await createProduct(req.body, req.file)
-        return res.status(200).json({
-            ok: true,            
-            data : {
-                message:"Producto creado exitosamente",
-                newProduct
-            },
-            meta : {
-                status: 200,
-                total : 1,
-                url : `/api/products/`
-            },
-        })
-        
+      return res.status(200).json({
+        ok: true,
+        data: {
+          message: "El producto fue creado con éxito",
+          product,
+        },
+      });
     } catch (error) {
-        console.log(error)
-        return createResponseError(res, error) 
+      return res.status(error.status || 500).json({
+        ok: false,
+        error: {
+          status: error.status || 500,
+          message: error.message || "Upss. Error!!",
+        },
+      });
     }
-},
-
-update : async (req,res) => {
+  },
+  update: async (req, res) => {
     try {
+      const errors = validationResult(req);
 
-        const errors = validationResult(req);
+      if (req.fileValidationError) {
+        errors.errors.push({
+          value: "",
+          msg: req.fileValidationError,
+          param: "icon",
+          location: "file",
+        });
+      }
 
-    
-        if(req.fileValidationError){
-            errors.errors.push({
-                value : "",
-                msg : req.fileValidationError,
-                param : "icon",
-                location : "file"
-            })
-        }
+      if (!errors.isEmpty())
+        throw {
+          status: 400,
+          message: errors.mapped(),
+        };
 
-        if(!errors.isEmpty()) throw{
-            status:400,
-            message:errors.mapped()
-        }
+      const productUpdated = await updateProduct(
+        req.params.id,
+        req.body,
+        req.file
+      );
 
-        const productUpdated = await updateProduct(req.params.id, req.body, req.file)
-
-        return res.status(200).json({
-            ok: true,            
-            data : {
-                message:"Actualizado correctamente",
-                productUpdated
-            },
-            meta : {
-                status: 200,
-                total : 1,
-                url : `/api/products/${req.params.id}` 
-            },
-        })
-        
+      return res.status(200).json({
+        ok: true,
+        data: {
+          message: "Actualizado correctamente",
+          productUpdated,
+        },
+        meta: {
+          status: 200,
+          total: 1,
+          url: `/api/products/${req.params.id}`,
+        },
+      });
     } catch (error) {
-        console.log(error)
-        return createResponseError(res, error) 
+      console.log(error);
+      return createResponseError(res, error);
     }
-},  
+  },
 
-destroy : async (req,res) => {
+  destroy: async (req, res) => {
     try {
-        const productDeleted = await destroyProduct(req.params.id)
-        return res.status(200).json({
-            ok: true,            
-            data : {
-                message:"Producto eliminado exitosamente",
-                productDeleted},
-            meta : {
-                status: 200,
-                total : 1,
-                url : `/api/products/${req.params.id}` 
-            },
-        })
+      const productDeleted = await destroyProduct(req.params.id);
+      return res.status(200).json({
+        ok: true,
+        data: {
+          message: "Producto eliminado exitosamente",
+          productDeleted,
+        },
+        meta: {
+          status: 200,
+          total: 1,
+          url: `/api/products/${req.params.id}`,
+        },
+      });
     } catch (error) {
-        console.log(error)
-        return createResponseError(res, error) 
+      console.log(error);
+      return createResponseError(res, error);
     }
-}
-
-
+  },
 };

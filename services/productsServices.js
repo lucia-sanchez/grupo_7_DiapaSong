@@ -125,31 +125,20 @@ module.exports = {
     }
   },
 
-  createProduct: async (data) => {
-    try {
-      const newProduct = await db.Product.create({
-        title: data.title.trim(),
-        /*     subtitle: data.subtitle.trim(),
-      idProductType: tipo === "product" ? 1 : 2,
-      idCondition: condition === "news" ? 1 : 2,
-      description: description.trim(),
-      price: data.price,
-      idCategory: data.category,
-      idColor: data.colors,
-      model: data.model,
-      stock: data.stock */
-      });
+  createProduct: async (product) => {
+try {
 
-      return newProduct;
-    } catch (error) {
-      console.log(error);
-      throw {
-        status: 500,
-        message: error.message,
-      };
-    }
-  },
-
+  let newProduct = await db.Product.create(product)
+  return newProduct
+  
+} catch (error) {
+  console.log(error);
+  throw {
+    status: 500,
+    message: error.message
+  }
+}
+},
   updateProduct: async (id, data, image) => {
     try {
       const productUpdated = await db.Product.update(
