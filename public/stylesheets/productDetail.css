@@ -113,6 +113,10 @@ line-height: 35px;
     height: 300px;
     width: auto;
  }
+ .tachado{
+    text-decoration:line-through;
+    color: red;
+ }
 
     @media (min-width: 768px) {
 
@@ -149,5 +153,6 @@ line-height: 35px;
 
             
         }
+
         
         }

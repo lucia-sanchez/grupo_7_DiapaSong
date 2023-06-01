@@ -52,6 +52,7 @@ module.exports = (sequelize, DataTypes) => {
       idCondition: DataTypes.INTEGER,
       idCategory: DataTypes.INTEGER,
       idColor: DataTypes.INTEGER,
+      discount: DataTypes.INTEGER,
     },
     {
       sequelize,

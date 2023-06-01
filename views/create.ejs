@@ -136,6 +136,15 @@
                                     <%= locals.errors && errors.price ? errors.price.msg : null %>
                                 </small>
                             </div>
+                            <!-- DESCUENTO -->
+                            <div>
+                                <label for="discount">Descuento</label>
+                                <input type="number" name="discount" id="discount"<%= locals.errors && errors.discount ? 'is-invalid' : null%> id="discount" name="discount" value="<%= locals.old && old.discount ? old.discount : null %>">
+                                <p>%</p>
+                            </div>
+                            <div>
+                                <small class="register__formbox__div__errors"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+                            </div>
                             <!-- BOTÓN -->
                             <div class="form__create-btn-box">
                                 <button class="btn--crear-cuenta" type="submit" id="agregarProducto">publicar</button>
