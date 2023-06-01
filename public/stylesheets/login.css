@@ -53,7 +53,9 @@
 }
 
 .login__formbox--btn-box button {}
-
+.login__formbox--btn-box{
+    gap: 8px;
+}
 .btn--login,
 .btn--register {
     background-color: rgb(243 238 238);

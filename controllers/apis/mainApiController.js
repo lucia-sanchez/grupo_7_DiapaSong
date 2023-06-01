@@ -1,3 +1,4 @@
+const { getAllColors } = require("../../services/colorsServices");
 const { getCountProducts } = require("../../services/productsServices");
 const { getCountUsers } = require("../../services/userServices");
 
@@ -27,4 +28,27 @@ module.exports = {
       });
     }
   },
+  getColors : async (req,res) => {
+    try {
+
+      const colors = await getAllColors();
+            
+      return res.status(200).json({
+          ok : true,
+          data : {
+              colors
+          }
+      })
+
+  } catch (error) {
+    console.log(error);
+    return res.status(error.status || 500).json({
+      ok: false,
+      error: {
+        status: error.status || 500,
+        message: error.message || "Upss, hubo un error",
+      },
+    });
+  }
+  }
 };

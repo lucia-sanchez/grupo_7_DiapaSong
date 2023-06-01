@@ -16,12 +16,11 @@ margin-bottom: 2px;}
       }
 .main__section__nav{
     display: flex;
-     flex-direction: column;
-     padding: 10px;
-     /* width: 190px; */
-
-   /* margin-right: 8px; */
-   
+    flex-direction: column;
+    width: 25%;
+    padding: 10px;
+    /* width: 190px; */
+    /* margin-right: 8px; */
  }
  .main_section_nav_categorias{
      display: flex;
