@@ -36,10 +36,28 @@
           </section>
 
           <section class="detalles_producto">
-            <article class="detalle-producto-precio">
-              <h5>Precio: $ <%= price %>
-              </h5>
-            </article>
+            <section class="detalles_producto">
+              <% if (discount > 0) { %>
+                
+                <article class="detalle-producto-precio">
+                 
+                <h5>Precio: $ <%= toThousand(price-((price *discount)/100)) %> 
+                  <p class="product-detail-price small tachado">
+                    <span>$ <%= toThousand(price) %> </span>
+                </h5>
+                </article>
+                <article class="detalle-producto-precio">
+                  <h5>Descuento: <%= discount %> %
+                  </h5>
+                </article>
+                <% } else { %>
+                 
+                <article class="detalle-producto-precio">
+                <h5> $ <%= toThousand(price) %> 
+                </h5> 
+              </article>
+                <% } %>
+                
             <article class="detalle-producto-comprar">
               <a href="#">COMPRAR</a>
             </article>

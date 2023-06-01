@@ -1,6 +1,6 @@
 const fs = require("fs");
-
 const db = require("../database/models");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const { validationResult } = require("express-validator");
 const product = require("../database/models/product");
 const Op = db.Sequelize.Op
@@ -36,7 +36,7 @@ module.exports = {
         // return res.send(/*CategoryFilt products filteredImages */products)
         return res.render("products", {
           product,
-
+          toThousand,
           CategoryFilt,
           title: "Productos",
           products,
@@ -63,6 +63,7 @@ module.exports = {
         return res.render("productDetail", {
           title: "Detalle de Producto",
           ...product.dataValues,
+          toThousand
         });
       })
       .catch((error) => console.log(error));
@@ -125,6 +126,7 @@ module.exports = {
         subtitle,
         condition,
         description,
+        discount,
         tipo,
         price,
         category,
@@ -139,6 +141,7 @@ module.exports = {
         idProductType: tipo === "product" ? 1 : 2,
         idCondition: condition === "news" ? 1 : 2,
         description: description.trim(),
+        discount,
         price,
         idCategory: category,
         idColor: colors,
@@ -246,6 +249,7 @@ module.exports = {
       subtitle,
       condition,
       description,
+      discount,
       tipo,
       price,
       category,
@@ -264,10 +268,12 @@ module.exports = {
           subtitle: subtitle.trim(),
           idCategory: category,
           description: description.trim(),
+          discount,
           idColor: colors,
           stock,
           model,
           price,
+          
         },
         {
           where: { id },

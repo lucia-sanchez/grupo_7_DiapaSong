@@ -1,8 +1,6 @@
 var express = require('express');
 const {index, search, productCart, blog, faq} = require('../controllers/indexController');
 var router = express.Router();
-
-
 const db = require('../database/models');
 const sequelize = db.sequelize;
 

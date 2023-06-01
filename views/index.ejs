@@ -36,77 +36,32 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-          <!--Ofertas-->
-        <h2 class="home__main__title">ofertas</h2>
-          <div class="home__main__cardsCarrusel">
-                <div class="home__main__conteiner">
-                <img src="/img/ofertas/guitar.png" alt="guitar" class="home__main__conteiner--img-producto">
-                    <div class="home__main__conteiner--descuento">
-                    <h2>20% off</h2>
-                    </div>
-                    <div class="home__main__conteiner--descripcion">
-                      <p>Guitarra Electroacustica Sigma Guitars</p>
-                      </div>
-                </div>
-               
-                
-                <div class="home__main__conteiner">
-                    <img src="/img/ofertas/chelo.png" alt="guitar" class="home__main__conteiner--img-producto">
-                    <div class="home__main__conteiner--descuento">
-                    <h2>10% off</h2>
-                    </div>
-                    <div class="home__main__conteiner--descripcion">
-                      <p> 3/4 Tapa Pino Solido Chelo Estuche y Arco</p>
-                    </div>
-                </div>
-                
-
-
-                <div class="home__main__conteiner">
-                        <img src="/img/ofertas/electric-guitar.png" alt="guitar" class="home__main__conteiner--img-producto">
-                        <div class="home__main__conteiner--descuento">
-                        <h2>10% off</h2>
-                        </div>
-                        <div class="home__main__conteiner--descripcion">
-                          <p>Guitarra Electroacustica Sigma Guitars</p>
-                        </div>
-                </div>
-                
-                  <div class="home__main__conteiner">
-                  <img src="/img/ofertas/timbales.png" alt="timbales" class="home__main__conteiner--img-producto">
-                      <div class="home__main__conteiner--descuento">
-                      <h2>15% off</h2>
-                      </div>
-                      <div class="home__main__conteiner--descripcion">
-                        <p>Kisspng-tom-toms-timbales</p>
-                        </div>
-                  </div>
-                 
-                  
-                  <div class="home__main__conteiner">
-                      <img src="/img/ofertas/tambores.png" alt="tambores" class="home__main__conteiner--img-producto">
-                      <div class="home__main__conteiner--descuento">
-                      <h2>40% off</h2>
-                      </div>
-                      <div class="home__main__conteiner--descripcion">
-                        <p>Timbaleta acero inox. con pie</p>
-                      </div>
-                  </div>
-                  
-  
-  
-                  <div class="home__main__conteiner">
-                          <img src="/img/ofertas/microfono.png" alt="microfono" class="home__main__conteiner--img-producto">
-                          <div class="home__main__conteiner--descuento">
-                          <h2>30% off</h2>
-                          </div>
-                          <div class="home__main__conteiner--descripcion">
-                            <p>Microfono Vocal con pie </p>
-                          </div>
-                  </div>
-                          
-          
+            <!--Ofertas-->
+            <h2 class="home__main__title"> OFERTAS </h2>
+            <section class="home__main__section--ofertas">
+              
+            <div class="home__main__cardsCarrusel">
+            
+           <% saleProducts.forEach(({  
+            id, images, title, subtitle, condition,description,discount,tipo, price,category,colors, model, stock}) => { %>
+              <%-include('./partials/cardHome',{ 
+            id,
+            images,
+            title,
+            subtitle,
+            condition,
+            description,
+            discount,
+            tipo,
+            price,
+            category,
+            colors,
+            model,
+              }) %>
+            
+           <% }); %>
           </div>
+        </section>
           <!--Quienes Somos-->
           <a name="about" id="about"><section class="home__main__section--quienesSomos"> </a>
            
@@ -117,7 +72,7 @@
 
 <p>La casa de música más completa de Argentina. Diapasong es una casa de música líder en instrumentos musicales y equipamiento de audio profesional. Disponemos de una amplia variedad de productos en nuestro catálogo, desde instrumentos de orquesta y estudio, hasta guitarras, baterías, pianos digitales, saxofones y ukeleles, además de equipos de grabación y microfonía líderes en el mercado. </p> 
 
-<p>Desde guitarras criollas para principiantes hasta micrófonos y amplificadores profesionales, la tienda de instrumentos musicales online Diapasonf dispone de una amplia gama de equipamiento musical. No importa si lo que buscas es un micrófono, un teclado musical, una batería electrónica o un bajo eléctrico, siempre te daremos asesoramiento en lo que necesites. </p> 
+<p>Desde guitarras criollas para principiantes hasta micrófonos y amplificadores profesionales, la tienda de instrumentos musicales online Diapasong dispone de una amplia gama de equipamiento musical. No importa si lo que buscas es un micrófono, un teclado musical, una batería electrónica o un bajo eléctrico, siempre te daremos asesoramiento en lo que necesites. </p> 
 
 <p> Tenemos algunas de las marcas más populares en stock, tales como Fender, Roland, Casio, Marshall, Ibanez, Behringer y Shure, sin olvidar que somos distribuidores oficiales Yamaha para instrumentos musicales y audio en Argentina. </p>
 </section>
