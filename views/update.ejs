@@ -162,7 +162,18 @@
                                 <small class="register__formbox__div__errors" id="priceError">
                                     <%= locals.errors && errors.price ? errors.price.msg : null %>
                                 </small>
+                                <!-- DESCUENTO -->
+                                <div>
+                                    <label for="discount">Descuento</label>
+                                    <input type="number" name="discount" id="discount" value="<%= product.discount %>">
+                                    <p>%</p>
+                                </div>
+                                <div>
+                                    <small class="register__formbox__div__errors" id="discountError"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+                                  </div>
+
                             </section>
+                            
 
                             <!-- BOTON FORMULARIO -->
                             <div class="form__create-btn-box">

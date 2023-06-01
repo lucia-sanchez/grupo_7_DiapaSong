@@ -25,6 +25,10 @@
     -webkit-text-stroke: 1px rgb(196, 196, 196);
 }
 
+.header--btn-menu:focus{
+    outline: none;
+
+}
 
 .header--logo {
     display: flex;
@@ -144,7 +148,7 @@ header .header__section--user-navigation-logged{
 
 .header--search-bar input {
     background: none;
-    padding: 3px;
+    padding: 3px 25px;
     margin-top: 15px;
     margin-right: -10px;
     border-radius: 50px;
@@ -392,7 +396,7 @@ float: left;
     .header--search-bar input {
         width: 500px;
         align-self: center;
-        padding: 15px 0;
+        padding: 15px 40px;
         margin-top: 25px;
         margin-left: 5px;
     }

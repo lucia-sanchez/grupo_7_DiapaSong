@@ -27,7 +27,7 @@
             </h2>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
-                <% product.forEach(({id,images, price, title, subtitle, category})=> { %>
+                <% product.forEach(({id,images, price, title, subtitle, category, discount})=> { %>
 
                   <div class="Products--all" >
                     <article class="main__section__productos--producto">
@@ -57,7 +57,7 @@
                       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
 
-                          <% products.forEach(({id,images, price, title, subtitle, category})=> { %>
+                          <% products.forEach(({id,images, price, title, subtitle, category, discount})=> { %>
                             
                              <!-- ACA SE PAGINAN LOS PRODUCTOS -->
                             <div id="container-products">

@@ -4,6 +4,9 @@
     margin: 0;
     font-family:var(--fuenteGeneral);
 }
+#root{
+    width: 100%;
+}
 body{
     background-color: var(--colorFondoBody);
 }

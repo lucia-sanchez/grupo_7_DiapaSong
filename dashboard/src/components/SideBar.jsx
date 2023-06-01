@@ -42,7 +42,7 @@ export const SideBar = () => {
       </li>
 
       <li className="nav-item">
-        <Link className="nav-link" to="/courses">
+        <Link className="nav-link" to="/products">
           <i className="fas fa-fw fa-chart-area"></i>
           <span>Productos</span>
         </Link>

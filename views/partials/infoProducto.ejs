@@ -1,45 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
+<!-- Producto -->
 
-<!-- HEAD -->
-<%- include('./head') %> 
+<section class="main__section__productos_search">
+    <h4 class="productos_search--titulo">
+        <%= title %>
+    </h4>
 
-<body>
-    
-        <!-- Producto -->
-      
-        <section class="main__section__productos_search">
-            <h4 class="productos_search--titulo"> <%= title %></h4>
-    
-                <article  class="product__search--card">
-                   
-                    <figure class="productos_search--img">
-                         <img class="search--img" src="/img/productos/<%= images[0].name %>" alt="<%= title %>">
-                    </figure>
-                </article> 
+    <article class="product__search--card">
 
-            <div class="product__search--card--buttons">
-             
-                <article class="product__search--card--precio">
-                    <h5>Precio: $ <%= price %></h5>
-                </article>
+        <figure class="productos_search--img">
+            <img class="search--img" src="/img/productos/<%= images[0].name %>" alt="<%= title %>">
+        </figure>
+    </article>
 
-                <article class="product__search--card--comprar">
-                    <a href="../products/detail/<%= id %>">ver mas</a>
-                </article>
+    <div class="product__search--card--buttons">
 
-                <article class="product__search--card--agregar">
-                    <a href="/productCart" >Agregar al carrito</a>
-                </article>
-            </div>  
-           
-        </section>
-    
-</main>
+        <article class="product__search--card--precio">
+            <h5>Precio: $ <%= price %>
+            </h5>
+        </article>
 
-   
-   <!--Slick script-->
-<%- include('./scripts') %>
-</body>
+        <article class="product__search--card--comprar">
+            <a href="../products/detail/<%= id %>">ver mas</a>
+        </article>
 
-</html>
+        <article class="product__search--card--agregar">
+            <a href="/productCart">Agregar al carrito</a>
+        </article>
+    </div>
+
+</section>

@@ -1,80 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
+  <!-- HEAD -->
+  <%- include('./partials/head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diapasong | Registro de Usuario</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <script src="https://kit.fontawesome.com/bd0eb781b4.js" crossorigin="anonymous"></script>
-
-</head>
-<!-- VISTA FAQ -->
-<body class="faq">
+  <body>
     <!-- HEADER -->
-    <%- include('./partials/header') %> 
-    <!-- MAIN -->
+    <%- include('./partials/header') %>
+    <!-- Main -->
     <main>
-        <h1>BLOG EN CONSTRUCCIÓN</h1>
-    </main>
-    <footer class="footer">
-      <div class="footer__top">
-      <!-- LOGO -->
-      <div class="footer__logo">
-          <img src="/img/logoDiapasong.png" alt="Logo Diapasong">
-      </div>
+      <article class="container">
+        <section>
+          <h1>
+            La musicoterapia y su capacidad para ayudar al ser humano a
+            expresarse con instrumentos musicales
+          </h1>
+          <p>
+            La musicoterapia es una disciplina terapéutica que utiliza la música
+            como medio para tratar diversas problemáticas del ser humano. Esta
+            técnica se basa en la idea de que la música tiene la capacidad de
+            influir en los estados emocionales y psicológicos del individuo, y
+            por tanto, puede ser utilizada para ayudar en el tratamiento de
+            trastornos emocionales, cognitivos, sociales o físicos.
+          </p>
+          <p>
+            La musicoterapia se aplica en diferentes contextos, como hospitales,
+            centros de rehabilitación, escuelas y centros de atención
+            especializada. El objetivo principal de la musicoterapia es utilizar
+            la música como una herramienta terapéutica para mejorar la calidad
+            de vida de los pacientes.
+          </p>
+          <p>
+            La musicoterapia se utiliza para tratar una amplia gama de
+            problemas, incluyendo trastornos del espectro autista, problemas de
+            ansiedad y estrés, problemas de conducta, problemas de comunicación,
+            trastornos del estado de ánimo, entre otros.
+          </p>
+          <p>
+            Una de las principales ventajas de la musicoterapia es que permite a
+            los pacientes expresarse y comunicarse a través de la música,
+            incluso si no pueden hacerlo verbalmente. Esto es especialmente
+            importante para pacientes con trastornos del espectro autista o para
+            personas con discapacidades físicas o cognitivas que les impiden
+            comunicarse de manera efectiva.
+          </p>
+          <p>
+            El uso de instrumentos musicales en la musicoterapia es fundamental.
+            Los pacientes pueden expresar sus emociones y sentimientos a través
+            de la música, utilizando instrumentos como la guitarra, el piano, la
+            batería, entre otros. Los terapeutas utilizan la música para ayudar
+            a los pacientes a relajarse, a reducir el estrés y la ansiedad, y a
+            mejorar su autoestima y autoconcepto.
+          </p>
+          <p>
+            Además, la música también se utiliza para fomentar la interacción
+            social y la comunicación entre los pacientes. Se pueden realizar
+            actividades grupales en las que se anima a los pacientes a tocar
+            juntos, cantar juntos y crear música en equipo. Esto ayuda a
+            fomentar la cohesión y la integración social.
+          </p>
+        </section>
+      </article>
+      <article>
+        <form action="" class="container d-flex flex-column align-items-center px-5 ">
+          <div class="form-group px-5">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" class="form-control">
+          </div>
+          <div class="form-group px-5">
+            <label for="textarea">Dejanos comentarios sobre esta seccion:</label>
+            <textarea name="textarea" id="textarea" class="form-control" cols="10" rows="5"></textarea>
+          </div>
+          <div class="form-group p  x-5">
+            <button type="submit" class="btn btn-primary">Enviar!</button>
+          </div>
+        </form>
+      </article>
       
-      <!-- REDES -->
-      <nav class="footer__redes">
-          <b>seguinos en nuestras redes</b>
-          <ul>
-              <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-          </ul>
-      </nav>
-      <!-- LINKS SITIO -->
-      <nav class="footer__links">
-          <b>links</b>
-          <ul>
-              <li><a href="/products">productos</a></li>
-              <li><a href="/blog">blog</a></li>
-              <li><a href="/tickets">entradas</a></li>
-              <li><a href="/#about">¿quienes somos?</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="">contacto</a></li>
-          </ul>
-      </nav>
-      <!-- LINKS CUENTA -->
-      <nav class="footer__links">
-          <b>cuenta</b>
-          <ul>
-              <li><a href="/login">mi cuenta</a></li>
-              <li><a href="/productCart">carrito</a></li>
-          </ul>
-      </nav>
-      <nav class="footer__links--contacto">
-          <b>contacto</b>
-          <ul>
-              <li><a href="tel:+12345678">12345678</a></li>
-              <li><a href="mailto:ventas@diapasong.com.ar">ventas@diapasong.com.ar</a></li>
-              <li><!-- <a href=""></a> --><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2010.109030140013!2d-58.37138422275975!3d-34.59535660858388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335bd8305e7a9%3A0xc41a764ce655671f!2sGlobant%20Tower!5e0!3m2!1ses-419!2sar!4v1673717852325!5m2!1ses-419!2sar" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
-          </ul>
-      </nav>
-      <div class="footer__medios-de-pago">
-          <b>medios de pago</b>            
-          <img src="/img/mediosdepago.png" alt="medios de pago">
-      </div>
-  </div>
-  <div class="footer__bottom">
-      <p><i class="fa-regular fa-copyright"></i> 2022 - todos los derechos reservados - <i class="fa-solid fa-heart"></i> hecho con amor</p>
-
-  </div>
-
-  </footer>
-</body>
-<!--Slick script-->
-
+    </main>
+    <!-- FOOTER -->
+    <%- include('./partials/footer') %>
+    <!-- SCRIPTS -->
+    <%- include('./partials/scripts') %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+  </body>
 </html>
