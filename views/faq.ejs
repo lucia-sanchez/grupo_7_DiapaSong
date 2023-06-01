@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diapasong | Registro de Usuario</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <script src="https://kit.fontawesome.com/bd0eb781b4.js" crossorigin="anonymous"></script>
+
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
 
 </head>
 <!-- VISTA FAQ -->
@@ -16,7 +13,37 @@
     <%- include('./partials/header') %> 
     <!-- MAIN -->
     <main>
-        <h1>PREGUNTAS FRECUENTES EN CONSTRUCCIÓN</h1>
+        <div class="container py-5">
+            <h1 class="text-center">PREGUNTAS FRECUENTES:</h1>
+            <hr>
+            <ul class="list-unstyled">
+              <li>
+                <h4>¿Cuál es el tiempo de garantía en los instrumentos que venden?</h4>
+                <p>Ofrecemos una garantía estándar de 15 años en todos nuestros instrumentos. Consulta nuestra política de garantía para obtener más detalles.</p>
+              </li>
+              <li>
+                <h4>¿Cómo puedo saber si un instrumento está en stock?</h4>
+                <p>En nuestra tienda en línea, puedes verificar la disponibilidad de un instrumento específico. Si un producto está en stock, se mostrará en la página del producto.</p>
+              </li>
+              <li>
+                <h4>¿Puedo solicitar un instrumento que no está disponible en su tienda en línea?</h4>
+                <p>Si estás buscando un instrumento específico que no encuentras en nuestra tienda en línea, contáctanos y haremos todo lo posible por conseguirlo para ti.</p>
+              </li>
+              <li>
+                <h4>¿Cuál es el costo de envío?</h4>
+                <p>El costo de envío puede variar según el destino y el tamaño del paquete. Puedes calcular el costo exacto del envío agregando los productos deseados al carrito y seleccionando tu ubicación durante el proceso de pago.</p>
+              </li>
+              <li>
+                <h4>¿Cómo puedo cancelar mi pedido?</h4>
+                <p>Si necesitas cancelar tu pedido, por favor contáctanos lo antes posible. Si el pedido aún no ha sido procesado, haremos todo lo posible para cancelarlo y emitir el reembolso correspondiente.</p>
+              </li>
+              <li>
+                <h4>¿Cuál es el plazo de entrega para pedidos internacionales?</h4>
+                <p>El tiempo de entrega para pedidos internacionales puede variar según el país de destino y los procedimientos aduaneros.</p>
+              </li>
+            </ul>
+            <hr>
+          </div>
     </main>
     <footer class="footer">
       <div class="footer__top">
@@ -84,4 +111,10 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>
+
+
+
+
+
