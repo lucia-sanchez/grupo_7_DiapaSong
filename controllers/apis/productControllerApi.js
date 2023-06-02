@@ -6,7 +6,7 @@ const {
   createProduct,
 /*   createImageProduct, */
   updateProduct,
-  destroyProduct
+  destroyProduct,
 } = require("../../services/productsServices");
 
 module.exports = {
@@ -46,7 +46,7 @@ module.exports = {
           .json({ status: 400, message: "La página que buscas no existe" });
       }
 
-      const totalPages = Math.ceil(count / limit) ;
+      const totalPages = Math.ceil(count / limit);
 
       return res.status(200).json({
         ok: true,
@@ -104,8 +104,13 @@ module.exports = {
         })
         
     } catch (error) {
-        console.log(error)
-        return createResponseError(res, error) 
+      return res.status(error.status || 500).json({
+        ok: false,
+        error: {
+          status: error.status || 500,
+          message: error.message || "Upss. Error!!",
+        },
+      });
     }
 },
 
@@ -141,30 +146,29 @@ update : async (req,res) => {
         })
         
     } catch (error) {
-        console.log(error)
-        return createResponseError(res, error) 
+      console.log(error);
+      return createResponseError(res, error);
     }
-},  
+  },
 
-destroy : async (req,res) => {
+  destroy: async (req, res) => {
     try {
-        const productDeleted = await destroyProduct(req.params.id)
-        return res.status(200).json({
-            ok: true,            
-            data : {
-                message:"Producto eliminado exitosamente",
-                productDeleted},
-            meta : {
-                status: 200,
-                total : 1,
-                url : `/api/products/${req.params.id}` 
-            },
-        })
+      const productDeleted = await destroyProduct(req.params.id);
+      return res.status(200).json({
+        ok: true,
+        data: {
+          message: "Producto eliminado exitosamente",
+          productDeleted,
+        },
+        meta: {
+          status: 200,
+          total: 1,
+          url: `/api/products/${req.params.id}`,
+        },
+      });
     } catch (error) {
-        console.log(error)
-        return createResponseError(res, error) 
+      console.log(error);
+      return createResponseError(res, error);
     }
-}
-
-
+  },
 };

@@ -5,8 +5,9 @@
 @import './footer.css';
 @import './home.css';
 @import'./login.css';
-@import'./register.css';
+
 @import'./forms.css';
+@import'./register.css';
 @import './create.css';
 @import './update.css';
 @import './blog.css';
