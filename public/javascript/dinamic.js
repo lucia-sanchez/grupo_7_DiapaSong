@@ -23,3 +23,21 @@ menuCategoria.addEventListener("click", function () {
 })
 
 
+/* quita botonera paginador */
+
+const paginador = document.querySelector("#paginator");
+
+function getCurrentURL() {
+  return window.location.href;
+}
+
+const currentUrl = getCurrentURL();
+if (
+  currentUrl.toLowerCase().includes("cuerdas") ||
+  currentUrl.toLowerCase().includes("percusion") ||
+  currentUrl.toLowerCase().includes("vientos") ||
+  currentUrl.toLowerCase().includes("electronicos") ||
+  currentUrl.toLowerCase().includes("accesorios")
+) {
+  paginador.style.display = "none";
+}
