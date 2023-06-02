@@ -169,7 +169,7 @@ hr{
             flex-direction: row;*/
         }
         .home__main__cardsCarrusel{
-            width: 90%;
+            width: 95%;
             display: flex;
             flex-wrap: wrap;
             gap: 5%;
