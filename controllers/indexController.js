@@ -84,6 +84,16 @@ module.exports ={
           })
           .catch((error) => console.log(error));
       },
+      suscripcion: (req, res) => {
+        const { nombre, email } = req.body;
+      
+        db.Suscritos.create({ nombre, email })
+        .then(() => {
+          res.redirect('/');
+        })
+          .catch((error) => console.log(error));
+         ;
+      },
     faq: (req,res) =>{
         return res.render('faq',{
             title: 'Preguntas Frecuentes'
