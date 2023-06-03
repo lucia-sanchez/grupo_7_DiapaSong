@@ -65,11 +65,25 @@ module.exports ={
             title:"Carrito"
         });
     },
-    blog: (req,res) =>{
-        return res.render('blog',{
-            title: 'Blog de Música'
-        })
-    },
+    blog: (req, res) => {
+        db.Blog.findAll()
+          .then((blogs) => {
+            return res.render('blog', {
+              blogs,
+              title: 'Blog de Música'
+            });
+          })
+          .catch((error) => console.log(error));
+      },
+      saveBlog: (req, res) => {
+        const { nombre, comentario } = req.body;
+    
+        db.Blog.create({ nombre, comentario })
+          .then(() => {
+            res.redirect('/blog');
+          })
+          .catch((error) => console.log(error));
+      },
     faq: (req,res) =>{
         return res.render('faq',{
             title: 'Preguntas Frecuentes'

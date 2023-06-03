@@ -8,8 +8,9 @@
 
 @import'./forms.css';
 @import'./register.css';
-@import './create.css';
 @import './update.css';
+@import './create.css';
+
 @import './blog.css';
 @import'./user.css';
 @import'./products.css';

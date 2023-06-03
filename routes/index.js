@@ -1,5 +1,5 @@
 var express = require('express');
-const {index, search, productCart, blog, faq} = require('../controllers/indexController');
+const {index, search, productCart, blog,saveBlog, faq} = require('../controllers/indexController');
 var router = express.Router();
 const db = require('../database/models');
 const sequelize = db.sequelize;
@@ -10,6 +10,8 @@ router
     .get('/search', search)
     .get('/productCart', productCart)
     .get('/blog', blog)
+    .post('/blog', saveBlog)
+
     .get('/faq', faq)
 
 
