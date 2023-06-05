@@ -4,6 +4,8 @@
     const productos = document.querySelector('main');
     productos.scrollIntoView({ behavior: 'smooth' });
   });
+
+
   /* hace aparecer la flecha al hacer scroll */
   window.addEventListener('scroll', function() {
     const botonArriba = document.getElementById('boton-arriba');
@@ -14,6 +16,8 @@
     }
   });
 });
+
+
 //transforma el header al hacer scroll/
 window.addEventListener("scroll", function () {
     const main = document.querySelector("main");
@@ -23,7 +27,6 @@ window.addEventListener("scroll", function () {
       header.classList.toggle("header-scroll", window.scrollY > 1);
       navBar.classList.toggle("fixed", window.scrollY > 1);
 });
-
 
 //Menu desplegable header//
 const btnmenu = document.querySelector("#iconomenu");
