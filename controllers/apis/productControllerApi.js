@@ -98,7 +98,7 @@ module.exports = {
             },
             meta : {
                 status: 200,
-                total : 1,
+                total : 1,  
                 url : `/api/products/`
             },
         })

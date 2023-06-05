@@ -1,4 +1,20 @@
-//Scroll//
+ /* desplazamiento suave hacia arriba */
+ document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('boton-arriba').addEventListener('click', function() {
+    const productos = document.querySelector('main');
+    productos.scrollIntoView({ behavior: 'smooth' });
+  });
+  /* hace aparecer la flecha al hacer scroll */
+  window.addEventListener('scroll', function() {
+    const botonArriba = document.getElementById('boton-arriba');
+    if (window.pageYOffset > 500) {
+      botonArriba.style.display = 'block';
+    } else {
+      botonArriba.style.display = 'none';
+    }
+  });
+});
+//transforma el header al hacer scroll/
 window.addEventListener("scroll", function () {
     const main = document.querySelector("main");
     const header = document.querySelector("header");
@@ -23,7 +39,7 @@ menuCategoria.addEventListener("click", function () {
 })
 
 
-/* quita botonera paginador */
+/* quita botonera paginador en categorias */
 
 const paginador = document.querySelector("#paginator");
 
@@ -41,5 +57,6 @@ if (
 ) {
   paginador.style.display = "none";
 }
+
 
 

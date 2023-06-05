@@ -7,8 +7,20 @@
     flex-wrap: wrap;
     padding: 10px 5px;
 }
-
-
+#boton-arriba {
+    position: fixed;
+    bottom: 88px;
+    right: 25px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    background-color: black;
+    padding: 6px 12px;  
+    border: 1px black solid;
+    border-radius: 55%;
+    display: none;
+    z-index: 999;
+    
+  }
 .header_div {
     display: flex;
     flex-wrap: nowrap;
@@ -131,7 +143,7 @@ header .header__section--user-navigation-logged{
     display: flex;   
     margin-right: 0;
     position: fixed;
-    top: 190px;
+    top: 180px;
     margin-top: 0;
     transition: all 2s;
     z-index: 1000;
@@ -598,5 +610,20 @@ float: left;
         padding-top: 190px !important;
     
     }
+    #boton-arriba {
+        position: fixed;
+        bottom: 15px;
+        right: 50%;
+        color: rgb(255, 255, 255);
+        font-size: 30px;
+        background-color: black;
+        padding: 6px 12px;  
+        border: 1px black solid;
+        border-radius: 55%;
+        display: none;
+        z-index: 999;
+        cursor: pointer;
+        
+      }
 
 }

@@ -114,12 +114,17 @@
 }
 .imageView {
     position: fixed;
-    top:50%;
+    top:0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
     height: 100vh;
     z-index: 9999;
+  }
+  .imageView img {
+    position: relative;
+    top: 25%;
+
   }
 
   .no-scroll {
@@ -152,7 +157,11 @@
     height: auto;
     background-color: rgb(95, 58, 142);
   }
+  .imageView img {
+    position: relative;
+    top: 0;
 
+  }
   .main__section__productos__producto--imagen-detail {
     background-color: rgb(255, 255, 255);
     width: 500px;
@@ -182,7 +191,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
     height: 100vh;
     z-index: 9999;

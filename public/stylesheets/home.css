@@ -2,6 +2,11 @@
     padding: 0;
     
 }
+
+.home-product{
+    max-width: 100% ;
+    height: auto;
+}
 .home__carrurell--banner .carousel-control-prev{
 margin-left: 0;
 top: 40px;
