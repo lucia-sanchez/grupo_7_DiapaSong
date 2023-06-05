@@ -56,10 +56,10 @@ const configUploadUsersImage = multer({
 
         cb(null, true);
     },
-}).fields([{ name: "mainImage", maxCount: 1 }]);
+});
 
 const uploadUserImage = (req, res, next) => {
-    const upload = configUploadUsersImage;
+    const upload = configUploadUsersImage.single('mainImage');
 
     upload(req, res, function (error) {
         if (error) {

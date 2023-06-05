@@ -1,9 +1,9 @@
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
-const products = require("../../data/products.json");
-const categories =  require('../../data/productsCategories.json');
-const colours = require('../../data/colours.json');
+const products = require("../../../data/products.json");
+const categories =  require('../../../data/productsCategories.json');
+const colours = require('../../../data/colours.json');
 
 const productsJson = products.map(({title,subtitle,description,price,discount, model,stock,category,colour,condition,tipo}) => {
   return {
