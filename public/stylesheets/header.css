@@ -10,7 +10,7 @@
 #boton-arriba {
     position: fixed;
     bottom: 88px;
-    right: 25px;
+    right: 24px;
     color: rgb(255, 255, 255);
     font-size: 30px;
     background-color: black;
@@ -624,6 +624,9 @@ float: left;
         z-index: 999;
         cursor: pointer;
         
+      }
+      .home-product{
+        cursor: pointer;
       }
 
 }

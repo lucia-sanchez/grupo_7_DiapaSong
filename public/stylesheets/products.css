@@ -221,7 +221,8 @@ height: 400px;
 .paginator-products{
     display: flex;
     justify-content: center;
-    width: 500px;
+    width: 80vw;
+
    
 }
 

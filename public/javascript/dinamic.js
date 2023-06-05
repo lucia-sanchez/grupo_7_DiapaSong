@@ -7,7 +7,7 @@
   /* hace aparecer la flecha al hacer scroll */
   window.addEventListener('scroll', function() {
     const botonArriba = document.getElementById('boton-arriba');
-    if (window.pageYOffset > 500) {
+    if (window.pageYOffset > 200) {
       botonArriba.style.display = 'block';
     } else {
       botonArriba.style.display = 'none';
