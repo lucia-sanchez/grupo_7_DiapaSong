@@ -25,7 +25,7 @@ const paintProducts = (products) => {
                         <div class="datos_productos">
                           <span class="agregar-al-carrito"> Más información
                             <i class="fa-sharp fa-solid fa-circle-info carrito_prod"></i> </span>
-                          <h3 class="main__section__productos__producto--precio">$ ${price}
+                          <h3 class="main__section__productos__producto--precio">$ ${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                           </h3>
                           <h4 class="main__section__productos__producto--marca">
                           ${title}
@@ -75,6 +75,7 @@ const statusPrevAndNex = ({page, totalPages}) =>{
 }
 
 window.addEventListener("load", async () => {
+
   try {
     const {
       data: { page, totalPages, products },
@@ -119,3 +120,4 @@ btnPrev.addEventListener("click", async () => {
     console.log(error);
   }
 })
+

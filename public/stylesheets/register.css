@@ -1,127 +1,137 @@
 /* MOBILE FIRST */
-.register {}
+.register {
+}
 
-.register__main {}
+.register__main {
+  
+}
 
 .register__main__section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+  
 }
 
 .register__main__section--mapa-sitio {
-    text-transform: capitalize;
-    text-align: center;
-    font-size: small;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: small;
 }
 
 .register__main__section--titulo {
-    text-transform: uppercase;
-    text-align: center;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .register__main__section--caja-beneficios {
-    background: rgba(255, 252, 252, 0.67);
-    border: 1px solid #000000;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  background: rgba(237, 192, 255, 0.67);
+  border: 1px solid #a622b8;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
 }
 .register__main__section--caja-beneficios p {
-    padding: 7px 30px 0;
+  color: #a622b8;
+  text-transform: uppercase;
 }
-
+.fa-check {
+  color: #a622b8;
+}
 .register__main__section--caja-beneficios ul {
-    list-style: none;
-    padding: 5px 10px;
+  list-style: none;
 }
 
 .form__checkbox--novedades,
 .form__checkbox--terminos {
-    justify-content: center;
+  justify-content: center;
 }
 
 .form__checkbox--novedades input,
 .form__checkbox--terminos input {
-    width: 22px;
+  width: 22px;
 }
 
 .form__checkbox--novedades label,
 .form__checkbox--terminos label {
-    width: 76%;
-    justify-content: flex-start;
+  width: 76%;
+  justify-content: flex-start;
 }
-.form__btn-box{
-    width: 100%;
-    justify-content: center;
-    padding: 15px;
+.form__btn-box {
+  width: 100%;
+  justify-content: center;
+  padding: 15px;
 }
 .btn--crear-cuenta {
-    width: 200px;
-    background: rgba(255, 252, 252, 0.5);
-    /* border: 1px solid #000000; */
-    border-radius: 15px;
-    text-transform: uppercase;
-    transition: all 0.5s;
-    padding: 5px;
+  width: 200px;
+  background: rgba(255, 252, 252, 0.5);
+  /* border: 1px solid #000000; */
+  border-radius: 15px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  padding: 5px;
 }
-.btn--crear-cuenta:hover{
-    background-color: rgb(150 119 255 / 36%);
-    box-shadow: 0px 0px 18px 1px rgb(129 129 129);
-    width: 230px;
-    font-size: large;
-    cursor: pointer;
+.btn--crear-cuenta:hover {
+  background-color: rgb(150 119 255 / 36%);
+  box-shadow: 0px 0px 18px 1px rgb(129 129 129);
+  width: 230px;
+  font-size: large;
+  cursor: pointer;
 }
-.register__main__section--login{
-    display: flex;
-    justify-content: center;
+.register__main__section--login {
+  display: flex;
+  justify-content: center;
 }
-.register__formbox__div__errors{
-    color: red;
-    width: 100%;
-    display: flex;
-    text-shadow: 0px 0px 1px black;
-    justify-content: center;
+.register__formbox__div__errors {
+  color: red;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: 12px;
 }
-.register__main__section .register__form div .is-invalid{
-    border: 2px rgb(233, 53, 53) solid;
-       
+.register__main__section .register__form div .is-invalid {
+  border: 2px rgb(233, 53, 53) solid;
 }
-.register__main__section .register__form div .is-valid{
-    border: 2px rgb(0, 255, 128) solid;
+.register__main__section .register__form div .is-valid {
+  border: 2px rgb(0, 255, 128) solid;
+}
+.form__checkbox1 div{
+  width: 60%;
+ 
+  flex-wrap: wrap;
 }
 
 /* TABLET */
 @media (min-width: 768px) {
-    .register__main__section {
-       
-display: flex;
-       
-align-items: center;
-    }
-    .register__main__section--caja-beneficios {
-        
-        display: inline-block;
-        width: 60%;
-        justify-content: flex-start;
-    }
-    .register__main__section--caja-beneficios p{
-        padding-left: 10px;
-    }
-    .register__main__section--caja-beneficios ul {
-        padding-top: 0;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .register__main__section--caja-beneficios ul p{
-        width: 100%;
-    }
-    .register__main__section--caja-beneficios ul li{
+  .register__main__section {
+    display: flex;
+
+    align-items: center;
+  }
+  .register__main__section--caja-beneficios {
+    display: inline-block;
+    width: 60%;
+    justify-content: flex-start;
+  }
+  .register__main__section--caja-beneficios p {
+    padding-left: 10px;
+  }
+  .register__main__section--caja-beneficios ul {
+    padding-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .register__main__section--caja-beneficios ul p {
+    width: 100%;
+  }
+  .register__main__section--caja-beneficios ul li {
     width: 50%;
-    }
-    .register__form{
+  }
+  .register__form {
     width: 100%;
     display: inline-flex;
     flex-direction: column;
@@ -131,28 +141,90 @@ align-items: center;
     position: relative;
     height: 390px;
     gap: 0px;
-}
-.register__form div{
-    
-width: 50%;
-    
-margin: 0;
-    
-padding-bottom: 1px;
-}
-.register__form .form__checkbox{
-    
-width: 49%;
-}
-.register__form .form__btn-box{
-}
-.form__checkbox--novedades{
-}
-.form__checkbox--terminos{
+  }
+  .register__form div {
+    width: 50%;
 
-}
+    margin: 0;
 
+    padding-bottom: 1px;
+  }
+  .register__form .form__checkbox1 {
+    width: 49%;
+  }
+  .register__form .form__btn-box {
+  }
+  .form__checkbox--novedades {
+  }
+  .form__checkbox--terminos {
+  }
+  .form__create--image-box label {
+    width: 100%;
+  }
 }
 /* DESKTOP */
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
+  .register__main1 {
+    justify-content: center;
+  }
+  .register__form1 {
+    width: 60%;
+    align-items: center;
+    height: auto;
+    padding: 0;
+    padding-bottom: 50px;
+  }
+  .register__form1 input {
+    width: 100%;
+  }
+  .register__form1 label {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .form__create--image-box1 label {
+    width: 100% !important;
+  }
+  .form__checkbox1 {
+    width: 100%;
+    align-self: center;
+  }
+  .mainImage {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .form__checkbox1 p {
+    width: auto;
+    margin-top: 10px;
+  }
+  .form__checkbox1 .checkbox-items {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .form__checkbox1 input {
+    width: 15px;
+  }
+  .form__checkbox1 label {
+    width: 24%;
+    justify-content: flex-start;
+    margin: 0;
+  }
+  .checkbox-terms{
+    padding-top: 20px;
+  }
+  .checkbox-terms div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .checkbox-terms label {
+    width: auto;
+    float: left;
+  }
+  .checkbox-terms input {
+    width: 15px;
+  }
 }

@@ -5,12 +5,13 @@ const products = require("../../data/products.json");
 const categories =  require('../../data/productsCategories.json');
 const colours = require('../../data/colours.json');
 
-const productsJson = products.map(({title,subtitle,description,price,model,stock,category,colour,condition,tipo}) => {
+const productsJson = products.map(({title,subtitle,description,price,discount, model,stock,category,colour,condition,tipo}) => {
   return {
     title,
     subtitle,
     description,
     price,
+    discount: !discount ? 0 : discount,
     model,
     stock,
     idProductType: tipo === "product" ? 1 : 2,

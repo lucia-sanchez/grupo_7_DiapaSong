@@ -1,15 +1,23 @@
 .form__update {
-position: absolute;
-box-shadow: inset 0px 0px 9px 0px #9e3fe382;
-width: 94%;
-position: relative;
+
+position: absolute;
+
+box-shadow: inset 0px 0px 9px 0px #9e3fe382;
+
+width: 94%;
+
+position: relative;
 }
 
 .form__update__section {
-display: flex;
-flex-wrap: wrap;
-row-gap: 10px;
-justify-content: center;
+
+display: flex;
+
+flex-wrap: wrap;
+
+row-gap: 10px;
+
+justify-content: center;
 }
 .form__update__section h5{
     width: 100%;
@@ -41,9 +49,12 @@
 }
 
 .form__update .form__create--radio label {
-width: auto;
-justify-content: flex-start;
-cursor: pointer;
+
+width: auto;
+
+justify-content: flex-start;
+
+cursor: pointer;
 }
 
 .form__update .form__create--radio input {
@@ -130,8 +141,10 @@
     box-shadow: inset 0px 0px 5px 1px;
 }
 .form__create--characteristics{
-    width: 100%;
-    /* margin-bottom: 10px; */
+    
+width: 100%;
+    
+/* margin-bottom: 10px; */
 }
 
 /* TABLET */
@@ -166,4 +179,6 @@ margin-bottom: 10px;
     }
 }
 
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+    
+}

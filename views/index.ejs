@@ -38,6 +38,7 @@
           </div>
             <!--Ofertas-->
             <h2 class="home__main__title"> OFERTAS </h2>
+          
             <section class="home__main__section--ofertas">
               
             <div class="home__main__cardsCarrusel">
@@ -86,14 +87,14 @@
       </div>
   
        <!--Formulario Suscripción-->
-       <form action="" class="home__main__form">
-       <label class="home__main__form--text" >no te pierdas las últimas novedades!!</label>
-       <input type="text" name="name" placeholder="Nombre" class="home__main__form--input">
-       <input type="email" name="email" placeholder="E-mail" class="home__main__form--input">
-       <button type="submit" class="home__main__form--button">
-        suscribirme
-       </button>
-       </form>
+       <form action="/" method="post" class="home__main__form" id="suscripcionForm">
+  <label class="home__main__form--text">No te pierdas las últimas novedades!!</label>
+  <input type="text" name="nombre" placeholder="Nombre" class="home__main__form--input">
+  <input type="email" name="email" placeholder="E-mail" class="home__main__form--input">
+  <button id="submit-suscript" type="submit" class="home__main__form--button">
+    Suscribirme
+  </button>
+</form>
 
     </main>
 <!-- FOOTER -->
@@ -101,4 +102,5 @@
 </body>
 <!--Slick script-->
 <%- include('./partials/scripts') %>
+
 </html>

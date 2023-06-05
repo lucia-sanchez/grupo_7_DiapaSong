@@ -15,12 +15,12 @@ module.exports = {
         createdAt:new Date()
       },
       {
-        category: "Percusión",
+        category: "Percusion",
         
         createdAt:new Date()
       },
       {
-        category: "Electrónicos",
+        category: "Electronicos",
         
         createdAt:new Date()
       },

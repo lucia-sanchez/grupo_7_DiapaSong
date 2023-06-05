@@ -22,6 +22,10 @@
   text-align: center;
   margin-top: 10px;
 }
+.tachado{
+  text-decoration:line-through;
+  color: red;
+}
 .detalle-producto-precio,
 .detalle-producto-comprar,
 .detalle-producto-agregar {
@@ -159,45 +163,16 @@
   }
   .main__section__productos__producto--imagen-detail img {
     width: auto;
-<<<<<<< HEAD
  }
- .tachado{
-    text-decoration:line-through;
-    color: red;
- }
-
-    @media (min-width: 768px) {
-
-    }
-    @media (min-width: 1024px) {
-    .main__section__productos-detalles{
-        width: 700px;
-        height: 700px;
-       background-color:  rgb(95, 58, 142)
-    }
-   
-        .main__section__productos__producto--imagen-detail{ 
-            background-color:rgb(255, 255, 255);
-            width: 500px;
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             border: 3px solid  rgb(95, 58, 142) ;
-         }
-         .main__section__productos__producto--imagen-detail img{
+ 
+  .main__section__productos__producto--imagen-detail img{
             width: auto;
             height: auto;
             max-width: 100%;
-=======
-    height: auto;
-    max-width: 100%;
->>>>>>> dcf26c3ad676690370adf637e74edba74ae39dc8
-
-    padding: 10px;
+            padding: 10px;
   }
   .main__section-product {
     height: auto;
-
     border-radius: 5px;
     display: flex;
     padding: 20px;
@@ -233,9 +208,5 @@
     background-color: rgb(255, 255, 255);
     margin: 0 15px;
   }
-  .tachado{
-    text-decoration:line-through;
-    color: red;
- }
 
 }
