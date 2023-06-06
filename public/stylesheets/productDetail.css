@@ -97,11 +97,74 @@
   height: 35px;
   line-height: 35px;
 }
-.product-buttons {
+.main__section-product .product-buttons {
+margin:0 auto;
+  position: fixed;
+  font-size: 13px;
+  background: rgba(0, 0, 0);
+
+  padding: 10px;
+width: 100%;
+  color: white;
+  font-weight: 800;
+  z-index: 3;
+  border: none;
+  bottom: 0;
+  left: 0;
   display: flex;
-  margin: 0, auto;
   justify-content: center;
-  gap: 10px;
+  
+}
+.main__section-product .product-buttons form{
+  width: 200px;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  
+}
+.main__section-product .product-buttons .btn--edit-prod{
+width: 200px;
+color:white;
+font-size: 15px;
+background-color: rgba(0, 0, 0, 0.8);
+float: left;
+border:none;
+cursor: pointer;
+margin-left:1px;
+text-transform: uppercase;
+letter-spacing: 1px;
+padding-left: 1px;
+}
+.main__section-product .product-buttons .btn--edit-prod:hover{
+color: yellowgreen;
+}
+
+.main__section-product .product-buttons .btn--delete-prod{
+  width: 200px;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.8); 
+  float: left;
+  border:none;
+  cursor: pointer;
+  margin-left: 1px;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding-left: 1px;
+  }
+  .main__section-product .product-buttons .btn--delete-prod:hover{
+    color: rgb(247, 47, 47)
+  }
+
+  
+.main__section-product .product-buttons i{
+
+color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-weight: 900;
+  font-size: 18px ;
+  border-radius: 50%;
+  padding: 5px;
 }
 .main__section__productos__producto--imagen-detail {
   width: auto;
@@ -114,12 +177,17 @@
 }
 .imageView {
     position: fixed;
-    top:50%;
+    top:0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
     height: 100vh;
     z-index: 9999;
+  }
+  .imageView img {
+    position: relative;
+    top: 25%;
+
   }
 
   .no-scroll {
@@ -152,7 +220,11 @@
     height: auto;
     background-color: rgb(95, 58, 142);
   }
+  .imageView img {
+    position: relative;
+    top: 0;
 
+  }
   .main__section__productos__producto--imagen-detail {
     background-color: rgb(255, 255, 255);
     width: 500px;
@@ -182,7 +254,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
     height: 100vh;
     z-index: 9999;

@@ -24,7 +24,7 @@
                 <div class="images-Detail">
                   <figure class="main__section__productos__producto--imagen-detail" id="product-image" >
                     <img src="/img/productos/<%= images.find((image)=>image.main==1).name %>" alt="<%= title %>"
-                    height="500px" class=" rounded-start" id="imgMain" style="object-fit:cover;">
+                    height="auto" class=" rounded-start" id="imgMain" style="object-fit:cover;">
                </figure>
                <!-- imagen secundaria -->
                <figure class="imagenes-secundarias" >
@@ -100,15 +100,16 @@
                 </p>
               </div>
             </article>
+            
             <% if (locals.userLogin && locals.userLogin.rol=="1" ) { %>
               <div class="product-buttons">
                 <div>
-                  <a href="/products/edit/<%=id%>"><button class="btn--crear-cuenta">editar producto</button></a>
+                  <a href="/products/edit/<%=id%>"><button class="btn--edit-prod"><i class="fa-solid fa-pen-to-square"></i> editar producto</button></a>
                 </div>
                 <div>
-                  <form class="form__delete" id="form_delete" action="/products/remove/<%=id%>?_method=DELETE"
+                  <form  id="form_delete" action="/products/remove/<%=id%>?_method=DELETE"
                     method="POST">
-                    <button type="submit" class="btn--crear-cuenta">eliminar producto</button>
+                    <button type="submit" class="btn--delete-prod"><i class="fa-solid fa-trash"></i> eliminar producto</button>
                   </form>
                 </div>
               </div>

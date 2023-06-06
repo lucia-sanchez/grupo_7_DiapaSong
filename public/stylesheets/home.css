@@ -2,6 +2,11 @@
     padding: 0;
     
 }
+
+.home-product{
+    max-width: 100% ;
+    height: auto;
+}
 .home__carrurell--banner .carousel-control-prev{
 margin-left: 0;
 top: 40px;
@@ -150,6 +155,33 @@ hr{
     background-color: linear-gradient(180deg, rgba(34,142,255,0.7) 0%, rgba(33,224,255,0.8) 100%);
     ;
 }
+
+.home__main__cardsHome__carousel{
+    width: 100% ;
+}
+
+
+/* Carousel */
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
 
 /*Media Query*/

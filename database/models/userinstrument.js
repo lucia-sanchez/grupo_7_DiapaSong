@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      UserInstrument.belongsTo(models.User, {
+      /* UserInstrument.belongsTo(models.User, {
         as: "user",
         foreignKey: "userId",
         onDelete: "cascade",
@@ -20,7 +20,12 @@ module.exports = (sequelize, DataTypes) => {
         as: "instrument",
         foreignKey: "instrumentId",
         onDelete: "cascade",
-      });
+      }); */
+      UserInstrument.hasMany(models.Product, {
+        as : 'product',
+        foreignKey : 'idCategory',
+        onDelete : 'cascade'
+      })
     }
   }
   UserInstrument.init({

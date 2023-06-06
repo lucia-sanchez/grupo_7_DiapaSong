@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
   position: 'center',
   icon: 'success',
-  title: 'Suscrpcion exitosa!',
+  title: 'Suscripcion exitosa!',
   showConfirmButton: false,
   timer: 1500
   })

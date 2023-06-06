@@ -24,9 +24,23 @@ module.exports ={
                   }
               ]
         })
-        .then((saleProducts)=>{
+        const featured = db.Product.findAll({
+          limit:8,
+          order: db.Sequelize.literal('rand()'),
+            include : [
+              {
+                  model: db.Image,
+                  as: "images",
+                  where: { main: 1 },
+                }
+            ]
+      
+      })
+      Promise.all([saleProducts, featured])
+        .then(([saleProducts,featured])=>{
             return res.render('index', {
                 saleProducts,
+                related : req.session.userLogin ? req.session.userLogin.related : featured,
                 title: "HOME"
             });
         })

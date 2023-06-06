@@ -1,6 +1,7 @@
 .body-productos{
     background-color: var(--colorFondoBody);
 }
+
 .main__section__productos{
    
     background-color:rgb(147, 120, 172);
@@ -220,7 +221,8 @@ height: 400px;
 .paginator-products{
     display: flex;
     justify-content: center;
-    width: 500px;
+    width: 80vw;
+
    
 }
 

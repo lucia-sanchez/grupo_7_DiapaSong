@@ -11,7 +11,7 @@
         <article>      <h1>
               La música como terapia
             </h1>   <figure>
-              <img src="https://staticsnews.medsbla.com/news-es/wp-content/uploads/2018/12/09075359/c284eef02591ebf503c5b096478ac949c83c3454.jpg" alt=""></figure>
+              <img width="100%" src="https://staticsnews.medsbla.com/news-es/wp-content/uploads/2018/12/09075359/c284eef02591ebf503c5b096478ac949c83c3454.jpg" alt=""></figure>
 
           <section>
         
@@ -133,7 +133,7 @@
             </section>
           </article>
   
-          <form action="/blog" method="POST">
+          <form id="form-blog" action="/blog" method="POST">
             <h5>Dejanos tus comentarios....</h5>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label" >Nombre</label>
@@ -148,13 +148,14 @@
             </div>
           </form>
         </article>
-
+      
       </main>
       <!-- FOOTER -->
       <%- include('./partials/footer') %>
         <!-- SCRIPTS -->
         <%- include('./partials/scripts') %>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+      <script src="/javascript/dinamic.js"></script>
+      <script src="/javascript/blog.js"></script>
   </body>
 
 </html>
