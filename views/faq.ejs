@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diapasong | Registro de Usuario</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <script src="https://kit.fontawesome.com/bd0eb781b4.js" crossorigin="anonymous"></script>
+
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
 
 </head>
 <!-- VISTA FAQ -->
@@ -16,72 +13,59 @@
     <%- include('./partials/header') %> 
     <!-- MAIN -->
     <main>
-        <h1>PREGUNTAS FRECUENTES EN CONSTRUCCIÓN</h1>
+        <div class="container py-5">
+            <h1 class="text-center">PREGUNTAS FRECUENTES:</h1>
+            <hr>
+            <ul class="list-unstyled">
+              <li>
+                <h4>¿Cuál es el tiempo de garantía en los instrumentos que venden?</h4>
+                <p>Ofrecemos una garantía estándar de 15 años en todos nuestros instrumentos. Consulta nuestra política de garantía para obtener más detalles.</p>
+              </li>
+              <li>
+                <h4>¿Cómo puedo saber si un instrumento está en stock?</h4>
+                <p>En nuestra tienda en línea, puedes verificar la disponibilidad de un instrumento específico. Si un producto está en stock, se mostrará en la página del producto.</p>
+              </li>
+              <li>
+                <h4>¿Puedo solicitar un instrumento que no está disponible en su tienda en línea?</h4>
+                <p>Si estás buscando un instrumento específico que no encuentras en nuestra tienda en línea, contáctanos y haremos todo lo posible por conseguirlo para ti.</p>
+              </li>
+              <li>
+                <h4>¿Cuál es el costo de envío?</h4>
+                <p>El costo de envío puede variar según el destino y el tamaño del paquete. Puedes calcular el costo exacto del envío agregando los productos deseados al carrito y seleccionando tu ubicación durante el proceso de pago.</p>
+              </li>
+              <li>
+                <h4>¿Cómo puedo cancelar mi pedido?</h4>
+                <p>Si necesitas cancelar tu pedido, por favor contáctanos lo antes posible. Si el pedido aún no ha sido procesado, haremos todo lo posible para cancelarlo y emitir el reembolso correspondiente.</p>
+              </li>
+              <li>
+                <h4>¿Cuál es el plazo de entrega para pedidos internacionales?</h4>
+                <p>El tiempo de entrega para pedidos internacionales puede variar según el país de destino y los procedimientos aduaneros.</p>
+              </li>
+            </ul>
+            <hr>
+          </div>
+          <div class="arriba-mobile">
+            <i id="boton-arriba" class="fa-solid fa-arrow-up"></i>
+             </div>
     </main>
-    <footer class="footer">
-      <div class="footer__top">
-      <!-- LOGO -->
-      <div class="footer__logo">
-          <img src="/img/logoDiapasong.png" alt="Logo Diapasong">
-      </div>
-      
-      <!-- REDES -->
-      <nav class="footer__redes">
-          <b>seguinos en nuestras redes</b>
-          <ul>
-              <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-              <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-          </ul>
-      </nav>
-      <!-- LINKS SITIO -->
-      <nav class="footer__links">
-          <b>links</b>
-          <ul>
-              <li><a href="/products">productos</a></li>
-              <li><a href="/blog">blog</a></li>
-              <li><a href="/tickets">entradas</a></li>
-              <li><a href="/#about">¿quienes somos?</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="">contacto</a></li>
-          </ul>
-      </nav>
-      <!-- LINKS CUENTA -->
-      <nav class="footer__links">
-          <b>cuenta</b>
-          <ul>
-              <li><a href="/login">mi cuenta</a></li>
-              <li><a href="/productCart">carrito</a></li>
-          </ul>
-      </nav>
-      <nav class="footer__links--contacto">
-          <b>contacto</b>
-          <ul>
-              <li><a href="tel:+12345678">12345678</a></li>
-              <li><a href="mailto:ventas@diapasong.com.ar">ventas@diapasong.com.ar</a></li>
-              <li><!-- <a href=""></a> --><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2010.109030140013!2d-58.37138422275975!3d-34.59535660858388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335bd8305e7a9%3A0xc41a764ce655671f!2sGlobant%20Tower!5e0!3m2!1ses-419!2sar!4v1673717852325!5m2!1ses-419!2sar" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
-          </ul>
-      </nav>
-      <div class="footer__medios-de-pago">
-          <b>medios de pago</b>            
-          <img src="/img/mediosdepago.png" alt="medios de pago">
-      </div>
-  </div>
-  <div class="footer__bottom">
-      <p><i class="fa-regular fa-copyright"></i> 2022 - todos los derechos reservados - <i class="fa-solid fa-heart"></i> hecho con amor</p>
+     <!-- FOOTER -->
+     <%- include('./partials/footer') %>
+     <%- include('./partials/scripts') %>
+       <!-- SweetAlert2 -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.all.min.js"></script>
+       <script src="/javascript/productDetail.js"></script>
+       <script src="/javascript/alert_delete.js"></script>
+       <script src="/javascript/dinamic.js"></script>
 
-  </div>
 
-  </footer>
+
 </body>
-<!--Slick script-->
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script src="../javascript/dinamic.js"></script>
-				
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- SCRIPTS -->
+  <%- include('./partials/scripts') %>
+
 </html>
+
+
+
+
+

@@ -38,6 +38,10 @@ module.exports = (sequelize, DataTypes) => {
       as: "carts",
      
     });
+    Product.belongsTo(models.Instrument, {
+      as: "instrument",
+      foreignKey: "idInstrument",
+    });
     }
   }
   Product.init(
@@ -52,6 +56,7 @@ module.exports = (sequelize, DataTypes) => {
       idCondition: DataTypes.INTEGER,
       idCategory: DataTypes.INTEGER,
       idColor: DataTypes.INTEGER,
+      discount: DataTypes.INTEGER,
     },
     {
       sequelize,

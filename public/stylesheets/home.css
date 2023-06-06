@@ -2,6 +2,11 @@
     padding: 0;
     
 }
+
+.home-product{
+    max-width: 100% ;
+    height: auto;
+}
 .home__carrurell--banner .carousel-control-prev{
 margin-left: 0;
 top: 40px;
@@ -27,9 +32,12 @@ height: 30px;
     margin: 20px 0;
     font-weight: bold;
 }
-.home__main__cardsCarrusel{
-    
+.home__main__section--ofertas{
+    /*display: flex;
+    width: 100%;
+    justify-content: space-evenly;*/
 }
+
 .home__main__conteiner{
     position: relative;
     width: 60%;
@@ -68,19 +76,26 @@ font-weight: bold;
 text-transform: uppercase;
 
 }
+.home__main__cardsCarrusel{
+    
+width: 100%;
+}
 .home__main__conteiner--descripcion{
     background-color: aliceblue;
+    border-radius: 0 0 5px 5px;
     width: 100%;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px 10%;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 .home__main__section--quienesSomos{
     padding: 0 10%;
+  
 }
 hr{
     border: 2px solid black;
@@ -88,10 +103,10 @@ hr{
 }
 .home__main__ubicacion{
     display: flex;
+    width: 100%;
     flex-direction: column;
-    flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
-
 }
 .home__main__ubicacion i{font-size: 1.5em;}
 .home__main__ubicacion--map{
@@ -105,6 +120,8 @@ hr{
     flex-direction: column;
     margin: 0 auto;
     background-color: transparent;
+    align-content: center;
+    flex-wrap: wrap;
 }
 .home__main__form--text{
     width: 100%;
@@ -139,6 +156,33 @@ hr{
     ;
 }
 
+.home__main__cardsHome__carousel{
+    width: 100% ;
+}
+
+
+/* Carousel */
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
 
 /*Media Query*/
 /*TABLET*/
@@ -146,25 +190,35 @@ hr{
         .home__carrurell--banner .carousel-control-prev, .home__carrurell--banner .carousel-control-next{
             display: flex;
             top: 120px;
+
            
         }
-        .home__main__cardsCarrusel{
+        .home__main__section--ofertas{
+           /* width: 90%;
             display: flex;
-            flex-direction: row;
-            gap: 25px;
+            justify-content: start;
+            gap: 5%;
+            flex-direction: row;*/
+        }
+        .home__main__cardsCarrusel{
+            width: 95%;
+            display: flex;
             flex-wrap: wrap;
+            gap: 5%;
             justify-content: space-evenly;
-            align-items: center;
-            align-content: center;
-            padding: 0 10%;
+        }
+        .home__main__cardsHome{
+            width: 30% ;
         }
         .home__main__conteiner{
-            width: 25%;
+            width: 80%;
         }
         .home__main__form{
             width:60%;
             margin-bottom: 5%;
         }
+    
+        
     }
 /*DESKTOP*/
 @media (min-width: 1024px){
@@ -174,13 +228,35 @@ hr{
     }
     
     .home__main__ubicacion--map{
-        width: 80%;
+        width: 90%;
+        display: flex;
+        justify-content: center;
     }
     .home__main__form{
-        width: 60%;
+        width: 80%;
+        display: flex;
         padding-top: 0;
         margin-top: 0;
+        align-items: center;
+        align-content: center;
     }
+   .home__main__cardsCarrusel{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-evenly;
+   }
+   .home__main__conteiner{
+    
+   }
+   .home__main__cardsHome{
+    width:23%;
+   }
+   .home__main__section--ofertas{
+    /*display: flex;    
+    flex-direction: row;       
+    column-gap: 8%;*/
+   }
    
-
 }

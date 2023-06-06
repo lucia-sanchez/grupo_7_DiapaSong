@@ -4,7 +4,8 @@ const users = require('../data/users.json');
 const { validationResult } = require('express-validator');
 const { hashSync } = require('bcryptjs')
 
-const db = require("../database/models")
+const db = require("../database/models");
+const { log } = require('console');
 
 module.exports = {
     register: (req, res) => {
@@ -33,6 +34,8 @@ module.exports = {
 
         const errors = validationResult(req);
 
+        console.log(req.files);
+
         /* if (!req.files.mainImage && !req.fileValidationError) {
             errors.errors.push({
                 value: "",
@@ -56,7 +59,7 @@ module.exports = {
                 , news, birthdate } = req.body;
 
             const newUser = db.User.create({
-                profileImage: req.files ? `${req.files.mainImage[0].filename}` : "user-default.png",
+                profileImage: req.file ? req.file.filename : "user-default.png",
                 name,
                 email,
                 password: hashSync(password, 12),
@@ -180,14 +183,35 @@ module.exports = {
             db.User.findOne({
                 where: {
                     email: req.body.email
-                }
+                },
+                include : [
+                    {
+                        association : 'instruments',
+                        include : [
+                            {
+                                association : 'products',
+                                attributes : ['id','title','price','discount'],
+                                include : ['images']
+                            }
+                        ]
+                    }
+                ]
             })
-                .then(({ id, name, rolId }) => {
+                .then(({ id, name, rolId, instruments }) => {
+
+                    
+                    const related = []
+                    instruments.forEach(item => item.products.forEach(item => related.push(item)))
+                    console.log(related);
+
+                    const unsort = related.sort(() => Math.random() - 0.5);
+                    const selected = unsort.slice(0,8);
 
                     req.session.userLogin = {
                         id,
                         name,
-                        rol: rolId
+                        rol: rolId,
+                        related : selected
                     };
 
                     if (req.body.remember) {

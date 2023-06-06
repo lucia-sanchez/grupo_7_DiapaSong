@@ -7,8 +7,20 @@
     flex-wrap: wrap;
     padding: 10px 5px;
 }
-
-
+#boton-arriba {
+    position: fixed;
+    bottom: 108px;
+    right: 24px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    background-color: black;
+    padding: 6px 12px;  
+    border: 1px black solid;
+    border-radius: 55%;
+    display: none;
+    z-index: 999;
+    
+  }
 .header_div {
     display: flex;
     flex-wrap: nowrap;
@@ -23,11 +35,6 @@
     font-size: 30px;
     color: rgb(255, 255, 255);
     -webkit-text-stroke: 1px rgb(196, 196, 196);
-    position: fixed;
-    left: 0px;
-    top: 25px;
-    z-index: 10;
-    cursor: pointer;
 }
 
 .header--btn-menu:focus{
@@ -35,17 +42,13 @@
 
 }
 
-.header--btn-menu i {
-    text-shadow: 0 0 5px black;
-}
-
 .header--logo {
     display: flex;
     flex-direction: column;
     width: 45%;
     text-align: center;
+
     justify-content: center;
-    margin-left: 60px;
 }
 
 .header--logo h1 {
@@ -119,9 +122,6 @@ header .header__section--user-navigation-logged{
 
 .header__nav ul {
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
 }
 
 .header__nav li {
@@ -140,7 +140,7 @@ header .header__section--user-navigation-logged{
     display: flex;
     margin-right: 0;
     position: fixed;
-    top: 88px;
+    top: 180px;
     margin-top: 0;
     transition: all 2s;
     z-index: 1000;
@@ -176,18 +176,12 @@ header .header__section--user-navigation-logged{
     top: 8px;
     right: 42px;
     color: rgb(239, 177, 241);
-    border: none;
-    background: none;
-}
-
-.header--search-bar .lupa:focus {
-outline: none;
 }
 
 .header--whatsapp-icon {
     display: flex;
     position: fixed;
-    bottom: 25px;
+    bottom: 55px;
     right: 25px;
     width: 45px;
     height: 45px;
@@ -279,6 +273,7 @@ outline: none;
     }
     .header__section--user-navigation-logged div{
         width: 100%;
+   
     }
     .header__section--user-navigation-logged i {
         font-size: 25px;
@@ -380,19 +375,23 @@ float: left;
     .header__section--user-navigation {
         order: 2;
         width: auto;
-        margin-top: 43px;
-        align-self: flex-start;
+      margin-top: 18px;
+        align-self: center;
     }
 
     .header__section--user-navigation i {
         font-size: 25px;
         padding: 0 18px;
     }
-
     .header__section--user-navigation i:hover {
-        padding: 1px;
-        margin: 0 14px -4px;
-        text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+        color: rgb(186, 112, 255);
+    }
+
+    .header__section--user-navigation:hover {
+   background-color: rgb(0, 0, 0, 0.5);
+   padding: 15px 0 15px;
+
+
     }
     .header .header__section--user-navigation-logged{
         width: 200px;
@@ -533,19 +532,6 @@ float: left;
     }
     .header-scroll .header--search-bar .lupa{
         top: 0px;
-        right: 42px;
-    }
-    .header-scroll .header--search-bar .lupa i{
-        font-size: 15px;
-        right:0;
-    }
-    .header-scroll .header--search-bar input::placeholder {
-        display: flex;
-        text-align: left;
-        }
-    .header-scroll .header__nav {
-        width: 70%;
-        top: 0px;
         left: 20px;
      
     }
@@ -585,7 +571,9 @@ float: left;
         font-size: 12px;
         margin-top: -5px;
     }
-
+    .header-scroll .header__section--user-navigation .cart-icon{
+        margin-left: -2px;
+    }
     .header-scroll .header__section--user-navigation {
         order: 4;
         width: 100px;
@@ -594,13 +582,27 @@ float: left;
         position: fixed;
         bottom: 80px;
         right: -25px;
+      
+    }
+    .header-scroll .header__section--user-navigation:hover {
+      background: none;
+      
+      padding: 0;
     }
 
     .header-scroll .header__section--user-navigation i {
         padding: 10px;
+       
      
 
     }
+    .header-scroll .header__section--user-navigation i:hover{
+     
+      background-color: rgb(2, 2, 2, 0.5) ;
+    border-radius: 10px;
+
+    }
+   
     .header-scroll .header__section--user-navigation-logged{
         background-color: rgb(0, 0, 0,0.8);
         align-self: center;
@@ -617,5 +619,24 @@ float: left;
         padding-top: 190px !important;
     
     }
+    #boton-arriba {
+        position: fixed;
+        bottom: 50px;
+        right: 50%;
+        color: rgb(255, 255, 255);
+        font-size: 30px;
+        background-color: black;
+        padding: 6px 12px;  
+        border: 1px black solid;
+        border-radius: 55%;
+        display: none;
+        z-index: 999;
+        cursor: pointer;
+        
+      }
+      .home-product{
+        cursor: pointer;
+      }
+      .header--whatsapp-icon {bottom: 35px;}
 
 }

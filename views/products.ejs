@@ -18,7 +18,7 @@
         </section>
         <!-- Productos -->
 
-        <section class="main__section__productos">
+        <section class="main__section__productos" id="arriva">
 
 
           <% if (CategoryFilt) { %>
@@ -27,7 +27,7 @@
             </h2>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
-                <% product.forEach(({id,images, price, title, subtitle, category})=> { %>
+                <% product.forEach(({id,images, price, title, subtitle, category, discount})=> { %>
 
                   <div class="Products--all" >
                     <article class="main__section__productos--producto">
@@ -38,7 +38,7 @@
                         <div class="datos_productos">
                           <span class="agregar-al-carrito"> Más información
                             <i class="fa-sharp fa-solid fa-circle-info carrito_prod"></i> </span>
-                          <h3 class="main__section__productos__producto--precio">$ <%= price %>
+                          <h3 class="main__section__productos__producto--precio">$ <%= price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); %>
                           </h3>
                           <h4 class="main__section__productos__producto--marca">
                             <%= title %>
@@ -53,11 +53,16 @@
 
                   <% }) %>
                     <% } else{%>
-                      <h2 class="subtitulo_productos">Destacados!</h2>
+                      <h2 class="subtitulo_productos">Productos disponibles!</h2>
+                      <div id="paginator" class="paginado">
+
+                        <%- include('./partials/paginateProducts') %>
+
+                      </div>
                       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
 
-                          <% products.forEach(({id,images, price, title, subtitle, category})=> { %>
+                          <% products.forEach(({id,images, price, title, subtitle, category, discount})=> { %>
                             
                              <!-- ACA SE PAGINAN LOS PRODUCTOS -->
                             <div id="container-products">
@@ -68,17 +73,11 @@
                             <% }) %>
                               <% } %>
                         </div>
-                      </div>
-                      <div>
-
-                        <%- include('./partials/paginateProducts') %>
-
-                      </div>
-                      
+                      </div>     
               </div>
               <% if (locals.userLogin && locals.userLogin.rol=="1" ) { %>
                 <div class="productos--crearProductos">
-                  <a href="/products/create"><button class="btn--crear-prod">crear
+                  <a href="/products/create"><button class="btn--crear-prod"> <i class="fa-solid fa-plus"></i> crear
                       producto</button></a>
 
                   <% } %>

@@ -8,7 +8,7 @@
         <%- include('./partials/header') %>
             <!-- Main -->
             <main class="create__main">
-                <section class="admin_panel">panel administrador en construcción</section>
+           <!--      <section class="admin_panel">panel administrador en construcción</section> -->
                 <section class="create__main__section">
 
                     <h1>crear producto</h1>
@@ -135,6 +135,15 @@
                                 <small class="register__formbox__div__errors" id="priceError">
                                     <%= locals.errors && errors.price ? errors.price.msg : null %>
                                 </small>
+                            </div>
+                            <!-- DESCUENTO -->
+                            <div>
+                                <label for="discount">Descuento</label>
+                                <input type="number" name="discount" id="discount"<%= locals.errors && errors.discount ? 'is-invalid' : null%> id="discount" name="discount" value="<%= locals.old && old.discount ? old.discount : null %>">
+                                <p>%</p>
+                            </div>
+                            <div>
+                                <small class="register__formbox__div__errors"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
                             </div>
                             <!-- BOTÓN -->
                             <div class="form__create-btn-box">

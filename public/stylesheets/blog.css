@@ -1,0 +1,75 @@
+
+.blog{
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(157, 112, 255);
+}
+.blog article section{
+    padding: 0 30px;
+}
+.blog h1, .blog h3 {
+  text-align: center;
+}
+.cita {
+  font-style: italic;
+  text-align: center;
+  padding: 25px;
+}
+.blog p {
+
+  padding-bottom: 15px;
+}
+.blog h4 {
+  padding-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.blog article form {
+  width: 70%;
+  margin: 0 auto;
+ background: none;
+  text-align: center;
+  border-radius: 10px;
+  padding-bottom: 40px;
+}
+.blog article form input,
+.blog article form textarea {
+  width: 70%;
+  margin: 0 auto;
+}
+.blog article form label {
+  width: 70%;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.blog article form .button {
+    display: flex;
+justify-content: center;
+
+}
+.blog article form .button button{
+border:none;
+border-radius: 5px;
+color: aliceblue;
+background-color: rgb(59, 4, 110);
+width: 250px;
+padding: 3px;
+border: 2px white solid;
+}
+.blog article section figure img{
+width: 80%;
+}
+.blog article figure{
+display: flex;
+justify-content: center;
+}
+.blog-comentarios{
+  background-color: rgb(167, 130, 248);
+
+}
+.blog-comentarios h6{
+ font-weight: 500;
+  
+}

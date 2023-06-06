@@ -180,22 +180,20 @@
 
 /* DESKTOP */
 @media (min-width: 1024px) {
-  .admin_panel {
-    width: 15%;
-  }
-
+ 
   .create__main {
+    width: 100%;
     display: flex;
 
     flex-direction: row;
 
     flex-wrap: nowrap;
 
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .create__main__section {
-    width: 80%;
+    width: 60%;
   }
 
   .create__main__section__div--form-box {
