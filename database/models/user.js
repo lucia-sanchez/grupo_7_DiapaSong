@@ -16,17 +16,31 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "rolId",
         onDelete: "cascade",
       });
-      User.hasMany(models.UserGenre, {
+     /*  User.hasMany(models.UserGenre, {
         as: "genre",
         foreignKey: "userId",
         onDelete: "cascade",
-      });
+      }); */
+      User.belongsToMany(models.Genre, {
+        as : 'genres',
+        through : 'usergenres',
+        foreignKey : 'userId',
+        otherKey : 'genreId'
+      })
 
-      User.hasMany(models.UserInstrument, {
+/*       User.hasMany(models.UserInstrument, {
         as: "instrument",
         foreignKey: "userId",
         onDelete: "cascade",
-      });
+      }); */
+
+      User.belongsToMany(models.Instrument, {
+        as : 'instruments',
+        through : 'userinstruments',
+        foreignKey : 'userId',
+        otherKey : 'instrumentId'
+      })
+
       User.hasMany(models.PaymentMethodUser, {
         as: "paymentMethod",
         foreignKey: "paymentMethodId",

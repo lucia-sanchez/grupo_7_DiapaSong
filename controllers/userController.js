@@ -186,10 +186,10 @@ module.exports = {
                 },
                 include : [
                     {
-                        association : 'instrument',
+                        association : 'instruments',
                         include : [
                             {
-                                association : 'product',
+                                association : 'products',
                                 attributes : ['id','title','price','discount'],
                                 include : ['images']
                             }
@@ -197,10 +197,12 @@ module.exports = {
                     }
                 ]
             })
-                .then(({ id, name, rolId, instrument }) => {
+                .then(({ id, name, rolId, instruments }) => {
+
                     
                     const related = []
-                    instrument.forEach(item => item.product.forEach(item => related.push(item)))
+                    instruments.forEach(item => item.products.forEach(item => related.push(item)))
+                    console.log(related);
 
                     const unsort = related.sort(() => Math.random() - 0.5);
                     const selected = unsort.slice(0,8);
