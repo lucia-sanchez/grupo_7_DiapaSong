@@ -294,8 +294,8 @@ outline: none;
         transition: all 0.2s;
     }
     .header__section--user-navigation-logged a{
-        
-        color: white;
+        color: white;
+        cursor: pointer;
     }
 
     .header--search-bar {
@@ -628,6 +628,7 @@ float: left;
         height: auto;
         top:0;
         padding: 0 0 3px 0;
+        z-index: 10;
     }
   
     .scroll_main_space_top{

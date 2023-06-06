@@ -1,7 +1,7 @@
 const { check, body } = require('express-validator');
 const users = require('../data/users.json');
 const db = require('../database/models')
-let regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&,._-])[A-Za-z\d$@$!%*?&,._-]{8,12}/;
+let regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&,._-])[A-Za-z\d$@$!%*?&,._-]{6,12}/;
 
 
 module.exports = [
