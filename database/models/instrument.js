@@ -11,11 +11,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Instrument.hasMany(models.UserInstrument, {
+      /* Instrument.hasMany(models.UserInstrument, {
         as: "userInstrument",
         foreignKey: "instrumentId",
         onDelete: "cascade",
+      }); */
+      Instrument.belongsToMany(models.User, {
+        as : 'users',
+        through : 'userinstruments',
+        foreignKey : 'instrumentId',
+        otherKey : 'userId'
       });
+
+      Instrument.hasMany(models.Product,{
+        as : 'products',
+        foreignKey : 'idInstrument',
+        onDelete : 'cascade'
+      })
     }
   }
   Instrument.init({

@@ -11,11 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Genre.hasMany(models.UserGenre, {
+     /*  Genre.hasMany(models.UserGenre, {
         as: "userGenre",
         foreignKey: "genreId",
         onDelete: "cascade",
-      });
+      }); */
+      Genre.belongsToMany(models.User, {
+        as : 'users',
+        through : 'usergenres',
+        foreignKey : 'genreId',
+        otherKey : 'userId'
+      })
     }
   }
   Genre.init({
