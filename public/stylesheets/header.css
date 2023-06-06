@@ -594,14 +594,17 @@ float: left;
         position: fixed;
         bottom: 80px;
         right: -25px;
+      
     }
     .header-scroll .header__section--user-navigation:hover {
       background: none;
+      
       padding: 0;
     }
 
     .header-scroll .header__section--user-navigation i {
         padding: 10px;
+       
      
 
     }
@@ -630,7 +633,7 @@ float: left;
     }
     #boton-arriba {
         position: fixed;
-        bottom: 75px;
+        bottom: 50px;
         right: 50%;
         color: rgb(255, 255, 255);
         font-size: 30px;
