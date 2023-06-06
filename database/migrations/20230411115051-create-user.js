@@ -15,6 +15,12 @@ module.exports = {
       profileImage: {
         type: Sequelize.STRING
       },
+      socialProvider : {
+        type: Sequelize.STRING
+      },
+      providerId : {
+        type: Sequelize.STRING
+      },
       email: {
         type: Sequelize.STRING
       },
