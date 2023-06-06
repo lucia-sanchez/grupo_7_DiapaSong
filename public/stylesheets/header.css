@@ -35,6 +35,11 @@
     font-size: 30px;
     color: rgb(255, 255, 255);
     -webkit-text-stroke: 1px rgb(196, 196, 196);
+    position: fixed;
+    top: 20px;
+    left: -10px;
+    z-index: 10;
+    text-shadow: 0 0 9px black;
 }
 
 .header--btn-menu:focus{
@@ -47,8 +52,8 @@
     flex-direction: column;
     width: 45%;
     text-align: center;
-
     justify-content: center;
+    margin-left: 50px;
 }
 
 .header--logo h1 {
@@ -140,7 +145,7 @@ header .header__section--user-navigation-logged{
     display: flex;
     margin-right: 0;
     position: fixed;
-    top: 180px;
+    top: 100px;
     margin-top: 0;
     transition: all 2s;
     z-index: 1000;
@@ -176,6 +181,12 @@ header .header__section--user-navigation-logged{
     top: 8px;
     right: 42px;
     color: rgb(239, 177, 241);
+    border: none;
+    background: none;
+}
+.header--search-bar .lupa:focus{
+
+outline: none;
 }
 
 .header--whatsapp-icon {
@@ -438,6 +449,9 @@ float: left;
         top: -10px;
         left: 270px;
     }
+    .header-scroll .header__nav{
+        left: 300px;
+    }
 
     .header__nav ul {
         width: 790px;
@@ -531,9 +545,8 @@ float: left;
         margin: 0;
     }
     .header-scroll .header--search-bar .lupa{
-        top: 0px;
-        left: 20px;
-     
+        top: -3px;
+        right: 45px;
     }
     .header-scroll .header__nav ul {
         display: flex;
@@ -541,6 +554,9 @@ float: left;
         margin: 0;
         padding: 0;
         align-items: center;
+        position: relative;
+        top: 8px;
+        right: 330px;
     }
     
     .header-scroll .header__nav ul li {

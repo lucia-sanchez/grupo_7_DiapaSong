@@ -83,6 +83,7 @@ font-size: 18px;
      background-color: rgb(147, 120, 172);
      /* height: 550px; */
      text-decoration: none;
+     border-radius: 0px 5px 8px 10px;
 }
 .main__section__nav--categoria span{
   display: none;
