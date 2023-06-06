@@ -83,11 +83,10 @@ box-shadow: -1px 2px 3px 1px #6610f273;
 
  .main_section_nav_categorias{
      display: flex;
- padding-left: 10px;
- background-color: rgb(147, 120, 172);
- height: 550px;
- text-decoration: none;
-
+     padding-left: 10px;
+     background-color: rgb(147, 120, 172);
+     /* height: 550px; */
+     text-decoration: none;
 }
 .main__section__nav--categoria span{
   display: none;
