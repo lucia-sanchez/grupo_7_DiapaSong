@@ -653,6 +653,8 @@ float: left;
       }
       .home-product{
         cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
       }
       .header--whatsapp-icon {bottom: 35px;}
 

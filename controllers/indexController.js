@@ -38,6 +38,7 @@ module.exports ={
       })
       Promise.all([saleProducts, featured])
         .then(([saleProducts,featured])=>{
+            // return res.send(saleProducts)
             return res.render('index', {
                 saleProducts,
                 related : req.session.userLogin ? req.session.userLogin.related : featured,

@@ -30,6 +30,27 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
+  var swiper = new Swiper(".mySwiper2", {
+       spaceBetween: 0,
+       freeMode: true,
+       pagination: {
+         el: ".swiper-pagination",
+         clickable: true,
+       },
+       breakpoints: {
+       768: {
+         slidesPerView: 3,
+       },
+       1024: {
+         slidesPerView: 5,
+       },
+     },
+     });
+ 
+ 
+ </script>
+
+<script>
  var swiper = new Swiper(".mySwiper", {
       spaceBetween: 30,
       freeMode: true,
