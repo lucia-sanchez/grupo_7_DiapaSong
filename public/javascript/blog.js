@@ -12,5 +12,5 @@ if (formBlogImput.value===""|| formBlogComents.value==="") {
         showConfirmButton: false,
         timer: 1500
       })
-}
-    })
+ } 
+})

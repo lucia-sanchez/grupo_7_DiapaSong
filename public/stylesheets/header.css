@@ -120,9 +120,9 @@ header .header__section--user-navigation-logged{
     flex-direction: column;
     background-color: rgb(0, 0, 0, 0.8);
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     display: none;
-    margin-top: -800px;
+ 
 }
 
 .header__nav ul {
@@ -294,8 +294,10 @@ outline: none;
         transition: all 0.2s;
     }
     .header__section--user-navigation-logged a{
-        color: white;
-        cursor: pointer;
+        
+color: white;
+        
+cursor: pointer;
     }
 
     .header--search-bar {
@@ -400,6 +402,7 @@ float: left;
 
     .header__section--user-navigation:hover {
    background-color: rgb(0, 0, 0, 0.5);
+   border-radius: 10px;
    padding: 15px 0 15px;
 
 
@@ -450,7 +453,8 @@ float: left;
         left: 270px;
     }
     .header-scroll .header__nav{
-        left: 300px;
+        
+left: 300px;
     }
 
     .header__nav ul {
@@ -537,7 +541,7 @@ float: left;
         padding: 0;
         /* position: relative; */
         top: 15px;
-        left: 36px;
+        left: 10px;
         margin: 0;
     }
     .header-scroll .header--search-bar input {
@@ -556,7 +560,7 @@ float: left;
         align-items: center;
         position: relative;
         top: 8px;
-        right: 330px;
+        right: 350px;
     }
     
     .header-scroll .header__nav ul li {
@@ -592,12 +596,8 @@ float: left;
     }
     .header-scroll .header__section--user-navigation {
         order: 4;
-        width: 100px;
-        flex-direction: column;
-        width: 100px;
-        position: fixed;
-        bottom: 80px;
-        right: -25px;
+        margin-top: -3px;
+        z-index: 100;
       
     }
     .header-scroll .header__section--user-navigation:hover {
@@ -624,11 +624,15 @@ float: left;
         align-self: center;
         justify-content: space-around;
         order: 4;
-        width: 220px;
+        width: 225px;
         height: auto;
         top:0;
+        left: -5px;
         padding: 0 0 3px 0;
         z-index: 10;
+    }
+    .header-scroll .header__section--user-navigation-logged a{
+      padding: 0 5px;
     }
   
     .scroll_main_space_top{
