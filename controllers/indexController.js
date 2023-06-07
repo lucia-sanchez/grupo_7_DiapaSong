@@ -75,11 +75,6 @@ module.exports ={
             })
             .catch((error) => console.log(error))     
     },
-    productCart: (req,res) =>{
-        return res.render('productCart',{
-            title:"Carrito"
-        });
-    },
     blog: (req, res) => {
         db.Blog.findAll()
           .then((blogs) => {
