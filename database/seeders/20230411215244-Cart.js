@@ -7,10 +7,22 @@ module.exports = {
       "Carts",
       [
         {
-          units:15,
-          totalPrice:150 ,
+          units:1,
+          totalPrice: null,
           idProduct:2 ,
-          saleId: 12,
+          saleId: 1,
+          createdAt:new Date (),
+        },{
+          units:1,
+          totalPrice: null,
+          idProduct:5 ,
+          saleId: 1,
+          createdAt:new Date (),
+        },{
+          units:1,
+          totalPrice: null,
+          idProduct: 10 ,
+          saleId: 1,
           createdAt:new Date (),
         },
         
