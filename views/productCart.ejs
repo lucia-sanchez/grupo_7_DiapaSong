@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- HEAD -->
-<%- include('./partials/head') %> 
+<%- include('./partials/head') %>
 
-<body>
-    
-<!-- HEADER -->
-<%- include('./partials/header') %> 
-    <main class="main__carrito">
-        
-        <h2 class="carrito__main__title">tu carrito</h2>
-        <hr>
-        <div class="carrito__main__container">
-            <div class="carrito__main__img">
-                <img src="../img/ofertas/electric-guitar.png" alt="electric-guitar">
-            </div>
-            <div class="carrito__main__desc">
-                <p>guitarra electrica Les-Paul</p>
-            </div>
-            <div class="carrito__main__cant">
-                <button type="button" class="carrito__main__cant--resta">
-                    -
-                </button>
-                <button type="button" class="carrito__main__cant--num">
-                    1
-                </button>
-                <button type="button" class="carrito__main__cant--suma">
-                    +
-                </button>
-        
-            </div>
-            <div class="carrito__main__precio">
-                <p>$85.000</p>
-            </div>
-        </div>
-            <hr>
-            <div class="carrito__main__totalCompra">
-            <p>total</p>
-            <span class="carrito__main__precio">$85.000</span>    
-            </div>
-            <div class="carrito__main__btn">
-                <button type="button" class="carrito__main__btn--contCompra home__main__form--button">continuar comprando</button>
-                <button type="button" class="carrito__main__btn--pagar home__main__form--button">pagar</button>
-        
+    <body>
 
-        
+        <!-- HEADER -->
+        <%- include('./partials/header') %>
+            <main class="main__carrito">
+                <h2 class="carrito__main__title">tu carrito</h2>
+                <!-- aregar un if si carrito no tiene productos mandar msj de error -->
+                <section class="main__section__carrito--products-box">
+                    <% if (items==null) { %>
+                        <p class="productos_search--error--text">No hay productos en tu carrito</p>
+                        <% } else { %>
+                            <!-- si hay productos mostrar los productos -->
+                            <% items.forEach(item=> { %>
+                                <div class="main__section__div__carrito-product">
+                                    <div class="carrito__main__img">
+                                        <img src="/img/productos/<%= item.products.images[0].name %>"
+                                            alt="<%= item.products.title %>">
+                                    </div>
+                                    <div class="carrito__main__desc">
+                                        <p>
+                                            <%= item.products.title %>
+                                        </p>
+                                    </div>
+                                    <div class="carrito__main__cant">
+                                        <button type="button" class="carrito__main__cant--resta">
+                                            -
+                                        </button>
+                                        <button type="button" class="carrito__main__cant--num">
+                                            <%= item.units %>
+                                        </button>
+                                        <button type="button" class="carrito__main__cant--suma">
+                                            +
+                                        </button>
+            
+                                    </div>
+                                    <div class="carrito__main__precio">
+                                        <p>$<%= toThousand(item.products.price)  %></p>
+                                    </div>
+                                </div>
+                                    <% }) %>
+                </section>
+                <section class="main__section__carrito--buttons-box">
+                    <div class="main__section__div__carrito--button">
 
-    </main>   
+                    </div>
+                </section>
+                <hr>
+                <% } %>
 
-<!-- FOOTER -->
-<%- include('./partials/footer') %> 
-    
-</body>
-<script src="../javascript/dinamic.js"></script>
+                    <div class="carrito__main__totalCompra">
+                        <p>total</p>
+                        <span class="carrito__main__precio">$85.000</span>
+                    </div>
+                    <div class="carrito__main__btn">
+                        <a href="/products"><button type="button" class="carrito__main__btn--contCompra home__main__form--button"> continuar
+                            comprando</button></a>
+                        <button type="button" class="carrito__main__btn--pagar home__main__form--button">pagar</button>
+
+
+
+
+            </main>
+
+            <!-- FOOTER -->
+            <%- include('./partials/footer') %>
+
+    </body>
+    <script src="../javascript/dinamic.js"></script>
+
 </html>
