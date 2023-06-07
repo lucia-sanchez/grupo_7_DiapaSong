@@ -13,6 +13,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const ticketsRouter = require('./routes/tickets');
+const cartRouter = require('./routes/cart')
 const localsUserCheck = require('./middlewares/localsUserCheck');
 const cookieCheck = require("./middlewares/cookieCheck");
 //APIS
@@ -49,9 +50,11 @@ app
 
 //RUTAS
 app.use('/', indexRouter);
+app.use('/', cartRouter)
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/tickets', ticketsRouter);
+
 
 //RUTAS APIs
 app.use("/api", apiMainRouter)
