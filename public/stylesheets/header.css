@@ -36,7 +36,7 @@
     color: rgb(255, 255, 255);
     -webkit-text-stroke: 1px rgb(196, 196, 196);
     position: fixed;
-    top: 20px;
+    top: 30px;
     left: -10px;
     z-index: 10;
     text-shadow: 0 0 9px black;

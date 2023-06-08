@@ -1,7 +1,7 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
 -- Host: localhost    Database: diapasong_db
--- ------------------------------------------------------
+-- ------------------------------------------------------
 -- Server version	8.0.26
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
