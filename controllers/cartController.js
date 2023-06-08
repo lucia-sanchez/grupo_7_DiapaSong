@@ -10,7 +10,12 @@ const Op = db.Sequelize.Op
 module.exports = {
   spinner: (req,res)=>{
     return res.render('spinnerCart',{
-      title: 'carrito'
+      title: 'Carrito'
+    })
+  },
+  spinner2: (req,res)=>{
+    return res.render('spinnerCart2',{
+      title: 'Carrito'
     })
   },
   addToCart: (req, res) => {
@@ -82,13 +87,36 @@ module.exports = {
     }).catch((error) => console.log(error));
   },
   moreUnits: (req,res)=>{
-
+    db.Cart.increment('units', {
+      by: 1,
+      where: {
+        id: req.params.id 
+      }
+    }).then(()=>{
+      return res.redirect('/spinner2')
+    })
+      .catch((error) => console.log(error));
   },
   lessUnits: (req,res)=>{
-
+    db.Cart.decrement('units', {
+      by: 1,
+      where: {
+        id: req.params.id 
+      }
+    }).then(()=>{
+      return res.redirect('/spinner2')
+    })
+      .catch((error) => console.log(error));
   },
   emptyCart: (req,res)=>{
-    
+    db.Cart.destroy({
+      where: { 
+        saleId: req.params.id
+       },
+    }).then(
+    ()=>{
+      return res.redirect('/spinner')
+    }).catch((error) => console.log(error));
   },
   products: (req, res) => {
     /* 
