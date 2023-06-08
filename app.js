@@ -16,6 +16,7 @@ const usersRouter = require('./routes/users');
 const authRouter = require ('./routes/auth');
 const productsRouter = require('./routes/products');
 const ticketsRouter = require('./routes/tickets');
+const cartRouter = require('./routes/cart')
 const localsUserCheck = require('./middlewares/localsUserCheck');
 const cookieCheck = require("./middlewares/cookieCheck");
 //APIS
@@ -52,12 +53,15 @@ app
 .use(passport.initialize())
 
 //RUTAS
+
 app
 .use('/', indexRouter)
+.use('/', cartRouter)
 .use('/users', usersRouter)
 .use('/products', productsRouter)
 .use('/tickets', ticketsRouter)
 .use('/auth', authRouter)
+
 
 
 //RUTAS APIs

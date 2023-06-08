@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
+    <body>
+
+        <!-- HEADER -->
+        <%- include('./partials/header') %>
+            <main class="main__carrito">
+                <h2 class="carrito__main__title">tu carrito</h2>
+                <!-- aregar un if si carrito no tiene productos mandar msj de error -->
+                <section class="main__section__carrito--products-box">
+                    
+                            <!-- si hay productos mostrar los productos -->
+                            <table>
+                                <tr>
+                                    <th class="carrito__table-head--image">Imagen</th>
+                                    <th class="carrito__table-head--product">Producto</th>
+                                    <th class="carrito__table-head--units">Cantidad</th>
+                                    <th class="carrito__table-head--price">Precio unitario</th>
+                                    <th class="carrito__table-head--price">Precio total</th>
+                                </tr>
+
+                                <tr><td><div class="lds-facebook"><div></div><div></div></div></td>
+                                    <td><div class="lds-facebook"><div></div><div></div></div></td>
+                                    <td><div class="lds-facebook"><div></div><div></div></div></td>
+                                    <td><div class="lds-facebook"><div></div><div></div></div></td>
+                                    <td><div class="lds-facebook"><div></div><div></div></div></td>
+                                </tr>
+                            </table>
+                            
+                </section>
+                
+                <hr>
+                
+
+                    <div class="carrito__main__totalCompra">
+                        <p>total</p>
+                        <span class="carrito__main__precio"><div class="lds-facebook"><div></div><div></div></div></span>
+                    </div>
+                    <div class="carrito__main__btn">
+                        <a href="/products"><button type="button" class="carrito__main__btn--contCompra home__main__form--button"> continuar
+                            comprando</button></a>
+                        <button type="button" class="carrito__main__btn--pagar home__main__form--button">pagar</button>
+
+
+
+
+            </main>
+
+            <!-- FOOTER -->
+            <%- include('./partials/footer') %>
+
+    </body>
+    <script>
+        // Redirige a la vista productCart después de un tiempo determinado
+        setTimeout(function() {
+          window.location.href = '/productCart';
+        }, 1000); 
+      </script>
+    <script src="../javascript/dinamic.js"></script>
+
+</html>

@@ -1,7 +1,8 @@
 var express = require('express');
-const {index, search, productCart, blog,saveBlog, faq, suscripcion, dashboard, removeProduct} = require('../controllers/indexController');
+const {index, search, blog,saveBlog, faq, suscripcion, dashboard, removeProduct} = require('../controllers/indexController');
 var router = express.Router();
 const db = require('../database/models');
+const { productCart } = require('../controllers/cartController');
 const sequelize = db.sequelize;
 
 
@@ -11,7 +12,7 @@ router
     .get('/', index)
     .post("/", suscripcion)
     .get('/search', search)
-    .get('/productCart', productCart)
+    //.get('/productCart', productCart)
     .get('/blog', blog)
     .post('/blog', saveBlog)
 
