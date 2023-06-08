@@ -1,3 +1,4 @@
+﻿-- Active: 1685824649029@@127.0.0.1@3306@diapasong_db
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: localhost    Database: diapasong_db
@@ -43,5 +44,10 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+ -- agregga categoria a producto guiro
+
+UPDATE `diapasong_db`.`products` SET `idCategory`='3' WHERE `id`='20';
+
 
 -- Dump completed on 2023-06-06  7:10:46

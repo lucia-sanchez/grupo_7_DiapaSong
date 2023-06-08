@@ -1,9 +1,11 @@
 var express = require('express');
-const {index, search, blog,saveBlog, faq, suscripcion} = require('../controllers/indexController');
+const {index, search, blog,saveBlog, faq, suscripcion, dashboard, removeProduct} = require('../controllers/indexController');
 var router = express.Router();
 const db = require('../database/models');
 const { productCart } = require('../controllers/cartController');
 const sequelize = db.sequelize;
+
+
 
 /* / */
 router
@@ -14,6 +16,8 @@ router
     .get('/blog', blog)
     .post('/blog', saveBlog)
 
+    .get("/dashboard",dashboard )
+    .delete('dashboard',removeProduct )
     .get('/faq', faq)
 
 
