@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('./partials/head') %>
+    <body>
+        <!-- HEADER -->
+        <%- include('./partials/header') %>
+            <!-- Main -->
+            <main id="space_complement">
+                <section class="" id="arriva">
+                                <h2 class="subtitulo_productos">Productos disponibles!</h2>
+                                <h3>total de productos:<h3 id="countProduct"></h3> </h3>
+                                <h3>total de Usuarios:<h3 id="countUsers"></h3> </h3>
+                                
+
+                                <div id="paginator" class="paginado">
+        
+                                  <%- include('./partials/paginateProducts') %>
+          
+                                </div>
+                
+                                       <!-- ACA SE PAGINAN LOS PRODUCTOS -->
+                                      <div class="product-list" id="container-products"> </div>                     
+                              
+                                   
+                        </div>
+                        <% if (locals.userLogin && locals.userLogin.rol=="1" ) { %>
+                          <div class="productos--crearProductos">
+                            <a href="/products/create"><button class="btn--crear-prod"> <i class="fa-solid fa-plus"></i> crear
+                                producto</button></a>
+          
+                            <% } %>
+             
+                          </div>
+                  </section>
+             
+                
+                   
+                    
+      
+
+
+
+
+            </main>
+            <!-- FOOTER -->
+            <%- include('./partials/footer') %>
+                <!-- SCRIPTS -->
+                <%- include('./partials/scripts') %>
+                    <script src="/javascript/paginateProductsDashboard.js"></script>
+               
+                
+             
+                    <script src="/javascript/dinamic.js"></script>
+               
+                   
+    </body>
+
+</html>

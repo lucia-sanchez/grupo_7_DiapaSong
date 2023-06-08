@@ -58,6 +58,7 @@ module.exports = {
         data: { count, products, page, totalPages },
 
         meta: {
+          count,
           page,
           status: 200,
           total: products.length,
