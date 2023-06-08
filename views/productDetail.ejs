@@ -63,7 +63,14 @@
               <a href="#">COMPRAR</a>
             </article>
             <article class="detalle-producto-agregar">
-              <a href="/productCart">Agregar al carrito</a>
+              <form action="/addToCart" method="post">
+                <input type="hidden" name="price" value="<%= price %>">
+                <input type="hidden" name="discount" value="<%= discount %>">
+                <input type="hidden" name="idProduct" value="<%= id %>">
+                <button type="submit">Agregar al carrito</button>
+                
+              </form>
+              
             </article>
             <article class="detalle-producto-medios">
               <h5>Medios de pago:</h5>

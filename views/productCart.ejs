@@ -1,56 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- HEAD -->
-<%- include('./partials/head') %> 
+<%- include('./partials/head') %>
 
-<body>
-    
-<!-- HEADER -->
-<%- include('./partials/header') %> 
-    <main class="main__carrito">
-        
-        <h2 class="carrito__main__title">tu carrito</h2>
-        <hr>
-        <div class="carrito__main__container">
-            <div class="carrito__main__img">
-                <img src="../img/ofertas/electric-guitar.png" alt="electric-guitar">
-            </div>
-            <div class="carrito__main__desc">
-                <p>guitarra electrica Les-Paul</p>
-            </div>
-            <div class="carrito__main__cant">
-                <button type="button" class="carrito__main__cant--resta">
-                    -
-                </button>
-                <button type="button" class="carrito__main__cant--num">
-                    1
-                </button>
-                <button type="button" class="carrito__main__cant--suma">
-                    +
-                </button>
-        
-            </div>
-            <div class="carrito__main__precio">
-                <p>$85.000</p>
-            </div>
-        </div>
-            <hr>
-            <div class="carrito__main__totalCompra">
-            <p>total</p>
-            <span class="carrito__main__precio">$85.000</span>    
-            </div>
-            <div class="carrito__main__btn">
-                <button type="button" class="carrito__main__btn--contCompra home__main__form--button">continuar comprando</button>
-                <button type="button" class="carrito__main__btn--pagar home__main__form--button">pagar</button>
-        
+    <body>
 
-        
+        <!-- HEADER -->
+        <%- include('./partials/header') %>
+            <main class="main__carrito">
+                <h2 class="carrito__main__title">tu carrito</h2>
+                <!-- aregar un if si carrito no tiene productos mandar msj de error -->
+                <section class="main__section__carrito--products-box">
+                    <% if (items.length==0) { %>
+                        <div class="cart--empty--text"><i class="fa-solid fa-cart-arrow-down fa-flip"></i>
+                            <p>
+                                No hay productos en tu carrito</p>
 
-    </main>   
+                        </div>
+                        <% } else { %>
+                            <!-- si hay productos mostrar los productos -->
+                            <table>
+                                <tr>
+                                    <th class="carrito__table-head--image">Imagen</th>
+                                    <th class="carrito__table-head--product">Producto</th>
+                                    <th class="carrito__table-head--units">Cantidad</th>
+                                    <th class="carrito__table-head--price">Precio unitario</th>
+                                    <th class="carrito__table-head--price">Precio total</th>
+                                </tr>
+                            </table>
+                            <% items.forEach((item,index)=> { %>
+                                <div class="main__section__div__carrito-product">
+                                    <div class="carrito__main__img">
+                                        <img src="/img/productos/<%= item.products.images[0].name %>"
+                                            alt="<%= item.products.title %>">
+                                    </div>
+                                    <div class="carrito__main__desc">
+                                        <p>
+                                            <%= item.products.title %>
+                                        </p>
+                                        <form action="/removeFromCart/<%= item.id %>?_method=DELETE" method="POST">
 
-<!-- FOOTER -->
-<%- include('./partials/footer') %> 
-    
-</body>
-<script src="../javascript/dinamic.js"></script>
+                                            <button type="submit">quitar del carrito</button>
+                                        </form>
+                                    </div>
+
+                                    <div class="carrito__main__cant">
+                                        <% if (item.units>1) { %>
+                                         <form action="/decrement/<%= item.id %>?_method=PATCH" method="POST"><button onClick="window.location.href=window.location.href" type="submit" class="carrito__main__cant--resta">
+                                            -
+                                        </button></form>
+                                        <% } %>
+                                        <input class="carrito__main__cant--num" type="number" value="<%= item.units %>" disabled>
+                                        <!-- <button type="button" class="carrito__main__cant--num">
+                                            <%= item.units %>
+                                        </button> -->
+                                        <form action="/increment/<%= item.id %>?_method=PATCH" method="post">
+                                        <button onClick="window.location.href=window.location.href" type="submit" class="carrito__main__cant--suma">
+                                            +
+                                        </button>
+                                    </form>
+
+                                    </div>
+
+                                    <div class="carrito__main__precio">
+                                        <% if (item.products.discount> 0) { %>
+                                            <p>$<%= toThousand(item.products.price-((item.products.price
+                                                    *item.products.discount)/100)) %>
+                                            </p>
+                                            <p class="tachado">$ <%= toThousand(item.products.price) %>
+                                            </p>
+                                            <% } else { %>
+                                                <p>$ <%= toThousand(item.products.price) %>
+                                                </p>
+                                                <% } %>
+
+                                    </div>
+
+                                    <div class="carrito__main__precio">
+                                        <p>completar con jsfront</p>
+                                    </div>
+                                </div>
+                                <% }) %>
+                </section>
+                <section class="main__section__carrito--buttons-box">
+                    <div class="main__section__div__carrito--button">
+
+                    </div>
+                </section>
+                <hr>
+                <div class="carrito__main__totalCompra">
+                    <p>total</p>
+                    <span class="carrito__main__precio">completar con jsfront</span>
+                </div>
+                <% } %>
+<div class="carrito__main__btn"></div>
+                    <% if (items.length>0) { %>
+                     <form action="/emptyCart/<%= items[0].saleId %>?_method=DELETE" method="POST">
+                        <button class="carrito__main__btn--vaciar home__main__form--button" type="submit">Vaciar carrito</button></form>
+                    <% } %>
+                        
+
+                        <a href="/products"><button type="button"
+                                class="carrito__main__btn--contCompra home__main__form--button"> continuar
+                                comprando</button></a>
+                                <% if (items.length>0) { %>
+                                 <button type="button" class="carrito__main__btn--pagar home__main__form--button">pagar</button>
+                                <% } %>
+                        
+
+
+
+
+            </main>
+
+            <!-- FOOTER -->
+            <%- include('./partials/footer') %>
+
+    </body>
+    <script src="../javascript/dinamic.js"></script>
+
 </html>
