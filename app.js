@@ -49,7 +49,7 @@ app
   req.session.message = null
   next()
 })
-.use(passport.initialize())
+/* .use(passport.initialize()) */
 
 //RUTAS
 app

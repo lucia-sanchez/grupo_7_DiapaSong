@@ -35,7 +35,7 @@ const paintProducts = (products) => {
                             .toString()
                             .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</h6>
                           <h6><a href="/products/detail/${id}">VER</a></h6>
-                          <a class="dashboard-button-delete" href="/products/edit/${id}"><i class="fa-solid fa-pen-to-square"></i></a>
+                          <a class="dashboard-button-edit" href="/products/edit/${id}"><i class="fa-solid fa-pen-to-square"></i></a>
                           <form id="form_delete_${id}" action="/products/remove/${id}?_method=DELETE" method="POST">
                             <button type="submit" class="dashboard-button-delete" onclick="confirmarBorrado(event, ${id})"><i class="fa-solid fa-trash"></i></button>
                           </form>
@@ -190,7 +190,7 @@ const paintUsers= (users) => {
                           <h6 class="dashboard-product-category">${ phone}</h6>
                           
                           <h6><a href="#">VER</a></h6>
-                          <a class="dashboard-button-delete" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                          <a class="dashboard-button-edit" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                           <form id="" action="" method="">
                             <button type="submit" class="dashboard-button-delete" onclick="confirmarBorrado(event, ${id})"><i class="fa-solid fa-trash"></i></button>
                           </form>
