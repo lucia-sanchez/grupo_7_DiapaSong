@@ -7,10 +7,13 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cors = require("cors");
+const passport = require("passport");
+const {loginGoogleInitialize} = require('./services/googleServices');
 
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const authRouter = require ('./routes/auth');
 const productsRouter = require('./routes/products');
 const ticketsRouter = require('./routes/tickets');
 const localsUserCheck = require('./middlewares/localsUserCheck');
@@ -22,7 +25,7 @@ const apiMainRouter = require('./routes/apis/mainApi');
 const apiCatogoryRouter = require('./routes/apis/categories');
 
 const app = express();
-
+loginGoogleInitialize()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -46,17 +49,21 @@ app
   req.session.message = null
   next()
 })
+.use(passport.initialize())
 
 //RUTAS
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/products', productsRouter);
-app.use('/tickets', ticketsRouter);
+app
+.use('/', indexRouter)
+.use('/users', usersRouter)
+.use('/products', productsRouter)
+.use('/tickets', ticketsRouter)
+.use('/auth', authRouter)
+
 
 //RUTAS APIs
 app.use("/api", apiMainRouter)
 app.use('/api/products', productsApiRouter);
-app.use('/api/users', apiUserRouter);
+app.use('/api/users', apiUserRouter); //http://:localhost:3000/auth
 app.use('/api/categories',apiCatogoryRouter)
 
 // catch 404 and forward to error handler

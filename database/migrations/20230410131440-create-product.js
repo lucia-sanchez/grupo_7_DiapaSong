@@ -35,6 +35,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      discount: {
+        type: Sequelize.INTEGER
+      },
       idProductType: {
         
         type: Sequelize.INTEGER,

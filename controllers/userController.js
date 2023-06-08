@@ -234,6 +234,7 @@ module.exports = {
     },
     logOut: (req, res) => {
         req.session.destroy();
+        res.cookie('userDiapasong', '')
         return res.redirect('/')
     },
     password: (req, res) => {
