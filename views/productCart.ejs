@@ -11,11 +11,24 @@
                 <h2 class="carrito__main__title">tu carrito</h2>
                 <!-- aregar un if si carrito no tiene productos mandar msj de error -->
                 <section class="main__section__carrito--products-box">
-                    <% if (items==null) { %>
-                        <p class="productos_search--error--text">No hay productos en tu carrito</p>
+                    <% if (items.length==0) { %>
+                        <div class="cart--empty--text"><i class="fa-solid fa-cart-arrow-down fa-flip"></i>
+                            <p>
+                                No hay productos en tu carrito</p>
+
+                        </div>
                         <% } else { %>
                             <!-- si hay productos mostrar los productos -->
-                            <% items.forEach(item=> { %>
+                            <table>
+                                <tr>
+                                    <th class="carrito__table-head--image">Imagen</th>
+                                    <th class="carrito__table-head--product">Producto</th>
+                                    <th class="carrito__table-head--units">Cantidad</th>
+                                    <th class="carrito__table-head--price">Precio unitario</th>
+                                    <th class="carrito__table-head--price">Precio total</th>
+                                </tr>
+                            </table>
+                            <% items.forEach((item,index)=> { %>
                                 <div class="main__section__div__carrito-product">
                                     <div class="carrito__main__img">
                                         <img src="/img/productos/<%= item.products.images[0].name %>"
@@ -25,24 +38,49 @@
                                         <p>
                                             <%= item.products.title %>
                                         </p>
+                                        <form action="/removeFromCart/<%= item.id %>?_method=DELETE" method="POST">
+
+                                            <button type="submit">quitar del carrito</button>
+                                        </form>
                                     </div>
+
                                     <div class="carrito__main__cant">
-                                        <button type="button" class="carrito__main__cant--resta">
+                                        <% if (item.units>1) { %>
+                                         <form action="/decrement/<%= item.id %>?_method=PATCH" method="POST"><button onClick="window.location.href=window.location.href" type="submit" class="carrito__main__cant--resta">
                                             -
-                                        </button>
-                                        <button type="button" class="carrito__main__cant--num">
+                                        </button></form>
+                                        <% } %>
+                                        <input class="carrito__main__cant--num" type="number" value="<%= item.units %>" disabled>
+                                        <!-- <button type="button" class="carrito__main__cant--num">
                                             <%= item.units %>
-                                        </button>
-                                        <button type="button" class="carrito__main__cant--suma">
+                                        </button> -->
+                                        <form action="/increment/<%= item.id %>?_method=PATCH" method="post">
+                                        <button onClick="window.location.href=window.location.href" type="submit" class="carrito__main__cant--suma">
                                             +
                                         </button>
-            
+                                    </form>
+
                                     </div>
+
                                     <div class="carrito__main__precio">
-                                        <p>$<%= toThousand(item.products.price)  %></p>
+                                        <% if (item.products.discount> 0) { %>
+                                            <p>$<%= toThousand(item.products.price-((item.products.price
+                                                    *item.products.discount)/100)) %>
+                                            </p>
+                                            <p class="tachado">$ <%= toThousand(item.products.price) %>
+                                            </p>
+                                            <% } else { %>
+                                                <p>$ <%= toThousand(item.products.price) %>
+                                                </p>
+                                                <% } %>
+
+                                    </div>
+
+                                    <div class="carrito__main__precio">
+                                        <p>completar con jsfront</p>
                                     </div>
                                 </div>
-                                    <% }) %>
+                                <% }) %>
                 </section>
                 <section class="main__section__carrito--buttons-box">
                     <div class="main__section__div__carrito--button">
@@ -50,16 +88,25 @@
                     </div>
                 </section>
                 <hr>
+                <div class="carrito__main__totalCompra">
+                    <p>total</p>
+                    <span class="carrito__main__precio">completar con jsfront</span>
+                </div>
                 <% } %>
+<div class="carrito__main__btn"></div>
+                    <% if (items.length>0) { %>
+                     <form action="/emptyCart/<%= items[0].saleId %>?_method=DELETE" method="POST">
+                        <button class="carrito__main__btn--vaciar home__main__form--button" type="submit">Vaciar carrito</button></form>
+                    <% } %>
+                        
 
-                    <div class="carrito__main__totalCompra">
-                        <p>total</p>
-                        <span class="carrito__main__precio">$85.000</span>
-                    </div>
-                    <div class="carrito__main__btn">
-                        <a href="/products"><button type="button" class="carrito__main__btn--contCompra home__main__form--button"> continuar
-                            comprando</button></a>
-                        <button type="button" class="carrito__main__btn--pagar home__main__form--button">pagar</button>
+                        <a href="/products"><button type="button"
+                                class="carrito__main__btn--contCompra home__main__form--button"> continuar
+                                comprando</button></a>
+                                <% if (items.length>0) { %>
+                                 <button type="button" class="carrito__main__btn--pagar home__main__form--button">pagar</button>
+                                <% } %>
+                        
 
 
 
