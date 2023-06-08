@@ -3,6 +3,7 @@ const createResponseError = require("../../helpers/createResponseErrors");
 const {
   getAllProducts,
   getOneProduct,
+  getCountProducts,
   createProduct,
 /*   createImageProduct, */
   updateProduct,
@@ -46,7 +47,7 @@ module.exports = {
           .json({ status: 400, message: "La página que buscas no existe" });
       }
 
-      const totalPages = Math.ceil(count / limit);
+      const totalPages = Math.ceil(count / limit) -1;
 
       return res.status(200).json({
         ok: true,
@@ -54,8 +55,8 @@ module.exports = {
         prevPageUrl,
         page,
         totalPages,
-
-        data: { count, products, page, totalPages },
+            
+        data: { count: count - 5, products, page, totalPages },
 
         meta: {
           count,

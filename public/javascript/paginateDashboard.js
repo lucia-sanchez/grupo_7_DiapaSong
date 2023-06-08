@@ -3,16 +3,15 @@ const btnPrev = $("#btn-prev");
 const btnNext = $("#btn-next");
 const containerItemsPages = $("#container-items-page");
 const containerProducts = $("#container-products");
+
 const countProduct = document.getElementById("countProduct");
-const countUsers = document.getElementById("countUsers");
+
 
 const apiGetProducts = "http://localhost:3000/api/products";
-const apiGetUsers = "http://localhost:3000/api/users";
 
 
-const getUsers = ({ page = 1 } = {}) => {
-  return fetch(`${apiGetUsers}?page=${page}`).then((res) => res.json());
-};
+
+
 
 let pageActive = 1;
 
@@ -25,13 +24,13 @@ const getProducts = ({ page = 1 } = {}) => {
 const paintProducts = (products) => {
   containerProducts.innerHTML = "";
 
-  products.forEach(({ id, images, category, price, title, subtitle }) => {
+  products.forEach(({ id, images, categories, price, title, subtitle }) => {
     const template = `<div>
                         <article class="dashboard-product">
                           <h6 class="dashboard-product-id">${id}</h6> 
                           <h6 class="dashboard-product-title">${title}</h6> 
                           <h6 class="dashboard-product-subtitle">${subtitle}</h6>
-                          <h6 class="dashboard-product-category">${category}</h6>
+                          <h6 class="dashboard-product-category">${categories.category}</h6>
                           <h6>$ ${price
                             .toString()
                             .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</h6>
@@ -134,24 +133,13 @@ window.addEventListener("load", async () => {
     paintProducts(products);
     paintItemPage({ numberPages: totalPages, itemActive: page });
     statusPrevAndNex({ page, totalPages });
-
+   
     countProduct.textContent = count.toString(); // Actualiza el valor del contador
   } catch (error) {
     console.log(error);
   }
 });
-window.addEventListener("load", async () => {
-  try {
-    const {
-      data: { count },
-    } = await getUsers();
 
-
-    countUsers.textContent = count.toString(); // Actualiza el valor del contador
-  } catch (error) {
-    console.log(error);
-  }
-});
 
 /* Funcionalidad al botón next */
 btnNext.addEventListener("click", async () => {
@@ -182,3 +170,59 @@ btnPrev.addEventListener("click", async () => {
     console.log(error);
   }
 });
+/* USERS */
+const containerUsers  = $("#container-users");
+const countUsers = document.getElementById("countUsers");
+const apiGetUsers = "http://localhost:3000/api/users";
+const getUsers = ({ page = 1 } = {}) => {
+  return fetch(`${apiGetUsers}?page=${page}`).then((res) => res.json());
+};
+
+const paintUsers= (users) => {
+  containerUsers.innerHTML = "";
+
+  users.forEach(({ id, name, email,  phone}) => {
+    const template = `<div>
+                        <article class="dashboard-product">
+                          <h6 class="dashboard-product-id">${id}</h6> 
+                          <h6 class="dashboard-product-title">${name}</h6> 
+                          <h6 class="dashboard-product-subtitle">${email}</h6>
+                          <h6 class="dashboard-product-category">${ phone}</h6>
+                          
+                          <h6><a href="#">VER</a></h6>
+                          <a class="dashboard-button-delete" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                          <form id="" action="" method="">
+                            <button type="submit" class="dashboard-button-delete" onclick="confirmarBorrado(event, ${id})"><i class="fa-solid fa-trash"></i></button>
+                          </form>
+                        </article>
+                      </div>`
+
+                      containerUsers.innerHTML += template;
+  });
+}; 
+
+window.addEventListener("load", async () => {
+  try {
+    const {
+      data: { users },
+    } = await getUsers();
+
+    paintUsers(users);
+  
+  
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+window.addEventListener("load", async () => {
+  try {
+    const {
+      data: { count },
+    } = await getUsers();
+    countUsers.textContent = count.toString(); // Actualiza el valor del contador
+  } catch (error) {
+    console.log(error);
+  }
+});
+
