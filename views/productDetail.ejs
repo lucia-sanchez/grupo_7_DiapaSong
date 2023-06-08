@@ -22,17 +22,18 @@
                   <%= subtitle %>
                 </h5>
                 <div class="images-Detail">
-                  <figure class="main__section__productos__producto--imagen-detail" id="product-image" >
-                    <img src="/img/productos/<%= images.find((image)=>image.main==1).name %>" alt="<%= title %>"
-                    height="auto" class=" rounded-start" id="imgMain" style="object-fit:cover;">
-               </figure>
-               <!-- imagen secundaria -->
-               <figure class="imagenes-secundarias" >
-                <% images.filter((image)=> image.main === 0).forEach((image) => { %>
-                  <img src="/img/productos/<%= image.name %>" class="img-fluid" alt="..." style="object-fit: cover;"
-                    onclick="document.getElementById('imgMain').setAttribute('src',this.src)">
-                  <% }); %>
-            </figure></div>
+                  <figure class="main__section__productos__producto--imagen-detail" id="product-image">
+                    <img src="/img/productos/<%= images.find((image) => image.main == 1).name %>" alt="<%= title %>"
+                      height="auto" class="rounded-start" id="imgMain" style="object-fit: cover;">
+                  </figure>
+                  <!-- Imágenes secundarias -->
+                  <figure class="imagenes-secundarias">
+                    <% images.filter((image) => image.main === 0).forEach((image) => { %>
+                    <img src="/img/productos/<%= image.name %>" class="img-fluid" alt="..." style="object-fit: cover;"
+                      onclick="changeMainImage(this)">
+                    <% }); %>
+                  </figure>
+                </div>
           </section>
 
           <section class="detalles_producto">
@@ -128,6 +129,14 @@
           <script src="/javascript/productDetail.js"></script>
           <script src="/javascript/alert_delete.js"></script>
           <script src="/javascript/dinamic.js"></script>
+          <script>
+            function changeMainImage(clickedImage) {
+              var mainImage = document.getElementById('imgMain');
+              var tempSrc = mainImage.src;
+              mainImage.src = clickedImage.src;
+              clickedImage.src = tempSrc;
+            }
+          </script>
 
 
 

@@ -79,11 +79,11 @@ font-size: 18px;
 
  .main_section_nav_categorias{
      display: flex;
- padding-left: 10px;
- background-color: rgb(147, 120, 172);
- height: 550px;
- text-decoration: none;
-
+     padding-left: 10px;
+     background-color: rgb(147, 120, 172);
+     /* height: 550px; */
+     text-decoration: none;
+     border-radius: 0px 5px 8px 10px;
 }
 .main__section__nav--categoria span{
   display: none;
