@@ -5,8 +5,42 @@ const { validationResult } = require("express-validator");
 //const product = require("../database/models/product");
 const Op = db.Sequelize.Op
 
-module.exports = {
 
+
+module.exports = {
+  spinner: (req,res)=>{
+    return res.render('spinnerCart',{
+      title: 'carrito'
+    })
+  },
+  addToCart: (req, res) => {
+    
+    const {/* units, */ /* totalPrice, */ idProduct } = req.body
+    db.Cart.findOrCreate({
+      where: { 
+        idProduct: idProduct,
+        saleId: req.cookies.idSale
+       },
+      defaults: { 
+        units: 1,
+        saleId: req.cookies.idSale
+       }
+    }).then(cart => {
+      //return res.send(cart)
+      if (!cart[1]) {
+        cart[0].units += 1;
+        cart[0].save();
+
+      }
+      //return res.render('spinnerCart',{
+        /* title: 'carrito'
+      }) */
+      return res.redirect('/spinner')
+      //return res.send(esto)
+    })
+.catch((error) => console.log(error));
+
+  },
   productCart: (req, res) => {
     db.Cart.findAll({
       include: [
@@ -23,7 +57,8 @@ module.exports = {
           },
 
         },
-      ]
+      ],
+      where: {saleId:req.cookies.idSale}
     })
       .then(items => {
         //return res.send(items)
@@ -35,18 +70,25 @@ module.exports = {
       }).catch((error) => console.log(error));
 
   },
-  addToCart: (req, res) => {
-    const {/* units, */ /* totalPrice, */ idProduct } = req.body
-
-    //return res.send(req.body)      
-    db.Cart.create({
-      units: 1,
-      totalPrice: null,
-      idProduct
-    }).then(() => {
-      return res.redirect('/productCart')
+  removeFromCart: (req,res)=>{
+    
+    db.Cart.destroy({
+      where: { 
+        id: req.params.id
+       },
+    }).then(
+    ()=>{
+      return res.redirect('/spinner')
     }).catch((error) => console.log(error));
+  },
+  moreUnits: (req,res)=>{
 
+  },
+  lessUnits: (req,res)=>{
+
+  },
+  emptyCart: (req,res)=>{
+    
   },
   products: (req, res) => {
     /* 
