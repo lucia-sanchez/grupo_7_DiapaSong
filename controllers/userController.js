@@ -266,15 +266,41 @@ module.exports = {
                 })
             })
             .catch(error => console.log(error))
-        /* const users = JSON.parse(fs.readFileSync("./data/users.json", "utf-8"))
-        const { email } = req.params;
-        const user = users.find(user => user.email === email);
-        return res.render('user', {
-            title: "Perfil de usuario",
-            name: req.session.userLogin.name,
-            ...user
+        
+    },
 
+    editarPerfil: (req,res)=>{
+        const errors = validationResult(req);
+        db.User.findByPk(req.session.userLogin.id, {
+            attributes: ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
+            include: [
+                {
+                    association: 'genres',
+                    attributes: ['genre']
+                },
+                {
+                    association: 'instruments',
+                    attributes: ['instrument']
+                }
+            ],
 
-        }) */
+        })
+        const {name, profileImage, email, passwor, identifyId, birthdate, phone, news, rolId}= req.body;
+        const id = +req.params.id;
+ return res.send (req.body)
+        if (errors.isEmpty()) {
+            const userUpdated = db.User.update(
+              {
+                name, profileImage, email, passwor, identifyId, birthdate, phone, news, rolId
+              },
+              {
+                where: {id},
+
+              }
+            )
+        }
+    },
+    removeUser: (req,res) =>{
+
     }
 }

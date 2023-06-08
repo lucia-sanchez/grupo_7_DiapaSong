@@ -105,7 +105,7 @@
             <% if (locals.userLogin && locals.userLogin.rol=="1" ) { %>
               <div class="product-buttons">
                 <div>
-                  <a href="/products/edit/<%=id%>"><button class="btn--edit-prod"><i class="fa-solid fa-pen-to-square"></i> editar producto</button></a>
+                  <a href="users/update/<%=id%>"><button class="btn--edit-prod"><i class="fa-solid fa-pen-to-square"></i> editar producto</button></a>
                 </div>
                 <div>
                   <form  id="form_delete" action="/products/remove/<%=id%>?_method=DELETE"
