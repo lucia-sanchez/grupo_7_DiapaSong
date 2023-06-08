@@ -195,7 +195,12 @@
   .create__main__section {
     width: 60%;
   }
-
+.created-form form label{
+  font-weight: 700;
+}
+.created-form form textarea{
+width: 40%;
+}
   .create__main__section__div--form-box {
   }
   .form__create--radio  {

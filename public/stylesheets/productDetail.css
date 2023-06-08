@@ -42,9 +42,12 @@
   padding: 10px;
   border-radius: 5px;
 }
-
+.detalle-producto-medios{
+  height: auto;
+}
 .detalle-producto-medios img {
   width: 50%;
+  height: auto;
   background: rgba(255, 252, 252, 0.5);
 }
 .detalle_producto-descripcion {
@@ -211,7 +214,9 @@
   .main__section__productos-detalles {
     width: 700px;
     height: auto;
+    align-items: flex-start;
     background-color: rgb(95, 58, 142);
+    border-radius: 10px;
   }
   .imageView img {
     position: relative;
@@ -282,5 +287,9 @@
     background-color: rgb(255, 255, 255);
     margin: 0 15px;
   }
-  
+  .productos_detalles-titulo{
+    border-radius: 10px;
+    background-color: rgb(95, 58, 142);
+
+  }
 }
