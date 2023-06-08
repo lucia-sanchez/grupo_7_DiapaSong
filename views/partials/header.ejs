@@ -14,7 +14,10 @@
         <% if (locals.userLogin) { %>
             <section class="header__section--user-navigation-logged">
             <div>
-            <a href="/users/profile">Hola <%= userLogin.name.split(" ")[0]  %><i class="fa-regular fa-user"></i></a>
+            <a href="/users/profile">Hola <%= userLogin.name.split(" ")[0]  %><% if (locals.userLogin && locals.userLogin.rol == 1) { %>
+                <i class="fa-solid fa-chart-column"></i> <a href="http://localhost:5173/"><i style="color: beige;font-weight: 900;text-shadow: 0px 0px 3px white;" class="fa-brands fa-react"></i></a><% } else { %>
+                 <i class="fa-regular fa-user"></i>
+            <% } %></a>
             <a href="/users/logOut">Salir<i class="fa-solid fa-xmark"></i></a>
             </div>
         <% }else{ %>
