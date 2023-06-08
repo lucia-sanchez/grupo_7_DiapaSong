@@ -234,6 +234,7 @@ module.exports = {
     },
     logOut: (req, res) => {
         req.session.destroy();
+        res.cookie('userDiapasong', '')
         return res.redirect('/')
     },
     password: (req, res) => {
@@ -247,12 +248,12 @@ module.exports = {
             attributes: ['id', 'name', 'profileImage', 'email', 'password', 'identifyId', 'birthdate', 'phone', 'news', 'rolId'],
             include: [
                 {
-                    association: 'genre',
-                    attributes: ['genreId']
+                    association: 'genres',
+                    attributes: ['genre']
                 },
                 {
-                    association: 'instrument',
-                    attributes: ['instrumentId']
+                    association: 'instruments',
+                    attributes: ['instrument']
                 }
             ],
 

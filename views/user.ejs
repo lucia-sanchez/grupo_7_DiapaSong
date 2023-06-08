@@ -17,7 +17,7 @@
           <div class="user_main_card-img">
             <form class="register__form user_registry-image" method="post" enctype="multipart/form-data">
               <div>
-                <img src="/img/users/<%= user.profileImage %>" alt="imagen-usuario" class="user-img">
+                <img src="<%= /http/.test(user.profileImage) ? user.profileImage: `/img/users/${user.profileImage}`||'user-default.png' %>" alt="imagen-usuario" class="user-img">
               </div>
             </form>
 

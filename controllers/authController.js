@@ -1,23 +1,40 @@
 const db = require("../database/models")
 
 module.exports = {
-    loginGoogle: (req,res)=>{
+    loginGoogle: async (req,res)=>{
         const { provider,
-            _json: {sub:id, given_name:name, family_name:surname, picture},
+            _json: {sub:googleId, name, picture},
         } = req.session.passport.user; 
         
-        
-        db.User.findOrCreate({
+        try{
+            const related = []
+        const [{id, rolId}] = await db.User.findOrCreate({
             where:{
-                socialId: id
+                socialId: googleId
             },
             defaults:{
                 name,
-                surname,
-                image: picture,
-                addressId: "",
+                profileImage: picture,
+                socialId: googleId,
+                socialProvider: provider,
+               related
+            },
+        });
 
-            }
-        })
-    }
-}
+        req.session.userLogin = {
+            id,
+            name,
+            rol: rolId,
+            socialId: googleId,
+            related
+            
+            
+        };
+        res.cookie('userDiapasong', req.session.userLogin, { maxAge: 10000 * 60 })
+
+        res.redirect('/')
+    }catch(error){
+        console.log(error)
+    } 
+},
+};

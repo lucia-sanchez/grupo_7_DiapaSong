@@ -18,7 +18,7 @@ module.exports = {
       socialProvider : {
         type: Sequelize.STRING
       },
-      providerId : {
+      socialId : {
         type: Sequelize.STRING
       },
       email: {

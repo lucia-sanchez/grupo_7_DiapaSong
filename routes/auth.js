@@ -4,7 +4,7 @@ const { loginGoogle } = require('../controllers/authController')
 const router = require('express').Router()
 
 passport.serializeUser((user, done)=> done(null,user))
-
+passport.deserializeUser((user, done)=> done(null,user))
 
 /* /login/google  */
 
