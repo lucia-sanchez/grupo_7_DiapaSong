@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
+  <body>
+
+    <!-- HEADER -->
+    <%- include('./partials/header') %>
+      <!-- Main -->
+      <main>
+    
+        <div class="user_main_container">
+          <h2>Bienvenid@ <%= user.name %>
+          </h2>
+          <div class="user_main_card-img">
+            <form class="register__form user_registry-image" method="post" enctype="multipart/form-data">
+              <div>
+                <img src="<%= /http/.test(user.profileImage) ? user.profileImage: `/img/users/${user.profileImage}`||'user-default.png' %>" alt="imagen-usuario" class="user-img">
+              </div>
+            </form>
+
+            
+
+          </div>
+          <div class="user_main data">
+
+            <h4>Datos Personales</h4>
+            <hr class="hr-user">
+
+            <div>
+              <ul>
+                <li> <strong>Nombre y Apellido: </strong> <%= user.name %></li>
+                <li> <strong>Email: </strong> <%= user.email %></li>
+                <li> <strong>Fecha de nacimiento: </strong> <%= user.birthdate %></li>
+                <li> <strong>DNI: </strong> <%= user.identifyId  %></li>
+                <li> <strong>Telefono: </strong> <%= user.phone  %></li>
+                
+                <a href="/user/edit/<%=user.id%>"><button class="btn--edit-prod"><i class="fa-solid fa-pen-to-square"></i> editar </button></a>
+              </ul>
+              
+
+            </div>
+
+          </div>
+
+      </main>
+
+      <!-- FOOTER -->
+      <%- include('./partials/footer') %>
+
+        <div class="eliminar_carrousel">
+
+
+        </div>
+  </body>
+
+</html>
