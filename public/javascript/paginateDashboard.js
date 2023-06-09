@@ -192,7 +192,7 @@ const paintUsers= (users) => {
                           <h6><a href="#">VER</a></h6>
                           <a class="dashboard-button-edit" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                           <form id="" action="" method="">
-                            <button type="submit" class="dashboard-button-delete" onclick="confirmarBorrado(event, ${id})"><i class="fa-solid fa-trash"></i></button>
+                            <button type="" class="dashboard-button-delete"><i class="fa-solid fa-trash"></i></button>
                           </form>
                         </article>
                       </div>`

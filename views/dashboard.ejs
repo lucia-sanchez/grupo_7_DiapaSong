@@ -8,67 +8,66 @@
     <!-- HEADER -->
     <%- include('./partials/header') %>
       <!-- Main -->
-      <main id="space_complement">
+      <main id="space_complement" >
         <section class="dashboard" id="arriva">
-          <h2 class="subtitulo_productos">DASHBOARD</h2>
+  
           <div class="metric">
-            <h3 class="metricProd">Total de productos:<p id="countProduct"></p>
+            <div>
+              <h2 class="titulo-dashboard">DASHBOARD</h2>
+            </div>
+
+            <div class="metric-metrics"> 
+            <h3 class="metricProd">Productos<p id="countProduct"></p>
             </h3>
-            <h3 class="metricUs">Total de Usuarios:<p id="countUsers"></p>
+            <h3 class="metricUs">Usuarios<p id="countUsers"></p>
+            </h3>
+            </h3>
+            <h3 class="metricSale">Ventas<p id="countSales"> 5</p>
             </h3>
           </div>
-
+        
+          </div>
           <div>
 
 
+            <div class="dashboard-table-user">
+              <div class="cabacera-products">
+                <h2>Productos</h2>  <a href="/products/create"><button class="icono-agregar"> <i class="fa-solid fa-plus"></i></button></a>
+                    <div id="paginator" class="paginado dashboard-paginate">
+                      <%- include('./partials/paginateProducts') %>
+                    </div>
+              </div>
 
-<!-- productos -->
-
-          <!-- PAGINADOR -->   
-         
-          <div id="paginator" class="paginado dashboard-paginate" > 
-            <%- include('./partials/paginateProducts') %>
-          </div>
-       <h2>Productos</h2>
-          <div class="dashboard-table-user">
-            <div>
-              <article class="dashboard-product cabeceraa">
-                <h6 class="dashboard-title">ID</h6> 
-                <h6 class="dashboard-title">TITULO</h6> 
+              <article class="dashboard-product cabecera">
+                <h6 class="dashboard-title">ID</h6>
+                <h6 class="dashboard-title">TITULO</h6>
                 <h6 class="dashboard-title">MARCA</h6>
                 <h6 class="dashboard-title">CATEGORIA</h6>
                 <h6 class="dashboard-title">PRECIO</h6>
                 <h6 class="dashboard-title">DETALLE</h6>
-                <h6 class="dashboard-title">EDITAR/BORRAR</h6>
-
-
-        
+                <h6 class="dashboard-title">EDITAR  /  BORRAR</h6>
               </article>
+              <!-- ACA SE PAGINAN LOS PRODUCTOS -->
+              <div class="product-list" id="container-products"> </div>
             </div>
-         
-
-
-          <!-- ACA SE PAGINAN LOS PRODUCTOS -->
-          <div class="product-list" id="container-products"> </div>
- </div>
-<!-- USUARIOS -->
-
-<div class="dashboard-table-user">
-  <div><h2>Usuarios</h2>
-    <article class="dashboard-product cabecera">
-      <h6 class="dashboard-title">ID</h6>
-      <h6 class="dashboard-title">NOMBRE</h6>
-      <h6 class="dashboard-title">CORREO</h6>
-      <h6 class="dashboard-title">TELEFONO</h6>
-      <h6 class="dashboard-title">DETALLE</h6>
-                <h6 class="dashboard-title">EDITAR/BORRAR</h6>
-    </article>
-  </div>
-
-
-<div class="users-list" id="container-users"> </div>
+            <!-- USUARIOS -->
+            <div class="dashboard-table-user">
+<div class="cabacera-products">
+          <h2 >Usuarios</h2>  
 </div>
-      </div>  </section>
+    
+              <article class="dashboard-product cabecera">
+                <h6 class="dashboard-title">ID</h6>
+                <h6 class="dashboard-title">NOMBRE</h6>
+                <h6 class="dashboard-title">CORREO</h6>
+                <h6 class="dashboard-title">TELEFONO</h6>
+                <h6 class="dashboard-title">DETALLE</h6>
+                <h6 class="dashboard-title dashboard-title-delete">EDITAR  /  BORRAR</h6>
+              </article>
+              <div class="users-list" id="container-users"> </div>
+            </div>
+          </div>
+        </section>
 
 
 

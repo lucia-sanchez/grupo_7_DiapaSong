@@ -1,3 +1,11 @@
+.dashboard{
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+    margin-top: -10px;
+    padding: 0 30px;
+   background-color: rgb(0, 0, 0,0.8);
+}
 .user-list{
     display: flex;
     flex-direction: column;
@@ -5,12 +13,13 @@
 .dashboard-product{
     display: flex;
     flex-direction: row;
-
+    justify-content:space-between;
+text-align: center;
     border-bottom: 1px black solid;
 }
 .dashboard-product h6{
     margin-top: 10px;
-width: 200px;
+width: 130px;
 text-align: center;
 }
 .dashboard-button-delete{
@@ -36,15 +45,19 @@ text-align: center;
     align-self: center;
 }    
 .dashboard-button-edit i{
+    margin-top: 10px;
  
 }   
+.dashboard-title-delete{
+padding-left: -30px;
+}
 .dashboard-button-edit:hover{
   
-    color: rgb(178, 207, 47);
+    color: rgb(101, 45, 165);
 }    
 .dashboard-button-delete:hover{
   
-    color: rgb(155, 31, 31);
+    color: rgb(191, 25, 25);
 }   
 
 .dashboard-title{
@@ -52,33 +65,50 @@ font-weight: 600;
 
 }
 .dashboard-table-user{
-    padding: 10px 50px;
+ margin-bottom: 30px;
 }
 .dashboard-table-product{
-    padding: 10px 50px;
+  /*   padding: 10px 50px; */
 }
 .dashboard h2{
     padding: 0 50px;
 }
+.titulo-dashboard{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: -30px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
 .metric{
-  padding: 10px;
+  padding: 50px;
+    display: flex;
+   justify-content: center;
+    flex-direction: column;
+
+}
+.metric-metrics{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-   
+    justify-content: space-between;
 }
 .metricProd{
     text-transform: uppercase;
  padding-top: 20px;
     display: flex;
-  
+    font-size: 20px;
+    letter-spacing: 2px;
     flex-direction: column;
     text-align: center;
     height: 150px;
+    color: white;
     width: 30%;
-background-color: rgb(247, 142, 142);
+    background-color: rgb(52, 16, 95);
+    border-radius: 15px;
 }
 .metricUs{
+    font-size: 20px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     padding-top: 20px;
     display: flex;
@@ -86,36 +116,110 @@ background-color: rgb(247, 142, 142);
     height: 150px;
     text-align: center;
     width: 30%;
-    background-color: rgb(120, 207, 142);
+    color: white;
+    background-color: rgb(52, 16, 95);
+    border-radius: 15px;
+}
+.metricSale{
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    text-align: center;
+    width: 30%;
+    color: white;
+    background-color: rgb(52, 16, 95);
+    border-radius: 15px;
 }
 #countProduct{
-    margin: 0 auto;
+    margin: 10px auto;
     width: 60px;
     height: 60px;
-    font-size: 50px;
-background-color: bisque;
+    font-size: 25px;
+    background-color: rgb(25, 10, 39, 0.8);
  border-radius: 50%;
+
 
 
 
 }
 #countUsers{
-    margin: 0 auto;
+    margin: 10px auto;
     width: 60px;
     height: 60px;
-    font-size: 50px;
-background-color: bisque;
+    font-size: 25px;
+    background-color: rgb(25, 10, 39, 0.8);
  border-radius: 50%;
- 
+
+
+}
+#countSales{
+    margin: 10px auto;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    background-color: rgb(25, 10, 39, 0.8);
+ border-radius: 50%;
+
+
+}
+.metricProd:hover #countProduct, .metricUs:hover #countUsers, .metricSale:hover #countSales{
+    border: 1px white solid;
+}
+.metric h3 p{
+    padding-top: 12px;
+    text-align: center;
 }
 .cabecera{
-    background-color: rgb(230, 141, 252);
+    background-color: rgb(160, 115, 255);
 }
 .cabeceraa{
 background-color: rgb(230, 141, 252);
 
 }
-.dashboard-paginate-list{
+.dashboard-paginate{
+    color: black;
 position: relative;
-top: 20px;
+width: 400px;
+top: 5px;
+left:300px;
 }
+.cabacera-products{
+    display: flex;
+   height: 50px;
+   color: white;
+   background-color: rgb(52, 16, 95);
+}
+
+.icono-agregar{
+    color: white;
+    border: 2px rgb(80, 219, 80) solid;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(80, 219, 80) ;
+cursor: pointer;
+margin-top:8px;
+margin-left: -40px;
+}
+.icono-agregar:hover{
+    color: white;
+    border: 2px rgb(255, 255, 255) solid;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(80, 219, 80) ;
+margin-top:8px;
+margin-left: -40px;
+}
+.product-list, .users-list{
+  background-color: rgb(255, 255, 255);
+
+}
+.product-list h6, .users-list h6{
+    font-weight:800 ;
+  
+  }
