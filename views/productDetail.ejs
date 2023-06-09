@@ -64,7 +64,12 @@
             </article>
             <article class="detalle-producto-agregar">
               <form action="/addToCart" method="post">
-                <input type="hidden" name="price" value="<%= price %>">
+                <% if (discount > 0) { %>
+                  <input type="hidden" name="price" value="<%= price-((price *discount)/100) %>">
+                  <% } else { %>
+                   <input type="hidden" name="price" value="<%= price %>">
+                <% } %>
+                
                 <input type="hidden" name="discount" value="<%= discount %>">
                 <input type="hidden" name="idProduct" value="<%= id %>">
                 <button type="submit">Agregar al carrito</button>

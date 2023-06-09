@@ -2,7 +2,7 @@ var express = require('express');
 //const {index, search, blog,saveBlog, faq, suscripcion} = require('../controllers/indexController');
 var router = express.Router();
 const db = require('../database/models');
-const { productCart, addToCart, spinner, removeFromCart, moreUnits, lessUnits, spinner2, emptyCart } = require('../controllers/cartController');
+const { productCart, addToCart, spinner, removeFromCart, moreUnits, lessUnits, spinner2, emptyCart, buyCart } = require('../controllers/cartController');
 const sequelize = db.sequelize;
 
 /* / */
@@ -18,6 +18,7 @@ router
     .patch('/increment/:id',moreUnits)
     .patch('/decrement/:id',lessUnits)
     .delete('/emptyCart/:id',emptyCart)
+    .patch('/buyCart', buyCart)
     //.get('/blog', blog)
     //.post('/blog', saveBlog)
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
+    <body>
+
+        <!-- HEADER -->
+        <%- include('./partials/header') %>
+            <main class="main__spinner">
+                <h2 class="spinner__main__title">Productos</h2>
+                <!-- aregar un if si spinner no tiene productos mandar msj de error -->
+                <section class="main__section__spinner--products-box">
+                    
+                            <!-- si hay productos mostrar los productos -->
+                            
+
+                                <div class="lds-facebook"><div></div><div></div></div>
+                                    
+                            
+                </section>
+                
+                <hr>       
+
+
+
+            </main>
+
+            <!-- FOOTER -->
+            <%- include('./partials/footer') %>
+
+    </body>
+    <script>
+        // Redirige a la vista productCart después de un tiempo determinado
+        setTimeout(function() {
+          window.location.href = '/products/novedades';
+        }, 1); 
+      </script>
+    <script src="../javascript/dinamic.js"></script>
+
+</html>

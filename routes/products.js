@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-const{detail,products,create,saveCreate,edit,update,remove} = require('../controllers/productController');
+const{detail,products,create,saveCreate,edit,update,remove, spinnerProduct} = require('../controllers/productController');
 const checkUserAdmin = require('../middlewares/checkUserAdmin');
 
 const { uploadProductsImage } = require('../middlewares/upload');
@@ -10,6 +10,7 @@ const productValidator = require('../validations/productValidator');
 
 /* /products */
 router.get('/', products)
+      .get('/spinner', spinnerProduct)
       .get('/detail/:id?', detail)
       .get('/create',  create)
       //checkUserAdmin,

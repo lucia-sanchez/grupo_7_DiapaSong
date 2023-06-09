@@ -46,28 +46,45 @@
 
                                     <div class="carrito__main__cant">
                                         <% if (item.units>1) { %>
-                                         <form action="/decrement/<%= item.id %>?_method=PATCH" method="POST"><button onClick="window.location.href=window.location.href" type="submit" class="carrito__main__cant--resta">
-                                            -
-                                        </button></form>
-                                        <% } %>
-                                        <input class="carrito__main__cant--num" type="number" value="<%= item.units %>" disabled>
-                                        <!-- <button type="button" class="carrito__main__cant--num">
+                                            <form action="/decrement/<%= item.id %>?_method=PATCH" method="POST">
+                                                <input type="hidden" name="units" value="<%= item.units %>">
+                                                    <% if (item.products.discount> 0) { %>
+                                                     <input type="hidden" name="price" value="<%= item.products.price-((item.products.price
+                                                     *item.products.discount)/100) %>">
+                                                    <% } else { %>
+                                                        <input type="hidden" name="price" value="<%= item.products.price %>">
+                                                     <% } %>
+                                                <button type="submit" class="carrito__main__cant--resta">
+                                                    -
+                                                </button>
+                                            </form>
+                                            <% } %>
+                                                <input class="carrito__main__cant--num" type="number"
+                                                    value="<%= item.units %>" disabled>
+                                                <!-- <button type="button" class="carrito__main__cant--num">
                                             <%= item.units %>
                                         </button> -->
-                                        <form action="/increment/<%= item.id %>?_method=PATCH" method="post">
-                                        <button onClick="window.location.href=window.location.href" type="submit" class="carrito__main__cant--suma">
-                                            +
-                                        </button>
-                                    </form>
+                                                <form action="/increment/<%= item.id %>?_method=PATCH" method="post">
+                                                    <input type="hidden" name="units" value="<%= item.units %>">
+                                                    <% if (item.products.discount> 0) { %>
+                                                     <input type="hidden" name="price" value="<%= item.products.price-((item.products.price
+                                                     *item.products.discount)/100) %>">
+                                                    <% } else { %>
+                                                        <input type="hidden" name="price" value="<%= item.products.price %>">
+                                                     <% } %>
+                                                    <button type="submit" class="carrito__main__cant--suma">
+                                                        +
+                                                    </button>
+                                                </form>
 
                                     </div>
 
                                     <div class="carrito__main__precio">
                                         <% if (item.products.discount> 0) { %>
+                                            <p class="tachado">$ <%= toThousand(item.products.price) %>
+                                            </p>
                                             <p>$<%= toThousand(item.products.price-((item.products.price
                                                     *item.products.discount)/100)) %>
-                                            </p>
-                                            <p class="tachado">$ <%= toThousand(item.products.price) %>
                                             </p>
                                             <% } else { %>
                                                 <p>$ <%= toThousand(item.products.price) %>
@@ -77,7 +94,9 @@
                                     </div>
 
                                     <div class="carrito__main__precio">
-                                        <p>completar con jsfront</p>
+                                        <p>
+                                           $ <%= toThousand(item.totalPrice) %>
+                                        </p>
                                     </div>
                                 </div>
                                 <% }) %>
@@ -90,23 +109,38 @@
                 <hr>
                 <div class="carrito__main__totalCompra">
                     <p>total</p>
-                    <span class="carrito__main__precio">completar con jsfront</span>
+                    <span class="carrito__main__precio--total-sale">$ <%= toThousand(totalSale)  %></span>
                 </div>
                 <% } %>
-<div class="carrito__main__btn"></div>
+                    <div class="carrito__main__btn"></div>
                     <% if (items.length>0) { %>
-                     <form action="/emptyCart/<%= items[0].saleId %>?_method=DELETE" method="POST">
-                        <button class="carrito__main__btn--vaciar home__main__form--button" type="submit">Vaciar carrito</button></form>
-                    <% } %>
-                        
+                        <form id="emptyCart" action="/emptyCart/<%= items[0].saleId %>?_method=DELETE" method="POST">
+                            <button class="carrito__main__btn--vaciar home__main__form--button" type="submit" >Vaciar
+                                carrito</button>
+                        </form>
+                        <% } %>
 
-                        <a href="/products"><button type="button"
-                                class="carrito__main__btn--contCompra home__main__form--button"> continuar
-                                comprando</button></a>
-                                <% if (items.length>0) { %>
-                                 <button type="button" class="carrito__main__btn--pagar home__main__form--button">pagar</button>
+
+                            <a href="/products"><button type="button"
+                                    class="carrito__main__btn--contCompra home__main__form--button"> agregar productos</button></a>
+                            <% if (items.length>0) { %>
+                                <% if (!locals.userLogin) { %>
+                                    
+                                        <a id="noLogged"href="/users/login">
+                                        <button  type="submit"
+                                        class="carrito__main__btn--pagar home__main__form--button" >comprar</button></a>
+                                    
+                                    <% } else { %>
+                                     <form id="buyCart" action="/buyCart?_method=PATCH" method="post">
+                                        <input type="hidden" name="totalPrice" value="<%= totalSale%>">
+                                    <button  type="submit"
+                                    class="carrito__main__btn--pagar home__main__form--button" >comprar</button>
+                                </form>
                                 <% } %>
-                        
+                                
+                                
+                                <% } %>
+
 
 
 
@@ -117,6 +151,14 @@
             <%- include('./partials/footer') %>
 
     </body>
-    <script src="../javascript/dinamic.js"></script>
+    <!-- <script src="../javascript/dinamic.js"></script> -->
+    <%- include('./partials/scripts') %>
+    <% if (!locals.userLogin) { %>
+     <script src="/javascript/cartNoLogged.js"></script>
+        <% } else { %>
+      <script src="/javascript/cart.js"></script>
+    
+    <% } %>
+    
 
 </html>
