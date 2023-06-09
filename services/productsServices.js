@@ -111,6 +111,70 @@ module.exports = {
       };
     }
   },
+  getLastProducts: async (/**/ req, limit, offset, page, totalPages) => {
+    try {
+      const { count, rows: products } = await db.Product.findAndCountAll({
+        include: [
+          {
+            association: "colors",
+            attributes: {
+              exclude: ["id", "createdAt", "updatedAt", "color"],
+            },
+          },
+          {
+            association: "categories",
+            attributes: {
+              exclude: ["id", "createdAt", "updatedAt"],
+            },
+          },
+          {
+            association: "images",
+            attributes: {
+              exclude: [
+                "main",
+                "id",
+                "createdAt",
+                "updatedAt",
+                "idProduct",
+                "name",
+              ],
+              include: [
+                literalQueryUrlImage(
+                  req,
+                  "productos",
+                  "images.name",
+                  "urlImage"
+                ),
+              ],
+            },
+            where:{
+              main:1
+            }
+          },
+        ],
+        attributes: [
+          "id",
+          "title",
+          "subtitle",
+          "description",
+          "price",
+          "stock",
+          'createdAt'
+        ],
+        order:[['createdAt','DESC']],
+        limit:1,
+      });
+      return {
+        count,
+        products,
+      };
+    } catch (error) {
+      throw {
+        status: 500,
+        message: error.message,
+      };
+    }
+  },
   getCountProducts: async () => {
     try {
       const totalProducts = await db.Product.count();

@@ -1,4 +1,5 @@
 import React from 'react'
+import admin from '/user-default.png'
 
 export const TopBar = () => {
   return (
@@ -10,26 +11,26 @@ export const TopBar = () => {
 
     <ul className="header__section--user-navigation-logged">
   
-      <li className="nav-item dropdown no-arrow mx-1">
-        <a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
+      <li className="alert">
+        <a className="nav-link dropdown-toggle alert" href="/" id="alertsDropdown">
           <i className="fas fa-bell fa-fw"></i>
-          <span className="badge badge-danger badge-counter">3+</span>
+          <span className="badge badge-danger badge-counter"></span>
         </a>
       </li>
   
-      <li className="nav-item dropdown no-arrow mx-1">
-        <a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
+      <li className="message">
+        <a className="nav-link dropdown-toggle message" href="/" id="messagesDropdown">
           <i className="fas fa-envelope fa-fw"></i>
-          <span className="badge badge-danger badge-counter">7</span>
+          <span className="badge badge-danger badge-counter"></span>
         </a>
       </li>
 
-      <div className="topbar-divider d-none d-sm-block"></div>
+      
 
-      <li className="nav-item dropdown no-arrow">
+      <li className="nav-item dropdown no-arrow admin">
         <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-          <span className="mr-2 d-none d-lg-inline text-gray-600 small">Jordan Walke</span>
-          <img className="img-profile rounded-circle" src="/jordan-walke.png" alt="" width="60"/>
+          <span className="mr-2 d-none d-lg-inline text-gray-600 small">Hola, Admin</span>
+          <img className="img-profile rounded-circle" src={admin} alt="" width="60"/>
         </a>
       </li>
     </ul>
