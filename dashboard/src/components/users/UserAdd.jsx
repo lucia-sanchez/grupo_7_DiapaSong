@@ -16,7 +16,7 @@ export const UserAdd = () => {
       <form className="row">
         <div className="col-12 mb-3">
           <label htmlFor="name" className="form-label">
-            Titulo *
+            Nombre *
           </label>
           <input
             type="text"
@@ -24,64 +24,13 @@ export const UserAdd = () => {
             name="name"
           />
         </div>
-        <div className="col-12 col-md-6 mb-3">
-          <label htmlFor="chef" className="form-label">
-            Chef *
-          </label>
-          <select
-            className="form-control"
-            name="chef"
-
-          >
-            <option hidden defaultValue value="">Seleccione...</option>
-            {
-              chefs.map((chef, index) => (
-                <option value={chef} key={index}>{chef}</option>
-              ))
-            }
-          </select>
-        </div>
-        <div className="col-12 col-md-6 mb-3">
-          <label htmlFor="category" className="form-label">
-            Categoría *
-          </label>
-          <select
-            className="form-control"
-            name="category"
-
-          >
-            <option hidden defaultValue value="">Seleccione...</option>
-            {
-              categories.map((category, index) => (
-                <option value={category} key={index}>{category}</option>
-              ))
-            }
-          </select>
-        </div>
-        <div className="col-12 col-md-6 mb-3">
-          <label htmlFor="price" className="form-label">
-            Precio *
-          </label>
-          <input
-            type="number"
-            className="form-control"
-            name="price"
-          />
-        </div>
-        <div className="col-12 col-md-6 mb-3">
-          <label htmlFor="discount" className="form-label">
-            Descuento
-          </label>
-          <input
-            type="number"
-            className="form-control"
-            name="discount"
-            defaultValue={0}
-          />
-        </div>
+        
+        
+        
+        
         <div className="col-12 mb-3">
           <label htmlFor="description" className="form-label">
-            Descripción *
+            Domicilio *
           </label>
           <textarea
             className="form-control"
@@ -94,12 +43,12 @@ export const UserAdd = () => {
             <div className="form-check form-switch">
               <input className="form-check-input" name="free" type="checkbox" role="switch"
                 id="flexSwitchCheckDefault" />
-              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Gratuito</label>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">intereses</label>
             </div>
             <div className="form-check form-switch">
               <input className="form-check-input" name="visible" type="checkbox" role="switch"
                 id="flexSwitchCheckChecked" checked />
-              <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Visible</label>
+              <label className="form-check-label" htmlFor="flexSwitchCheckChecked"></label>
             </div>
           </div>
 
