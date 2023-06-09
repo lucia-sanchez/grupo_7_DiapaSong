@@ -61,7 +61,7 @@ font-size: 18px;
       display: flex;
       flex-direction: column;
       justify-content: left;
-      text-align: left;
+      text-align: center;
     
     }
     .menuCatMobile{
@@ -80,9 +80,10 @@ font-size: 18px;
  .main_section_nav_categorias{
      display: flex;
      padding-left: 10px;
-     background-color: rgb(147, 120, 172);
+     background-color: rgb(17, 17, 17,0.8);
      /* height: 550px; */
      text-decoration: none;
+     text-align: center;
      border-radius: 0px 5px 8px 10px;
 }
 .main__section__nav--categoria span{
@@ -117,12 +118,30 @@ display: flex;
  letter-spacing:3px;
  margin-left: 0;
  text-shadow: 1px 1px 2px black;
+
  }
+ a.main__section__nav--categoria-titulo{
+transition: all 0.5s;
+   }
+ a.main__section__nav--categoria-titulo:hover{
+letter-spacing: 4px;
+ }
+ a.main__section__nav--categoria-titulo:hover i{
+  transition: all 0.5s;
+  color: rgb(58, 12, 88);
+}
+ li.main__section__nav--categoria{
+ padding-bottom: 10px;
+
  
+  }
+  
  .main__section__nav--categoria ul li{
  margin-left: 25px;
+
+
  }
- 
+
  .main__section__nav--categoria ul{
     border-left: 2px white solid;
     margin-bottom:10px ;
@@ -135,6 +154,7 @@ display: flex;
  }
  .main__section__nav--categoria ul a{
  text-decoration: none; 
+
   }
   .btn--crear-prod{
 position: fixed;
@@ -160,24 +180,22 @@ position: fixed;
     }
     
    
-      .fixed{
-       position: relative;
-      width: 155px;
     
-      }
-      .fixed .divFix{
-        position: fixed;
-        top:88px;
-        bottom: 0;
-        z-index:1;
-        
-        
-        
-      }
+    
+      
+  
 .spaceComplementFixed{
   background-color: red;
   
         height: 800px;
       }
+      .main__section__nav--categoria i{
+        font-size: 30px;
+        width: 180px;
+        margin-top: 2px;
+        color: rgb(156, 120, 180);
+        
+      }
+      
       
 }
