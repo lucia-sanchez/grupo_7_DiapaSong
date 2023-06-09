@@ -41,7 +41,7 @@ export const ProductAdd = () => {
         </div>
         <div className="col-12 col-md-6 mb-3">
           <label htmlFor="chef" className="form-label">
-            Chef *
+           colores *
           </label>
           <select
             className="form-control"
