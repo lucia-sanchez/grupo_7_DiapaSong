@@ -10,7 +10,10 @@ const Op = db.Sequelize.Op
 
 module.exports ={
    index: (req,res) =>{
-        const sale= db.Sale.findAll()
+        const sale= db.Sale.findAll({
+          order:[['id','DESC']],
+          limit:1
+        })
         
         const saleProducts = db.Product.findAll({
             where: {
@@ -40,7 +43,9 @@ module.exports ={
       })
       Promise.all([saleProducts, featured, sale])
         .then(([saleProducts,featured, sale])=>{
-            const idSale=sale.length
+          //  return res.send(sale)
+          const id = sale[0].id;
+          const idSale=id
             res.cookie('idSale',idSale,{
               maxAge: 24 * 60 * 60 * 1000,
               httpOnly: true

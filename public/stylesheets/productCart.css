@@ -132,6 +132,7 @@ font-size: 100px;
     text-transform: uppercase;
     position: relative;
     right: 60px;
+    align-items: center;
 }
 
 /*Media Query*/
@@ -176,6 +177,7 @@ font-size: 100px;
         width: 400px;
         flex-wrap: wrap;
         font-weight: 600;
+        justify-content: space-between;
     }
 
     .carrito__main__desc p {
@@ -208,8 +210,20 @@ text-align: center;
 
     .carrito__main__precio {
         width: 10%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
     }
+    .carrito__main__precio p{
 
+margin: 0;
+
+font-size: 18px;
+
+}
+    .carrito__main__precio .tachado{
+    font-size: 14px;
+    }
     .carrito__main__cant-precio {
 
         display: flex;
@@ -218,7 +232,13 @@ text-align: center;
 
         justify-content: space-between;
     }
-
+    .carrito__main__totalCompra p{
+margin: 0;
+}
+    .carrito__main__precio--total-sale{
+font-weight: 900;
+font-size: 34px;
+}
     .carrito__table-head--image {
         width: 17%;
     }
