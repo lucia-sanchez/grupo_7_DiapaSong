@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const{list,detail,store,update,destroy} = require('../../controllers/apis/productControllerApi');
+const{list,detail,store,update,destroy, lastProduct} = require('../../controllers/apis/productControllerApi');
 
 
 
@@ -12,6 +12,7 @@ const productValidator = require('../../validations/productValidator');
 
 /* /products */
 router.get('/', list)
+       .get('/last', lastProduct)
        .get('/:id?', detail)
        .post('/', store)
        .put('/:id?', update)

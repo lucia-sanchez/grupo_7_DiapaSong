@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { UseFetch } from "../hooks/UseFetch";
 import lastProduct from '/logoDiapasong.png'
 
+
 export const LastProductInDb = () => {
+  const [state, setState] = useState({
+    loading: true,
+    products: []
+  });
+
+  useEffect(() => {
+    UseFetch("/products/last")
+      .then(({ ok, data }) => {
+        const { products } = data;
+        setState({
+          loading: false,
+          products
+        });
+      })
+      .catch(() => console.error);
+  }, []);
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
@@ -15,20 +33,15 @@ export const LastProductInDb = () => {
             <img
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: "40rem" }}
-              src={lastProduct}
-              alt=" Star Wars - Mandalorian "
+              src={state.products.length >0 ? state.products[0].images[0].urlImage:''}
+              alt={state.products.length >0 ? state.products[0].title : ''}
             />
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-            consequatur explicabo officia inventore libero veritatis iure
-            voluptate reiciendis a magnam, vitae, aperiam voluptatum non
-            corporis quae dolorem culpa citationem ratione aperiam voluptatum
-            non corporis ratione aperiam voluptatum quae dolorem culpa ratione
-            aperiam voluptatum?
+            {state.products.length >0 ? state.products[0].description : ''}
           </p>
           <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
-            View Product detail
+            Ver Detalles
           </a>
         </div>
       </div>
